@@ -15,7 +15,8 @@ extern bool imgFlag;
 void sensingAndEstimation();
 void detumble();
 void calibration();
-void readTargetAttitude();
+void readTargetAttitudeCOMMS();
+void readTargetAttitudeIMG();
 void positionControl();
 
 #endif
