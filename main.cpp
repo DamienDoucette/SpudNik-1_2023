@@ -9,13 +9,18 @@
  * 
  */
 
-//Include External libraries
+/*Include external files*/
+
+//C++ built in libraries
 #include <iostream>
 #include <thread>
 
-//Include Local libraries
+//Local files for various threads functions
 #include "threads/acs.h"
 #include "threads/powerManagement.h"
+
+//SGP4 library
+#include "sgp4/SGP4.h"
 
 using namespace std;
 
@@ -24,7 +29,7 @@ bool startFlag = 1;
 bool pwrFlag = 0;
 bool comFlag = 0;
 bool imgFlag = 0;
-char TLE[3][69];
+char TLE[2][69];
 
 
 void acs(){
@@ -44,9 +49,8 @@ void acs(){
     uint8_t ATT_MOD = 0x00; //Will have to check what defualt value is supposed to be
 
     //Logic defined in FlowChart
-    printf("ACS Function started\n");
+    printf("LOG:\tACS Function started\n");
     if(startFlag){
-        printf("Start flag true\n");
         //sensingAndEstimation();
         if(pwrFlag){
             if(w < 1){
@@ -104,6 +108,7 @@ void powerManagement(){
         and will control what power mode the CubeSat is in depending on the battery level
 
     */
+   printf("LOG:\tPower Management Function started\n");
 
    //Delcare local variables
     float battThresh = 1;   //Define battery level threshold
@@ -124,9 +129,9 @@ void payloadCOMMS(){
 
 
 void setup(){
-    printf("Beginning setup loop...\n");
-
-    printf("Setup Complete.\n");
+    printf("LOG:\tBeginning setup loop...\n");
+    
+    printf("LOG:\tSetup Complete.\n");
 
 }
 
@@ -137,21 +142,22 @@ void loop(){
 int main()
 {
     setup();
-
     thread acsThread(acs);  //Start ACS thread
-    printf("ACS Thread started...\n");
+    printf("LOG:\tACS Thread called...\n");
 
     thread powerManagementThread(powerManagement);
-    printf("Power Management Thread started...\n");
+    printf("LOG:\tPower Management Thread called...\n");
 
     acsThread.join();   //When ACS threah finishes, join back to the main thread
-    printf("ACS Thread ended.\n");
+    printf("LOG:\tACS Thread ended.\n");
 
     powerManagementThread.join();
-    printf("Power Management Thread ended.");
+    printf("LOG:\tPower Management Thread ended./n");
 
     // while(1){
     //     loop();
     // }
+
+    printf("LOG:\t main.cpp completed.  Script will terminate.\n");
 
 }
