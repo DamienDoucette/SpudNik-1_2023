@@ -9,29 +9,56 @@
  * 
  */
 
+
 #include "acs.h"
 
-void sensingAndEstimation(char TLE[3][69], float tprev){
+void sensingAndEstimation(char TLE[2][69], float tprev){
     printf("Sensing and Estimation called!\n");
 
-    /* Read gyroscope values*/
+    /*----I2C Communication----*/
+    int file_i2c;
+    int length;
+    unsigned char buffer[60] = {0};
 
-    //I2C communication to IMU
+    /*Open I2C Bus*/
+    char *filename = (char*)"dev/i2c-0"
+    if((file_i2c = open(filename, O_RDWR)) < 0){
+        printf("Failed to open I2C bus.\n");
+        return;
+    }
 
-    float gyro[3];
+    /*Communicate with IMU*/
 
-    /* Read sun sensor values*/
+    int addrIMU = 0x00;    //Use 'sudo i2cdetect -y 0 to echo addresses of connected devices
+    if(ioctl(file_i2c, I2C_SLAVE, addrIMU) < 0){
+        printf("Failed to contact slave at address %d\n", addrIMU);
+    }
 
-    //I2C communication to MCU
+    /*Read data from IMU*/
+    length = 1; //Number of bytes to read
+    if(read(file_i2c, buffer,length) != length){
+        printf("Failed to read bytes from slave");
+    } else {
+        //Parse the data recieved into the vairous variables
+        float gyro[3] = buffer;
+        float mag[3] = buffer;
+    }
 
-    float sunSens[12];
+    /*Communicate with MCU*/
 
-    /*Read Magnetometer values*/
+    int addrMCU = 0x01;    //Use 'sudo i2cdetect -y 0 to echo addresses of connected devices
+    if(ioctl(file_i2c, I2C_SLAVE, addrIMU) < 0){
+        printf("Failed to contact slave at address %d\n", addrMCU);
+    }
 
-    //I2C communication to IMU
-
-    float mag[3];
-
+    /*Read data from MCU*/
+    length = 1; //Number of bytes to read
+    if(read(file_i2c, buffer,length) != length){
+        printf("Failed to read bytes from slave");
+    } else {
+        //Parse the data recieved into the vairous variables
+        float sunSens[12];
+    }
 
 }
 
