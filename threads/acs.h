@@ -1,7 +1,14 @@
 #ifndef ACS_H
 #define ACS_H
 
-#include <stdio.h>  
+#include <stdio.h>
+
+//I2C libraries  
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <linux/i2c-dev.h>
+
 
 //Define Flag variables that are not defined in ACS thread
 extern bool startFlag;
