@@ -15,6 +15,7 @@
 
 //Include Local libraries
 #include "threads/acs.h"
+#include "threads/powerManagement.h"
 
 using namespace std;
 
@@ -23,6 +24,8 @@ bool startFlag = 1;
 bool pwrFlag = 0;
 bool comFlag = 0;
 bool imgFlag = 0;
+char TLE[3][69];
+
 
 void acs(){
     /*
@@ -44,7 +47,7 @@ void acs(){
     printf("ACS Function started\n");
     if(startFlag){
         printf("Start flag true\n");
-        sensingAndEstimation();
+        //sensingAndEstimation();
         if(pwrFlag){
             if(w < 1){
                 if(posErr < 1){
@@ -89,6 +92,37 @@ void acs(){
     }
 }
 
+void supervisory(){
+
+}
+
+
+void powerManagement(){
+    /*  This function is used to moniter the power of the satellite
+
+        The function will interface with the battery charge module to determine the battery level
+        and will control what power mode the CubeSat is in depending on the battery level
+
+    */
+
+   //Delcare local variables
+    float battThresh = 1;   //Define battery level threshold
+    float battLevel = checkBattery();
+
+    if(battLevel < battThresh){
+        pwrFlag = 1;
+    } else {
+        pwrFlag = 0;
+    }
+
+}
+
+
+void payloadCOMMS(){
+
+}
+
+
 void setup(){
     printf("Beginning setup loop...\n");
 
@@ -104,10 +138,17 @@ int main()
 {
     setup();
 
-    thread acsThread(acs);
+    thread acsThread(acs);  //Start ACS thread
     printf("ACS Thread started...\n");
 
-    acsThread.join();
+    thread powerManagementThread(powerManagement);
+    printf("Power Management Thread started...\n");
+
+    acsThread.join();   //When ACS threah finishes, join back to the main thread
+    printf("ACS Thread ended.\n");
+
+    powerManagementThread.join();
+    printf("Power Management Thread ended.");
 
     // while(1){
     //     loop();
