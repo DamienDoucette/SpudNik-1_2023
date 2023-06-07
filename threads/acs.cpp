@@ -11,8 +11,28 @@
 
 #include "acs.h"
 
-void sensingAndEstimation(){
+void sensingAndEstimation(char TLE[3][69], float tprev){
     printf("Sensing and Estimation called!\n");
+
+    /* Read gyroscope values*/
+
+    //I2C communication to IMU
+
+    float gyro[3];
+
+    /* Read sun sensor values*/
+
+    //I2C communication to MCU
+
+    float sunSens[12];
+
+    /*Read Magnetometer values*/
+
+    //I2C communication to IMU
+
+    float mag[3];
+
+
 }
 
 void detumble(){
