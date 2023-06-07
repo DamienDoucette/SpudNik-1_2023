@@ -11,6 +11,8 @@
 				"${file}",
 				"${fileDirname}\\threads\\**.cpp",
 				"${fileDirname}\\threads\\**.h",
+				"${fileDirname}\\sgp4\\**.cpp",
+				"${fileDirname}\\sgp4\\**.h",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 				
