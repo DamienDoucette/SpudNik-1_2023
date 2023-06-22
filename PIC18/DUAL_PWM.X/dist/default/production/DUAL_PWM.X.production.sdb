@@ -1,0 +1,127 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F15Q40 ]
+[d frameptr 1249 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"13 C:\Users\damie\MPLABXProjects\DUAL_PWM.X\main.c
+[v _PWMsetup PWMsetup `(v  1 e 1 0 ]
+"44
+[v _loop loop `(v  1 e 1 0 ]
+"60
+[v _main main `(v  1 e 1 0 ]
+"8696 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @527 ]
+"9146
+[v _RC7PPS RC7PPS `VEuc  1 e 1 @536 ]
+"33356
+[v _PWM1ERS PWM1ERS `VEuc  1 e 1 @1120 ]
+"33426
+[v _PWM1CLK PWM1CLK `VEuc  1 e 1 @1121 ]
+"33566
+"33566
+[v _PWM1PR PWM1PR `VEus  1 e 2 @1123 ]
+"33613
+[v _PWM1CPRE PWM1CPRE `VEuc  1 e 1 @1125 ]
+"33679
+[v _PWM1GIE PWM1GIE `VEuc  1 e 1 @1128 ]
+[s S67 . 1 `uc 1 ERSNOW 1 0 :1:0 
+`uc 1 ERSPOL 1 0 :1:1 
+`uc 1 LD 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 EN 1 0 :1:7 
+]
+"33719
+[u S73 . 1 `S67 1 . 1 0 ]
+"33719
+"33719
+[v _PWM1CONbits PWM1CONbits `VES73  1 e 1 @1129 ]
+[s S82 . 1 `uc 1 MODE 1 0 :3:0 
+`uc 1 PPEN 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 POL1 1 0 :1:6 
+`uc 1 POL2 1 0 :1:7 
+]
+"33763
+[s S88 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+]
+"33763
+[u S92 . 1 `S82 1 . 1 0 `S88 1 . 1 0 ]
+"33763
+"33763
+[v _PWM1S1CFGbits PWM1S1CFGbits `VES92  1 e 1 @1130 ]
+"33803
+[v _PWM1S1P1 PWM1S1P1 `VEus  1 e 2 @1131 ]
+"33850
+[v _PWM1S1P2 PWM1S1P2 `VEus  1 e 2 @1133 ]
+[s S45 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"36547
+[u S51 . 1 `S45 1 . 1 0 ]
+"36547
+"36547
+[v _TRISBbits TRISBbits `VES51  1 e 1 @1223 ]
+[s S24 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"36589
+[u S33 . 1 `S24 1 . 1 0 ]
+"36589
+"36589
+[v _TRISCbits TRISCbits `VES33  1 e 1 @1224 ]
+"60 C:\Users\damie\MPLABXProjects\DUAL_PWM.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"66
+} 0
+"44
+[v _loop loop `(v  1 e 1 0 ]
+{
+"48
+[v loop@i i `us  1 a 2 8 ]
+"47
+[v loop@pwm12 pwm12 `C*.39VEi  1 a 2 6 ]
+"46
+[v loop@pwm11 pwm11 `C*.39VEi  1 a 2 4 ]
+"58
+} 0
+"13
+[v _PWMsetup PWMsetup `(v  1 e 1 0 ]
+{
+"42
+} 0
