@@ -1,7 +1,7 @@
 #ifndef MOTORDRIVER_H
 #define MOTORDRIVER_H
 
-#include <wiringPi.h>
+#include <lgpio.h>
 
 class motorDriver {
     private:
@@ -13,7 +13,9 @@ class motorDriver {
         bool enable;
         motorDriver(int pwm, int ena, int dir);
 
-        void rotate(int pwm, bool dir);
+        void rotate(float pwm, bool dir);
+
+        void close();
 
 }
 
