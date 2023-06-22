@@ -1,0 +1,766 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                               Tue Jun 20 15:32:22 2023
+
+Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
+     1                           	processor	18F15Q40
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    16                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    17   000000                     
+    18                           ; Generated 23/03/2023 GMT
+    19                           ; 
+    20                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    21                           ; All rights reserved.
+    22                           ; 
+    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    24                           ; 
+    25                           ; Redistribution and use in source and binary forms, with or without modification, are
+    26                           ; permitted provided that the following conditions are met:
+    27                           ; 
+    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    29                           ;        conditions and the following disclaimer.
+    30                           ; 
+    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    32                           ;        of conditions and the following disclaimer in the documentation and/or other
+    33                           ;        materials provided with the distribution. Publication is not required when
+    34                           ;        this file is used in an embedded application.
+    35                           ; 
+    36                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    37                           ;        software without specific prior written permission.
+    38                           ; 
+    39                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    40                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    41                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    42                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    43                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    44                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    45                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    46                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    47                           ; 
+    48                           ; 
+    49                           ; Code-generator required, PIC18F15Q40 Definitions
+    50                           ; 
+    51                           ; SFR Addresses
+    52   000000                     
+    53                           	psect	idataCOMRAM
+    54   007ECC                     __pidataCOMRAM:
+    55                           	callstack 0
+    56                           
+    57                           ;initializer for _channel_map
+    58   007ECC  05                 	db	5
+    59   007ECD  04                 	db	4
+    60   007ECE  03                 	db	3
+    61   007ECF  15                 	db	21
+    62   007ED0  14                 	db	20
+    63   007ED1  13                 	db	19
+    64   007ED2  16                 	db	22
+    65   007ED3  17                 	db	23
+    66   007ED4  0F                 	db	15
+    67   007ED5  0E                 	db	14
+    68   007ED6  0D                 	db	13
+    69   007ED7  0C                 	db	12
+    70                           
+    71                           	psect	nvCOMRAM
+    72   000514                     __pnvCOMRAM:
+    73                           	callstack 0
+    74   000514                     _B5:
+    75                           	callstack 0
+    76   000514                     	ds	2
+    77   000000                     _FVRCONbits	set	983
+    78   000000                     _ADREFbits	set	1016
+    79   000000                     _ANSELA	set	1024
+    80   000000                     _TRISA	set	1222
+    81   000000                     _TRISC	set	1224
+    82   000000                     _TRISB	set	1223
+    83   000000                     _ANSELB	set	1032
+    84   000000                     _ANSELC	set	1040
+    85   000000                     _ADACQ	set	1006
+    86   000000                     _ADRESL	set	1002
+    87   000000                     _ADRESH	set	1003
+    88   000000                     _ADPCH	set	1004
+    89   000000                     _ADCON0bits	set	1011
+    90                           
+    91                           ; #config settings
+    92                           
+    93                           	psect	cinit
+    94   007ED8                     __pcinit:
+    95                           	callstack 0
+    96   007ED8                     start_initialization:
+    97                           	callstack 0
+    98   007ED8                     __initialization:
+    99                           	callstack 0
+   100                           
+   101                           ; Initialize objects allocated to COMRAM (12 bytes)
+   102                           ; load TBLPTR registers with __pidataCOMRAM
+   103   007ED8  0ECC               	movlw	low __pidataCOMRAM
+   104   007EDA  6EF6               	movwf	tblptrl,c
+   105   007EDC  0E7E               	movlw	high __pidataCOMRAM
+   106   007EDE  6EF7               	movwf	tblptrh,c
+   107   007EE0  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   108   007EE2  6EF8               	movwf	tblptru,c
+   109   007EE4  EE01  F101         	lfsr	0,__pdataCOMRAM
+   110   007EE8  EE10 F00C          	lfsr	1,12
+   111   007EEC                     copy_data0:
+   112   007EEC  0009               	tblrd		*+
+   113   007EEE  C4F5 F4EE          	movff	tablat,postinc0
+   114   007EF2  50E5               	movf	postdec1,w,c
+   115   007EF4  50E1               	movf	fsr1l,w,c
+   116   007EF6  E1FA               	bnz	copy_data0
+   117                           
+   118                           ; Clear objects allocated to COMRAM (2 bytes)
+   119   007EF8  6A17               	clrf	(__pbssCOMRAM+1)& (0+255),c
+   120   007EFA  6A16               	clrf	__pbssCOMRAM& (0+255),c
+   121   007EFC                     end_of_initialization:
+   122                           	callstack 0
+   123   007EFC                     __end_of__initialization:
+   124                           	callstack 0
+   125   007EFC  0100               	movlb	0
+   126   007EFE  EF60  F03F         	goto	_main	;jump to C main() function
+   127                           
+   128                           	psect	bssCOMRAM
+   129   000516                     __pbssCOMRAM:
+   130                           	callstack 0
+   131   000516                     _B4:
+   132                           	callstack 0
+   133   000516                     	ds	2
+   134                           
+   135                           	psect	dataCOMRAM
+   136   000501                     __pdataCOMRAM:
+   137                           	callstack 0
+   138   000501                     _channel_map:
+   139                           	callstack 0
+   140   000501                     	ds	12
+   141                           
+   142                           	psect	cstackCOMRAM
+   143   00050D                     __pcstackCOMRAM:
+   144                           	callstack 0
+   145   00050D                     ?_ADCread:
+   146                           	callstack 0
+   147   00050D                     ADCread@channel:
+   148                           	callstack 0
+   149                           
+   150                           ; 2 bytes @ 0x0
+   151   00050D                     	ds	2
+   152   00050F                     ADCread@resultHigh:
+   153                           	callstack 0
+   154                           
+   155                           ; 1 bytes @ 0x2
+   156   00050F                     	ds	1
+   157   000510                     ADCread@resultLow:
+   158                           	callstack 0
+   159                           
+   160                           ; 1 bytes @ 0x3
+   161   000510                     	ds	1
+   162   000511                     ADCread@result:
+   163                           	callstack 0
+   164                           
+   165                           ; 2 bytes @ 0x4
+   166   000511                     	ds	2
+   167   000513                     ??_loop:
+   168                           
+   169                           ; 1 bytes @ 0x6
+   170   000513                     	ds	1
+   171   000514                     
+   172                           ; 1 bytes @ 0x7
+   173 ;;
+   174 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   175 ;;
+   176 ;; *************** function _main *****************
+   177 ;; Defined at:
+   178 ;;		line 108 in file "main.c"
+   179 ;; Parameters:    Size  Location     Type
+   180 ;;		None
+   181 ;; Auto vars:     Size  Location     Type
+   182 ;;		None
+   183 ;; Return value:  Size  Location     Type
+   184 ;;                  1    wreg      void 
+   185 ;; Registers used:
+   186 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   187 ;; Tracked objects:
+   188 ;;		On entry : 0/0
+   189 ;;		On exit  : 0/0
+   190 ;;		Unchanged: 0/0
+   191 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   192 ;;      Params:         0       0       0       0       0       0       0       0       0
+   193 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   194 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   195 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   196 ;;Total ram usage:        0 bytes
+   197 ;; Hardware stack levels required when called: 2
+   198 ;; This function calls:
+   199 ;;		_ADCsetup
+   200 ;;		_loop
+   201 ;; This function is called by:
+   202 ;;		Startup code after reset
+   203 ;; This function uses a non-reentrant model
+   204 ;;
+   205                           
+   206                           	psect	text0
+   207   007EC0                     __ptext0:
+   208                           	callstack 0
+   209   007EC0                     _main:
+   210                           	callstack 125
+   211   007EC0                     
+   212                           ;main.c: 109:     ADCsetup();
+   213   007EC0  EC81  F03F         	call	_ADCsetup	;wreg free
+   214   007EC4                     
+   215                           ;main.c: 110:     loop();
+   216   007EC4  ECA6  F03F         	call	_loop	;wreg free
+   217   007EC8  EFFE  F03F         	goto	start
+   218   007ECC                     __end_of_main:
+   219                           	callstack 0
+   220                           
+   221 ;; *************** function _loop *****************
+   222 ;; Defined at:
+   223 ;;		line 94 in file "main.c"
+   224 ;; Parameters:    Size  Location     Type
+   225 ;;		None
+   226 ;; Auto vars:     Size  Location     Type
+   227 ;;		None
+   228 ;; Return value:  Size  Location     Type
+   229 ;;                  1    wreg      void 
+   230 ;; Registers used:
+   231 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   232 ;; Tracked objects:
+   233 ;;		On entry : 0/0
+   234 ;;		On exit  : 0/0
+   235 ;;		Unchanged: 0/0
+   236 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   237 ;;      Params:         0       0       0       0       0       0       0       0       0
+   238 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   239 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   240 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   241 ;;Total ram usage:        1 bytes
+   242 ;; Hardware stack levels used: 1
+   243 ;; Hardware stack levels required when called: 1
+   244 ;; This function calls:
+   245 ;;		_ADCread
+   246 ;; This function is called by:
+   247 ;;		_main
+   248 ;; This function uses a non-reentrant model
+   249 ;;
+   250                           
+   251                           	psect	text1
+   252   007F4C                     __ptext1:
+   253                           	callstack 0
+   254   007F4C                     _loop:
+   255                           	callstack 125
+   256   007F4C                     l49:
+   257   007F4C                     
+   258                           ;main.c: 97:         B5 = ADCread(10);
+   259   007F4C  0E00               	movlw	0
+   260   007F4E  6E0E               	movwf	(ADCread@channel+1)^(0+1280),c
+   261   007F50  0E0A               	movlw	10
+   262   007F52  6E0D               	movwf	ADCread@channel^(0+1280),c
+   263   007F54  ECCD  F03F         	call	_ADCread	;wreg free
+   264   007F58  C50D  F514         	movff	?_ADCread,_B5
+   265   007F5C  C50E  F515         	movff	?_ADCread+1,_B5+1
+   266   007F60                     
+   267                           ;main.c: 99:         _delay((unsigned long)((50)*(4000000/4000.0)));
+   268   007F60  0E41               	movlw	65
+   269   007F62  6E13               	movwf	??_loop^(0+1280),c
+   270   007F64  0EEE               	movlw	238
+   271   007F66                     u57:
+   272   007F66  2EE8               	decfsz	wreg,f,c
+   273   007F68  D7FE               	bra	u57
+   274   007F6A  2E13               	decfsz	??_loop^(0+1280),f,c
+   275   007F6C  D7FC               	bra	u57
+   276   007F6E  D000               	nop2	
+   277   007F70                     
+   278                           ;main.c: 102:         B4 = ADCread(11);
+   279   007F70  0E00               	movlw	0
+   280   007F72  6E0E               	movwf	(ADCread@channel+1)^(0+1280),c
+   281   007F74  0E0B               	movlw	11
+   282   007F76  6E0D               	movwf	ADCread@channel^(0+1280),c
+   283   007F78  ECCD  F03F         	call	_ADCread	;wreg free
+   284   007F7C  C50D  F516         	movff	?_ADCread,_B4
+   285   007F80  C50E  F517         	movff	?_ADCread+1,_B4+1
+   286                           
+   287                           ;main.c: 104:         _delay((unsigned long)((50)*(4000000/4000.0)));
+   288   007F84  0E41               	movlw	65
+   289   007F86  6E13               	movwf	??_loop^(0+1280),c
+   290   007F88  0EEE               	movlw	238
+   291   007F8A                     u67:
+   292   007F8A  2EE8               	decfsz	wreg,f,c
+   293   007F8C  D7FE               	bra	u67
+   294   007F8E  2E13               	decfsz	??_loop^(0+1280),f,c
+   295   007F90  D7FC               	bra	u67
+   296   007F92  D000               	nop2	
+   297   007F94  EFA6  F03F         	goto	l49
+   298   007F98  0012               	return		;funcret
+   299   007F9A                     __end_of_loop:
+   300                           	callstack 0
+   301                           
+   302 ;; *************** function _ADCread *****************
+   303 ;; Defined at:
+   304 ;;		line 62 in file "main.c"
+   305 ;; Parameters:    Size  Location     Type
+   306 ;;  channel         2    0[COMRAM] int 
+   307 ;; Auto vars:     Size  Location     Type
+   308 ;;  result          2    4[COMRAM] unsigned short 
+   309 ;;  resultLow       1    3[COMRAM] unsigned char 
+   310 ;;  resultHigh      1    2[COMRAM] unsigned char 
+   311 ;; Return value:  Size  Location     Type
+   312 ;;                  2    0[COMRAM] unsigned short 
+   313 ;; Registers used:
+   314 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   315 ;; Tracked objects:
+   316 ;;		On entry : 0/0
+   317 ;;		On exit  : 0/0
+   318 ;;		Unchanged: 0/0
+   319 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   320 ;;      Params:         2       0       0       0       0       0       0       0       0
+   321 ;;      Locals:         4       0       0       0       0       0       0       0       0
+   322 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   323 ;;      Totals:         6       0       0       0       0       0       0       0       0
+   324 ;;Total ram usage:        6 bytes
+   325 ;; Hardware stack levels used: 1
+   326 ;; This function calls:
+   327 ;;		Nothing
+   328 ;; This function is called by:
+   329 ;;		_loop
+   330 ;; This function uses a non-reentrant model
+   331 ;;
+   332                           
+   333                           	psect	text2
+   334   007F9A                     __ptext2:
+   335                           	callstack 0
+   336   007F9A                     _ADCread:
+   337                           	callstack 125
+   338   007F9A                     
+   339                           ;main.c: 74:     ADPCH = 0b111011;
+   340   007F9A  0E3B               	movlw	59
+   341   007F9C  0103               	movlb	3	; () banked
+   342   007F9E  6FEC               	movwf	236,b	;volatile
+   343   007FA0                     
+   344                           ; BSR set to: 3
+   345                           ;main.c: 75:     ADCON0bits.GO = 1;
+   346   007FA0  81F3               	bsf	243,0,b	;volatile
+   347   007FA2                     l40:
+   348                           
+   349                           ; BSR set to: 3
+   350   007FA2  B1F3               	btfsc	243,0,b	;volatile
+   351   007FA4  EFD6  F03F         	goto	u31
+   352   007FA8  EFD8  F03F         	goto	u30
+   353   007FAC                     u31:
+   354   007FAC  EFD1  F03F         	goto	l40
+   355   007FB0                     u30:
+   356   007FB0                     
+   357                           ; BSR set to: 3
+   358                           ;main.c: 79:     ADPCH = channel_map[channel];
+   359   007FB0  0E01               	movlw	low _channel_map
+   360   007FB2  240D               	addwf	ADCread@channel^(0+1280),w,c
+   361   007FB4  6ED9               	movwf	fsr2l,c
+   362   007FB6  0E05               	movlw	high _channel_map
+   363   007FB8  200E               	addwfc	(ADCread@channel+1)^(0+1280),w,c
+   364   007FBA  6EDA               	movwf	fsr2h,c
+   365   007FBC  50DF               	movf	indf2,w,c
+   366   007FBE  6FEC               	movwf	236,b	;volatile
+   367   007FC0                     
+   368                           ; BSR set to: 3
+   369                           ;main.c: 80:     ADCON0bits.ON = 1;
+   370   007FC0  8FF3               	bsf	243,7,b	;volatile
+   371   007FC2                     
+   372                           ; BSR set to: 3
+   373                           ;main.c: 81:     ADCON0bits.GO = 1;
+   374   007FC2  81F3               	bsf	243,0,b	;volatile
+   375   007FC4                     l43:
+   376                           
+   377                           ; BSR set to: 3
+   378   007FC4  B1F3               	btfsc	243,0,b	;volatile
+   379   007FC6  EFE7  F03F         	goto	u41
+   380   007FCA  EFE9  F03F         	goto	u40
+   381   007FCE                     u41:
+   382   007FCE  EFE2  F03F         	goto	l43
+   383   007FD2                     u40:
+   384   007FD2                     
+   385                           ; BSR set to: 3
+   386                           ;main.c: 83:     uint8_t resultHigh = ADRESH;
+   387   007FD2  C3EB F50F          	movff	1003,ADCread@resultHigh	;volatile
+   388                           
+   389                           ;main.c: 84:     uint8_t resultLow = ADRESL;
+   390   007FD6  C3EA F510          	movff	1002,ADCread@resultLow	;volatile
+   391                           
+   392                           ;main.c: 87:     uint16_t result = resultHigh;
+   393   007FDA  C50F  F511         	movff	ADCread@resultHigh,ADCread@result
+   394   007FDE  6A12               	clrf	(ADCread@result+1)^(0+1280),c
+   395   007FE0                     
+   396                           ; BSR set to: 3
+   397                           ;main.c: 88:     result = result << 8;
+   398   007FE0  5011               	movf	ADCread@result^(0+1280),w,c
+   399   007FE2  6E12               	movwf	(ADCread@result+1)^(0+1280),c
+   400   007FE4  6A11               	clrf	ADCread@result^(0+1280),c
+   401   007FE6                     
+   402                           ; BSR set to: 3
+   403                           ;main.c: 89:     result = result + resultLow;
+   404   007FE6  5010               	movf	ADCread@resultLow^(0+1280),w,c
+   405   007FE8  2411               	addwf	ADCread@result^(0+1280),w,c
+   406   007FEA  6E11               	movwf	ADCread@result^(0+1280),c
+   407   007FEC  0E00               	movlw	0
+   408   007FEE  2012               	addwfc	(ADCread@result+1)^(0+1280),w,c
+   409   007FF0  6E12               	movwf	(ADCread@result+1)^(0+1280),c
+   410   007FF2                     
+   411                           ; BSR set to: 3
+   412                           ;main.c: 91:     return result;
+   413   007FF2  C511  F50D         	movff	ADCread@result,?_ADCread
+   414   007FF6  C512  F50E         	movff	ADCread@result+1,?_ADCread+1
+   415   007FFA                     
+   416                           ; BSR set to: 3
+   417   007FFA  0012               	return		;funcret
+   418   007FFC                     __end_of_ADCread:
+   419                           	callstack 0
+   420                           
+   421 ;; *************** function _ADCsetup *****************
+   422 ;; Defined at:
+   423 ;;		line 28 in file "main.c"
+   424 ;; Parameters:    Size  Location     Type
+   425 ;;		None
+   426 ;; Auto vars:     Size  Location     Type
+   427 ;;		None
+   428 ;; Return value:  Size  Location     Type
+   429 ;;                  1    wreg      void 
+   430 ;; Registers used:
+   431 ;;		wreg, status,2, status,0
+   432 ;; Tracked objects:
+   433 ;;		On entry : 0/0
+   434 ;;		On exit  : 0/0
+   435 ;;		Unchanged: 0/0
+   436 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   437 ;;      Params:         0       0       0       0       0       0       0       0       0
+   438 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   439 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   440 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   441 ;;Total ram usage:        0 bytes
+   442 ;; Hardware stack levels used: 1
+   443 ;; This function calls:
+   444 ;;		Nothing
+   445 ;; This function is called by:
+   446 ;;		_main
+   447 ;; This function uses a non-reentrant model
+   448 ;;
+   449                           
+   450                           	psect	text3
+   451   007F02                     __ptext3:
+   452                           	callstack 0
+   453   007F02                     _ADCsetup:
+   454                           	callstack 126
+   455   007F02                     
+   456                           ;main.c: 30:     TRISA = TRISA | 0b00111000;
+   457   007F02  50C6               	movf	198,w,c	;volatile
+   458   007F04  0938               	iorlw	56
+   459   007F06  6EC6               	movwf	198,c	;volatile
+   460                           
+   461                           ;main.c: 31:     TRISB = TRISB | 0b11110000;
+   462   007F08  50C7               	movf	199,w,c	;volatile
+   463   007F0A  09F0               	iorlw	240
+   464   007F0C  6EC7               	movwf	199,c	;volatile
+   465                           
+   466                           ;main.c: 32:     TRISC = TRISC | 0b11111000;
+   467   007F0E  50C8               	movf	200,w,c	;volatile
+   468   007F10  09F8               	iorlw	248
+   469   007F12  6EC8               	movwf	200,c	;volatile
+   470                           
+   471                           ;main.c: 34:     ANSELA = ANSELA | 0b00111000;
+   472   007F14  0104               	movlb	4	; () banked
+   473   007F16  5100               	movf	0,w,b	;volatile
+   474   007F18  0938               	iorlw	56
+   475   007F1A  6F00               	movwf	0,b	;volatile
+   476                           
+   477                           ;main.c: 35:     ANSELB = ANSELB | 0b11110000;
+   478   007F1C  5108               	movf	8,w,b	;volatile
+   479   007F1E  09F0               	iorlw	240
+   480   007F20  6F08               	movwf	8,b	;volatile
+   481                           
+   482                           ;main.c: 36:     ANSELC = ANSELC | 0b11111000;
+   483   007F22  5110               	movf	16,w,b	;volatile
+   484   007F24  09F8               	iorlw	248
+   485   007F26  6F10               	movwf	16,b	;volatile
+   486   007F28                     
+   487                           ; BSR set to: 4
+   488                           ;main.c: 39:     ADREFbits.NREF = 0;
+   489   007F28  0E0F               	movlw	-241
+   490   007F2A  0103               	movlb	3	; () banked
+   491   007F2C  17F8               	andwf	248,f,b	;volatile
+   492   007F2E                     
+   493                           ; BSR set to: 3
+   494                           ;main.c: 43:     ADREFbits.PREF = 0b00;
+   495   007F2E  0EF0               	movlw	-16
+   496   007F30  17F8               	andwf	248,f,b	;volatile
+   497   007F32                     
+   498                           ; BSR set to: 3
+   499                           ;main.c: 50:     FVRCONbits.ADFVR = 0b11;
+   500   007F32  0E03               	movlw	3
+   501   007F34  13D7               	iorwf	215,f,b	;volatile
+   502   007F36                     
+   503                           ; BSR set to: 3
+   504                           ;main.c: 55:     FVRCONbits.EN = 1;
+   505   007F36  8FD7               	bsf	215,7,b	;volatile
+   506   007F38                     
+   507                           ; BSR set to: 3
+   508                           ;main.c: 57:     ADCON0bits.FM = 1;
+   509   007F38  51F3               	movf	243,w,b	;volatile
+   510   007F3A  0BF3               	andlw	-13
+   511   007F3C  0904               	iorlw	4
+   512   007F3E  6FF3               	movwf	243,b	;volatile
+   513   007F40                     
+   514                           ; BSR set to: 3
+   515                           ;main.c: 58:     ADCON0bits.CS = 1;
+   516   007F40  89F3               	bsf	243,4,b	;volatile
+   517   007F42                     
+   518                           ; BSR set to: 3
+   519                           ;main.c: 59:     ADACQ = 32;
+   520   007F42  0E00               	movlw	0
+   521   007F44  6FEF               	movwf	239,b	;volatile
+   522   007F46  0E20               	movlw	32
+   523   007F48  6FEE               	movwf	238,b	;volatile
+   524   007F4A                     
+   525                           ; BSR set to: 3
+   526   007F4A  0012               	return		;funcret
+   527   007F4C                     __end_of_ADCsetup:
+   528                           	callstack 0
+   529   000000                     
+   530                           	psect	rparam
+   531   000000                     tosu	equ	0x4FF
+   532                           tosh	equ	0x4FE
+   533                           tosl	equ	0x4FD
+   534                           stkptr	equ	0x4FC
+   535                           pclatu	equ	0x4FB
+   536                           pclath	equ	0x4FA
+   537                           pcl	equ	0x4F9
+   538                           tblptru	equ	0x4F8
+   539                           tblptrh	equ	0x4F7
+   540                           tblptrl	equ	0x4F6
+   541                           tablat	equ	0x4F5
+   542                           prodh	equ	0x4F4
+   543                           prodl	equ	0x4F3
+   544                           indf0	equ	0x4EF
+   545                           postinc0	equ	0x4EE
+   546                           postdec0	equ	0x4ED
+   547                           preinc0	equ	0x4EC
+   548                           plusw0	equ	0x4EB
+   549                           fsr0h	equ	0x4EA
+   550                           fsr0l	equ	0x4E9
+   551                           wreg	equ	0x4E8
+   552                           indf1	equ	0x4E7
+   553                           postinc1	equ	0x4E6
+   554                           postdec1	equ	0x4E5
+   555                           preinc1	equ	0x4E4
+   556                           plusw1	equ	0x4E3
+   557                           fsr1h	equ	0x4E2
+   558                           fsr1l	equ	0x4E1
+   559                           bsr	equ	0x4E0
+   560                           indf2	equ	0x4DF
+   561                           postinc2	equ	0x4DE
+   562                           postdec2	equ	0x4DD
+   563                           preinc2	equ	0x4DC
+   564                           plusw2	equ	0x4DB
+   565                           fsr2h	equ	0x4DA
+   566                           fsr2l	equ	0x4D9
+   567                           status	equ	0x4D8
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        12
+    BSS         2
+    Persistent  2
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      7      23
+    BANK5           160      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_loop
+    _loop->_ADCread
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     289
+                           _ADCsetup
+                               _loop
+ ---------------------------------------------------------------------------------
+ (1) _loop                                                 1     1      0     289
+                                              6 COMRAM     1     1      0
+                            _ADCread
+ ---------------------------------------------------------------------------------
+ (2) _ADCread                                              6     4      2     289
+                                              0 COMRAM     6     4      2
+ ---------------------------------------------------------------------------------
+ (1) _ADCsetup                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _ADCsetup
+   _loop
+     _ADCread
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      21        0.0%
+BITBIGSFRllll      3D7      0       0      31        0.0%
+EEDATA             200      0       0       0        0.0%
+BITBIGSFR_1        100      0       0      20        0.0%
+BITBANK12          100      0       0      18        0.0%
+BANK12             100      0       0      19        0.0%
+BITBANK11          100      0       0      16        0.0%
+BANK11             100      0       0      17        0.0%
+BITBANK10          100      0       0      14        0.0%
+BANK10             100      0       0      15        0.0%
+BITBANK9           100      0       0      12        0.0%
+BANK9              100      0       0      13        0.0%
+BITBANK8           100      0       0      10        0.0%
+BANK8              100      0       0      11        0.0%
+BITBANK7           100      0       0       8        0.0%
+BANK7              100      0       0       9        0.0%
+BITBANK6           100      0       0       6        0.0%
+BANK6              100      0       0       7        0.0%
+BITBIGSFRlhhh       B5      0       0      23        0.0%
+BITBANK5            A0      0       0       4        0.0%
+BANK5               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F      7      17       1       24.2%
+BITBIGSFRh          37      0       0      22        0.0%
+BITBIGSFRlllhll     12      0       0      30        0.0%
+BITBIGSFRllh         7      0       0      26        0.0%
+BITBIGSFRlhhl        7      0       0      24        0.0%
+BITBIGSFRlhl         7      0       0      25        0.0%
+BITBIGSFRlllhh       4      0       0      27        0.0%
+BITBIGSFRlllhlh      3      0       0      28        0.0%
+BITBIGSFRlllhll      1      0       0      29        0.0%
+BIGSFR_1             0      0       0     200        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR_6             0      0       0     200        0.0%
+SFR_6                0      0       0     200        0.0%
+BITSFR_5             0      0       0     200        0.0%
+SFR_5                0      0       0     200        0.0%
+BITSFR_4             0      0       0     200        0.0%
+SFR_4                0      0       0     200        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      17      32        0.0%
+DATA                 0      0      17       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                   Tue Jun 20 15:32:22 2023
+
+                     _B4 0516                       _B5 0514                       l40 7FA2  
+                     l43 7FC4                       l37 7F4A                       l45 7FD2  
+                     l46 7FFA                       l49 7F4C                       l57 7EC8  
+                     u30 7FB0                       u31 7FAC                       u40 7FD2  
+                     u41 7FCE                       u57 7F66                       u67 7F8A  
+                    l801 7F70                      l803 7EC0                      l805 7EC4  
+                    l751 7F02                      l761 7F38                      l753 7F28  
+                    l763 7F40                      l755 7F2E                      l765 7F42  
+                    l757 7F32                      l781 7FA0                      l759 7F36  
+                    l791 7FE6                      l783 7FB0                      l793 7FF2  
+                    l785 7FC0                      l787 7FC2                      l779 7F9A  
+                    l789 7FE0                      l797 7F4C                      l799 7F60  
+                    wreg 04E8          __end_of_ADCread 7FFC                     _main 7EC0  
+                   _loop 7F4C                     indf2 04DF                     fsr1l 04E1  
+                   fsr2l 04D9                     start 7FFC         __end_of_ADCsetup 7F4C  
+           ___param_bank 0000                    _ADACQ 03EE                    ?_main 050D  
+                  _ADPCH 03EC                    ?_loop 050D                    _TRISA 04C6  
+                  _TRISB 04C7                    _TRISC 04C8                    tablat 04F5  
+       ADCread@resultLow 0510          __initialization 7ED8             __end_of_main 7ECC  
+           __end_of_loop 7F9A                ??_ADCread 050F                   ??_main 0514  
+                 ??_loop 0513            __activetblptr 0000                   _ADRESH 03EB  
+                 _ADRESL 03EA                   _ANSELA 0400                   _ANSELB 0408  
+                 _ANSELC 0410                   isa$std 0001             __pdataCOMRAM 0501  
+                 tblptrh 04F7                   tblptrl 04F6                   tblptru 04F8  
+              ?_ADCsetup 050D               __accesstop 0560  __end_of__initialization 7EFC  
+          ___rparam_used 0001        ADCread@resultHigh 050F            ADCread@result 0511  
+         __pcstackCOMRAM 050D               ??_ADCsetup 050D               __pnvCOMRAM 0514  
+                _ADCread 7F9A                _ADREFbits 03F8                  __Hparam 0000  
+                __Lparam 0000                  __pcinit 7ED8                  __ramtop 0E00  
+                __ptext0 7EC0                  __ptext1 7F4C                  __ptext2 7F9A  
+                __ptext3 7F02     end_of_initialization 7EFC                  postdec1 04E5  
+                postinc0 04EE           ADCread@channel 050D            __pidataCOMRAM 7ECC  
+    start_initialization 7ED8                 ?_ADCread 050D              __pbssCOMRAM 0516  
+            _channel_map 0501                 _ADCsetup 7F02               _ADCON0bits 03F3  
+              copy_data0 7EEC                 __Hrparam 0000                 __Lrparam 0000  
+               isa$xinst 0000               _FVRCONbits 03D7  
