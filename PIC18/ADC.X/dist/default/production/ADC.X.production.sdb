@@ -1,0 +1,122 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F15Q40 ]
+[d frameptr 1249 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"17 C:\Users\damie\MPLABXProjects\ADC.X\main.c
+[v _ADCsetup ADCsetup `(v  1 e 1 0 ]
+"34
+[v _ADCread ADCread `(us  1 e 2 0 ]
+"49
+[v _loop loop `(v  1 e 1 0 ]
+"55
+[v _main main `(v  1 e 1 0 ]
+"29093 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h
+[v _ADRESL ADRESL `VEuc  1 e 1 @1002 ]
+"29221
+[v _ADRESH ADRESH `VEuc  1 e 1 @1003 ]
+"29341
+[v _ADPCH ADPCH `VEuc  1 e 1 @1004 ]
+"29399
+[v _ADACQ ADACQ `VEus  1 e 2 @1006 ]
+[s S55 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :2:2 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"29945
+[s S63 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S71 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM0 1 0 :1:2 
+`uc 1 FM1 1 0 :1:3 
+]
+[s S76 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S78 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[u S83 . 1 `S55 1 . 1 0 `S63 1 . 1 0 `S71 1 . 1 0 `S76 1 . 1 0 `S78 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES83  1 e 1 @1011 ]
+[s S40 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ANSELB4 1 0 :1:4 
+`uc 1 ANSELB5 1 0 :1:5 
+`uc 1 ANSELB6 1 0 :1:6 
+`uc 1 ANSELB7 1 0 :1:7 
+]
+"31240
+[u S46 . 1 `S40 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES46  1 e 1 @1032 ]
+[s S25 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"36547
+[u S31 . 1 `S25 1 . 1 0 ]
+"36547
+"36547
+[v _TRISBbits TRISBbits `VES31  1 e 1 @1223 ]
+"55 C:\Users\damie\MPLABXProjects\ADC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"59
+} 0
+"49
+[v _loop loop `(v  1 e 1 0 ]
+{
+"53
+} 0
+"34
+[v _ADCread ADCread `(us  1 e 2 0 ]
+{
+"42
+[v ADCread@result result `us  1 a 2 4 ]
+"39
+[v ADCread@resultLow resultLow `uc  1 a 1 3 ]
+"38
+[v ADCread@resultHigh resultHigh `uc  1 a 1 2 ]
+"47
+} 0
+"17
+[v _ADCsetup ADCsetup `(v  1 e 1 0 ]
+{
+"32
+} 0
