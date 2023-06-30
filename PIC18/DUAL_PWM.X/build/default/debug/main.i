@@ -22517,7 +22517,9 @@ void PWMsetup(){
     PWM1PR = 0x00C7;
     PWM1CPRE = 0x00;
     PWM1GIE = 0x00;
-    PWM1CONbits.LD = 1;
+
+
+    PWM1CONbits.LD = 0;
 
 
 
@@ -22527,20 +22529,51 @@ void PWMsetup(){
     PWM1S1CFGbits.PPEN = 0;
     PWM1S1CFGbits.MODE = 0b001;
 
-    PWM1S1P1 = 0x0001;
-    PWM1S1P2 = 0x0005;
+    PWM1S1P1 = 0x0000;
+    PWM1S1P2 = 0x0000;
 
     PWM1CONbits.EN = 1;
 }
 
+void setPWM(int address, uint8_t duty_cycle){
+    int temp = address >> 4;
+    int conReg;
+    if(temp == 0x046){
+        conReg = temp << 4 | 0x0009;
+    }
+    if(temp == 0x047){
+        conReg = temp << 4 | 0x0008;
+    }
+    if(temp == 0x048){
+        conReg = temp << 4 | 0x0007;
+    }
+    int volatile * const pConReg = (int *) conReg;
+    *pConReg &= ~(0b10000000);
+    int volatile * const pDutyReg = (int *) address;
+    *pDutyReg = duty_cycle;
+    *pConReg |= 0b10000000;
+}
+
 void loop(){
+
+
+    int buffer1 = 0x46B;
+    int buffer2 = 0x46D;
+
+
+    int volatile * const pwm11 = (int *) buffer1;
+    int volatile * const pwm12 = (int *) buffer2;
+
+
     for(uint16_t i = 0; i < 0x00C8; i++){
 
-        PWM1CONbits.EN = 0;
-        PWM1S1P1 = i;
-        PWM1S1P2 = (0x00C8 - i)/2;
 
-        PWM1CONbits.EN = 1;
+
+
+
+
+
+        setPWM(0x048B, i);
 
         _delay((unsigned long)((10)*(4000000/4000.0)));
     }

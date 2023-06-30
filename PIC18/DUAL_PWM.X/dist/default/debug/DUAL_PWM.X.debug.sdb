@@ -27,11 +27,13 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"13 C:\Users\damie\MPLABXProjects\DUAL_PWM.X\main.c
+"13 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\DUAL_PWM.X\main.c
 [v _PWMsetup PWMsetup `(v  1 e 1 0 ]
-"44
+"46
+[v _setPWM setPWM `(v  1 e 1 0 ]
+"65
 [v _loop loop `(v  1 e 1 0 ]
-"57
+"90
 [v _main main `(v  1 e 1 0 ]
 "8696 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h
 [v _RB6PPS RB6PPS `VEuc  1 e 1 @527 ]
@@ -104,20 +106,38 @@
 "36589
 "36589
 [v _TRISCbits TRISCbits `VES33  1 e 1 @1224 ]
-"57 C:\Users\damie\MPLABXProjects\DUAL_PWM.X\main.c
+"90 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\DUAL_PWM.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"63
+"96
 } 0
-"44
+"65
 [v _loop loop `(v  1 e 1 0 ]
 {
-"45
-[v loop@i i `us  1 a 2 4 ]
-"55
+"76
+[v loop@i i `us  1 a 2 17 ]
+"69
+[v loop@buffer2 buffer2 `i  1 a 2 15 ]
+"88
+} 0
+"46
+[v _setPWM setPWM `(v  1 e 1 0 ]
+{
+"47
+[v setPWM@temp temp `i  1 a 2 12 ]
+"58
+[v setPWM@pConReg pConReg `C*.39VEi  1 a 2 10 ]
+"48
+[v setPWM@conReg conReg `i  1 a 2 8 ]
+"60
+[v setPWM@pDutyReg pDutyReg `C*.39VEi  1 a 2 6 ]
+"46
+[v setPWM@address address `i  1 p 2 0 ]
+[v setPWM@duty_cycle duty_cycle `uc  1 p 1 2 ]
+"63
 } 0
 "13
 [v _PWMsetup PWMsetup `(v  1 e 1 0 ]
 {
-"42
+"44
 } 0

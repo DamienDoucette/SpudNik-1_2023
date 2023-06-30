@@ -2119,102 +2119,182 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;main.c: 27:     PWM1GIE = 0x00;
 [e = _PWM1GIE -> -> 0 `i `uc ]
-"28
-[; ;main.c: 28:     PWM1CONbits.LD = 1;
-[e = . . _PWM1CONbits 0 2 -> -> 1 `i `uc ]
-"32
-[; ;main.c: 32:     PWM1S1CFGbits.POL1 = 0;
+"30
+[; ;main.c: 30:     PWM1CONbits.LD = 0;
+[e = . . _PWM1CONbits 0 2 -> -> 0 `i `uc ]
+"34
+[; ;main.c: 34:     PWM1S1CFGbits.POL1 = 0;
 [e = . . _PWM1S1CFGbits 0 3 -> -> 0 `i `uc ]
-"33
-[; ;main.c: 33:     PWM1S1CFGbits.POL2 = 0;
-[e = . . _PWM1S1CFGbits 0 4 -> -> 0 `i `uc ]
 "35
-[; ;main.c: 35:     PWM1S1CFGbits.PPEN = 0;
+[; ;main.c: 35:     PWM1S1CFGbits.POL2 = 0;
+[e = . . _PWM1S1CFGbits 0 4 -> -> 0 `i `uc ]
+"37
+[; ;main.c: 37:     PWM1S1CFGbits.PPEN = 0;
 [e = . . _PWM1S1CFGbits 0 1 -> -> 0 `i `uc ]
-"36
-[; ;main.c: 36:     PWM1S1CFGbits.MODE = 0b001;
-[e = . . _PWM1S1CFGbits 0 0 -> -> 1 `i `uc ]
 "38
-[; ;main.c: 38:     PWM1S1P1 = 0x0001;
-[e = _PWM1S1P1 -> -> 1 `i `us ]
-"39
-[; ;main.c: 39:     PWM1S1P2 = 0x0005;
-[e = _PWM1S1P2 -> -> 5 `i `us ]
+[; ;main.c: 38:     PWM1S1CFGbits.MODE = 0b001;
+[e = . . _PWM1S1CFGbits 0 0 -> -> 1 `i `uc ]
+"40
+[; ;main.c: 40:     PWM1S1P1 = 0x0000;
+[e = _PWM1S1P1 -> -> 0 `i `us ]
 "41
-[; ;main.c: 41:     PWM1CONbits.EN = 1;
+[; ;main.c: 41:     PWM1S1P2 = 0x0000;
+[e = _PWM1S1P2 -> -> 0 `i `us ]
+"43
+[; ;main.c: 43:     PWM1CONbits.EN = 1;
 [e = . . _PWM1CONbits 0 4 -> -> 1 `i `uc ]
-"42
-[; ;main.c: 42: }
+"44
+[; ;main.c: 44: }
 [e :UE 1844 ]
 }
-"44
-[; ;main.c: 44: void loop(){
+"46
+[; ;main.c: 46: void setPWM(int address, uint8_t duty_cycle){
+[v _setPWM `(v ~T0 @X0 1 ef2`i`uc ]
+{
+[e :U _setPWM ]
+[v _address `i ~T0 @X0 1 r1 ]
+[v _duty_cycle `uc ~T0 @X0 1 r2 ]
+[f ]
+"47
+[; ;main.c: 47:     int temp = address >> 4;
+[v _temp `i ~T0 @X0 1 a ]
+[e = _temp >> _address -> 4 `i ]
+"48
+[; ;main.c: 48:     int conReg;
+[v _conReg `i ~T0 @X0 1 a ]
+"49
+[; ;main.c: 49:     if(temp == 0x046){
+[e $ ! == _temp -> 70 `i 1846  ]
+{
+"50
+[; ;main.c: 50:         conReg = temp << 4 | 0x0009;
+[e = _conReg | << _temp -> 4 `i -> 9 `i ]
+"51
+[; ;main.c: 51:     }
+}
+[e :U 1846 ]
+"52
+[; ;main.c: 52:     if(temp == 0x047){
+[e $ ! == _temp -> 71 `i 1847  ]
+{
+"53
+[; ;main.c: 53:         conReg = temp << 4 | 0x0008;
+[e = _conReg | << _temp -> 4 `i -> 8 `i ]
+"54
+[; ;main.c: 54:     }
+}
+[e :U 1847 ]
+"55
+[; ;main.c: 55:     if(temp == 0x048){
+[e $ ! == _temp -> 72 `i 1848  ]
+{
+"56
+[; ;main.c: 56:         conReg = temp << 4 | 0x0007;
+[e = _conReg | << _temp -> 4 `i -> 7 `i ]
+"57
+[; ;main.c: 57:     }
+}
+[e :U 1848 ]
+[v F13012 `*Vi ~T0 @X0 1 t ]
+"58
+[; ;main.c: 58:     int volatile * const pConReg = (int *) conReg;
+[v _pConReg `C*Vi ~T0 @X0 1 a ]
+[e = _pConReg -> -> _conReg `*i `*Vi ]
+"59
+[; ;main.c: 59:     *pConReg &= ~(0b10000000);
+[e =& *U _pConReg -> ~ -> 128 `i `i ]
+[v F13014 `*Vi ~T0 @X0 1 t ]
+"60
+[; ;main.c: 60:     int volatile * const pDutyReg = (int *) address;
+[v _pDutyReg `C*Vi ~T0 @X0 1 a ]
+[e = _pDutyReg -> -> _address `*i `*Vi ]
+"61
+[; ;main.c: 61:     *pDutyReg = duty_cycle;
+[e = *U _pDutyReg -> _duty_cycle `i ]
+"62
+[; ;main.c: 62:     *pConReg |= 0b10000000;
+[e =| *U _pConReg -> -> 128 `i `i ]
+"63
+[; ;main.c: 63: }
+[e :UE 1845 ]
+}
+"65
+[; ;main.c: 65: void loop(){
 [v _loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _loop ]
 [f ]
-"45
-[; ;main.c: 45:     for(uint16_t i = 0; i < 0x00C8; i++){
+"68
+[; ;main.c: 68:     int buffer1 = 0x46B;
+[v _buffer1 `i ~T0 @X0 1 a ]
+[e = _buffer1 -> 1131 `i ]
+"69
+[; ;main.c: 69:     int buffer2 = 0x46D;
+[v _buffer2 `i ~T0 @X0 1 a ]
+[e = _buffer2 -> 1133 `i ]
+[v F13019 `*Vi ~T0 @X0 1 t ]
+"72
+[; ;main.c: 72:     int volatile * const pwm11 = (int *) buffer1;
+[v _pwm11 `C*Vi ~T0 @X0 1 a ]
+[e = _pwm11 -> -> _buffer1 `*i `*Vi ]
+[v F13021 `*Vi ~T0 @X0 1 t ]
+"73
+[; ;main.c: 73:     int volatile * const pwm12 = (int *) buffer2;
+[v _pwm12 `C*Vi ~T0 @X0 1 a ]
+[e = _pwm12 -> -> _buffer2 `*i `*Vi ]
+"76
+[; ;main.c: 76:     for(uint16_t i = 0; i < 0x00C8; i++){
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $ < -> _i `ui -> -> 200 `i `ui 1846  ]
-[e $U 1847  ]
-[e :U 1846 ]
+[e $ < -> _i `ui -> -> 200 `i `ui 1850  ]
+[e $U 1851  ]
+[e :U 1850 ]
 {
-"47
-[; ;main.c: 47:         PWM1CONbits.EN = 0;
-[e = . . _PWM1CONbits 0 4 -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:         PWM1S1P1 = i;
-[e = _PWM1S1P1 _i ]
-"49
-[; ;main.c: 49:         PWM1S1P2 = (0x00C8 - i)/2;
-[e = _PWM1S1P2 -> / - -> -> 200 `i `ui -> _i `ui -> -> 2 `i `ui `us ]
-"51
-[; ;main.c: 51:         PWM1CONbits.EN = 1;
-[e = . . _PWM1CONbits 0 4 -> -> 1 `i `uc ]
-"53
-[; ;main.c: 53:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"84
+[; ;main.c: 84:         setPWM(0x048B, i);
+[e ( _setPWM (2 , -> 1163 `i -> _i `uc ]
+"86
+[; ;main.c: 86:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"54
-[; ;main.c: 54:     }
+"87
+[; ;main.c: 87:     }
 }
 [e ++ _i -> -> 1 `i `us ]
-[e $ < -> _i `ui -> -> 200 `i `ui 1846  ]
-[e :U 1847 ]
+[e $ < -> _i `ui -> -> 200 `i `ui 1850  ]
+[e :U 1851 ]
 }
-"55
-[; ;main.c: 55: }
-[e :UE 1845 ]
+"88
+[; ;main.c: 88: }
+[e :UE 1849 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;main.c: 57: void main(void) {
+"90
+[; ;main.c: 90: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"58
-[; ;main.c: 58:     PWMsetup();
+"91
+[; ;main.c: 91:     PWMsetup();
 [e ( _PWMsetup ..  ]
-"59
-[; ;main.c: 59:     while(1){
-[e :U 1851 ]
+"92
+[; ;main.c: 92:     while(1){
+[e :U 1855 ]
 {
-"60
-[; ;main.c: 60:         loop();
+"93
+[; ;main.c: 93:         loop();
 [e ( _loop ..  ]
-"61
-[; ;main.c: 61:     }
+"94
+[; ;main.c: 94:     }
 }
-[e :U 1850 ]
-[e $U 1851  ]
-[e :U 1852 ]
-"62
-[; ;main.c: 62:     return;
-[e $UE 1849  ]
-"63
-[; ;main.c: 63: }
-[e :UE 1849 ]
+[e :U 1854 ]
+[e $U 1855  ]
+[e :U 1856 ]
+"95
+[; ;main.c: 95:     return;
+[e $UE 1853  ]
+"96
+[; ;main.c: 96: }
+[e :UE 1853 ]
 }
