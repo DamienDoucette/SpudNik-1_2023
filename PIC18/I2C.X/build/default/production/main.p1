@@ -1721,45 +1721,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "153
 [e :UE 1874 ]
 }
-"156
-[v _loop `(v ~T0 @X0 1 ef ]
-{
-[e :U _loop ]
-[f ]
-"157
-[v _cnt `i ~T0 @X0 1 a ]
-[e = _cnt -> 0 `i ]
-"158
-[e $ ! == -> . . _I2C1PIRbits 0 0 `i -> 1 `i 1877  ]
-{
-"159
-[e ++ _cnt -> 1 `i ]
-"160
-}
-[e :U 1877 ]
-"161
-[e :UE 1876 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"163
+"155
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"164
+"156
 [e ( _configI2C ..  ]
-"165
-[e :U 1880 ]
-{
-"166
-[e ( _loop ..  ]
-"167
-}
-[e :U 1879 ]
-[e $U 1880  ]
-[e :U 1881 ]
-"168
-[e $UE 1878  ]
-"169
-[e :UE 1878 ]
+"157
+[e $UE 1876  ]
+"158
+[e :UE 1876 ]
 }

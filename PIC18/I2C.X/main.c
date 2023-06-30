@@ -9,8 +9,12 @@
 #include <xc.h>
 
 void configI2C(){
-    //SCL1 -- RC0
-    //SDA1 -- RC1
+    //SCL1 -- RC1
+    //SDA1 -- RC0
+    
+    //Set all pins to digital not analog
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
     
     /*Configure pins*/
     //Set pins
@@ -20,13 +24,19 @@ void configI2C(){
     ODCONCbits.ODCC0 = 1;
     ODCONCbits.ODCC1 = 1;
     
-    //Set pins to SDA and SCL
+    //Set pins to SDA and SCL output
     RC0PPS = 0x22;  //Set pin C0 to SDA
     RC1PPS = 0x21;  //Set pin C1 to SCL
+    
+    //Set pins to SDA and SCL input
+    I2C1SDAPPS = 0b010000;  //Set C0 to SDA
+    I2C1SCLPPS = 0b010001; //Set C1 to SCL
     
     /*Config I2C*/
     I2C1CON0bits.MODE = 0b000; //Set to client 7bit w/o masking
     I2C1CON0bits.CSTR = 0;      //Enable clocking (not stretching clock)
+    
+    //I2C1CON1bits.CSD = 1;       //Disable clock stretching
     
     I2C1CON2bits.ACNT = 0;      //First transmission after address will be loaded to the byte count register
     I2C1CON2bits.GCEN = 1;      //Enable general address call -- will respond to address 0x00
@@ -44,7 +54,7 @@ void configI2C(){
     I2C1BTObits.TOBY32 = 0;     //Enable 32 prescaling
     I2C1BTObits.TOTIME = 0x23;  //Set timeout time to 35ms (32kHz / 32 prescale * 35 = 35ms)
     
-    I2C1ADR0 = 0b0000111;   //Set 7bit address
+    I2C1ADR0 = 0x11;   //Set 7bit address
     
     /*Config I2C interrupts*/
     INTCON0bits.GIE = 1;    //Enable interrupts
@@ -150,7 +160,18 @@ void __interrupt(irq(I2C1)) ISR(void){
     return;
 }
 
+
+void loop(){
+    int cnt = 0;
+    if(I2C1PIRbits.SCIF == 1){
+        i2cStart();
+    }
+}
+
 void main(void) {
     configI2C();
+    while(1){
+        loop();
+    }
     return;
 }

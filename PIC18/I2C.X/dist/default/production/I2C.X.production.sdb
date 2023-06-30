@@ -33,9 +33,7 @@
 [v _i2cStart i2cStart `(v  1 e 1 0 ]
 "148
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"156
-[v _loop loop `(v  1 e 1 0 ]
-"163
+"155
 [v _main main `(v  1 e 1 0 ]
 "8796 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h
 [v _RC0PPS RC0PPS `VEuc  1 e 1 @529 ]
@@ -267,17 +265,10 @@
 "36805
 "36805
 [v _INTCON0bits INTCON0bits `VES205  1 e 1 @1238 ]
-"163 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+"155 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"169
-} 0
-"156
-[v _loop loop `(v  1 e 1 0 ]
-{
-"157
-[v loop@cnt cnt `i  1 a 2 2 ]
-"161
+"158
 } 0
 "11
 [v _configI2C configI2C `(v  1 e 1 0 ]
