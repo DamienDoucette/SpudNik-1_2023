@@ -1,0 +1,211 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F15Q40 ]
+[d frameptr 1249 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"14 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\UART.X\main.c
+[v _TX TX `(v  1 e 1 0 ]
+"20
+[v _setup setup `(v  1 e 1 0 ]
+"52
+[v _loop loop `(v  1 e 1 0 ]
+"75
+[v _main main `(v  1 e 1 0 ]
+[s S80 . 1 `uc 1 NDIV 1 0 :4:0 
+`uc 1 NOSC 1 0 :3:4 
+]
+"5145 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
+[s S83 . 1 `uc 1 NDIV0 1 0 :1:0 
+`uc 1 NDIV1 1 0 :1:1 
+`uc 1 NDIV2 1 0 :1:2 
+`uc 1 NDIV3 1 0 :1:3 
+`uc 1 NOSC0 1 0 :1:4 
+`uc 1 NOSC1 1 0 :1:5 
+`uc 1 NOSC2 1 0 :1:6 
+]
+[u S91 . 1 `S80 1 . 1 0 `S83 1 . 1 0 ]
+[v _OSCCON1bits OSCCON1bits `VES91  1 e 1 @173 ]
+"5368
+[v _OSCFREQ OSCFREQ `VEuc  1 e 1 @177 ]
+"8796
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @529 ]
+"12088
+[v _U1RXPPS U1RXPPS `VEuc  1 e 1 @626 ]
+"14052
+[v _U1TXB U1TXB `VEuc  1 e 1 @675 ]
+[s S130 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+]
+"14284
+[s S135 . 1 `uc 1 U1MODE 1 0 :4:0 
+`uc 1 U1RXEN 1 0 :1:4 
+`uc 1 U1TXEN 1 0 :1:5 
+`uc 1 U1ABDEN 1 0 :1:6 
+`uc 1 U1BRGS 1 0 :1:7 
+]
+[s S141 . 1 `uc 1 U1MODE0 1 0 :1:0 
+`uc 1 U1MODE1 1 0 :1:1 
+`uc 1 U1MODE2 1 0 :1:2 
+`uc 1 U1MODE3 1 0 :1:3 
+]
+[s S146 . 1 `uc 1 MODE 1 0 :4:0 
+`uc 1 RXEN 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 ABDEN 1 0 :1:6 
+`uc 1 BRGS 1 0 :1:7 
+]
+[u S152 . 1 `S130 1 . 1 0 `S135 1 . 1 0 `S141 1 . 1 0 `S146 1 . 1 0 ]
+[v _U1CON0bits U1CON0bits `VES152  1 e 1 @683 ]
+[s S240 . 1 `uc 1 SENDB 1 0 :1:0 
+`uc 1 BRKOVR 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 RXBIMD 1 0 :1:3 
+`uc 1 WUE 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 ON 1 0 :1:7 
+]
+"14404
+[s S248 . 1 `uc 1 U1SENDB 1 0 :1:0 
+`uc 1 U1BRKOVR 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 U1RXBIMD 1 0 :1:3 
+`uc 1 U1WUE 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 U1ON 1 0 :1:7 
+]
+[u S256 . 1 `S240 1 . 1 0 `S248 1 . 1 0 ]
+[v _U1CON1bits U1CON1bits `VES256  1 e 1 @684 ]
+[s S180 . 1 `uc 1 FLO 1 0 :2:0 
+`uc 1 TXPOL 1 0 :1:2 
+`uc 1 C0EN 1 0 :1:3 
+`uc 1 STP 1 0 :2:4 
+`uc 1 RXPOL 1 0 :1:6 
+`uc 1 RUNOVF 1 0 :1:7 
+]
+"14496
+[s S187 . 1 `uc 1 FLO0 1 0 :1:0 
+`uc 1 FLO1 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 STP0 1 0 :1:4 
+`uc 1 STP1 1 0 :1:5 
+]
+[s S193 . 1 `uc 1 U1FLO 1 0 :2:0 
+`uc 1 U1TXPOL 1 0 :1:2 
+`uc 1 U1C0EN 1 0 :1:3 
+`uc 1 U1STP 1 0 :2:4 
+`uc 1 U1RXPOL 1 0 :1:6 
+`uc 1 U1RUNOVF 1 0 :1:7 
+]
+[s S200 . 1 `uc 1 U1FLO0 1 0 :1:0 
+`uc 1 U1FLO1 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 U1STP0 1 0 :1:4 
+`uc 1 U1STP1 1 0 :1:5 
+]
+[u S206 . 1 `S180 1 . 1 0 `S187 1 . 1 0 `S193 1 . 1 0 `S200 1 . 1 0 ]
+[v _U1CON2bits U1CON2bits `VES206  1 e 1 @685 ]
+"14608
+[v _U1BRGL U1BRGL `VEuc  1 e 1 @686 ]
+"14628
+[v _U1BRGH U1BRGH `VEuc  1 e 1 @687 ]
+[s S24 . 1 `uc 1 RXBF 1 0 :1:0 
+`uc 1 RXBE 1 0 :1:1 
+`uc 1 XON 1 0 :1:2 
+`uc 1 RXIDL 1 0 :1:3 
+`uc 1 TXBF 1 0 :1:4 
+`uc 1 TXBE 1 0 :1:5 
+`uc 1 STPMD 1 0 :1:6 
+`uc 1 TXWRE 1 0 :1:7 
+]
+"14683
+[s S33 . 1 `uc 1 U1RXBF 1 0 :1:0 
+`uc 1 U1RXBE 1 0 :1:1 
+`uc 1 U1XON 1 0 :1:2 
+`uc 1 U1RXIDL 1 0 :1:3 
+`uc 1 U1TXBF 1 0 :1:4 
+`uc 1 U1TXBE 1 0 :1:5 
+`uc 1 U1STPMD 1 0 :1:6 
+`uc 1 U1TXWRE 1 0 :1:7 
+]
+[s S42 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 U1RCIDL 1 0 :1:3 
+]
+[s S45 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RCIDL 1 0 :1:3 
+]
+[u S48 . 1 `S24 1 . 1 0 `S33 1 . 1 0 `S42 1 . 1 0 `S45 1 . 1 0 ]
+[v _U1FIFObits U1FIFObits `VES48  1 e 1 @688 ]
+[s S107 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"36615
+[u S116 . 1 `S107 1 . 1 0 ]
+"36615
+"36615
+[v _TRISCbits TRISCbits `VES116  1 e 1 @1224 ]
+"43737
+[v _RC1 RC1 `VEb  1 e 0 @9857 ]
+"75 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\UART.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"82
+} 0
+"20
+[v _setup setup `(v  1 e 1 0 ]
+{
+"50
+} 0
+"52
+[v _loop loop `(v  1 e 1 0 ]
+{
+"55
+[v loop@i i `i  1 a 2 10 ]
+"54
+[v loop@msg msg `[7]uc  1 a 7 3 ]
+"52
+[v loop@F13022 F13022 `[7]uc  1 s 7 F13022 ]
+"61
+} 0
+"14
+[v _TX TX `(v  1 e 1 0 ]
+{
+[v TX@data data `uc  1 a 1 wreg ]
+"15
+[v TX@timeout timeout `i  1 a 2 0 ]
+"14
+[v TX@data data `uc  1 a 1 wreg ]
+[v TX@data data `uc  1 a 1 2 ]
+"18
+} 0

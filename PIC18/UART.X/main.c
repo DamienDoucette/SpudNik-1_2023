@@ -1,0 +1,79 @@
+/*
+ * File:   main.c
+ * Author: damie
+ *
+ * Created on July 17, 2023, 9:17 AM
+ */
+
+
+#include <xc.h>
+#define _XTAL_FREQ 4000000
+uint8_t receive[8];
+int count = 0;
+
+void TX(char data){
+    int timeout = 0;
+    while(U1FIFObits.TXBF && timeout < 1000){timeout++;}
+    U1TXB = data;    
+}
+
+void setup(){
+    OSCFREQ = 0b0010;   //Set HF clock to 4MHz
+    OSCCON1bits.NOSC = 0b110;   //Set HF to Fosc
+    RC0PPS = 0x10;  //Set UART TX to C0
+    TRISCbits.TRISC0 = 0;
+    U1RXPPS = RC1;  //Set UART RX to C1
+    U1CON0bits.BRGS = 0;    //Set Baud rate generator to normal speed with 16 clocks per bit
+    U1CON0bits.MODE = 0b0011;   //Set mode to 9bit even parity
+    U1CON0bits.RXEN = 1;        //Enable receive
+    U1CON0bits.TXEN = 1;        //Enable transmit
+    
+    U1CON2bits.RXPOL = 0;       //Regular polarity - 1 = High
+    U1CON2bits.TXPOL = 0;       //Regular polarity - 1 = High
+    U1CON2bits.STP = 0b00;      //Num stop bits
+    
+    /* BAUD = (Fosc * (1+BRGS*3))/(16*(BRG-1))
+     * 9600 = (4e6 * (1+0*3))/(16*(BRG-1))
+     * 9600 = (4e6)/(16*(BRG-1))
+     * BRG-1 = 4e6/(16*9600)
+     * BRG-1 = 26.0416666
+     * BRG = ~27
+    */
+    
+    U1BRGH = 0;
+    U1BRGL = 0x19;  //Set BRG to 27 for baud of ~9600 (manually changed to 25 when debugging)
+    
+    U1CON1bits.ON = 1;  //Turn on UART 
+}
+
+void loop(){
+    #define length 7
+    char msg[length] = "testing";
+    for(int i = 0; i<length; i++){
+        TX(msg[i]);
+    }
+    TX(0x09);
+    
+    __delay_ms(1);
+}
+
+//void __interrupt(irq(U1RX)) ISR(void) {
+//    int timeout = 0;
+//    while(~U1FIFObits.RXBF && timeout < 500){timeout++;}
+//    receive[count] = U1RXB;
+//    count++;
+//    
+//    if(count > 7){
+//        count = 0;
+//    }
+//}
+
+
+void main(void) {
+    setup();
+    
+    while(1){
+        loop();
+    }
+    return;
+}
