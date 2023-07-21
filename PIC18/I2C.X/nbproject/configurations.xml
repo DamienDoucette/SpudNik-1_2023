@@ -144,6 +144,11 @@
         <property key="program-the-device-with-default-config-words" value="false"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <Tool>
+        <property key="memories.programmemory.ranges" value="0-7fff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/damie/Documents/GitHub/SpudNik-1_2023/PIC18/I2C.X/debug/default/I2C_ptg"/>
+      </Tool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
         <property key="stack-guidance" value="false"/>
@@ -166,6 +171,11 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <snap>
+        <property key="memories.programmemory.ranges" value="0-7fff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/damie/Documents/GitHub/SpudNik-1_2023/PIC18/I2C.X/debug/default/I2C_ptg"/>
+      </snap>
     </conf>
   </confs>
 </configurationDescriptor>

@@ -22591,15 +22591,15 @@ void i2cStart(){
 
 
 
+
     while(I2C1STAT0bits.SMA == 0){};
     if(I2C1STAT0bits.R == 1){
         for(int i = 1; i < 13; i ++){
             I2C1TXB = i;
-            _delay((unsigned long)((200)*(4000000/4000000.0)));
             I2C1CON0bits.CSTR = 0;
-
+            while(I2C1CON0bits.CSTR == 0);
         }
-        _delay((unsigned long)((200)*(4000000/4000000.0)));
+
     }
 
     if(I2C1STAT0bits.R == 0){

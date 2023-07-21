@@ -11,17 +11,20 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+$C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 init CODE 0 BA BA 4 1 2
 reset_vec CODE 0 0 0 4 1 2
 $dist/default/production\I2C.X.production.o
 ivt0x8 CODE 0 8 8 B2 1 2
-cinit CODE 0 264 264 14 1 2
-text0 CODE 0 278 278 8 1 2
-text1 CODE 0 1EE 1EE 52 1 2
-text2 CODE 0 240 240 24 1 4
-text3 CODE 0 BE BE 130 1 2
-cstackCOMRAM COMRAM 1 501 501 2 1 1
+cinit CODE 0 200 200 20 1 2
+text0 CODE 0 24C 24C 10 1 2
+text1 CODE 0 238 238 14 1 2
+text2 CODE 0 170 170 90 1 2
+text3 CODE 0 25C 25C A 1 2
+text4 CODE 0 220 220 18 1 4
+text5 CODE 0 BE BE B2 1 2
+cstackCOMRAM COMRAM 1 511 511 5 1 1
+bssCOMRAM COMRAM 1 501 501 10 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -37,18 +40,18 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
-CONST 280-7FFF 1
+CONST 266-7FFF 1
 IDLOC 200000-20003F 1
 SMALLCONST E00-7FFF 1
 CODE 4-7 1
-CODE 280-7FFF 1
+CODE 266-7FFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
-BIGRAM 503-CFF 1
+BIGRAM 516-CFF 1
 BIGSFR 0-4FF 1
 BIGSFR D00-DFF 1
-COMRAM 503-55F 1
+COMRAM 516-55F 1
 CONFIG 300000-300011 1
 EEDATA 380000-3801FF 1
 MEDIUMCONST E00-7FFF 1
@@ -66,100 +69,114 @@ MEDIUMCONST E00-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\I2C.X.production.o
-BE text3 CODE >64:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-BE text3 CODE >72:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-C2 text3 CODE >73:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-D4 text3 CODE >74:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-D6 text3 CODE >76:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-D8 text3 CODE >77:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-D8 text3 CODE >86:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-F4 text3 CODE >87:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-F6 text3 CODE >88:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-F8 text3 CODE >89:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-F8 text3 CODE >98:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-106 text3 CODE >99:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-108 text3 CODE >100:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-10A text3 CODE >101:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-10A text3 CODE >104:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-118 text3 CODE >105:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-126 text3 CODE >106:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-128 text3 CODE >109:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-130 text3 CODE >110:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-13E text3 CODE >111:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-142 text3 CODE >114:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-150 text3 CODE >115:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-154 text3 CODE >117:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-174 text3 CODE >118:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-174 text3 CODE >121:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-182 text3 CODE >122:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-190 text3 CODE >123:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-192 text3 CODE >124:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-194 text3 CODE >125:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-196 text3 CODE >127:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1A4 text3 CODE >128:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1A6 text3 CODE >129:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1A8 text3 CODE >130:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1AA text3 CODE >132:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1B8 text3 CODE >133:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1BA text3 CODE >134:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1BC text3 CODE >135:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1BE text3 CODE >139:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1BE text3 CODE >141:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1CC text3 CODE >143:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1CE text3 CODE >72:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1CE text3 CODE >145:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1EC text3 CODE >146:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-240 text2 CODE >62:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-240 text2 CODE >148:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-240 text2 CODE >149:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-25E text2 CODE >150:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-262 text2 CODE >153:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1EE text1 CODE >11:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1EE text1 CODE >17:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1F0 text1 CODE >18:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1F2 text1 CODE >20:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1F6 text1 CODE >21:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1F8 text1 CODE >24:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-1FE text1 CODE >25:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-202 text1 CODE >28:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-206 text1 CODE >29:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-208 text1 CODE >33:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-20A text1 CODE >34:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-20C text1 CODE >36:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-20E text1 CODE >37:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-210 text1 CODE >38:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-212 text1 CODE >39:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-214 text1 CODE >40:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-216 text1 CODE >41:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-218 text1 CODE >42:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-21A text1 CODE >44:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-21E text1 CODE >45:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-220 text1 CODE >46:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-222 text1 CODE >47:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-22A text1 CODE >49:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-22E text1 CODE >52:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-230 text1 CODE >53:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-232 text1 CODE >56:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-236 text1 CODE >57:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-238 text1 CODE >58:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-23A text1 CODE >61:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-23E text1 CODE >62:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-278 text0 CODE >155:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-278 text0 CODE >156:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-27C text0 CODE >158:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
-264 cinit CODE >1505:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-264 cinit CODE >1507:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-264 cinit CODE >1510:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-264 cinit CODE >1518:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-266 cinit CODE >1519:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-268 cinit CODE >1520:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-26A cinit CODE >1521:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-26C cinit CODE >1522:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-26E cinit CODE >1523:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-270 cinit CODE >1524:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-272 cinit CODE >1530:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-272 cinit CODE >1532:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
-274 cinit CODE >1533:C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_1.s
+BE text5 CODE >95:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+BE text5 CODE >103:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+CE text5 CODE >104:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+DC text5 CODE >105:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+E4 text5 CODE >106:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+E8 text5 CODE >107:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+EA text5 CODE >108:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+F8 text5 CODE >109:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+118 text5 CODE >111:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+118 text5 CODE >113:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+126 text5 CODE >114:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+12E text5 CODE >115:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+132 text5 CODE >116:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+134 text5 CODE >117:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+142 text5 CODE >118:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+152 text5 CODE >119:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+154 text5 CODE >120:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+156 text5 CODE >121:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+15A text5 CODE >115:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+16A text5 CODE >126:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+16E text5 CODE >204:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+220 text4 CODE >206:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+220 text4 CODE >207:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+220 text4 CODE >224:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+230 text4 CODE >208:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+232 text4 CODE >209:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+236 text4 CODE >212:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+25C text3 CODE >221:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+25C text3 CODE >222:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+25E text3 CODE >223:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+264 text3 CODE >224:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+170 text2 CODE >15:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+170 text2 CODE >16:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+174 text2 CODE >21:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+178 text2 CODE >22:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+17A text2 CODE >26:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+17C text2 CODE >27:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+17E text2 CODE >29:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+180 text2 CODE >30:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+182 text2 CODE >33:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+188 text2 CODE >34:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+18C text2 CODE >37:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+190 text2 CODE >38:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+194 text2 CODE >41:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+198 text2 CODE >42:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+19A text2 CODE >44:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+19C text2 CODE >46:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+19E text2 CODE >47:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1A0 text2 CODE >48:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1A2 text2 CODE >49:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1A6 text2 CODE >51:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1A8 text2 CODE >52:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1AA text2 CODE >53:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1AC text2 CODE >54:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1AE text2 CODE >55:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1B0 text2 CODE >56:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1B2 text2 CODE >57:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1B4 text2 CODE >60:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1B6 text2 CODE >61:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1B8 text2 CODE >62:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1BA text2 CODE >64:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1BE text2 CODE >65:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1C0 text2 CODE >66:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1C2 text2 CODE >67:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1CA text2 CODE >69:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1CC text2 CODE >70:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1CE text2 CODE >72:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1D2 text2 CODE >73:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1D6 text2 CODE >76:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1D8 text2 CODE >77:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1DA text2 CODE >80:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1DE text2 CODE >81:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1E0 text2 CODE >82:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1E2 text2 CODE >84:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1E6 text2 CODE >86:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1E8 text2 CODE >88:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1F6 text2 CODE >90:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1FA text2 CODE >91:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1FC text2 CODE >92:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+1FE text2 CODE >93:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+238 text1 CODE >214:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+238 text1 CODE >215:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+23E text1 CODE >216:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+246 text1 CODE >218:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+24A text1 CODE >219:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+24C text0 CODE >226:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+24C text0 CODE >227:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+250 text0 CODE >228:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+250 text0 CODE >229:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
+200 cinit CODE >1526:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+200 cinit CODE >1528:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+200 cinit CODE >1531:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+200 cinit CODE >1543:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+204 cinit CODE >1544:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+206 cinit CODE >1545:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+206 cinit CODE >1546:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+208 cinit CODE >1547:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+20A cinit CODE >1548:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+20C cinit CODE >1556:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+20E cinit CODE >1557:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+210 cinit CODE >1558:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+212 cinit CODE >1559:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+214 cinit CODE >1560:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+216 cinit CODE >1561:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+218 cinit CODE >1562:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+21A cinit CODE >1568:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+21A cinit CODE >1570:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
+21C cinit CODE >1571:C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -174,48 +191,54 @@ F8 text3 CODE >98:C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\mai
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\I2C.X.production.o
 __Hspace_0 E00 0 ABS 0 - dist/default/production\I2C.X.production.o
-__Hspace_1 503 0 ABS 0 - dist/default/production\I2C.X.production.o
+__Hspace_1 516 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hspace_4 0 0 ABS 0 - dist/default/production\I2C.X.production.o
-i2cStart@i 501 0 COMRAM 1 cstackCOMRAM dist/default/production\I2C.X.production.o
+i2cStart@i 513 0 COMRAM 1 cstackCOMRAM dist/default/production\I2C.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\I2C.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+_i2cBuffer 501 0 COMRAM 1 bssCOMRAM dist/default/production\I2C.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\I2C.X.production.o
-_i2cStart BE 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+_i2cStart BE 0 CODE 0 text5 dist/default/production\I2C.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\I2C.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\I2C.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-_main 278 0 CODE 0 text0 dist/default/production\I2C.X.production.o
-start BA 0 CODE 0 init C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-__end_of_i2cStart 1EE 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+_loop 25C 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+_main 24C 0 CODE 0 text0 dist/default/production\I2C.X.production.o
+start BA 0 CODE 0 init C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+__end_of_i2cStart 170 0 CODE 0 text5 dist/default/production\I2C.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\I2C.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\I2C.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-intlevel0 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-intlevel1 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-intlevel2 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-intlevel3 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+__accesstop 560 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\I2C.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\I2C.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\I2C.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\I2C.X.production.o
-__end_of_configI2C 240 0 CODE 0 text1 dist/default/production\I2C.X.production.o
+__end_of_configI2C 200 0 CODE 0 text2 dist/default/production\I2C.X.production.o
 ivt0x8_base 8 0 CODE 0 ivt0x8 dist/default/production\I2C.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-_I2C1ADB0 28E 0 ABS 0 - dist/default/production\I2C.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 _I2C1ADR0 290 0 ABS 0 - dist/default/production\I2C.X.production.o
+_I2C1ADR1 291 0 ABS 0 - dist/default/production\I2C.X.production.o
+_I2C1BAUD 29D 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1BTOC 29F 0 ABS 0 - dist/default/production\I2C.X.production.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+_I2C1CNTL 28C 0 ABS 0 - dist/default/production\I2C.X.production.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\I2C.X.production.o
-_configI2C 1EE 0 CODE 0 text1 dist/default/production\I2C.X.production.o
+_configI2C 170 0 CODE 0 text2 dist/default/production\I2C.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\I2C.X.production.o
 _INTCON0bits 4D6 0 ABS 0 - dist/default/production\I2C.X.production.o
-start_initialization 264 0 CODE 0 cinit dist/default/production\I2C.X.production.o
+start_initialization 200 0 CODE 0 cinit dist/default/production\I2C.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\I2C.X.production.o
 _TRISCbits 4C8 0 ABS 0 - dist/default/production\I2C.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\I2C.X.production.o
 _RC0PPS 211 0 ABS 0 - dist/default/production\I2C.X.production.o
 _RC1PPS 212 0 ABS 0 - dist/default/production\I2C.X.production.o
 _IPR7bits 36E 0 ABS 0 - dist/default/production\I2C.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+isa$xinst 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 __Hbank5 0 0 ABS 0 bank5 dist/default/production\I2C.X.production.o
 __Hbank6 0 0 ABS 0 bank6 dist/default/production\I2C.X.production.o
 __Hbank7 0 0 ABS 0 bank7 dist/default/production\I2C.X.production.o
@@ -233,13 +256,15 @@ __Htext0 0 0 ABS 0 text0 dist/default/production\I2C.X.production.o
 __Htext1 0 0 ABS 0 text1 dist/default/production\I2C.X.production.o
 __Htext2 0 0 ABS 0 text2 dist/default/production\I2C.X.production.o
 __Htext3 0 0 ABS 0 text3 dist/default/production\I2C.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\I2C.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\I2C.X.production.o
 __Hbank10 0 0 ABS 0 bank10 dist/default/production\I2C.X.production.o
 __Hbank11 0 0 ABS 0 bank11 dist/default/production\I2C.X.production.o
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\I2C.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\I2C.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\I2C.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\I2C.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\I2C.X.production.o
 __Hconfig 0 0 ABS 0 config dist/default/production\I2C.X.production.o
 __Lbank5 0 0 ABS 0 bank5 dist/default/production\I2C.X.production.o
@@ -259,6 +284,8 @@ __Ltext0 0 0 ABS 0 text0 dist/default/production\I2C.X.production.o
 __Ltext1 0 0 ABS 0 text1 dist/default/production\I2C.X.production.o
 __Ltext2 0 0 ABS 0 text2 dist/default/production\I2C.X.production.o
 __Ltext3 0 0 ABS 0 text3 dist/default/production\I2C.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\I2C.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\I2C.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\I2C.X.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production\I2C.X.production.o
 __Hdata 0 0 ABS 0 data dist/default/production\I2C.X.production.o
@@ -278,9 +305,9 @@ __Ltemp 0 0 COMRAM 1 temp dist/default/production\I2C.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production\I2C.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\I2C.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\I2C.X.production.o
-_ISR 240 0 CODE 0 text2 dist/default/production\I2C.X.production.o
-__S0 280 0 ABS 0 - dist/default/production\I2C.X.production.o
-__S1 503 0 ABS 0 - dist/default/production\I2C.X.production.o
+_ISR 220 0 CODE 0 text4 dist/default/production\I2C.X.production.o
+__S0 266 0 ABS 0 - dist/default/production\I2C.X.production.o
+__S1 516 0 ABS 0 - dist/default/production\I2C.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hivt0x8 BA 0 CODE 0 ivt0x8 dist/default/production\I2C.X.production.o
@@ -292,7 +319,7 @@ _I2C1STAT0bits 298 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1STAT1bits 299 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\I2C.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\I2C.X.production.o
-__end_of_ISR 264 0 CODE 0 text2 dist/default/production\I2C.X.production.o
+__end_of_ISR 238 0 CODE 0 text4 dist/default/production\I2C.X.production.o
 _I2C1CON0bits 294 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1CON1bits 295 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1CON2bits 296 0 ABS 0 - dist/default/production\I2C.X.production.o
@@ -300,6 +327,8 @@ __Hramtop E00 0 RAM 0 ramtop dist/default/production\I2C.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\I2C.X.production.o
 __activetblptr 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\I2C.X.production.o
+_I2C1CLK 29E 0 ABS 0 - dist/default/production\I2C.X.production.o
+_I2C1PIR 29A 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1RXB 28A 0 ABS 0 - dist/default/production\I2C.X.production.o
 _I2C1TXB 28B 0 ABS 0 - dist/default/production\I2C.X.production.o
 _PIE7bits 4AF 0 ABS 0 - dist/default/production\I2C.X.production.o
@@ -312,48 +341,58 @@ __Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\I2C.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\I2C.X.production.o
 __Lconfig 0 0 ABS 0 config dist/default/production\I2C.X.production.o
 ivt0x8_undefint B8 0 CODE 0 ivt0x8 dist/default/production\I2C.X.production.o
+_I2C1SCLPPS 271 0 ABS 0 - dist/default/production\I2C.X.production.o
+_I2C1SDAPPS 270 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\I2C.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\I2C.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+isa$std 1 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 _I2C1BTObits 29C 0 ABS 0 - dist/default/production\I2C.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-stacklo 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+stackhi 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+_OSCFREQ B1 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\I2C.X.production.o
 __Livt0x8 8 0 CODE 0 ivt0x8 dist/default/production\I2C.X.production.o
+i2cStart@index 511 0 COMRAM 1 cstackCOMRAM dist/default/production\I2C.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lspace_4 0 0 ABS 0 - dist/default/production\I2C.X.production.o
+__pbssCOMRAM 501 0 COMRAM 1 bssCOMRAM dist/default/production\I2C.X.production.o
 _PIR7bits 4BA 0 ABS 0 - dist/default/production\I2C.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\I2C.X.production.o
-end_of_initialization 272 0 CODE 0 cinit dist/default/production\I2C.X.production.o
+end_of_initialization 21A 0 CODE 0 cinit dist/default/production\I2C.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\I2C.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\I2C.X.production.o
 __Lramtop E00 0 RAM 0 ramtop dist/default/production\I2C.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\I2C.X.production.o
-__pcinit 264 0 CODE 0 cinit dist/default/production\I2C.X.production.o
-__ptext0 278 0 CODE 0 text0 dist/default/production\I2C.X.production.o
-__ptext1 1EE 0 CODE 0 text1 dist/default/production\I2C.X.production.o
-__ptext2 240 0 CODE 0 text2 dist/default/production\I2C.X.production.o
-__ptext3 BE 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+__pcinit 200 0 CODE 0 cinit dist/default/production\I2C.X.production.o
+_OSCCON1bits AD 0 ABS 0 - dist/default/production\I2C.X.production.o
+__ptext0 24C 0 CODE 0 text0 dist/default/production\I2C.X.production.o
+__ptext1 238 0 CODE 0 text1 dist/default/production\I2C.X.production.o
+__ptext2 170 0 CODE 0 text2 dist/default/production\I2C.X.production.o
+__ptext3 25C 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+__ptext4 220 0 CODE 0 text4 dist/default/production\I2C.X.production.o
+__ptext5 BE 0 CODE 0 text5 dist/default/production\I2C.X.production.o
 _I2C1PIEbits 29B 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\I2C.X.production.o
 _I2C1PIRbits 29A 0 ABS 0 - dist/default/production\I2C.X.production.o
-__ramtop E00 0 RAM 0 ramtop C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+__ramtop E00 0 RAM 0 ramtop C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\I2C.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\I2C.X.production.o
 __H__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\I2C.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\I2C.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
-___heap_lo 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAskt4.\driver_tmp_9.o
+___heap_hi 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
 ___param_bank 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\I2C.X.production.o
-__end_of__initialization 272 0 CODE 0 cinit dist/default/production\I2C.X.production.o
+__end_of__initialization 21A 0 CODE 0 cinit dist/default/production\I2C.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\I2C.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\I2C.X.production.o
-__pcstackCOMRAM 501 0 COMRAM 1 cstackCOMRAM dist/default/production\I2C.X.production.o
-__end_of_main 280 0 CODE 0 text0 dist/default/production\I2C.X.production.o
+__pcstackCOMRAM 511 0 COMRAM 1 cstackCOMRAM dist/default/production\I2C.X.production.o
+__end_of_loop 266 0 CODE 0 text3 dist/default/production\I2C.X.production.o
+__end_of_main 25C 0 CODE 0 text0 dist/default/production\I2C.X.production.o
 _ODCONCbits 412 0 ABS 0 - dist/default/production\I2C.X.production.o
+__end_of_setup 24C 0 CODE 0 text1 dist/default/production\I2C.X.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hbss 0 0 RAM 1 bss dist/default/production\I2C.X.production.o
 __Hram 0 0 ABS 0 ram dist/default/production\I2C.X.production.o
@@ -362,10 +401,12 @@ __LRAM 1 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\I2C.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\I2C.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\I2C.X.production.o
-__initialization 264 0 CODE 0 cinit dist/default/production\I2C.X.production.o
+_setup 238 0 CODE 0 text1 dist/default/production\I2C.X.production.o
+__initialization 200 0 CODE 0 cinit dist/default/production\I2C.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\I2C.X.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\I2C.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\I2C.X.production.o
+_ANSELCbits 410 0 ABS 0 - dist/default/production\I2C.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\I2C.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -391,9 +432,9 @@ __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\I2C.X.producti
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-ivt0x8 0 8 8 278 1
-cstackCOMRAM 1 501 501 2 1
+ivt0x8 0 8 8 25E 1
 reset_vec 0 0 0 4 1
+bssCOMRAM 1 501 501 15 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
