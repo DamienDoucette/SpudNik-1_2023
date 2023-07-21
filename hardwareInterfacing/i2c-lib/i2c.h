@@ -1,3 +1,14 @@
+/**
+ * @file i2c.h
+ * @author Damien Doucette (dldoucette@upei.ca)
+ * @brief Header file for library to use the I2C on the Raspberry PI - Provides simpler interface for linux/i2c-dev.h
+ * @version 0.1
+ * @date 2023-07-14
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #ifndef I2C_H
 #define I2C_H
 
@@ -6,6 +17,7 @@
 #include <fcntl.h>				//Needed for I2C port
 #include <sys/ioctl.h>			//Needed for I2C port
 #include <linux/i2c-dev.h>		//Needed for I2C port
+#include <linux/i2c.h>		//Needed for I2C port
 
 /*Other libraries*/
 #include <cstdint>
@@ -53,6 +65,7 @@ class i2c {
         i2c(const char* i2cBus = "/dev/i2c-1");
         int readBus(uint8_t address, int length, uint8_t *buffer);
         int writeBus(uint8_t address, int length, uint8_t *buffer);
+        int writeReadBus(uint8_t address, int length, uint8_t *commands, bool *R_W);
         void closeBus();
 
 };

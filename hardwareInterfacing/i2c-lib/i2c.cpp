@@ -1,3 +1,14 @@
+/**
+ * @file i2c.cpp
+ * @author Damien Doucette (dldoucette@upei.ca)
+ * @brief C++ file for library to use the I2C on the Raspberry PI - Provides simpler interface for linux/i2c-dev.h
+ * @version 0.1
+ * @date 2023-07-14
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "i2c.h"
 
 i2c::i2c(const char* i2cBus){
@@ -67,6 +78,41 @@ int i2c::writeBus(uint8_t address, int length, uint8_t writeBuffer[3]){
         return 4;
 	}
     
+    return 0;
+}
+
+int i2c::writeReadBus(uint8_t address, int length, uint8_t *command, bool *R_W){
+    /*
+    writeReadBus(uint8_t address, int length, uint8_t *command, bool *R_W) - This method is to write to a client on the I2C bus
+            Parameters:
+                address     -   7bit address of the client to read data from
+                length      -   Number of commands
+                command     -   Pointer to array holding the write commands and acting as a buffer to store the read commands
+                R_W         -   Pointer to an array holding a 1 (read) or 0 (write) to determine transaction
+
+            Return:
+                0           -   The transmission was successful
+                ~0          -   An error occured
+    */
+
+    struct i2c_msg msg[length];     //Initialize structure for messages
+
+    /*Format each of the messages in the msg structure*/
+    for(int i = 0; i < length; i++){
+        msg[i].addr = address;  //Set the client address
+        msg[i].flags = R_W[i];  //Set read (1) or write (0)
+        msg[i].len = 1;         //Set length of message
+        msg[i].buf = command;   //Provide the read/write buffer
+        command++;              //Increment the pointer to the buffer
+    }
+
+    struct i2c_rdwr_ioctl_data ioctl_data = {msg, length};  //Format the messages into the read/write structure
+
+    /*Perform transaction*/
+    if(ioctl(file_i2c, I2C_RDWR, &ioctl_data) != length){
+        printf("ERROR:\tFailed to complete read/write command");
+        return 1;
+    }
     return 0;
 }
 
