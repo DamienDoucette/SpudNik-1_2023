@@ -1,12 +1,13 @@
-__end_of_loop 7F90 0 CODE 0
+__end_of_loop 7F9C 0 CODE 0
 __S0 8000 0 ABS 0
-__S1 507 0 ABS 0
+__S1 50A 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
+_adc 508 0 COMRAM 1
 ?_ADCread 501 0 COMRAM 1
-_main 7F90 0 CODE 0
+_main 7F6E 0 CODE 0
 ___sp 0 0 STACK 2
-_loop 7F86 0 CODE 0
+_loop 7F7A 0 CODE 0
 start 7FFC 0 CODE 0
 _ADPCH 3EC 0 ABS 0
 _ADACQ 3EE 0 ABS 0
@@ -59,7 +60,10 @@ _ADRESL 3EA 0 ABS 0
 isa$xinst 0 0 ABS 0
 __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
+__HnvCOMRAM 0 0 ABS 0
+__LnvCOMRAM 0 0 ABS 0
 ___heap_hi 0 0 ABS 0
+__pnvCOMRAM 508 0 COMRAM 1
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 isa$std 1 0 ABS 0
@@ -74,12 +78,12 @@ __Lrbit 0 0 COMRAM 1
 __Hinit 8000 0 CODE 0
 __Linit 7FFC 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main 7F9C 0 CODE 0
+__end_of_main 7F7A 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 ___heap_lo 0 0 ABS 0
-end_of_initialization 7F80 0 CODE 0
+end_of_initialization 7F68 0 CODE 0
 _TRISBbits 4C7 0 ABS 0
 ADCread@resultLow 504 0 COMRAM 1
 __Hibigdata 0 0 CODE 0
@@ -102,10 +106,10 @@ __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 7F90 0 CODE 0
+__ptext0 7F6E 0 CODE 0
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 7F86 0 CODE 0
+__ptext1 7F7A 0 CODE 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
 __ptext2 7FC0 0 CODE 0
@@ -113,7 +117,7 @@ __ptext3 7F9C 0 CODE 0
 __end_of_ADCread 7FFC 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization 7F80 0 CODE 0
+__end_of__initialization 7F68 0 CODE 0
 ___rparam_used 1 0 ABS 0
 _ADCread 7FC0 0 CODE 0
 __H__absolute__ 0 0 ABS 0
@@ -133,7 +137,7 @@ __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
 __pcstackCOMRAM 501 0 COMRAM 1
-__Hspace_1 507 0 ABS 0
+__Hspace_1 50A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 0 0 SMALLCONST 0
 __Lsmallconst 0 0 SMALLCONST 0
@@ -143,7 +147,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 7F80 0 CODE 0
+__pcinit 7F68 0 CODE 0
 __ramtop E00 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __Hconst 0 0 CONST 0
@@ -171,54 +175,55 @@ intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
 ADCread@result 505 0 COMRAM 1
 ADCread@resultHigh 503 0 COMRAM 1
-start_initialization 7F80 0 CODE 0
-__initialization 7F80 0 CODE 0
+start_initialization 7F68 0 CODE 0
+__initialization 7F68 0 CODE 0
 __activetblptr 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
 init 7FFC 7FFF CODE 7FFC 0
-cstackCOMRAM 501 506 COMRAM 501 1
+cstackCOMRAM 501 509 COMRAM 501 1
 text2 7FC0 7FFB CODE 7FC0 0
 text3 7F9C 7FBF CODE 7F9C 0
-text0 7F90 7F9B CODE 7F90 0
-text1 7F86 7F8F CODE 7F86 0
-cinit 7F80 7F85 CODE 7F80 0
+text1 7F7A 7F9B CODE 7F7A 0
+text0 7F6E 7F79 CODE 7F6E 0
+cinit 7F68 7F6D CODE 7F68 0
 %locals
 dist/default/production\ADC.X.production.o
-C:\Users\damie\AppData\Local\Temp\xcAsbr0.\driver_tmp_1.s
-1475 7F80 0 CODE 0
-1477 7F80 0 CODE 0
-1480 7F80 0 CODE 0
-1486 7F80 0 CODE 0
-1488 7F80 0 CODE 0
-1489 7F82 0 CODE 0
+C:\Users\damie\AppData\Local\Temp\xcAsaqo.\driver_tmp_1.s
+1482 7F68 0 CODE 0
+1484 7F68 0 CODE 0
+1487 7F68 0 CODE 0
+1493 7F68 0 CODE 0
+1495 7F68 0 CODE 0
+1496 7F6A 0 CODE 0
 main.c
-55 7F90 0 CODE 0
-56 7F90 0 CODE 0
-57 7F94 0 CODE 0
-59 7F98 0 CODE 0
+60 7F6E 0 CODE 0
+61 7F6E 0 CODE 0
+62 7F72 0 CODE 0
+64 7F76 0 CODE 0
 main.c
-49 7F86 0 CODE 0
-50 7F86 0 CODE 0
-51 7F86 0 CODE 0
+52 7F7A 0 CODE 0
+53 7F7A 0 CODE 0
+54 7F7A 0 CODE 0
+56 7F86 0 CODE 0
 main.c
-34 7FC0 0 CODE 0
-36 7FC0 0 CODE 0
-37 7FC4 0 CODE 0
-38 7FD2 0 CODE 0
-39 7FD6 0 CODE 0
-42 7FDA 0 CODE 0
-43 7FE0 0 CODE 0
-44 7FE6 0 CODE 0
-46 7FF2 0 CODE 0
-47 7FFA 0 CODE 0
+37 7FC0 0 CODE 0
+39 7FC0 0 CODE 0
+40 7FC4 0 CODE 0
+41 7FD2 0 CODE 0
+42 7FD6 0 CODE 0
+45 7FDA 0 CODE 0
+46 7FE0 0 CODE 0
+47 7FE6 0 CODE 0
+49 7FF2 0 CODE 0
+50 7FFA 0 CODE 0
 main.c
-17 7F9C 0 CODE 0
-19 7F9C 0 CODE 0
-20 7FA2 0 CODE 0
-21 7FA4 0 CODE 0
-28 7FA8 0 CODE 0
-29 7FB2 0 CODE 0
-30 7FB4 0 CODE 0
-31 7FBC 0 CODE 0
-32 7FBE 0 CODE 0
+20 7F9C 0 CODE 0
+22 7F9C 0 CODE 0
+23 7FA2 0 CODE 0
+24 7FA4 0 CODE 0
+31 7FA8 0 CODE 0
+32 7FB2 0 CODE 0
+33 7FB4 0 CODE 0
+34 7FBC 0 CODE 0
+35 7FBE 0 CODE 0

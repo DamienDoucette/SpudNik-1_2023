@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 10 "main.c"
+# 11 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -22490,7 +22490,7 @@ __attribute__((__unsupported__("The READTIMER" "3" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 11 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
@@ -22638,7 +22638,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "main.c" 2
+# 12 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
@@ -22698,10 +22698,12 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "main.c" 2
+# 14 "main.c" 2
 
 
 
+
+uint16_t adc;
 
 void ADCsetup(){
 
@@ -22737,7 +22739,9 @@ uint16_t ADCread(){
 
 void loop(){
     while(1){
-        uint8_t Chan1 = ADCread();
+        adc = ADCread();
+
+        _delay((unsigned long)((5)*(4000000/4000.0)));
     }
 }
 
