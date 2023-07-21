@@ -1,0 +1,345 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F15Q40 ]
+[d frameptr 1249 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"14 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C_DMA.X\main.c
+[v _configDMA configDMA `(v  1 e 1 0 ]
+"50
+[v _configI2C configI2C `(v  1 e 1 0 ]
+"130
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+"137
+[v _setup setup `(v  1 e 1 0 ]
+"145
+[v _loop loop `(v  1 e 1 0 ]
+"149
+[v _main main `(v  1 e 1 0 ]
+[s S422 . 1 `uc 1 NDIV 1 0 :4:0 
+`uc 1 NOSC 1 0 :3:4 
+]
+"5145 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
+[s S425 . 1 `uc 1 NDIV0 1 0 :1:0 
+`uc 1 NDIV1 1 0 :1:1 
+`uc 1 NDIV2 1 0 :1:2 
+`uc 1 NDIV3 1 0 :1:3 
+`uc 1 NOSC0 1 0 :1:4 
+`uc 1 NOSC1 1 0 :1:5 
+`uc 1 NOSC2 1 0 :1:6 
+]
+[u S433 . 1 `S422 1 . 1 0 `S425 1 . 1 0 ]
+[v _OSCCON1bits OSCCON1bits `VES433  1 e 1 @173 ]
+"5368
+[v _OSCFREQ OSCFREQ `VEuc  1 e 1 @177 ]
+"6804
+[v _DMASELECT DMASELECT `VEuc  1 e 1 @232 ]
+"7185
+[v _DMAnDSZL DMAnDSZL `VEuc  1 e 1 @238 ]
+"7255
+[v _DMAnDSZH DMAnDSZH `VEuc  1 e 1 @239 ]
+"7308
+[v _DMAnDSAL DMAnDSAL `VEuc  1 e 1 @240 ]
+"7378
+[v _DMAnDSAH DMAnDSAH `VEuc  1 e 1 @241 ]
+"7785
+[v _DMAnSSZL DMAnSSZL `VEuc  1 e 1 @247 ]
+"7855
+[v _DMAnSSZH DMAnSSZH `VEuc  1 e 1 @248 ]
+"7910
+[v _DMAnSSAL DMAnSSAL `VEuc  1 e 1 @249 ]
+"7980
+[v _DMAnSSAH DMAnSSAH `VEuc  1 e 1 @250 ]
+"8050
+[v _DMAnSSAU DMAnSSAU `VEuc  1 e 1 @251 ]
+[s S25 . 1 `uc 1 XIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 AIRQEN 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DGO 1 0 :1:5 
+`uc 1 SIRQEN 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"8124
+[u S33 . 1 `S25 1 . 1 0 ]
+[v _DMAnCON0bits DMAnCON0bits `VES33  1 e 1 @252 ]
+[s S44 . 1 `uc 1 SSTP 1 0 :1:0 
+`uc 1 SMODE 1 0 :2:1 
+`uc 1 SMR 1 0 :2:3 
+`uc 1 DSTP 1 0 :1:5 
+`uc 1 DMODE 1 0 :2:6 
+]
+"8168
+[u S50 . 1 `S44 1 . 1 0 ]
+[v _DMAnCON1bits DMAnCON1bits `VES50  1 e 1 @253 ]
+"8262
+[v _DMAnSIRQ DMAnSIRQ `VEuc  1 e 1 @255 ]
+"8796
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @529 ]
+"8846
+[v _RC1PPS RC1PPS `VEuc  1 e 1 @530 ]
+"11944
+[v _I2C1SDAPPS I2C1SDAPPS `VEuc  1 e 1 @624 ]
+"12016
+[v _I2C1SCLPPS I2C1SCLPPS `VEuc  1 e 1 @625 ]
+"12824
+[v _I2C1CNTL I2C1CNTL `VEuc  1 e 1 @652 ]
+"13004
+[v _I2C1ADR0 I2C1ADR0 `VEuc  1 e 1 @656 ]
+"13024
+[v _I2C1ADR1 I2C1ADR1 `VEuc  1 e 1 @657 ]
+[s S69 . 1 `uc 1 MODE 1 0 :3:0 
+`uc 1 MDR 1 0 :1:3 
+`uc 1 CSTR 1 0 :1:4 
+`uc 1 S 1 0 :1:5 
+`uc 1 RSEN 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"13108
+[s S76 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 I2CEN 1 0 :1:7 
+]
+[u S82 . 1 `S69 1 . 1 0 `S76 1 . 1 0 ]
+[v _I2C1CON0bits I2C1CON0bits `VES82  1 e 1 @660 ]
+[s S166 . 1 `uc 1 CSD 1 0 :1:0 
+`uc 1 TXU 1 0 :1:1 
+`uc 1 RXO 1 0 :1:2 
+`uc 1 P 1 0 :1:3 
+`uc 1 ACKT 1 0 :1:4 
+`uc 1 ACKSTAT 1 0 :1:5 
+`uc 1 ACKDT 1 0 :1:6 
+`uc 1 ACKCNT 1 0 :1:7 
+]
+"13180
+[u S175 . 1 `S166 1 . 1 0 ]
+[v _I2C1CON1bits I2C1CON1bits `VES175  1 e 1 @661 ]
+[s S187 . 1 `uc 1 BFRET 1 0 :2:0 
+`uc 1 SDAHT 1 0 :2:2 
+`uc 1 ABD 1 0 :1:4 
+`uc 1 FME 1 0 :1:5 
+`uc 1 GCEN 1 0 :1:6 
+`uc 1 ACNT 1 0 :1:7 
+]
+"13246
+[s S194 . 1 `uc 1 BFRET0 1 0 :1:0 
+`uc 1 BFRET1 1 0 :1:1 
+`uc 1 SDAHT0 1 0 :1:2 
+`uc 1 SDAHT1 1 0 :1:3 
+]
+[u S199 . 1 `S187 1 . 1 0 `S194 1 . 1 0 ]
+[v _I2C1CON2bits I2C1CON2bits `VES199  1 e 1 @662 ]
+[s S255 . 1 `uc 1 SCIF 1 0 :1:0 
+`uc 1 RSCIF 1 0 :1:1 
+`uc 1 PCIF 1 0 :1:2 
+`uc 1 ADRIF 1 0 :1:3 
+`uc 1 WRIF 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ACKTIF 1 0 :1:6 
+`uc 1 CNTIF 1 0 :1:7 
+]
+"13555
+[s S264 . 1 `uc 1 SC1IF 1 0 :1:0 
+`uc 1 RSC1IF 1 0 :1:1 
+`uc 1 PC1IF 1 0 :1:2 
+`uc 1 ADR1IF 1 0 :1:3 
+`uc 1 WR1IF 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ACKT1IF 1 0 :1:6 
+`uc 1 CNT1IF 1 0 :1:7 
+]
+[u S273 . 1 `S255 1 . 1 0 `S264 1 . 1 0 ]
+[v _I2C1PIRbits I2C1PIRbits `VES273  1 e 1 @666 ]
+[s S215 . 1 `uc 1 SCIE 1 0 :1:0 
+`uc 1 RSCIE 1 0 :1:1 
+`uc 1 PCIE 1 0 :1:2 
+`uc 1 ADRIE 1 0 :1:3 
+`uc 1 WRIE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ACKTIE 1 0 :1:6 
+`uc 1 CNTIE 1 0 :1:7 
+]
+"13657
+[s S224 . 1 `uc 1 SC1IE 1 0 :1:0 
+`uc 1 RSC1IE 1 0 :1:1 
+`uc 1 PC1IE 1 0 :1:2 
+`uc 1 ADR1IE 1 0 :1:3 
+`uc 1 WR1IE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ACKT1IE 1 0 :1:6 
+`uc 1 CNT1IE 1 0 :1:7 
+]
+[u S233 . 1 `S215 1 . 1 0 `S224 1 . 1 0 ]
+[v _I2C1PIEbits I2C1PIEbits `VES233  1 e 1 @667 ]
+[s S296 . 1 `uc 1 TOTIME 1 0 :6:0 
+`uc 1 TOBY32 1 0 :1:6 
+`uc 1 TOREC 1 0 :1:7 
+]
+"13752
+[s S300 . 1 `uc 1 TOTIME0 1 0 :1:0 
+`uc 1 TOTIME1 1 0 :1:1 
+`uc 1 TOTIME2 1 0 :1:2 
+`uc 1 TOTIME3 1 0 :1:3 
+`uc 1 TOTIME4 1 0 :1:4 
+`uc 1 TOTIME5 1 0 :1:5 
+]
+[u S307 . 1 `S296 1 . 1 0 `S300 1 . 1 0 ]
+[v _I2C1BTObits I2C1BTObits `VES307  1 e 1 @668 ]
+"13802
+[v _I2C1BAUD I2C1BAUD `VEuc  1 e 1 @669 ]
+"13822
+[v _I2C1CLK I2C1CLK `VEuc  1 e 1 @670 ]
+"13914
+[v _I2C1BTOC I2C1BTOC `VEuc  1 e 1 @671 ]
+[s S352 . 1 `uc 1 I2C1RXIP 1 0 :1:0 
+`uc 1 I2C1TXIP 1 0 :1:1 
+`uc 1 I2C1IP 1 0 :1:2 
+`uc 1 I2C1EIP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CLC3IP 1 0 :1:5 
+`uc 1 PWM3PIP 1 0 :1:6 
+`uc 1 PWM3IP 1 0 :1:7 
+]
+"25128
+[u S361 . 1 `S352 1 . 1 0 ]
+[v _IPR7bits IPR7bits `VES361  1 e 1 @878 ]
+[s S99 . 1 `uc 1 ANSELC0 1 0 :1:0 
+`uc 1 ANSELC1 1 0 :1:1 
+`uc 1 ANSELC2 1 0 :1:2 
+`uc 1 ANSELC3 1 0 :1:3 
+`uc 1 ANSELC4 1 0 :1:4 
+`uc 1 ANSELC5 1 0 :1:5 
+`uc 1 ANSELC6 1 0 :1:6 
+`uc 1 ANSELC7 1 0 :1:7 
+]
+"31581
+[u S108 . 1 `S99 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES108  1 e 1 @1040 ]
+[s S141 . 1 `uc 1 ODCC0 1 0 :1:0 
+`uc 1 ODCC1 1 0 :1:1 
+`uc 1 ODCC2 1 0 :1:2 
+`uc 1 ODCC3 1 0 :1:3 
+`uc 1 ODCC4 1 0 :1:4 
+`uc 1 ODCC5 1 0 :1:5 
+`uc 1 ODCC6 1 0 :1:6 
+`uc 1 ODCC7 1 0 :1:7 
+]
+"31705
+[u S150 . 1 `S141 1 . 1 0 ]
+[v _ODCONCbits ODCONCbits `VES150  1 e 1 @1042 ]
+[s S394 . 1 `uc 1 I2C1RXIE 1 0 :1:0 
+`uc 1 I2C1TXIE 1 0 :1:1 
+`uc 1 I2C1IE 1 0 :1:2 
+`uc 1 I2C1EIE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CLC3IE 1 0 :1:5 
+`uc 1 PWM3PIE 1 0 :1:6 
+`uc 1 PWM3IE 1 0 :1:7 
+]
+"35511
+[u S403 . 1 `S394 1 . 1 0 ]
+"35511
+"35511
+[v _PIE7bits PIE7bits `VES403  1 e 1 @1199 ]
+[s S373 . 1 `uc 1 I2C1RXIF 1 0 :1:0 
+`uc 1 I2C1TXIF 1 0 :1:1 
+`uc 1 I2C1IF 1 0 :1:2 
+`uc 1 I2C1EIF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CLC3IF 1 0 :1:5 
+`uc 1 PWM3PIF 1 0 :1:6 
+`uc 1 PWM3IF 1 0 :1:7 
+]
+"36158
+[u S382 . 1 `S373 1 . 1 0 ]
+"36158
+"36158
+[v _PIR7bits PIR7bits `VES382  1 e 1 @1210 ]
+[s S120 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"36615
+[u S129 . 1 `S120 1 . 1 0 ]
+"36615
+"36615
+[v _TRISCbits TRISCbits `VES129  1 e 1 @1224 ]
+[s S326 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"36831
+[s S334 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GIEH 1 0 :1:7 
+]
+"36831
+[u S337 . 1 `S326 1 . 1 0 `S334 1 . 1 0 ]
+"36831
+"36831
+[v _INTCON0bits INTCON0bits `VES337  1 e 1 @1238 ]
+"149 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C_DMA.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"155
+} 0
+"137
+[v _setup setup `(v  1 e 1 0 ]
+{
+"143
+} 0
+"50
+[v _configI2C configI2C `(v  1 e 1 0 ]
+{
+"128
+} 0
+"14
+[v _configDMA configDMA `(v  1 e 1 0 ]
+{
+"15
+[v configDMA@bufferReg bufferReg `us  1 a 2 0 ]
+"48
+} 0
+"145
+[v _loop loop `(v  1 e 1 0 ]
+{
+"147
+} 0
+"130
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+{
+"135
+} 0
