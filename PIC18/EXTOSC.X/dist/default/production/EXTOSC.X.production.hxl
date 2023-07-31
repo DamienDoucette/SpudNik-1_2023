@@ -1,0 +1,28 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\damie\AppData\Local\Temp\xcCs88k.2\driver_tmp_3.o
+ -Odist/default/production\EXTOSC.X.production.hex
+ -logfile=dist/default/production\EXTOSC.X.production.hxl
+ -addressing=1
+ -break=300000
+
+### Memory Usage ###
+ Input file ranges:
+  0h - 3h		(C:\Users\damie\AppData\Local\Temp\xcCs88k.2\driver_tmp_3.o)
+  7FD0h - 7FFFh		(C:\Users\damie\AppData\Local\Temp\xcCs88k.2\driver_tmp_3.o)
+ Unused ranges:
+  4h - 7FCFh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\damie\AppData\Local\Temp\xcCs88k.2\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+----------------------------------------------------------
+00007FD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00007FE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00007FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
