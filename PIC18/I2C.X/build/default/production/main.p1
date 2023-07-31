@@ -263,9 +263,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5145
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h: 5145: extern volatile OSCCON1bits_t OSCCON1bits __attribute__((address(0x0AD)));
 [v _OSCCON1bits `VS236 ~T0 @X0 0 e@173 ]
-"8 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
 [p mainexit ]
 "269 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f15q40.h: 269: __asm("CLKRCON equ 039h");
@@ -2338,17 +2335,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 49:     I2C1CON2bits.SDAHT = 0b00;
 [e = . . _I2C1CON2bits 0 1 -> -> 0 `i `uc ]
 "51
-[; ;main.c: 51:     I2C1PIEbits.CNT1IE = 1;
-[e = . . _I2C1PIEbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 51:     I2C1PIEbits.CNT1IE = 0;
+[e = . . _I2C1PIEbits 1 7 -> -> 0 `i `uc ]
 "52
-[; ;main.c: 52:     I2C1PIEbits.ACKTIE = 1;
-[e = . . _I2C1PIEbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 52:     I2C1PIEbits.ACKTIE = 0;
+[e = . . _I2C1PIEbits 0 6 -> -> 0 `i `uc ]
 "53
-[; ;main.c: 53:     I2C1PIEbits.WRIE = 1;
-[e = . . _I2C1PIEbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 53:     I2C1PIEbits.WRIE = 0;
+[e = . . _I2C1PIEbits 0 4 -> -> 0 `i `uc ]
 "54
-[; ;main.c: 54:     I2C1PIEbits.ADRIE = 0;
-[e = . . _I2C1PIEbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 54:     I2C1PIEbits.ADRIE = 1;
+[e = . . _I2C1PIEbits 0 3 -> -> 1 `i `uc ]
 "55
 [; ;main.c: 55:     I2C1PIEbits.PCIE = 0;
 [e = . . _I2C1PIEbits 0 2 -> -> 0 `i `uc ]
@@ -2356,8 +2353,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 56:     I2C1PIEbits.RSCIE = 0;
 [e = . . _I2C1PIEbits 0 1 -> -> 0 `i `uc ]
 "57
-[; ;main.c: 57:     I2C1PIEbits.SCIE = 0;
-[e = . . _I2C1PIEbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 57:     I2C1PIEbits.SCIE = 1;
+[e = . . _I2C1PIEbits 0 0 -> -> 1 `i `uc ]
 "60
 [; ;main.c: 60:     I2C1PIRbits.PCIF = 0;
 [e = . . _I2C1PIRbits 0 2 -> -> 0 `i `uc ]
@@ -2448,7 +2445,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> . . _I2C1STAT0bits 0 2 `i -> 1 `i 1849  ]
 {
 "105
-[; ;main.c: 105:         for(int i = 1; i < 13; i ++){
+[; ;main.c: 105:         I2C1CON0bits.CSTR = 0;
+[e = . . _I2C1CON0bits 0 2 -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106:         for(int i = 1; i < 13; i ++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 1 `i ]
@@ -2456,18 +2456,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1851  ]
 [e :U 1850 ]
 {
-"106
-[; ;main.c: 106:             I2C1TXB = i;
-[e = _I2C1TXB -> _i `uc ]
 "107
-[; ;main.c: 107:             I2C1CON0bits.CSTR = 0;
-[e = . . _I2C1CON0bits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 107:             I2C1TXB = i;
+[e = _I2C1TXB -> _i `uc ]
 "108
-[; ;main.c: 108:             while(I2C1CON0bits.CSTR == 0);
+[; ;main.c: 108:             while(I2C1STAT1bits.TXBE == 0);
 [e $U 1853  ]
 [e :U 1854 ]
 [e :U 1853 ]
-[e $ == -> . . _I2C1CON0bits 0 2 `i -> 0 `i 1854  ]
+[e $ == -> . . _I2C1STAT1bits 0 5 `i -> 0 `i 1854  ]
 [e :U 1855 ]
 "109
 [; ;main.c: 109:         }
@@ -2476,13 +2473,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 13 `i 1850  ]
 [e :U 1851 ]
 }
-"111
-[; ;main.c: 111:     }
+"110
+[; ;main.c: 110:     }
 }
 [e :U 1849 ]
+"111
+[; ;main.c: 111:     while(I2C1CON1bits.ACKT == 0);
+[e $U 1856  ]
+[e :U 1857 ]
+[e :U 1856 ]
+[e $ == -> . . _I2C1CON1bits 0 4 `i -> 0 `i 1857  ]
+[e :U 1858 ]
 "113
 [; ;main.c: 113:     if(I2C1STAT0bits.R == 0){
-[e $ ! == -> . . _I2C1STAT0bits 0 2 `i -> 0 `i 1856  ]
+[e $ ! == -> . . _I2C1STAT0bits 0 2 `i -> 0 `i 1859  ]
 {
 "114
 [; ;main.c: 114:         int index = 0;
@@ -2490,19 +2494,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _index -> 0 `i ]
 "115
 [; ;main.c: 115:         while(I2C1CNTL > 0){
-[e $U 1857  ]
-[e :U 1858 ]
+[e $U 1860  ]
+[e :U 1861 ]
 {
 "116
 [; ;main.c: 116:             I2C1CON0bits.CSTR = 0;
 [e = . . _I2C1CON0bits 0 2 -> -> 0 `i `uc ]
 "117
 [; ;main.c: 117:             while(I2C1STAT1bits.RXBF == 0);
-[e $U 1860  ]
-[e :U 1861 ]
-[e :U 1860 ]
-[e $ == -> . . _I2C1STAT1bits 0 0 `i -> 0 `i 1861  ]
-[e :U 1862 ]
+[e $U 1863  ]
+[e :U 1864 ]
+[e :U 1863 ]
+[e $ == -> . . _I2C1STAT1bits 0 0 `i -> 0 `i 1864  ]
+[e :U 1865 ]
 "118
 [; ;main.c: 118:             i2cBuffer[index] = I2C1RXB;
 [e = *U + &U _i2cBuffer * -> -> _index `ui `ux -> -> # *U &U _i2cBuffer `ui `ux _I2C1RXB ]
@@ -2518,112 +2522,112 @@ Version 4.0 HI-TECH Software Intermediate Code
 "122
 [; ;main.c: 122:         }
 }
-[e :U 1857 ]
+[e :U 1860 ]
 "115
 [; ;main.c: 115:         while(I2C1CNTL > 0){
-[e $ > -> _I2C1CNTL `i -> 0 `i 1858  ]
-[e :U 1859 ]
+[e $ > -> _I2C1CNTL `i -> 0 `i 1861  ]
+[e :U 1862 ]
 "123
 [; ;main.c: 123:     }
 }
-[e :U 1856 ]
+[e :U 1859 ]
+"125
+[; ;main.c: 125:     I2C1CON0bits.EN = 0;
+[e = . . _I2C1CON0bits 0 5 -> -> 0 `i `uc ]
 "126
 [; ;main.c: 126:     I2C1PIR = 0x00;
 [e = _I2C1PIR -> -> 0 `i `uc ]
-"204
-[; ;main.c: 204: }
+"127
+[; ;main.c: 127:     I2C1CON0bits.EN = 1;
+[e = . . _I2C1CON0bits 0 5 -> -> 1 `i `uc ]
+"128
+[; ;main.c: 128: }
 [e :UE 1845 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"206
-[; ;main.c: 206: void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
+"130
+[; ;main.c: 130: void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"207
-[; ;main.c: 207:     if(I2C1PIRbits.SCIF == 1){
-[e $ ! == -> . . _I2C1PIRbits 0 0 `i -> 1 `i 1864  ]
+"131
+[; ;main.c: 131:     if(I2C1PIRbits.SCIF == 1){
+[e $ ! == -> . . _I2C1PIRbits 0 0 `i -> 1 `i 1867  ]
 {
-"208
-[; ;main.c: 208:         I2C1PIRbits.SCIF = 0;
+"132
+[; ;main.c: 132:         I2C1PIRbits.SCIF = 0;
 [e = . . _I2C1PIRbits 0 0 -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:         i2cStart();
+"133
+[; ;main.c: 133:         i2cStart();
 [e ( _i2cStart ..  ]
-"210
-[; ;main.c: 210:     }
+"134
+[; ;main.c: 134:     }
 }
-[e :U 1864 ]
-"211
-[; ;main.c: 211:     return;
-[e $UE 1863  ]
-"212
-[; ;main.c: 212: }
-[e :UE 1863 ]
+[e :U 1867 ]
+"135
+[; ;main.c: 135: }
+[e :UE 1866 ]
 }
-"214
-[; ;main.c: 214: void setup(){
+"137
+[; ;main.c: 137: void setup(){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"215
-[; ;main.c: 215:     OSCFREQ = 0b0010;
+"138
+[; ;main.c: 138:     OSCFREQ = 0b0010;
 [e = _OSCFREQ -> -> 2 `i `uc ]
-"216
-[; ;main.c: 216:     OSCCON1bits.NOSC = 0b110;
+"139
+[; ;main.c: 139:     OSCCON1bits.NOSC = 0b110;
 [e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
-"218
-[; ;main.c: 218:     configI2C();
+"141
+[; ;main.c: 141:     configI2C();
 [e ( _configI2C ..  ]
-"219
-[; ;main.c: 219: }
-[e :UE 1865 ]
+"142
+[; ;main.c: 142: }
+[e :UE 1868 ]
 }
-"221
-[; ;main.c: 221: void loop(){
+"144
+[; ;main.c: 144: void loop(){
 [v _loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _loop ]
 [f ]
-"222
-[; ;main.c: 222:     __nop();
-[e ( ___nop ..  ]
-"223
-[; ;main.c: 223:     I2C1CNTL = 0x04;
-[e = _I2C1CNTL -> -> 4 `i `uc ]
-"224
-[; ;main.c: 224: }
-[e :UE 1866 ]
+"145
+[; ;main.c: 145:     I2C1CNTL = 0x0F;
+[e = _I2C1CNTL -> -> 15 `i `uc ]
+"146
+[; ;main.c: 146: }
+[e :UE 1869 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"226
-[; ;main.c: 226: void main(void) {
+"148
+[; ;main.c: 148: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"227
-[; ;main.c: 227:     setup();
+"149
+[; ;main.c: 149:     setup();
 [e ( _setup ..  ]
-"228
-[; ;main.c: 228:     while(1){
-[e :U 1869 ]
+"150
+[; ;main.c: 150:     while(1){
+[e :U 1872 ]
 {
-"229
-[; ;main.c: 229:         loop();
+"151
+[; ;main.c: 151:         loop();
 [e ( _loop ..  ]
-"230
-[; ;main.c: 230:     }
+"152
+[; ;main.c: 152:     }
 }
-[e :U 1868 ]
-[e $U 1869  ]
-[e :U 1870 ]
-"231
-[; ;main.c: 231:     return;
-[e $UE 1867  ]
-"232
-[; ;main.c: 232: }
-[e :UE 1867 ]
+[e :U 1871 ]
+[e $U 1872  ]
+[e :U 1873 ]
+"153
+[; ;main.c: 153:     return;
+[e $UE 1870  ]
+"154
+[; ;main.c: 154: }
+[e :UE 1870 ]
 }

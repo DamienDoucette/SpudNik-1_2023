@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\dat\20230323153512_en.msgs \
   -pivt0x8=08h -cn -h+dist/default/production\I2C.X.production.sym \
   --cmf=dist/default/production\I2C.X.production.cmf -z -Q18F15Q40 \
-  -oC:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_3.o \
+  -oC:\Users\damie\AppData\Local\Temp\xcBs9e4.1\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/I2C.X.production.map \
-  --md=C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\damie\AppData\Local\Temp\xcBs9e4.1\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0E00h-0EFFhx114 -AMEDIUMCONST=0E00h-07FFFh \
   -ACOMRAM=0501h-055Fh -AABS1=0500h-0CFFh -ABIGRAM=0501h-0CFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o \
+  C:\Users\damie\AppData\Local\Temp\xcBs9e4.1\driver_tmp_9.o \
   dist/default/production\I2C.X.production.o 
 
 Object code version is 3.11
@@ -36,33 +36,33 @@ Machine type is 18F15Q40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\damie\AppData\Local\Temp\xcAscb8.\driver_tmp_9.o
+C:\Users\damie\AppData\Local\Temp\xcBs9e4.1\driver_tmp_9.o
                 init                                 BA       BA        4        4       0
                 reset_vec                             0        0        4        0       0
 dist/default/production\I2C.X.production.o
                 ivt0x8                                8        8       B2        4       0
-                text5                                BE       BE       B2        4       0
-                text4                               220      220       18        4       0
-                text3                               25C      25C        A        4       0
-                text2                               170      170       90        4       0
-                text1                               238      238       14        4       0
-                text0                               24C      24C       10        4       0
+                text5                                BE       BE       C4        4       0
+                text4                               234      234       18       8D       0
+                text3                               270      270        8       8D       0
+                text2                               182      182       90        4       0
+                text1                               24C      24C       14       8D       0
+                text0                               260      260       10       8D       0
                 cstackCOMRAM                        511      511        5      501       1
                 bssCOMRAM                           501      501       10      501       1
-                cinit                               200      200       20        4       0
+                cinit                               212      212       20        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 init                                 BA       BA        4         0
                 reset_vec                             0        0        4         0
                 ivt0x8                                8        8       B2         0
-                text5                                BE       BE       B2         0
-                text4                               220      220       18         0
-                text3                               25C      25C        A         0
-                text2                               170      170       90         0
-                text1                               238      238       14         0
-                text0                               24C      24C       10         0
-                cinit                               200      200       20         0
+                text5                                BE       BE       C4         0
+                text4                               234      234       18         0
+                text3                               270      270        8         0
+                text2                               182      182       90         0
+                text1                               24C      24C       14         0
+                text0                               260      260       10         0
+                cinit                               212      212       20         0
 
         CLASS   CONST          
 
@@ -117,7 +117,8 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                ivt0x8                         000008  00025E  000266         4       0  CODE    
+                ivt0x8                         000008  00022A  000232         4       0  CODE    
+                text4                          000234  000044  000278        8D       0  CODE    
                 bssCOMRAM                      000501  000015  000516       501       1  COMRAM  
 
 
@@ -136,11 +137,13 @@ UNUSED ADDRESS RANGES
         BIGSFR           000-4FF           500
                          D00-DFF           100
         CODE             004-007             4
-                         266-7FFF          7D9A
+                         232-233             2
+                         278-7FFF          7D88
         COMRAM           516-55F            4A
         CONFIG           300000-300011            12
         CONST            004-007             4
-                         266-7FFF          7D9A
+                         232-233             2
+                         278-7FFF          7D88
         EEDATA           380000-3801FF           200
         IDLOC            200000-20003F            40
         MEDIUMCONST      E00-7FFF          7200
@@ -176,7 +179,7 @@ _I2C1STAT1bits           (abs)        299
 _I2C1TXB                 (abs)        28B
 _INTCON0bits             (abs)        4D6
 _IPR7bits                (abs)        36E
-_ISR                     text4        220
+_ISR                     text4        234
 _ODCONCbits              (abs)        412
 _OSCCON1bits             (abs)        0AD
 _OSCFREQ                 (abs)        0B1
@@ -315,7 +318,7 @@ __Ltext2                 text2        000
 __Ltext3                 text3        000
 __Ltext4                 text4        000
 __Ltext5                 text5        000
-__S0                     (abs)        266
+__S0                     (abs)        278
 __S1                     (abs)        516
 __S4                     (abs)        000
 __S5                     (abs)        000
@@ -328,34 +331,34 @@ ___rparam_used           (abs)        001
 ___sp                    stack        000
 __accesstop              (abs)        560
 __activetblptr           (abs)        000
-__end_of_ISR             text4        238
-__end_of__initialization cinit        21A
-__end_of_configI2C       text2        200
-__end_of_i2cStart        text5        170
-__end_of_loop            text3        266
-__end_of_main            text0        25C
-__end_of_setup           text1        24C
-__initialization         cinit        200
+__end_of_ISR             text4        24C
+__end_of__initialization cinit        22C
+__end_of_configI2C       text2        212
+__end_of_i2cStart        text5        182
+__end_of_loop            text3        278
+__end_of_main            text0        270
+__end_of_setup           text1        260
+__initialization         cinit        212
 __mediumconst            mediumconst  000
 __pbssCOMRAM             bssCOMRAM    501
-__pcinit                 cinit        200
+__pcinit                 cinit        212
 __pcstackCOMRAM          cstackCOMRAM 511
 __pivt0x8                ivt0x8       008
-__ptext0                 text0        24C
-__ptext1                 text1        238
-__ptext2                 text2        170
-__ptext3                 text3        25C
-__ptext4                 text4        220
+__ptext0                 text0        260
+__ptext1                 text1        24C
+__ptext2                 text2        182
+__ptext3                 text3        270
+__ptext4                 text4        234
 __ptext5                 text5        0BE
 __ramtop                 ramtop       E00
 __smallconst             smallconst   000
-_configI2C               text2        170
+_configI2C               text2        182
 _i2cBuffer               bssCOMRAM    501
 _i2cStart                text5        0BE
-_loop                    text3        25C
-_main                    text0        24C
-_setup                   text1        238
-end_of_initialization    cinit        21A
+_loop                    text3        270
+_main                    text0        260
+_setup                   text1        24C
+end_of_initialization    cinit        22C
 i2cStart@i               cstackCOMRAM 513
 i2cStart@index           cstackCOMRAM 511
 intlevel0                text         000
@@ -369,24 +372,24 @@ ivt0x8_undefint          ivt0x8       0B8
 stackhi                  (abs)        000
 stacklo                  (abs)        000
 start                    init         0BA
-start_initialization     cinit        200
+start_initialization     cinit        212
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	0200	0000	26
+		__initialization		CODE           	0212	0000	26
 
 shared estimated size: 26
 
 main.c
-		_loop          		CODE           	025C	0000	10
-		_ISR           		CODE           	0220	0000	24
-		_main          		CODE           	024C	0000	16
-		_i2cStart      		CODE           	00BE	0000	178
-		_configI2C     		CODE           	0170	0000	144
-		_setup         		CODE           	0238	0000	20
+		_loop          		CODE           	0270	0000	8
+		_ISR           		CODE           	0234	0000	24
+		_main          		CODE           	0260	0000	16
+		_i2cStart      		CODE           	00BE	0000	196
+		_configI2C     		CODE           	0182	0000	144
+		_setup         		CODE           	024C	0000	20
 
-main.c estimated size: 392
+main.c estimated size: 408
 

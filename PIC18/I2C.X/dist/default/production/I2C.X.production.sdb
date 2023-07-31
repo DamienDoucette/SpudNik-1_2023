@@ -31,13 +31,13 @@
 [v _configI2C configI2C `(v  1 e 1 0 ]
 "95
 [v _i2cStart i2cStart `(v  1 e 1 0 ]
-"206
+"130
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"214
+"137
 [v _setup setup `(v  1 e 1 0 ]
-"221
+"144
 [v _loop loop `(v  1 e 1 0 ]
-"226
+"148
 [v _main main `(v  1 e 1 0 ]
 [s S446 . 1 `uc 1 NDIV 1 0 :4:0 
 `uc 1 NOSC 1 0 :3:4 
@@ -311,37 +311,37 @@
 [v _INTCON0bits INTCON0bits `VES292  1 e 1 @1238 ]
 "14 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\I2C.X\main.c
 [v _i2cBuffer i2cBuffer `[16]uc  1 e 16 0 ]
-"226
+"148
 [v _main main `(v  1 e 1 0 ]
 {
-"232
+"154
 } 0
-"214
+"137
 [v _setup setup `(v  1 e 1 0 ]
 {
-"219
+"142
 } 0
 "15
 [v _configI2C configI2C `(v  1 e 1 0 ]
 {
 "93
 } 0
-"221
+"144
 [v _loop loop `(v  1 e 1 0 ]
 {
-"224
+"146
 } 0
-"206
+"130
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"212
+"135
 } 0
 "95
 [v _i2cStart i2cStart `(v  1 e 1 0 ]
 {
-"105
+"106
 [v i2cStart@i i `i  1 a 2 2 ]
 "114
 [v i2cStart@index index `i  1 a 2 0 ]
-"204
+"128
 } 0

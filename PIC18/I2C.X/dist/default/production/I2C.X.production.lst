@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Thu Jul 20 14:41:28 2023
+                                                                                               Mon Jul 24 13:35:44 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F15Q40
@@ -97,37 +97,37 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
     83                           ; #config settings
     84                           
     85                           	psect	cinit
-    86   000200                     __pcinit:
+    86   000212                     __pcinit:
     87                           	callstack 0
-    88   000200                     start_initialization:
+    88   000212                     start_initialization:
     89                           	callstack 0
-    90   000200                     __initialization:
+    90   000212                     __initialization:
     91                           	callstack 0
     92                           
     93                           ; Clear objects allocated to COMRAM (16 bytes)
-    94   000200  EE01  F101         	lfsr	0,__pbssCOMRAM
-    95   000204  0E10               	movlw	16
-    96   000206                     clear_0:
-    97   000206  6AEE               	clrf	postinc0,c
-    98   000208  06E8               	decf	wreg,f,c
-    99   00020A  E1FD               	bnz	clear_0
+    94   000212  EE01  F101         	lfsr	0,__pbssCOMRAM
+    95   000216  0E10               	movlw	16
+    96   000218                     clear_0:
+    97   000218  6AEE               	clrf	postinc0,c
+    98   00021A  06E8               	decf	wreg,f,c
+    99   00021C  E1FD               	bnz	clear_0
    100                           
    101                           ;
    102                           ; Setup IVTBASE
    103                           ;
-   104   00020C  0104               	movlb	4
-   105   00020E  0E08               	movlw	(ivt0x8_base shr 0)& (0+255)
-   106   000210  6F5D               	movwf	93,b
-   107   000212  0E00               	movlw	(ivt0x8_base shr (0+8))& (0+255)
-   108   000214  6F5E               	movwf	94,b
-   109   000216  0E00               	movlw	(ivt0x8_base shr (0+16))& (0+255)
-   110   000218  6F5F               	movwf	95,b
-   111   00021A                     end_of_initialization:
+   104   00021E  0104               	movlb	4
+   105   000220  0E08               	movlw	(ivt0x8_base shr 0)& (0+255)
+   106   000222  6F5D               	movwf	93,b
+   107   000224  0E00               	movlw	(ivt0x8_base shr (0+8))& (0+255)
+   108   000226  6F5E               	movwf	94,b
+   109   000228  0E00               	movlw	(ivt0x8_base shr (0+16))& (0+255)
+   110   00022A  6F5F               	movwf	95,b
+   111   00022C                     end_of_initialization:
    112                           	callstack 0
-   113   00021A                     __end_of__initialization:
+   113   00022C                     __end_of__initialization:
    114                           	callstack 0
-   115   00021A  0100               	movlb	0
-   116   00021C  EF26  F001         	goto	_main	;jump to C main() function
+   115   00022C  0100               	movlb	0
+   116   00022E  EF30  F001         	goto	_main	;jump to C main() function
    117                           
    118                           	psect	bssCOMRAM
    119   000501                     __pbssCOMRAM:
@@ -160,7 +160,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    146 ;;
    147 ;; *************** function _main *****************
    148 ;; Defined at:
-   149 ;;		line 226 in file "main.c"
+   149 ;;		line 148 in file "main.c"
    150 ;; Parameters:    Size  Location     Type
    151 ;;		None
    152 ;; Auto vars:     Size  Location     Type
@@ -189,25 +189,25 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    175 ;;
    176                           
    177                           	psect	text0
-   178   00024C                     __ptext0:
+   178   000260                     __ptext0:
    179                           	callstack 0
-   180   00024C                     _main:
+   180   000260                     _main:
    181                           	callstack 123
-   182   00024C                     
-   183                           ;main.c: 227:     setup();
-   184   00024C  EC1C  F001         	call	_setup	;wreg free
-   185   000250                     l105:
+   182   000260                     
+   183                           ;main.c: 149:     setup();
+   184   000260  EC26  F001         	call	_setup	;wreg free
+   185   000264                     l106:
    186                           
-   187                           ;main.c: 229:         loop();
-   188   000250  EC2E  F001         	call	_loop	;wreg free
-   189   000254  EF28  F001         	goto	l105
-   190   000258  EF5D  F000         	goto	start
-   191   00025C                     __end_of_main:
+   187                           ;main.c: 151:         loop();
+   188   000264  EC38  F001         	call	_loop	;wreg free
+   189   000268  EF32  F001         	goto	l106
+   190   00026C  EF5D  F000         	goto	start
+   191   000270                     __end_of_main:
    192                           	callstack 0
    193                           
    194 ;; *************** function _setup *****************
    195 ;; Defined at:
-   196 ;;		line 214 in file "main.c"
+   196 ;;		line 137 in file "main.c"
    197 ;; Parameters:    Size  Location     Type
    198 ;;		None
    199 ;; Auto vars:     Size  Location     Type
@@ -236,27 +236,27 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    222 ;;
    223                           
    224                           	psect	text1
-   225   000238                     __ptext1:
+   225   00024C                     __ptext1:
    226                           	callstack 0
-   227   000238                     _setup:
+   227   00024C                     _setup:
    228                           	callstack 123
-   229   000238                     
-   230                           ;main.c: 215:     OSCFREQ = 0b0010;
-   231   000238  0E02               	movlw	2
-   232   00023A  0100               	movlb	0	; () banked
-   233   00023C  6FB1               	movwf	177,b	;volatile
+   229   00024C                     
+   230                           ;main.c: 138:     OSCFREQ = 0b0010;
+   231   00024C  0E02               	movlw	2
+   232   00024E  0100               	movlb	0	; () banked
+   233   000250  6FB1               	movwf	177,b	;volatile
    234                           
-   235                           ;main.c: 216:     OSCCON1bits.NOSC = 0b110;
-   236   00023E  51AD               	movf	173,w,b	;volatile
-   237   000240  0B8F               	andlw	-113
-   238   000242  0960               	iorlw	96
-   239   000244  6FAD               	movwf	173,b	;volatile
-   240   000246                     
+   235                           ;main.c: 139:     OSCCON1bits.NOSC = 0b110;
+   236   000252  51AD               	movf	173,w,b	;volatile
+   237   000254  0B8F               	andlw	-113
+   238   000256  0960               	iorlw	96
+   239   000258  6FAD               	movwf	173,b	;volatile
+   240   00025A                     
    241                           ; BSR set to: 0
-   242                           ;main.c: 218:     configI2C();
-   243   000246  ECB8  F000         	call	_configI2C	;wreg free
-   244   00024A  0012               	return		;funcret
-   245   00024C                     __end_of_setup:
+   242                           ;main.c: 141:     configI2C();
+   243   00025A  ECC1  F000         	call	_configI2C	;wreg free
+   244   00025E  0012               	return		;funcret
+   245   000260                     __end_of_setup:
    246                           	callstack 0
    247                           
    248 ;; *************** function _configI2C *****************
@@ -290,215 +290,215 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    276 ;;
    277                           
    278                           	psect	text2
-   279   000170                     __ptext2:
+   279   000182                     __ptext2:
    280                           	callstack 0
-   281   000170                     _configI2C:
+   281   000182                     _configI2C:
    282                           	callstack 123
-   283   000170                     
+   283   000182                     
    284                           ;main.c: 16:     I2C1CON0bits.EN = 0;
-   285   000170  0102               	movlb	2	; () banked
-   286   000172  9F94               	bcf	148,7,b	;volatile
+   285   000182  0102               	movlb	2	; () banked
+   286   000184  9F94               	bcf	148,7,b	;volatile
    287                           
    288                           ;main.c: 21:     ANSELCbits.ANSELC0 = 0;
-   289   000174  0104               	movlb	4	; () banked
-   290   000176  9110               	bcf	16,0,b	;volatile
+   289   000186  0104               	movlb	4	; () banked
+   290   000188  9110               	bcf	16,0,b	;volatile
    291                           
    292                           ;main.c: 22:     ANSELCbits.ANSELC1 = 0;
-   293   000178  9310               	bcf	16,1,b	;volatile
+   293   00018A  9310               	bcf	16,1,b	;volatile
    294                           
    295                           ;main.c: 26:     TRISCbits.TRISC0 = 0;
-   296   00017A  90C8               	bcf	200,0,c	;volatile
+   296   00018C  90C8               	bcf	200,0,c	;volatile
    297                           
    298                           ;main.c: 27:     TRISCbits.TRISC1 = 0;
-   299   00017C  92C8               	bcf	200,1,c	;volatile
+   299   00018E  92C8               	bcf	200,1,c	;volatile
    300                           
    301                           ;main.c: 29:     ODCONCbits.ODCC0 = 1;
-   302   00017E  8112               	bsf	18,0,b	;volatile
+   302   000190  8112               	bsf	18,0,b	;volatile
    303                           
    304                           ;main.c: 30:     ODCONCbits.ODCC1 = 1;
-   305   000180  8312               	bsf	18,1,b	;volatile
-   306   000182                     
+   305   000192  8312               	bsf	18,1,b	;volatile
+   306   000194                     
    307                           ; BSR set to: 4
    308                           ;main.c: 33:     RC0PPS = 0x22;
-   309   000182  0E22               	movlw	34
-   310   000184  0102               	movlb	2	; () banked
-   311   000186  6F11               	movwf	17,b	;volatile
+   309   000194  0E22               	movlw	34
+   310   000196  0102               	movlb	2	; () banked
+   311   000198  6F11               	movwf	17,b	;volatile
    312                           
    313                           ;main.c: 34:     RC1PPS = 0x21;
-   314   000188  0E21               	movlw	33
-   315   00018A  6F12               	movwf	18,b	;volatile
+   314   00019A  0E21               	movlw	33
+   315   00019C  6F12               	movwf	18,b	;volatile
    316                           
    317                           ;main.c: 37:     I2C1SDAPPS = 0b010000;
-   318   00018C  0E10               	movlw	16
-   319   00018E  6F70               	movwf	112,b	;volatile
+   318   00019E  0E10               	movlw	16
+   319   0001A0  6F70               	movwf	112,b	;volatile
    320                           
    321                           ;main.c: 38:     I2C1SCLPPS = 0b010001;
-   322   000190  0E11               	movlw	17
-   323   000192  6F71               	movwf	113,b	;volatile
+   322   0001A2  0E11               	movlw	17
+   323   0001A4  6F71               	movwf	113,b	;volatile
    324                           
    325                           ;main.c: 41:     I2C1CON0bits.MODE = 0b000;
-   326   000194  0EF8               	movlw	-8
-   327   000196  1794               	andwf	148,f,b	;volatile
-   328   000198                     
+   326   0001A6  0EF8               	movlw	-8
+   327   0001A8  1794               	andwf	148,f,b	;volatile
+   328   0001AA                     
    329                           ; BSR set to: 2
    330                           ;main.c: 42:     I2C1CON0bits.CSTR = 0;
-   331   000198  9994               	bcf	148,4,b	;volatile
-   332   00019A                     
+   331   0001AA  9994               	bcf	148,4,b	;volatile
+   332   0001AC                     
    333                           ; BSR set to: 2
    334                           ;main.c: 44:     I2C1CON1bits.CSD = 0;
-   335   00019A  9195               	bcf	149,0,b	;volatile
-   336   00019C                     
+   335   0001AC  9195               	bcf	149,0,b	;volatile
+   336   0001AE                     
    337                           ; BSR set to: 2
    338                           ;main.c: 46:     I2C1CON2bits.ACNT = 0;
-   339   00019C  9F96               	bcf	150,7,b	;volatile
-   340   00019E                     
+   339   0001AE  9F96               	bcf	150,7,b	;volatile
+   340   0001B0                     
    341                           ; BSR set to: 2
    342                           ;main.c: 47:     I2C1CON2bits.GCEN = 1;
-   343   00019E  8D96               	bsf	150,6,b	;volatile
-   344   0001A0                     
+   343   0001B0  8D96               	bsf	150,6,b	;volatile
+   344   0001B2                     
    345                           ; BSR set to: 2
    346                           ;main.c: 48:     I2C1CON2bits.ABD = 0;
-   347   0001A0  9996               	bcf	150,4,b	;volatile
+   347   0001B2  9996               	bcf	150,4,b	;volatile
    348                           
    349                           ;main.c: 49:     I2C1CON2bits.SDAHT = 0b00;
-   350   0001A2  0EF3               	movlw	-13
-   351   0001A4  1796               	andwf	150,f,b	;volatile
-   352   0001A6                     
+   350   0001B4  0EF3               	movlw	-13
+   351   0001B6  1796               	andwf	150,f,b	;volatile
+   352   0001B8                     
    353                           ; BSR set to: 2
-   354                           ;main.c: 51:     I2C1PIEbits.CNT1IE = 1;
-   355   0001A6  8F9B               	bsf	155,7,b	;volatile
-   356   0001A8                     
+   354                           ;main.c: 51:     I2C1PIEbits.CNT1IE = 0;
+   355   0001B8  9F9B               	bcf	155,7,b	;volatile
+   356   0001BA                     
    357                           ; BSR set to: 2
-   358                           ;main.c: 52:     I2C1PIEbits.ACKTIE = 1;
-   359   0001A8  8D9B               	bsf	155,6,b	;volatile
-   360   0001AA                     
+   358                           ;main.c: 52:     I2C1PIEbits.ACKTIE = 0;
+   359   0001BA  9D9B               	bcf	155,6,b	;volatile
+   360   0001BC                     
    361                           ; BSR set to: 2
-   362                           ;main.c: 53:     I2C1PIEbits.WRIE = 1;
-   363   0001AA  899B               	bsf	155,4,b	;volatile
-   364   0001AC                     
+   362                           ;main.c: 53:     I2C1PIEbits.WRIE = 0;
+   363   0001BC  999B               	bcf	155,4,b	;volatile
+   364   0001BE                     
    365                           ; BSR set to: 2
-   366                           ;main.c: 54:     I2C1PIEbits.ADRIE = 0;
-   367   0001AC  979B               	bcf	155,3,b	;volatile
-   368   0001AE                     
+   366                           ;main.c: 54:     I2C1PIEbits.ADRIE = 1;
+   367   0001BE  879B               	bsf	155,3,b	;volatile
+   368   0001C0                     
    369                           ; BSR set to: 2
    370                           ;main.c: 55:     I2C1PIEbits.PCIE = 0;
-   371   0001AE  959B               	bcf	155,2,b	;volatile
-   372   0001B0                     
+   371   0001C0  959B               	bcf	155,2,b	;volatile
+   372   0001C2                     
    373                           ; BSR set to: 2
    374                           ;main.c: 56:     I2C1PIEbits.RSCIE = 0;
-   375   0001B0  939B               	bcf	155,1,b	;volatile
-   376   0001B2                     
+   375   0001C2  939B               	bcf	155,1,b	;volatile
+   376   0001C4                     
    377                           ; BSR set to: 2
-   378                           ;main.c: 57:     I2C1PIEbits.SCIE = 0;
-   379   0001B2  919B               	bcf	155,0,b	;volatile
-   380   0001B4                     
+   378                           ;main.c: 57:     I2C1PIEbits.SCIE = 1;
+   379   0001C4  819B               	bsf	155,0,b	;volatile
+   380   0001C6                     
    381                           ; BSR set to: 2
    382                           ;main.c: 60:     I2C1PIRbits.PCIF = 0;
-   383   0001B4  959A               	bcf	154,2,b	;volatile
-   384   0001B6                     
+   383   0001C6  959A               	bcf	154,2,b	;volatile
+   384   0001C8                     
    385                           ; BSR set to: 2
    386                           ;main.c: 61:     I2C1PIRbits.SCIF = 0;
-   387   0001B6  919A               	bcf	154,0,b	;volatile
-   388   0001B8                     
+   387   0001C8  919A               	bcf	154,0,b	;volatile
+   388   0001CA                     
    389                           ; BSR set to: 2
    390                           ;main.c: 62:     I2C1PIRbits.RSCIF = 0;
-   391   0001B8  939A               	bcf	154,1,b	;volatile
+   391   0001CA  939A               	bcf	154,1,b	;volatile
    392                           
    393                           ;main.c: 64:     I2C1BTOC = 0x03;
-   394   0001BA  0E03               	movlw	3
-   395   0001BC  6F9F               	movwf	159,b	;volatile
-   396   0001BE                     
+   394   0001CC  0E03               	movlw	3
+   395   0001CE  6F9F               	movwf	159,b	;volatile
+   396   0001D0                     
    397                           ; BSR set to: 2
    398                           ;main.c: 65:     I2C1BTObits.TOREC = 1;
-   399   0001BE  8F9C               	bsf	156,7,b	;volatile
-   400   0001C0                     
+   399   0001D0  8F9C               	bsf	156,7,b	;volatile
+   400   0001D2                     
    401                           ; BSR set to: 2
    402                           ;main.c: 66:     I2C1BTObits.TOBY32 = 0;
-   403   0001C0  9D9C               	bcf	156,6,b	;volatile
+   403   0001D2  9D9C               	bcf	156,6,b	;volatile
    404                           
    405                           ;main.c: 67:     I2C1BTObits.TOTIME = 0x23;
-   406   0001C2  519C               	movf	156,w,b	;volatile
-   407   0001C4  0BC0               	andlw	-64
-   408   0001C6  0923               	iorlw	35
-   409   0001C8  6F9C               	movwf	156,b	;volatile
-   410   0001CA                     
+   406   0001D4  519C               	movf	156,w,b	;volatile
+   407   0001D6  0BC0               	andlw	-64
+   408   0001D8  0923               	iorlw	35
+   409   0001DA  6F9C               	movwf	156,b	;volatile
+   410   0001DC                     
    411                           ; BSR set to: 2
    412                           ;main.c: 69:     I2C1ADR0 = 0xFF;
-   413   0001CA  6990               	setf	144,b	;volatile
-   414   0001CC                     
+   413   0001DC  6990               	setf	144,b	;volatile
+   414   0001DE                     
    415                           ; BSR set to: 2
    416                           ;main.c: 70:     I2C1ADR1 = 0xFF;
-   417   0001CC  6991               	setf	145,b	;volatile
+   417   0001DE  6991               	setf	145,b	;volatile
    418                           
    419                           ;main.c: 72:     I2C1CLK = 0b0011;
-   420   0001CE  0E03               	movlw	3
-   421   0001D0  6F9E               	movwf	158,b	;volatile
+   420   0001E0  0E03               	movlw	3
+   421   0001E2  6F9E               	movwf	158,b	;volatile
    422                           
    423                           ;main.c: 73:     I2C1BAUD = 0x04;
-   424   0001D2  0E04               	movlw	4
-   425   0001D4  6F9D               	movwf	157,b	;volatile
-   426   0001D6                     
+   424   0001E4  0E04               	movlw	4
+   425   0001E6  6F9D               	movwf	157,b	;volatile
+   426   0001E8                     
    427                           ; BSR set to: 2
    428                           ;main.c: 76:     INTCON0bits.GIE = 1;
-   429   0001D6  8ED6               	bsf	214,7,c	;volatile
-   430   0001D8                     
+   429   0001E8  8ED6               	bsf	214,7,c	;volatile
+   430   0001EA                     
    431                           ; BSR set to: 2
    432                           ;main.c: 77:     INTCON0bits.IPEN = 1;
-   433   0001D8  8AD6               	bsf	214,5,c	;volatile
-   434   0001DA                     
+   433   0001EA  8AD6               	bsf	214,5,c	;volatile
+   434   0001EC                     
    435                           ; BSR set to: 2
    436                           ;main.c: 80:     IPR7bits.I2C1IP = 1;
-   437   0001DA  0103               	movlb	3	; () banked
-   438   0001DC  856E               	bsf	110,2,b	;volatile
-   439   0001DE                     
+   437   0001EC  0103               	movlb	3	; () banked
+   438   0001EE  856E               	bsf	110,2,b	;volatile
+   439   0001F0                     
    440                           ; BSR set to: 3
    441                           ;main.c: 81:     PIR7bits.I2C1IF = 0;
-   442   0001DE  94BA               	bcf	186,2,c	;volatile
-   443   0001E0                     
+   442   0001F0  94BA               	bcf	186,2,c	;volatile
+   443   0001F2                     
    444                           ; BSR set to: 3
    445                           ;main.c: 82:     PIE7bits.I2C1IE = 1;
-   446   0001E0  84AF               	bsf	175,2,c	;volatile
-   447   0001E2                     
+   446   0001F2  84AF               	bsf	175,2,c	;volatile
+   447   0001F4                     
    448                           ; BSR set to: 3
    449                           ;main.c: 84:     I2C1PIRbits.PCIF = 0;
-   450   0001E2  0102               	movlb	2	; () banked
-   451   0001E4  959A               	bcf	154,2,b	;volatile
-   452   0001E6                     
+   450   0001F4  0102               	movlb	2	; () banked
+   451   0001F6  959A               	bcf	154,2,b	;volatile
+   452   0001F8                     
    453                           ; BSR set to: 2
    454                           ;main.c: 86:     I2C1CON0bits.EN = 1;
-   455   0001E6  8F94               	bsf	148,7,b	;volatile
-   456   0001E8                     
+   455   0001F8  8F94               	bsf	148,7,b	;volatile
+   456   0001FA                     
    457                           ; BSR set to: 2
    458                           ;main.c: 88:     _delay((unsigned long)((10)*(4000000/4000.0)));
-   459   0001E8  0E0D               	movlw	13
-   460   0001EA  6E15               	movwf	??_configI2C^(0+1280),c
-   461   0001EC  0EFC               	movlw	252
-   462   0001EE                     u97:
-   463   0001EE  2EE8               	decfsz	wreg,f,c
-   464   0001F0  D7FE               	bra	u97
-   465   0001F2  2E15               	decfsz	??_configI2C^(0+1280),f,c
-   466   0001F4  D7FC               	bra	u97
-   467   0001F6                     
+   459   0001FA  0E0D               	movlw	13
+   460   0001FC  6E15               	movwf	??_configI2C^(0+1280),c
+   461   0001FE  0EFC               	movlw	252
+   462   000200                     u107:
+   463   000200  2EE8               	decfsz	wreg,f,c
+   464   000202  D7FE               	bra	u107
+   465   000204  2E15               	decfsz	??_configI2C^(0+1280),f,c
+   466   000206  D7FC               	bra	u107
+   467   000208                     
    468                           ;main.c: 90:     I2C1PIEbits.PCIE = 0;
-   469   0001F6  0102               	movlb	2	; () banked
-   470   0001F8  959B               	bcf	155,2,b	;volatile
-   471   0001FA                     
+   469   000208  0102               	movlb	2	; () banked
+   470   00020A  959B               	bcf	155,2,b	;volatile
+   471   00020C                     
    472                           ; BSR set to: 2
    473                           ;main.c: 91:     I2C1PIEbits.RSCIE = 1;
-   474   0001FA  839B               	bsf	155,1,b	;volatile
-   475   0001FC                     
+   474   00020C  839B               	bsf	155,1,b	;volatile
+   475   00020E                     
    476                           ; BSR set to: 2
    477                           ;main.c: 92:     I2C1PIEbits.SCIE = 1;
-   478   0001FC  819B               	bsf	155,0,b	;volatile
-   479   0001FE                     
+   478   00020E  819B               	bsf	155,0,b	;volatile
+   479   000210                     
    480                           ; BSR set to: 2
-   481   0001FE  0012               	return		;funcret
-   482   000200                     __end_of_configI2C:
+   481   000210  0012               	return		;funcret
+   482   000212                     __end_of_configI2C:
    483                           	callstack 0
    484                           
    485 ;; *************** function _loop *****************
    486 ;; Defined at:
-   487 ;;		line 221 in file "main.c"
+   487 ;;		line 144 in file "main.c"
    488 ;; Parameters:    Size  Location     Type
    489 ;;		None
    490 ;; Auto vars:     Size  Location     Type
@@ -527,571 +527,585 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    513 ;;
    514                           
    515                           	psect	text3
-   516   00025C                     __ptext3:
+   516   000270                     __ptext3:
    517                           	callstack 0
-   518   00025C                     _loop:
+   518   000270                     _loop:
    519                           	callstack 124
-   520   00025C                     
-   521                           ;main.c: 222:     __nop();
-   522   00025C  F000               	nop	
-   523   00025E                     
-   524                           ;main.c: 223:     I2C1CNTL = 0x04;
-   525   00025E  0E04               	movlw	4
-   526   000260  0102               	movlb	2	; () banked
-   527   000262  6F8C               	movwf	140,b	;volatile
-   528   000264                     
-   529                           ; BSR set to: 2
-   530   000264  0012               	return		;funcret
-   531   000266                     __end_of_loop:
-   532                           	callstack 0
-   533                           
-   534 ;; *************** function _ISR *****************
-   535 ;; Defined at:
-   536 ;;		line 206 in file "main.c"
-   537 ;; Parameters:    Size  Location     Type
-   538 ;;		None
-   539 ;; Auto vars:     Size  Location     Type
-   540 ;;		None
-   541 ;; Return value:  Size  Location     Type
-   542 ;;                  1    wreg      void 
-   543 ;; Registers used:
-   544 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
-   545 ;; Tracked objects:
-   546 ;;		On entry : 0/0
-   547 ;;		On exit  : 0/0
-   548 ;;		Unchanged: 0/0
-   549 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-   550 ;;      Params:         0       0       0       0       0       0       0       0       0
-   551 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   552 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   553 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   554 ;;Total ram usage:        0 bytes
-   555 ;; Hardware stack levels used: 1
-   556 ;; Hardware stack levels required when called: 1
-   557 ;; This function calls:
-   558 ;;		_i2cStart
-   559 ;; This function is called by:
-   560 ;;		Interrupt level 2
-   561 ;; This function uses a non-reentrant model
-   562 ;;
-   563                           
-   564                           	psect	text4
-   565   000220                     __ptext4:
-   566                           	callstack 0
-   567   000220                     _ISR:
-   568                           	callstack 123
-   569   000220                     
-   570                           ;main.c: 207:     if(I2C1PIRbits.SCIF == 1){
-   571   000220  0102               	movlb	2	; () banked
-   572   000222  A19A               	btfss	154,0,b	;volatile
-   573   000224  EF16  F001         	goto	i2u8_41
-   574   000228  EF18  F001         	goto	i2u8_40
-   575   00022C                     i2u8_41:
-   576   00022C  EF1B  F001         	goto	i2l94
-   577   000230                     i2u8_40:
-   578   000230                     
-   579                           ; BSR set to: 2
-   580                           ;main.c: 208:         I2C1PIRbits.SCIF = 0;
-   581   000230  919A               	bcf	154,0,b	;volatile
-   582   000232                     
-   583                           ; BSR set to: 2
-   584                           ;main.c: 209:         i2cStart();
-   585   000232  EC5F  F000         	call	_i2cStart	;wreg free
-   586   000236                     i2l94:
-   587   000236  0011               	retfie		f
-   588   000238                     __end_of_ISR:
-   589                           	callstack 0
-   590                           
-   591 ;; *************** function _i2cStart *****************
-   592 ;; Defined at:
-   593 ;;		line 95 in file "main.c"
-   594 ;; Parameters:    Size  Location     Type
-   595 ;;		None
-   596 ;; Auto vars:     Size  Location     Type
-   597 ;;  i               2    2[COMRAM] int 
-   598 ;;  index           2    0[COMRAM] int 
-   599 ;; Return value:  Size  Location     Type
-   600 ;;                  1    wreg      void 
-   601 ;; Registers used:
-   602 ;;		wreg, fsr2l, fsr2h, status,2, status,0
-   603 ;; Tracked objects:
-   604 ;;		On entry : 0/0
-   605 ;;		On exit  : 0/0
-   606 ;;		Unchanged: 0/0
-   607 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-   608 ;;      Params:         0       0       0       0       0       0       0       0       0
-   609 ;;      Locals:         4       0       0       0       0       0       0       0       0
-   610 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   611 ;;      Totals:         4       0       0       0       0       0       0       0       0
-   612 ;;Total ram usage:        4 bytes
-   613 ;; Hardware stack levels used: 1
-   614 ;; This function calls:
-   615 ;;		Nothing
-   616 ;; This function is called by:
-   617 ;;		_ISR
-   618 ;; This function uses a non-reentrant model
-   619 ;;
-   620                           
-   621                           	psect	text5
-   622   0000BE                     __ptext5:
-   623                           	callstack 0
-   624   0000BE                     _i2cStart:
-   625                           	callstack 123
-   626   0000BE                     i2l72:
-   627   0000BE  0102               	movlb	2	; () banked
-   628   0000C0  AD98               	btfss	152,6,b	;volatile
-   629   0000C2  EF65  F000         	goto	i2u1_41
-   630   0000C6  EF67  F000         	goto	i2u1_40
-   631   0000CA                     i2u1_41:
-   632   0000CA  EF5F  F000         	goto	i2l72
-   633   0000CE                     i2u1_40:
-   634   0000CE                     
-   635                           ; BSR set to: 2
-   636                           ;main.c: 104:     if(I2C1STAT0bits.R == 1){
-   637   0000CE  A998               	btfss	152,4,b	;volatile
-   638   0000D0  EF6C  F000         	goto	i2u2_41
-   639   0000D4  EF6E  F000         	goto	i2u2_40
-   640   0000D8                     i2u2_41:
-   641   0000D8  EF8C  F000         	goto	i2l75
-   642   0000DC                     i2u2_40:
-   643   0000DC                     
-   644                           ; BSR set to: 2
-   645                           ;main.c: 105:         for(int i = 1; i < 13; i ++){
-   646   0000DC  0E00               	movlw	0
-   647   0000DE  6E14               	movwf	(i2cStart@i+1)^(0+1280),c
-   648   0000E0  0E01               	movlw	1
-   649   0000E2  6E13               	movwf	i2cStart@i^(0+1280),c
-   650   0000E4                     i2l76:
-   651                           
-   652                           ; BSR set to: 2
-   653                           ;main.c: 106:             I2C1TXB = i;
-   654   0000E4  C513  F28B         	movff	i2cStart@i,651	;volatile
-   655                           
-   656                           ;main.c: 107:             I2C1CON0bits.CSTR = 0;
-   657   0000E8  9994               	bcf	148,4,b	;volatile
-   658   0000EA                     i2l78:
-   659                           
-   660                           ; BSR set to: 2
-   661   0000EA  A994               	btfss	148,4,b	;volatile
-   662   0000EC  EF7A  F000         	goto	i2u3_41
-   663   0000F0  EF7C  F000         	goto	i2u3_40
-   664   0000F4                     i2u3_41:
-   665   0000F4  EF75  F000         	goto	i2l78
-   666   0000F8                     i2u3_40:
-   667   0000F8                     
-   668                           ; BSR set to: 2
-   669                           ;main.c: 109:         }
-   670   0000F8  4A13               	infsnz	i2cStart@i^(0+1280),f,c
-   671   0000FA  2A14               	incf	(i2cStart@i+1)^(0+1280),f,c
-   672   0000FC                     
-   673                           ; BSR set to: 2
-   674   0000FC  BE14               	btfsc	(i2cStart@i+1)^(0+1280),7,c
-   675   0000FE  EF8A  F000         	goto	i2u4_41
-   676   000102  5014               	movf	(i2cStart@i+1)^(0+1280),w,c
-   677   000104  E109               	bnz	i2u4_40
-   678   000106  0E0D               	movlw	13
-   679   000108  5C13               	subwf	i2cStart@i^(0+1280),w,c
-   680   00010A  A0D8               	btfss	status,0,c
-   681   00010C  EF8A  F000         	goto	i2u4_41
-   682   000110  EF8C  F000         	goto	i2u4_40
-   683   000114                     i2u4_41:
-   684   000114  EF72  F000         	goto	i2l76
-   685   000118                     i2u4_40:
-   686   000118                     i2l75:
-   687                           
-   688                           ; BSR set to: 2
-   689                           ;main.c: 113:     if(I2C1STAT0bits.R == 0){
-   690   000118  B998               	btfsc	152,4,b	;volatile
-   691   00011A  EF91  F000         	goto	i2u5_41
-   692   00011E  EF93  F000         	goto	i2u5_40
-   693   000122                     i2u5_41:
-   694   000122  EFB5  F000         	goto	i2l872
-   695   000126                     i2u5_40:
-   696   000126                     
-   697                           ; BSR set to: 2
-   698                           ;main.c: 114:         int index = 0;
-   699   000126  0E00               	movlw	0
-   700   000128  6E12               	movwf	(i2cStart@index+1)^(0+1280),c
-   701   00012A  0E00               	movlw	0
-   702   00012C  6E11               	movwf	i2cStart@index^(0+1280),c
-   703                           
-   704                           ;main.c: 115:         while(I2C1CNTL > 0){
-   705   00012E  EFAD  F000         	goto	i2l870
-   706   000132                     i2l83:
-   707                           
-   708                           ; BSR set to: 2
-   709                           ;main.c: 116:             I2C1CON0bits.CSTR = 0;
-   710   000132  9994               	bcf	148,4,b	;volatile
-   711   000134                     i2l84:
-   712                           
-   713                           ; BSR set to: 2
-   714   000134  A199               	btfss	153,0,b	;volatile
-   715   000136  EF9F  F000         	goto	i2u6_41
-   716   00013A  EFA1  F000         	goto	i2u6_40
-   717   00013E                     i2u6_41:
-   718   00013E  EF9A  F000         	goto	i2l84
-   719   000142                     i2u6_40:
-   720   000142                     
-   721                           ; BSR set to: 2
-   722                           ;main.c: 118:             i2cBuffer[index] = I2C1RXB;
-   723   000142  0E01               	movlw	low _i2cBuffer
-   724   000144  2411               	addwf	i2cStart@index^(0+1280),w,c
-   725   000146  6ED9               	movwf	fsr2l,c
-   726   000148  0E05               	movlw	high _i2cBuffer
-   727   00014A  2012               	addwfc	(i2cStart@index+1)^(0+1280),w,c
-   728   00014C  6EDA               	movwf	fsr2h,c
-   729   00014E  C28A F4DF          	movff	650,indf2	;volatile
-   730   000152                     
-   731                           ; BSR set to: 2
-   732                           ;main.c: 119:             I2C1CON1bits.ACKDT = 0;
-   733   000152  9D95               	bcf	149,6,b	;volatile
-   734   000154                     
-   735                           ; BSR set to: 2
-   736                           ;main.c: 120:             I2C1CON0bits.CSTR = 0;
-   737   000154  9994               	bcf	148,4,b	;volatile
-   738   000156                     
-   739                           ; BSR set to: 2
-   740                           ;main.c: 121:             index++;
-   741   000156  4A11               	infsnz	i2cStart@index^(0+1280),f,c
-   742   000158  2A12               	incf	(i2cStart@index+1)^(0+1280),f,c
-   743   00015A                     i2l870:
-   744                           
+   520   000270                     
+   521                           ;main.c: 145:     I2C1CNTL = 0x0F;
+   522   000270  0E0F               	movlw	15
+   523   000272  0102               	movlb	2	; () banked
+   524   000274  6F8C               	movwf	140,b	;volatile
+   525   000276                     
+   526                           ; BSR set to: 2
+   527   000276  0012               	return		;funcret
+   528   000278                     __end_of_loop:
+   529                           	callstack 0
+   530                           
+   531 ;; *************** function _ISR *****************
+   532 ;; Defined at:
+   533 ;;		line 130 in file "main.c"
+   534 ;; Parameters:    Size  Location     Type
+   535 ;;		None
+   536 ;; Auto vars:     Size  Location     Type
+   537 ;;		None
+   538 ;; Return value:  Size  Location     Type
+   539 ;;                  1    wreg      void 
+   540 ;; Registers used:
+   541 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   542 ;; Tracked objects:
+   543 ;;		On entry : 0/0
+   544 ;;		On exit  : 0/0
+   545 ;;		Unchanged: 0/0
+   546 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   547 ;;      Params:         0       0       0       0       0       0       0       0       0
+   548 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   549 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   550 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   551 ;;Total ram usage:        0 bytes
+   552 ;; Hardware stack levels used: 1
+   553 ;; Hardware stack levels required when called: 1
+   554 ;; This function calls:
+   555 ;;		_i2cStart
+   556 ;; This function is called by:
+   557 ;;		Interrupt level 2
+   558 ;; This function uses a non-reentrant model
+   559 ;;
+   560                           
+   561                           	psect	text4
+   562   000234                     __ptext4:
+   563                           	callstack 0
+   564   000234                     _ISR:
+   565                           	callstack 123
+   566   000234                     
+   567                           ;main.c: 131:     if(I2C1PIRbits.SCIF == 1){
+   568   000234  0102               	movlb	2	; () banked
+   569   000236  A19A               	btfss	154,0,b	;volatile
+   570   000238  EF20  F001         	goto	i2u9_41
+   571   00023C  EF22  F001         	goto	i2u9_40
+   572   000240                     i2u9_41:
+   573   000240  EF25  F001         	goto	i2l95
+   574   000244                     i2u9_40:
+   575   000244                     
+   576                           ; BSR set to: 2
+   577                           ;main.c: 132:         I2C1PIRbits.SCIF = 0;
+   578   000244  919A               	bcf	154,0,b	;volatile
+   579   000246                     
+   580                           ; BSR set to: 2
+   581                           ;main.c: 133:         i2cStart();
+   582   000246  EC5F  F000         	call	_i2cStart	;wreg free
+   583   00024A                     i2l95:
+   584   00024A  0011               	retfie		f
+   585   00024C                     __end_of_ISR:
+   586                           	callstack 0
+   587                           
+   588 ;; *************** function _i2cStart *****************
+   589 ;; Defined at:
+   590 ;;		line 95 in file "main.c"
+   591 ;; Parameters:    Size  Location     Type
+   592 ;;		None
+   593 ;; Auto vars:     Size  Location     Type
+   594 ;;  i               2    2[COMRAM] int 
+   595 ;;  index           2    0[COMRAM] int 
+   596 ;; Return value:  Size  Location     Type
+   597 ;;                  1    wreg      void 
+   598 ;; Registers used:
+   599 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   600 ;; Tracked objects:
+   601 ;;		On entry : 0/0
+   602 ;;		On exit  : 0/0
+   603 ;;		Unchanged: 0/0
+   604 ;; Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+   605 ;;      Params:         0       0       0       0       0       0       0       0       0
+   606 ;;      Locals:         4       0       0       0       0       0       0       0       0
+   607 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   608 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   609 ;;Total ram usage:        4 bytes
+   610 ;; Hardware stack levels used: 1
+   611 ;; This function calls:
+   612 ;;		Nothing
+   613 ;; This function is called by:
+   614 ;;		_ISR
+   615 ;; This function uses a non-reentrant model
+   616 ;;
+   617                           
+   618                           	psect	text5
+   619   0000BE                     __ptext5:
+   620                           	callstack 0
+   621   0000BE                     _i2cStart:
+   622                           	callstack 123
+   623   0000BE                     i2l70:
+   624   0000BE  0102               	movlb	2	; () banked
+   625   0000C0  AD98               	btfss	152,6,b	;volatile
+   626   0000C2  EF65  F000         	goto	i2u1_41
+   627   0000C6  EF67  F000         	goto	i2u1_40
+   628   0000CA                     i2u1_41:
+   629   0000CA  EF5F  F000         	goto	i2l70
+   630   0000CE                     i2u1_40:
+   631   0000CE                     
+   632                           ; BSR set to: 2
+   633                           ;main.c: 104:     if(I2C1STAT0bits.R == 1){
+   634   0000CE  A998               	btfss	152,4,b	;volatile
+   635   0000D0  EF6C  F000         	goto	i2u2_41
+   636   0000D4  EF6E  F000         	goto	i2u2_40
+   637   0000D8                     i2u2_41:
+   638   0000D8  EF8C  F000         	goto	i2l79
+   639   0000DC                     i2u2_40:
+   640   0000DC                     
+   641                           ; BSR set to: 2
+   642                           ;main.c: 105:         I2C1CON0bits.CSTR = 0;
+   643   0000DC  9994               	bcf	148,4,b	;volatile
+   644   0000DE                     
+   645                           ; BSR set to: 2
+   646                           ;main.c: 106:         for(int i = 1; i < 13; i ++){
+   647   0000DE  0E00               	movlw	0
+   648   0000E0  6E14               	movwf	(i2cStart@i+1)^(0+1280),c
+   649   0000E2  0E01               	movlw	1
+   650   0000E4  6E13               	movwf	i2cStart@i^(0+1280),c
+   651   0000E6                     i2l74:
+   652                           
+   653                           ; BSR set to: 2
+   654                           ;main.c: 107:             I2C1TXB = i;
+   655   0000E6  C513  F28B         	movff	i2cStart@i,651	;volatile
+   656   0000EA                     i2l76:
+   657                           
+   658                           ; BSR set to: 2
+   659   0000EA  AB99               	btfss	153,5,b	;volatile
+   660   0000EC  EF7A  F000         	goto	i2u3_41
+   661   0000F0  EF7C  F000         	goto	i2u3_40
+   662   0000F4                     i2u3_41:
+   663   0000F4  EF75  F000         	goto	i2l76
+   664   0000F8                     i2u3_40:
+   665   0000F8                     
+   666                           ; BSR set to: 2
+   667                           ;main.c: 109:         }
+   668   0000F8  4A13               	infsnz	i2cStart@i^(0+1280),f,c
+   669   0000FA  2A14               	incf	(i2cStart@i+1)^(0+1280),f,c
+   670   0000FC                     
+   671                           ; BSR set to: 2
+   672   0000FC  BE14               	btfsc	(i2cStart@i+1)^(0+1280),7,c
+   673   0000FE  EF8A  F000         	goto	i2u4_41
+   674   000102  5014               	movf	(i2cStart@i+1)^(0+1280),w,c
+   675   000104  E109               	bnz	i2u4_40
+   676   000106  0E0D               	movlw	13
+   677   000108  5C13               	subwf	i2cStart@i^(0+1280),w,c
+   678   00010A  A0D8               	btfss	status,0,c
+   679   00010C  EF8A  F000         	goto	i2u4_41
+   680   000110  EF8C  F000         	goto	i2u4_40
+   681   000114                     i2u4_41:
+   682   000114  EF73  F000         	goto	i2l74
+   683   000118                     i2u4_40:
+   684   000118                     i2l79:
+   685                           
+   686                           ; BSR set to: 2
+   687   000118  A995               	btfss	149,4,b	;volatile
+   688   00011A  EF91  F000         	goto	i2u5_41
+   689   00011E  EF93  F000         	goto	i2u5_40
+   690   000122                     i2u5_41:
+   691   000122  EF8C  F000         	goto	i2l79
+   692   000126                     i2u5_40:
+   693   000126                     
+   694                           ; BSR set to: 2
+   695                           ;main.c: 113:     if(I2C1STAT0bits.R == 0){
+   696   000126  B998               	btfsc	152,4,b	;volatile
+   697   000128  EF98  F000         	goto	i2u6_41
+   698   00012C  EF9A  F000         	goto	i2u6_40
+   699   000130                     i2u6_41:
+   700   000130  EFBC  F000         	goto	i2l82
+   701   000134                     i2u6_40:
+   702   000134                     
+   703                           ; BSR set to: 2
+   704                           ;main.c: 114:         int index = 0;
+   705   000134  0E00               	movlw	0
+   706   000136  6E12               	movwf	(i2cStart@index+1)^(0+1280),c
+   707   000138  0E00               	movlw	0
+   708   00013A  6E11               	movwf	i2cStart@index^(0+1280),c
+   709                           
+   710                           ;main.c: 115:         while(I2C1CNTL > 0){
+   711   00013C  EFB4  F000         	goto	i2l873
+   712   000140                     i2l84:
+   713                           
+   714                           ; BSR set to: 2
+   715                           ;main.c: 116:             I2C1CON0bits.CSTR = 0;
+   716   000140  9994               	bcf	148,4,b	;volatile
+   717   000142                     i2l85:
+   718                           
+   719                           ; BSR set to: 2
+   720   000142  A199               	btfss	153,0,b	;volatile
+   721   000144  EFA6  F000         	goto	i2u7_41
+   722   000148  EFA8  F000         	goto	i2u7_40
+   723   00014C                     i2u7_41:
+   724   00014C  EFA1  F000         	goto	i2l85
+   725   000150                     i2u7_40:
+   726   000150                     
+   727                           ; BSR set to: 2
+   728                           ;main.c: 118:             i2cBuffer[index] = I2C1RXB;
+   729   000150  0E01               	movlw	low _i2cBuffer
+   730   000152  2411               	addwf	i2cStart@index^(0+1280),w,c
+   731   000154  6ED9               	movwf	fsr2l,c
+   732   000156  0E05               	movlw	high _i2cBuffer
+   733   000158  2012               	addwfc	(i2cStart@index+1)^(0+1280),w,c
+   734   00015A  6EDA               	movwf	fsr2h,c
+   735   00015C  C28A F4DF          	movff	650,indf2	;volatile
+   736   000160                     
+   737                           ; BSR set to: 2
+   738                           ;main.c: 119:             I2C1CON1bits.ACKDT = 0;
+   739   000160  9D95               	bcf	149,6,b	;volatile
+   740   000162                     
+   741                           ; BSR set to: 2
+   742                           ;main.c: 120:             I2C1CON0bits.CSTR = 0;
+   743   000162  9994               	bcf	148,4,b	;volatile
+   744   000164                     
    745                           ; BSR set to: 2
-   746                           ;main.c: 115:         while(I2C1CNTL > 0){
-   747   00015A  518C               	movf	140,w,b	;volatile
-   748   00015C  A4D8               	btfss	status,2,c
-   749   00015E  EFB3  F000         	goto	i2u7_41
-   750   000162  EFB5  F000         	goto	i2u7_40
-   751   000166                     i2u7_41:
-   752   000166  EF99  F000         	goto	i2l83
-   753   00016A                     i2u7_40:
-   754   00016A                     i2l872:
-   755                           
-   756                           ; BSR set to: 2
-   757                           ;main.c: 126:     I2C1PIR = 0x00;
-   758   00016A  0E00               	movlw	0
-   759   00016C  6F9A               	movwf	154,b	;volatile
-   760   00016E                     
-   761                           ; BSR set to: 2
-   762   00016E  0012               	return		;funcret
-   763   000170                     __end_of_i2cStart:
-   764                           	callstack 0
-   765                           
-   766                           ;
-   767                           ; Interrupt Vector Table @ 0x8
-   768                           ;
-   769                           
-   770                           	psect	ivt0x8
-   771   000008                     __pivt0x8:
-   772                           	callstack 0
-   773   000008                     ivt0x8_base:
-   774                           	callstack 0
-   775                           
-   776                           ; Vector 0 : SWINT
-   777   000008  002E               	dw	ivt0x8_undefint shr (0+2)
-   778                           
-   779                           ; Vector 1 : HLVD
-   780   00000A  002E               	dw	ivt0x8_undefint shr (0+2)
-   781                           
-   782                           ; Vector 2 : OSF
-   783   00000C  002E               	dw	ivt0x8_undefint shr (0+2)
-   784                           
-   785                           ; Vector 3 : CSW
-   786   00000E  002E               	dw	ivt0x8_undefint shr (0+2)
-   787                           
-   788                           ; Vector 4 : NVMIP
-   789   000010  002E               	dw	ivt0x8_undefint shr (0+2)
-   790                           
-   791                           ; Vector 5 : CLC1
-   792   000012  002E               	dw	ivt0x8_undefint shr (0+2)
-   793                           
-   794                           ; Vector 6 : CRC
-   795   000014  002E               	dw	ivt0x8_undefint shr (0+2)
-   796                           
-   797                           ; Vector 7 : IOC
-   798   000016  002E               	dw	ivt0x8_undefint shr (0+2)
-   799                           
-   800                           ; Vector 8 : INT0
-   801   000018  002E               	dw	ivt0x8_undefint shr (0+2)
-   802                           
-   803                           ; Vector 9 : ZCD
-   804   00001A  002E               	dw	ivt0x8_undefint shr (0+2)
-   805                           
-   806                           ; Vector 10 : AD
-   807   00001C  002E               	dw	ivt0x8_undefint shr (0+2)
-   808                           
-   809                           ; Vector 11 : ACT
-   810   00001E  002E               	dw	ivt0x8_undefint shr (0+2)
-   811                           
-   812                           ; Vector 12 : CMP1
-   813   000020  002E               	dw	ivt0x8_undefint shr (0+2)
-   814                           
-   815                           ; Vector 13 : SMT1
-   816   000022  002E               	dw	ivt0x8_undefint shr (0+2)
-   817                           
-   818                           ; Vector 14 : SMT1PRA
-   819   000024  002E               	dw	ivt0x8_undefint shr (0+2)
-   820                           
-   821                           ; Vector 15 : SMT1PWA
-   822   000026  002E               	dw	ivt0x8_undefint shr (0+2)
-   823                           
-   824                           ; Vector 16 : ADT
-   825   000028  002E               	dw	ivt0x8_undefint shr (0+2)
-   826                           
-   827                           ; Vector 17 : Undefined
-   828   00002A  002E               	dw	ivt0x8_undefint shr (0+2)
-   829                           
-   830                           ; Vector 18 : Undefined
-   831   00002C  002E               	dw	ivt0x8_undefint shr (0+2)
-   832                           
-   833                           ; Vector 19 : Undefined
-   834   00002E  002E               	dw	ivt0x8_undefint shr (0+2)
-   835                           
-   836                           ; Vector 20 : DMA1SCNT
-   837   000030  002E               	dw	ivt0x8_undefint shr (0+2)
-   838                           
-   839                           ; Vector 21 : DMA1DCNT
-   840   000032  002E               	dw	ivt0x8_undefint shr (0+2)
-   841                           
-   842                           ; Vector 22 : DMA1OR
-   843   000034  002E               	dw	ivt0x8_undefint shr (0+2)
-   844                           
-   845                           ; Vector 23 : DMA1A
-   846   000036  002E               	dw	ivt0x8_undefint shr (0+2)
-   847                           
-   848                           ; Vector 24 : SPI1RX
-   849   000038  002E               	dw	ivt0x8_undefint shr (0+2)
-   850                           
-   851                           ; Vector 25 : SPI1TX
-   852   00003A  002E               	dw	ivt0x8_undefint shr (0+2)
-   853                           
-   854                           ; Vector 26 : SPI1
-   855   00003C  002E               	dw	ivt0x8_undefint shr (0+2)
-   856                           
-   857                           ; Vector 27 : TMR2
-   858   00003E  002E               	dw	ivt0x8_undefint shr (0+2)
-   859                           
-   860                           ; Vector 28 : TMR1
-   861   000040  002E               	dw	ivt0x8_undefint shr (0+2)
-   862                           
-   863                           ; Vector 29 : TMR1G
-   864   000042  002E               	dw	ivt0x8_undefint shr (0+2)
-   865                           
-   866                           ; Vector 30 : CCP1
-   867   000044  002E               	dw	ivt0x8_undefint shr (0+2)
-   868                           
-   869                           ; Vector 31 : TMR0
-   870   000046  002E               	dw	ivt0x8_undefint shr (0+2)
-   871                           
-   872                           ; Vector 32 : U1RX
-   873   000048  002E               	dw	ivt0x8_undefint shr (0+2)
-   874                           
-   875                           ; Vector 33 : U1TX
-   876   00004A  002E               	dw	ivt0x8_undefint shr (0+2)
-   877                           
-   878                           ; Vector 34 : U1E
-   879   00004C  002E               	dw	ivt0x8_undefint shr (0+2)
-   880                           
-   881                           ; Vector 35 : U1
-   882   00004E  002E               	dw	ivt0x8_undefint shr (0+2)
-   883                           
-   884                           ; Vector 36 : TMR3
-   885   000050  002E               	dw	ivt0x8_undefint shr (0+2)
-   886                           
-   887                           ; Vector 37 : TMR3G
-   888   000052  002E               	dw	ivt0x8_undefint shr (0+2)
-   889                           
-   890                           ; Vector 38 : PWM1PR
-   891   000054  002E               	dw	ivt0x8_undefint shr (0+2)
-   892                           
-   893                           ; Vector 39 : PWM1
-   894   000056  002E               	dw	ivt0x8_undefint shr (0+2)
-   895                           
-   896                           ; Vector 40 : SPI2RX
-   897   000058  002E               	dw	ivt0x8_undefint shr (0+2)
-   898                           
-   899                           ; Vector 41 : SPI2TX
-   900   00005A  002E               	dw	ivt0x8_undefint shr (0+2)
-   901                           
-   902                           ; Vector 42 : SPI2
-   903   00005C  002E               	dw	ivt0x8_undefint shr (0+2)
-   904                           
-   905                           ; Vector 43 : Undefined
-   906   00005E  002E               	dw	ivt0x8_undefint shr (0+2)
-   907                           
-   908                           ; Vector 44 : CMP2
-   909   000060  002E               	dw	ivt0x8_undefint shr (0+2)
-   910                           
-   911                           ; Vector 45 : CLC2
-   912   000062  002E               	dw	ivt0x8_undefint shr (0+2)
-   913                           
-   914                           ; Vector 46 : PWM2PR
-   915   000064  002E               	dw	ivt0x8_undefint shr (0+2)
-   916                           
-   917                           ; Vector 47 : PWM2
-   918   000066  002E               	dw	ivt0x8_undefint shr (0+2)
-   919                           
-   920                           ; Vector 48 : INT1
-   921   000068  002E               	dw	ivt0x8_undefint shr (0+2)
-   922                           
-   923                           ; Vector 49 : CWG1
-   924   00006A  002E               	dw	ivt0x8_undefint shr (0+2)
-   925                           
-   926                           ; Vector 50 : NCO1
-   927   00006C  002E               	dw	ivt0x8_undefint shr (0+2)
-   928                           
-   929                           ; Vector 51 : DMA2SCNT
-   930   00006E  002E               	dw	ivt0x8_undefint shr (0+2)
-   931                           
-   932                           ; Vector 52 : DMA2DCNT
-   933   000070  002E               	dw	ivt0x8_undefint shr (0+2)
-   934                           
-   935                           ; Vector 53 : DMA2OR
-   936   000072  002E               	dw	ivt0x8_undefint shr (0+2)
-   937                           
-   938                           ; Vector 54 : DMA2A
-   939   000074  002E               	dw	ivt0x8_undefint shr (0+2)
-   940                           
-   941                           ; Vector 55 : Undefined
-   942   000076  002E               	dw	ivt0x8_undefint shr (0+2)
-   943                           
-   944                           ; Vector 56 : I2C1RX
-   945   000078  002E               	dw	ivt0x8_undefint shr (0+2)
-   946                           
-   947                           ; Vector 57 : I2C1TX
-   948   00007A  002E               	dw	ivt0x8_undefint shr (0+2)
-   949                           
-   950                           ; Vector 58 : I2C1
-   951   00007C  0088               	dw	_ISR shr (0+2)
-   952                           
-   953                           ; Vector 59 : I2C1E
-   954   00007E  002E               	dw	ivt0x8_undefint shr (0+2)
-   955                           
-   956                           ; Vector 60 : Undefined
-   957   000080  002E               	dw	ivt0x8_undefint shr (0+2)
-   958                           
-   959                           ; Vector 61 : CLC3
-   960   000082  002E               	dw	ivt0x8_undefint shr (0+2)
-   961                           
-   962                           ; Vector 62 : PWM3PR
-   963   000084  002E               	dw	ivt0x8_undefint shr (0+2)
-   964                           
-   965                           ; Vector 63 : PWM3
-   966   000086  002E               	dw	ivt0x8_undefint shr (0+2)
-   967                           
-   968                           ; Vector 64 : U2RX
-   969   000088  002E               	dw	ivt0x8_undefint shr (0+2)
-   970                           
-   971                           ; Vector 65 : U2TX
-   972   00008A  002E               	dw	ivt0x8_undefint shr (0+2)
-   973                           
-   974                           ; Vector 66 : U2E
-   975   00008C  002E               	dw	ivt0x8_undefint shr (0+2)
-   976                           
-   977                           ; Vector 67 : U2
-   978   00008E  002E               	dw	ivt0x8_undefint shr (0+2)
-   979                           
-   980                           ; Vector 68 : Undefined
-   981   000090  002E               	dw	ivt0x8_undefint shr (0+2)
-   982                           
-   983                           ; Vector 69 : CLC4
-   984   000092  002E               	dw	ivt0x8_undefint shr (0+2)
-   985                           
-   986                           ; Vector 70 : Undefined
-   987   000094  002E               	dw	ivt0x8_undefint shr (0+2)
-   988                           
-   989                           ; Vector 71 : SCAN
-   990   000096  002E               	dw	ivt0x8_undefint shr (0+2)
-   991                           
-   992                           ; Vector 72 : U3RX
-   993   000098  002E               	dw	ivt0x8_undefint shr (0+2)
-   994                           
-   995                           ; Vector 73 : U3TX
-   996   00009A  002E               	dw	ivt0x8_undefint shr (0+2)
-   997                           
-   998                           ; Vector 74 : U3E
-   999   00009C  002E               	dw	ivt0x8_undefint shr (0+2)
-  1000                           
-  1001                           ; Vector 75 : U3
-  1002   00009E  002E               	dw	ivt0x8_undefint shr (0+2)
-  1003                           
-  1004                           ; Vector 76 : DMA3SCNT
-  1005   0000A0  002E               	dw	ivt0x8_undefint shr (0+2)
-  1006                           
-  1007                           ; Vector 77 : DMA3DCNT
-  1008   0000A2  002E               	dw	ivt0x8_undefint shr (0+2)
-  1009                           
-  1010                           ; Vector 78 : DMA3OR
-  1011   0000A4  002E               	dw	ivt0x8_undefint shr (0+2)
-  1012                           
-  1013                           ; Vector 79 : DMA3A
-  1014   0000A6  002E               	dw	ivt0x8_undefint shr (0+2)
-  1015                           
-  1016                           ; Vector 80 : INT2
-  1017   0000A8  002E               	dw	ivt0x8_undefint shr (0+2)
-  1018                           
-  1019                           ; Vector 81 : Undefined
-  1020   0000AA  002E               	dw	ivt0x8_undefint shr (0+2)
-  1021                           
-  1022                           ; Vector 82 : Undefined
-  1023   0000AC  002E               	dw	ivt0x8_undefint shr (0+2)
-  1024                           
-  1025                           ; Vector 83 : TMR4
-  1026   0000AE  002E               	dw	ivt0x8_undefint shr (0+2)
-  1027                           
-  1028                           ; Vector 84 : DMA4SCNT
-  1029   0000B0  002E               	dw	ivt0x8_undefint shr (0+2)
-  1030                           
-  1031                           ; Vector 85 : DMA4DCNT
-  1032   0000B2  002E               	dw	ivt0x8_undefint shr (0+2)
-  1033                           
-  1034                           ; Vector 86 : DMA4OR
-  1035   0000B4  002E               	dw	ivt0x8_undefint shr (0+2)
-  1036                           
-  1037                           ; Vector 87 : DMA4A
-  1038   0000B6  002E               	dw	ivt0x8_undefint shr (0+2)
-  1039   0000B8                     ivt0x8_undefint:
-  1040                           	callstack 0
-  1041   0000B8  00FF               	reset	
-  1042   000000                     
-  1043                           	psect	rparam
-  1044   000000                     tosu	equ	0x4FF
-  1045                           tosh	equ	0x4FE
-  1046                           tosl	equ	0x4FD
-  1047                           stkptr	equ	0x4FC
-  1048                           pclatu	equ	0x4FB
-  1049                           pclath	equ	0x4FA
-  1050                           pcl	equ	0x4F9
-  1051                           tblptru	equ	0x4F8
-  1052                           tblptrh	equ	0x4F7
-  1053                           tblptrl	equ	0x4F6
-  1054                           tablat	equ	0x4F5
-  1055                           prodh	equ	0x4F4
-  1056                           prodl	equ	0x4F3
-  1057                           indf0	equ	0x4EF
-  1058                           postinc0	equ	0x4EE
-  1059                           postdec0	equ	0x4ED
-  1060                           preinc0	equ	0x4EC
-  1061                           plusw0	equ	0x4EB
-  1062                           fsr0h	equ	0x4EA
-  1063                           fsr0l	equ	0x4E9
-  1064                           wreg	equ	0x4E8
-  1065                           indf1	equ	0x4E7
-  1066                           postinc1	equ	0x4E6
-  1067                           postdec1	equ	0x4E5
-  1068                           preinc1	equ	0x4E4
-  1069                           plusw1	equ	0x4E3
-  1070                           fsr1h	equ	0x4E2
-  1071                           fsr1l	equ	0x4E1
-  1072                           bsr	equ	0x4E0
-  1073                           indf2	equ	0x4DF
-  1074                           postinc2	equ	0x4DE
-  1075                           postdec2	equ	0x4DD
-  1076                           preinc2	equ	0x4DC
-  1077                           plusw2	equ	0x4DB
-  1078                           fsr2h	equ	0x4DA
-  1079                           fsr2l	equ	0x4D9
-  1080                           status	equ	0x4D8
+   746                           ;main.c: 121:             index++;
+   747   000164  4A11               	infsnz	i2cStart@index^(0+1280),f,c
+   748   000166  2A12               	incf	(i2cStart@index+1)^(0+1280),f,c
+   749   000168                     i2l873:
+   750                           
+   751                           ; BSR set to: 2
+   752                           ;main.c: 115:         while(I2C1CNTL > 0){
+   753   000168  518C               	movf	140,w,b	;volatile
+   754   00016A  A4D8               	btfss	status,2,c
+   755   00016C  EFBA  F000         	goto	i2u8_41
+   756   000170  EFBC  F000         	goto	i2u8_40
+   757   000174                     i2u8_41:
+   758   000174  EFA0  F000         	goto	i2l84
+   759   000178                     i2u8_40:
+   760   000178                     i2l82:
+   761                           
+   762                           ; BSR set to: 2
+   763                           ;main.c: 125:     I2C1CON0bits.EN = 0;
+   764   000178  9F94               	bcf	148,7,b	;volatile
+   765   00017A                     
+   766                           ; BSR set to: 2
+   767                           ;main.c: 126:     I2C1PIR = 0x00;
+   768   00017A  0E00               	movlw	0
+   769   00017C  6F9A               	movwf	154,b	;volatile
+   770   00017E                     
+   771                           ; BSR set to: 2
+   772                           ;main.c: 127:     I2C1CON0bits.EN = 1;
+   773   00017E  8F94               	bsf	148,7,b	;volatile
+   774   000180                     
+   775                           ; BSR set to: 2
+   776   000180  0012               	return		;funcret
+   777   000182                     __end_of_i2cStart:
+   778                           	callstack 0
+   779                           
+   780                           ;
+   781                           ; Interrupt Vector Table @ 0x8
+   782                           ;
+   783                           
+   784                           	psect	ivt0x8
+   785   000008                     __pivt0x8:
+   786                           	callstack 0
+   787   000008                     ivt0x8_base:
+   788                           	callstack 0
+   789                           
+   790                           ; Vector 0 : SWINT
+   791   000008  002E               	dw	ivt0x8_undefint shr (0+2)
+   792                           
+   793                           ; Vector 1 : HLVD
+   794   00000A  002E               	dw	ivt0x8_undefint shr (0+2)
+   795                           
+   796                           ; Vector 2 : OSF
+   797   00000C  002E               	dw	ivt0x8_undefint shr (0+2)
+   798                           
+   799                           ; Vector 3 : CSW
+   800   00000E  002E               	dw	ivt0x8_undefint shr (0+2)
+   801                           
+   802                           ; Vector 4 : NVMIP
+   803   000010  002E               	dw	ivt0x8_undefint shr (0+2)
+   804                           
+   805                           ; Vector 5 : CLC1
+   806   000012  002E               	dw	ivt0x8_undefint shr (0+2)
+   807                           
+   808                           ; Vector 6 : CRC
+   809   000014  002E               	dw	ivt0x8_undefint shr (0+2)
+   810                           
+   811                           ; Vector 7 : IOC
+   812   000016  002E               	dw	ivt0x8_undefint shr (0+2)
+   813                           
+   814                           ; Vector 8 : INT0
+   815   000018  002E               	dw	ivt0x8_undefint shr (0+2)
+   816                           
+   817                           ; Vector 9 : ZCD
+   818   00001A  002E               	dw	ivt0x8_undefint shr (0+2)
+   819                           
+   820                           ; Vector 10 : AD
+   821   00001C  002E               	dw	ivt0x8_undefint shr (0+2)
+   822                           
+   823                           ; Vector 11 : ACT
+   824   00001E  002E               	dw	ivt0x8_undefint shr (0+2)
+   825                           
+   826                           ; Vector 12 : CMP1
+   827   000020  002E               	dw	ivt0x8_undefint shr (0+2)
+   828                           
+   829                           ; Vector 13 : SMT1
+   830   000022  002E               	dw	ivt0x8_undefint shr (0+2)
+   831                           
+   832                           ; Vector 14 : SMT1PRA
+   833   000024  002E               	dw	ivt0x8_undefint shr (0+2)
+   834                           
+   835                           ; Vector 15 : SMT1PWA
+   836   000026  002E               	dw	ivt0x8_undefint shr (0+2)
+   837                           
+   838                           ; Vector 16 : ADT
+   839   000028  002E               	dw	ivt0x8_undefint shr (0+2)
+   840                           
+   841                           ; Vector 17 : Undefined
+   842   00002A  002E               	dw	ivt0x8_undefint shr (0+2)
+   843                           
+   844                           ; Vector 18 : Undefined
+   845   00002C  002E               	dw	ivt0x8_undefint shr (0+2)
+   846                           
+   847                           ; Vector 19 : Undefined
+   848   00002E  002E               	dw	ivt0x8_undefint shr (0+2)
+   849                           
+   850                           ; Vector 20 : DMA1SCNT
+   851   000030  002E               	dw	ivt0x8_undefint shr (0+2)
+   852                           
+   853                           ; Vector 21 : DMA1DCNT
+   854   000032  002E               	dw	ivt0x8_undefint shr (0+2)
+   855                           
+   856                           ; Vector 22 : DMA1OR
+   857   000034  002E               	dw	ivt0x8_undefint shr (0+2)
+   858                           
+   859                           ; Vector 23 : DMA1A
+   860   000036  002E               	dw	ivt0x8_undefint shr (0+2)
+   861                           
+   862                           ; Vector 24 : SPI1RX
+   863   000038  002E               	dw	ivt0x8_undefint shr (0+2)
+   864                           
+   865                           ; Vector 25 : SPI1TX
+   866   00003A  002E               	dw	ivt0x8_undefint shr (0+2)
+   867                           
+   868                           ; Vector 26 : SPI1
+   869   00003C  002E               	dw	ivt0x8_undefint shr (0+2)
+   870                           
+   871                           ; Vector 27 : TMR2
+   872   00003E  002E               	dw	ivt0x8_undefint shr (0+2)
+   873                           
+   874                           ; Vector 28 : TMR1
+   875   000040  002E               	dw	ivt0x8_undefint shr (0+2)
+   876                           
+   877                           ; Vector 29 : TMR1G
+   878   000042  002E               	dw	ivt0x8_undefint shr (0+2)
+   879                           
+   880                           ; Vector 30 : CCP1
+   881   000044  002E               	dw	ivt0x8_undefint shr (0+2)
+   882                           
+   883                           ; Vector 31 : TMR0
+   884   000046  002E               	dw	ivt0x8_undefint shr (0+2)
+   885                           
+   886                           ; Vector 32 : U1RX
+   887   000048  002E               	dw	ivt0x8_undefint shr (0+2)
+   888                           
+   889                           ; Vector 33 : U1TX
+   890   00004A  002E               	dw	ivt0x8_undefint shr (0+2)
+   891                           
+   892                           ; Vector 34 : U1E
+   893   00004C  002E               	dw	ivt0x8_undefint shr (0+2)
+   894                           
+   895                           ; Vector 35 : U1
+   896   00004E  002E               	dw	ivt0x8_undefint shr (0+2)
+   897                           
+   898                           ; Vector 36 : TMR3
+   899   000050  002E               	dw	ivt0x8_undefint shr (0+2)
+   900                           
+   901                           ; Vector 37 : TMR3G
+   902   000052  002E               	dw	ivt0x8_undefint shr (0+2)
+   903                           
+   904                           ; Vector 38 : PWM1PR
+   905   000054  002E               	dw	ivt0x8_undefint shr (0+2)
+   906                           
+   907                           ; Vector 39 : PWM1
+   908   000056  002E               	dw	ivt0x8_undefint shr (0+2)
+   909                           
+   910                           ; Vector 40 : SPI2RX
+   911   000058  002E               	dw	ivt0x8_undefint shr (0+2)
+   912                           
+   913                           ; Vector 41 : SPI2TX
+   914   00005A  002E               	dw	ivt0x8_undefint shr (0+2)
+   915                           
+   916                           ; Vector 42 : SPI2
+   917   00005C  002E               	dw	ivt0x8_undefint shr (0+2)
+   918                           
+   919                           ; Vector 43 : Undefined
+   920   00005E  002E               	dw	ivt0x8_undefint shr (0+2)
+   921                           
+   922                           ; Vector 44 : CMP2
+   923   000060  002E               	dw	ivt0x8_undefint shr (0+2)
+   924                           
+   925                           ; Vector 45 : CLC2
+   926   000062  002E               	dw	ivt0x8_undefint shr (0+2)
+   927                           
+   928                           ; Vector 46 : PWM2PR
+   929   000064  002E               	dw	ivt0x8_undefint shr (0+2)
+   930                           
+   931                           ; Vector 47 : PWM2
+   932   000066  002E               	dw	ivt0x8_undefint shr (0+2)
+   933                           
+   934                           ; Vector 48 : INT1
+   935   000068  002E               	dw	ivt0x8_undefint shr (0+2)
+   936                           
+   937                           ; Vector 49 : CWG1
+   938   00006A  002E               	dw	ivt0x8_undefint shr (0+2)
+   939                           
+   940                           ; Vector 50 : NCO1
+   941   00006C  002E               	dw	ivt0x8_undefint shr (0+2)
+   942                           
+   943                           ; Vector 51 : DMA2SCNT
+   944   00006E  002E               	dw	ivt0x8_undefint shr (0+2)
+   945                           
+   946                           ; Vector 52 : DMA2DCNT
+   947   000070  002E               	dw	ivt0x8_undefint shr (0+2)
+   948                           
+   949                           ; Vector 53 : DMA2OR
+   950   000072  002E               	dw	ivt0x8_undefint shr (0+2)
+   951                           
+   952                           ; Vector 54 : DMA2A
+   953   000074  002E               	dw	ivt0x8_undefint shr (0+2)
+   954                           
+   955                           ; Vector 55 : Undefined
+   956   000076  002E               	dw	ivt0x8_undefint shr (0+2)
+   957                           
+   958                           ; Vector 56 : I2C1RX
+   959   000078  002E               	dw	ivt0x8_undefint shr (0+2)
+   960                           
+   961                           ; Vector 57 : I2C1TX
+   962   00007A  002E               	dw	ivt0x8_undefint shr (0+2)
+   963                           
+   964                           ; Vector 58 : I2C1
+   965   00007C  008D               	dw	_ISR shr (0+2)
+   966                           
+   967                           ; Vector 59 : I2C1E
+   968   00007E  002E               	dw	ivt0x8_undefint shr (0+2)
+   969                           
+   970                           ; Vector 60 : Undefined
+   971   000080  002E               	dw	ivt0x8_undefint shr (0+2)
+   972                           
+   973                           ; Vector 61 : CLC3
+   974   000082  002E               	dw	ivt0x8_undefint shr (0+2)
+   975                           
+   976                           ; Vector 62 : PWM3PR
+   977   000084  002E               	dw	ivt0x8_undefint shr (0+2)
+   978                           
+   979                           ; Vector 63 : PWM3
+   980   000086  002E               	dw	ivt0x8_undefint shr (0+2)
+   981                           
+   982                           ; Vector 64 : U2RX
+   983   000088  002E               	dw	ivt0x8_undefint shr (0+2)
+   984                           
+   985                           ; Vector 65 : U2TX
+   986   00008A  002E               	dw	ivt0x8_undefint shr (0+2)
+   987                           
+   988                           ; Vector 66 : U2E
+   989   00008C  002E               	dw	ivt0x8_undefint shr (0+2)
+   990                           
+   991                           ; Vector 67 : U2
+   992   00008E  002E               	dw	ivt0x8_undefint shr (0+2)
+   993                           
+   994                           ; Vector 68 : Undefined
+   995   000090  002E               	dw	ivt0x8_undefint shr (0+2)
+   996                           
+   997                           ; Vector 69 : CLC4
+   998   000092  002E               	dw	ivt0x8_undefint shr (0+2)
+   999                           
+  1000                           ; Vector 70 : Undefined
+  1001   000094  002E               	dw	ivt0x8_undefint shr (0+2)
+  1002                           
+  1003                           ; Vector 71 : SCAN
+  1004   000096  002E               	dw	ivt0x8_undefint shr (0+2)
+  1005                           
+  1006                           ; Vector 72 : U3RX
+  1007   000098  002E               	dw	ivt0x8_undefint shr (0+2)
+  1008                           
+  1009                           ; Vector 73 : U3TX
+  1010   00009A  002E               	dw	ivt0x8_undefint shr (0+2)
+  1011                           
+  1012                           ; Vector 74 : U3E
+  1013   00009C  002E               	dw	ivt0x8_undefint shr (0+2)
+  1014                           
+  1015                           ; Vector 75 : U3
+  1016   00009E  002E               	dw	ivt0x8_undefint shr (0+2)
+  1017                           
+  1018                           ; Vector 76 : DMA3SCNT
+  1019   0000A0  002E               	dw	ivt0x8_undefint shr (0+2)
+  1020                           
+  1021                           ; Vector 77 : DMA3DCNT
+  1022   0000A2  002E               	dw	ivt0x8_undefint shr (0+2)
+  1023                           
+  1024                           ; Vector 78 : DMA3OR
+  1025   0000A4  002E               	dw	ivt0x8_undefint shr (0+2)
+  1026                           
+  1027                           ; Vector 79 : DMA3A
+  1028   0000A6  002E               	dw	ivt0x8_undefint shr (0+2)
+  1029                           
+  1030                           ; Vector 80 : INT2
+  1031   0000A8  002E               	dw	ivt0x8_undefint shr (0+2)
+  1032                           
+  1033                           ; Vector 81 : Undefined
+  1034   0000AA  002E               	dw	ivt0x8_undefint shr (0+2)
+  1035                           
+  1036                           ; Vector 82 : Undefined
+  1037   0000AC  002E               	dw	ivt0x8_undefint shr (0+2)
+  1038                           
+  1039                           ; Vector 83 : TMR4
+  1040   0000AE  002E               	dw	ivt0x8_undefint shr (0+2)
+  1041                           
+  1042                           ; Vector 84 : DMA4SCNT
+  1043   0000B0  002E               	dw	ivt0x8_undefint shr (0+2)
+  1044                           
+  1045                           ; Vector 85 : DMA4DCNT
+  1046   0000B2  002E               	dw	ivt0x8_undefint shr (0+2)
+  1047                           
+  1048                           ; Vector 86 : DMA4OR
+  1049   0000B4  002E               	dw	ivt0x8_undefint shr (0+2)
+  1050                           
+  1051                           ; Vector 87 : DMA4A
+  1052   0000B6  002E               	dw	ivt0x8_undefint shr (0+2)
+  1053   0000B8                     ivt0x8_undefint:
+  1054                           	callstack 0
+  1055   0000B8  00FF               	reset	
+  1056   000000                     
+  1057                           	psect	rparam
+  1058   000000                     tosu	equ	0x4FF
+  1059                           tosh	equ	0x4FE
+  1060                           tosl	equ	0x4FD
+  1061                           stkptr	equ	0x4FC
+  1062                           pclatu	equ	0x4FB
+  1063                           pclath	equ	0x4FA
+  1064                           pcl	equ	0x4F9
+  1065                           tblptru	equ	0x4F8
+  1066                           tblptrh	equ	0x4F7
+  1067                           tblptrl	equ	0x4F6
+  1068                           tablat	equ	0x4F5
+  1069                           prodh	equ	0x4F4
+  1070                           prodl	equ	0x4F3
+  1071                           indf0	equ	0x4EF
+  1072                           postinc0	equ	0x4EE
+  1073                           postdec0	equ	0x4ED
+  1074                           preinc0	equ	0x4EC
+  1075                           plusw0	equ	0x4EB
+  1076                           fsr0h	equ	0x4EA
+  1077                           fsr0l	equ	0x4E9
+  1078                           wreg	equ	0x4E8
+  1079                           indf1	equ	0x4E7
+  1080                           postinc1	equ	0x4E6
+  1081                           postdec1	equ	0x4E5
+  1082                           preinc1	equ	0x4E4
+  1083                           plusw1	equ	0x4E3
+  1084                           fsr1h	equ	0x4E2
+  1085                           fsr1l	equ	0x4E1
+  1086                           bsr	equ	0x4E0
+  1087                           indf2	equ	0x4DF
+  1088                           postinc2	equ	0x4DE
+  1089                           postdec2	equ	0x4DD
+  1090                           preinc2	equ	0x4DC
+  1091                           plusw2	equ	0x4DB
+  1092                           fsr2h	equ	0x4DA
+  1093                           fsr2l	equ	0x4D9
+  1094                           status	equ	0x4D8
 
 Data Sizes:
     Strings     0
@@ -1292,64 +1306,66 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Thu Jul 20 14:41:28 2023
+Symbol Table                                                                                   Mon Jul 24 13:35:44 2023
 
-                     l69 01FE                       l97 024A                       u97 01EE  
-                    l100 0264                      l105 0250                      l800 01A8  
-                    l810 01B2                      l802 01AA                      l820 01C0  
-                    l812 01B4                      l804 01AC                      l830 01DA  
-                    l822 01CA                      l814 01B6                      l806 01AE  
-                    l840 01E8                      l832 01DE                      l824 01CC  
-                    l816 01B8                      l808 01B0                      l842 01F6  
-                    l834 01E0                      l826 01D6                      l818 01BE  
-                    l844 01FA                      l836 01E2                      l828 01D8  
-                    l846 01FC                      l838 01E6                      l790 019A  
-                    l880 025E                      l792 019C                      l784 0170  
-                    l794 019E                      l786 0182                      l874 0238  
-                    l890 024C                      l796 01A0                      l788 0198  
-                    l876 0246                      l878 025C                      l798 01A6  
-                    _ISR 0220                      wreg 04E8                     ?_ISR 0511  
-                   i2l72 00BE                     i2l74 00CE                     i2l83 0132  
-                   i2l75 0118                     i2l84 0134                     i2l76 00E4  
-                   i2l78 00EA                     i2l94 0236                     i2l88 016E  
-                   _main 024C                     _loop 025C                     indf2 04DF  
-                   fsr2l 04D9                     start 00BA             ___param_bank 0000  
-                  ??_ISR 0515                    ?_main 0511                    ?_loop 0511  
-                  i2l850 00DC                    i2l860 0126                    i2l862 0142  
-                  i2l870 015A                    i2l864 0152                    i2l872 016A  
-                  i2l856 00F8                    i2l848 00BE                    i2l866 0154  
-                  i2l858 00FC                    i2l882 0220                    i2l868 0156  
-                  i2l884 0230                    i2l886 0232                    _setup 0238  
-                  status 04D8          __initialization 0200             __end_of_main 025C  
-           __end_of_loop 0266         __end_of_i2cStart 0170                   ??_main 0516  
+                     l67 0210                       l98 025E                      l101 0276  
+                    l106 0264                      l801 01BA                      l811 01C4  
+                    l803 01BC                      l821 01D2                      l813 01C6  
+                    l805 01BE                      l831 01EC                      l823 01DC  
+                    l815 01C8                      l807 01C0                      l841 01FA  
+                    l833 01F0                      l825 01DE                      l817 01CA  
+                    l809 01C2                      l843 0208                      l835 01F2  
+                    l827 01E8                      l819 01D0                      l845 020C  
+                    l837 01F4                      l829 01EA                      l847 020E  
+                    l839 01F8                      l791 01AC                      l793 01AE  
+                    l785 0182                      l881 025A                      l883 0270  
+                    l795 01B0                      l787 0194                      l891 0260  
+                    l797 01B2                      l789 01AA                      l799 01B8  
+                    l879 024C                      u107 0200                      _ISR 0234  
+                    wreg 04E8                     ?_ISR 0511                     i2l70 00BE  
+                   i2l72 00CE                     i2l81 0126                     i2l82 0178  
+                   i2l74 00E6                     i2l84 0140                     i2l76 00EA  
+                   i2l85 0142                     i2l79 0118                     i2l95 024A  
+                   i2l89 0180                     _main 0260                     _loop 0270  
+                   indf2 04DF                     fsr2l 04D9                     start 00BA  
+           ___param_bank 0000                    ??_ISR 0515                    ?_main 0511  
+                  ?_loop 0511                    i2l851 00DC                    i2l861 00FC  
+                  i2l853 00DE                    i2l871 0164                    i2l863 0134  
+                  i2l865 0150                    i2l873 0168                    i2l849 00BE  
+                  i2l875 017A                    i2l867 0160                    i2l859 00F8  
+                  i2l877 017E                    i2l869 0162                    i2l885 0234  
+                  i2l887 0244                    i2l889 0246                    _setup 024C  
+                  status 04D8          __initialization 0212             __end_of_main 0270  
+           __end_of_loop 0278         __end_of_i2cStart 0182                   ??_main 0516  
                  ??_loop 0515            __activetblptr 0000                   ?_setup 0511  
                  _RC0PPS 0211                   _RC1PPS 0212                   i2u1_40 00CE  
                  i2u1_41 00CA                   i2u2_40 00DC                   i2u2_41 00D8  
                  i2u3_40 00F8                   i2u3_41 00F4                   i2u4_40 0118  
                  i2u4_41 0114                   i2u5_40 0126                   i2u5_41 0122  
-                 i2u6_40 0142                   i2u6_41 013E                   i2u7_40 016A  
-                 i2u7_41 0166                   i2u8_40 0230                   i2u8_41 022C  
-          i2cStart@index 0511                   clear_0 0206                   isa$std 0001  
-             __accesstop 0560  __end_of__initialization 021A            ___rparam_used 0001  
-         __pcstackCOMRAM 0511           ivt0x8_undefint 00B8            __end_of_setup 024C  
-                ??_setup 0516                ?_i2cStart 0511                  IVTBASEH 045E  
-                IVTBASEL 045D                  IVTBASEU 045F                  _I2C1CLK 029E  
-                _I2C1PIR 029A                  _I2C1RXB 028A                  _I2C1TXB 028B  
-                _OSCFREQ 00B1               ??_i2cStart 0511                  __Hparam 0000  
-                __Lparam 0000        __end_of_configI2C 0200                  __pcinit 0200  
-                __ramtop 0E00                  __ptext0 024C                  __ptext1 0238  
-                __ptext2 0170                  __ptext3 025C                  __ptext4 0220  
-                __ptext5 00BE              _I2C1BTObits 029C              _I2C1PIEbits 029B  
-            _I2C1PIRbits 029A     end_of_initialization 021A                  postinc0 04EE  
-              _TRISCbits 04C8                i2cStart@i 0513                _i2cBuffer 0501  
-    start_initialization 0200              __end_of_ISR 0238               ivt0x8_base 0008  
-            __pbssCOMRAM 0501                 _I2C1ADR0 0290                 _I2C1ADR1 0291  
-               _I2C1BAUD 029D                 _I2C1BTOC 029F                 _I2C1CNTL 028C  
-              _configI2C 0170               _I2C1SDAPPS 0270               _I2C1SCLPPS 0271  
-               _IPR7bits 036E                 _PIE7bits 04AF            _I2C1STAT0bits 0298  
-          _I2C1STAT1bits 0299                 _PIR7bits 04BA               ?_configI2C 0511  
-            _INTCON0bits 04D6                 _i2cStart 00BE                 __Hrparam 0000  
-               __Lrparam 0000               _ANSELCbits 0410             _I2C1CON0bits 0294  
-           _I2C1CON1bits 0295             _I2C1CON2bits 0296                 __pivt0x8 0008  
-            _OSCCON1bits 00AD                 isa$xinst 0000               _ODCONCbits 0412  
-            ??_configI2C 0515                 intlevel2 0000  
+                 i2u6_40 0134                   i2u6_41 0130                   i2u7_40 0150  
+                 i2u7_41 014C                   i2u8_40 0178                   i2u8_41 0174  
+                 i2u9_40 0244                   i2u9_41 0240            i2cStart@index 0511  
+                 clear_0 0218                   isa$std 0001               __accesstop 0560  
+__end_of__initialization 022C            ___rparam_used 0001           __pcstackCOMRAM 0511  
+         ivt0x8_undefint 00B8            __end_of_setup 0260                  ??_setup 0516  
+              ?_i2cStart 0511                  IVTBASEH 045E                  IVTBASEL 045D  
+                IVTBASEU 045F                  _I2C1CLK 029E                  _I2C1PIR 029A  
+                _I2C1RXB 028A                  _I2C1TXB 028B                  _OSCFREQ 00B1  
+             ??_i2cStart 0511                  __Hparam 0000                  __Lparam 0000  
+      __end_of_configI2C 0212                  __pcinit 0212                  __ramtop 0E00  
+                __ptext0 0260                  __ptext1 024C                  __ptext2 0182  
+                __ptext3 0270                  __ptext4 0234                  __ptext5 00BE  
+            _I2C1BTObits 029C              _I2C1PIEbits 029B              _I2C1PIRbits 029A  
+   end_of_initialization 022C                  postinc0 04EE                _TRISCbits 04C8  
+              i2cStart@i 0513                _i2cBuffer 0501      start_initialization 0212  
+            __end_of_ISR 024C               ivt0x8_base 0008              __pbssCOMRAM 0501  
+               _I2C1ADR0 0290                 _I2C1ADR1 0291                 _I2C1BAUD 029D  
+               _I2C1BTOC 029F                 _I2C1CNTL 028C                _configI2C 0182  
+             _I2C1SDAPPS 0270               _I2C1SCLPPS 0271                 _IPR7bits 036E  
+               _PIE7bits 04AF            _I2C1STAT0bits 0298            _I2C1STAT1bits 0299  
+               _PIR7bits 04BA               ?_configI2C 0511              _INTCON0bits 04D6  
+               _i2cStart 00BE                 __Hrparam 0000                 __Lrparam 0000  
+             _ANSELCbits 0410             _I2C1CON0bits 0294             _I2C1CON1bits 0295  
+           _I2C1CON2bits 0296                 __pivt0x8 0008              _OSCCON1bits 00AD  
+               isa$xinst 0000               _ODCONCbits 0412              ??_configI2C 0515  
+               intlevel2 0000  

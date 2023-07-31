@@ -22540,13 +22540,13 @@ void configI2C(){
     I2C1CON2bits.ABD = 0;
     I2C1CON2bits.SDAHT = 0b00;
 
-    I2C1PIEbits.CNT1IE = 1;
-    I2C1PIEbits.ACKTIE = 1;
-    I2C1PIEbits.WRIE = 1;
-    I2C1PIEbits.ADRIE = 0;
+    I2C1PIEbits.CNT1IE = 0;
+    I2C1PIEbits.ACKTIE = 0;
+    I2C1PIEbits.WRIE = 0;
+    I2C1PIEbits.ADRIE = 1;
     I2C1PIEbits.PCIE = 0;
     I2C1PIEbits.RSCIE = 0;
-    I2C1PIEbits.SCIE = 0;
+    I2C1PIEbits.SCIE = 1;
 
 
     I2C1PIRbits.PCIF = 0;
@@ -22594,13 +22594,13 @@ void i2cStart(){
 
     while(I2C1STAT0bits.SMA == 0){};
     if(I2C1STAT0bits.R == 1){
+        I2C1CON0bits.CSTR = 0;
         for(int i = 1; i < 13; i ++){
             I2C1TXB = i;
-            I2C1CON0bits.CSTR = 0;
-            while(I2C1CON0bits.CSTR == 0);
+            while(I2C1STAT1bits.TXBE == 0);
         }
-
     }
+    while(I2C1CON1bits.ACKT == 0);
 
     if(I2C1STAT0bits.R == 0){
         int index = 0;
@@ -22614,9 +22614,9 @@ void i2cStart(){
         }
     }
 
-
+    I2C1CON0bits.EN = 0;
     I2C1PIR = 0x00;
-# 204 "main.c"
+    I2C1CON0bits.EN = 1;
 }
 
 void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
@@ -22624,7 +22624,6 @@ void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
         I2C1PIRbits.SCIF = 0;
         i2cStart();
     }
-    return;
 }
 
 void setup(){
@@ -22635,8 +22634,7 @@ void setup(){
 }
 
 void loop(){
-    __nop();
-    I2C1CNTL = 0x04;
+    I2C1CNTL = 0x0F;
 }
 
 void main(void) {
