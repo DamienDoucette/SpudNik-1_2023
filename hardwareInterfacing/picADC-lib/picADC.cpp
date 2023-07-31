@@ -13,7 +13,7 @@ void picADC::readSunSensors(uint16_t* readings){
             Return:
                 readings    -   Pointer to the array holding the 12 12bit ADC readings
     */
-   uint8_t buffer[24];
+   uint8_t* buffer;
    I2C.readBus(addr, 24, buffer); //Read sunsenor data from MCU
 
     /*Convert the 24 bytes read to be 12 2byte values

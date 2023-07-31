@@ -5,7 +5,7 @@
 
 int main(){
     i2c I2C;  //Create instance of the I2C class
-	int addr = 0x68;    //Define address of client
+	int addr = 0b1111111;    //Define address of client
 
     picADC adc(addr, I2C);  //Create instance of picADC class
 
