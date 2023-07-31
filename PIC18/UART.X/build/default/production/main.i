@@ -22523,14 +22523,17 @@ void TX(char data){
 }
 
 void setup(){
-    OSCFREQ = 0b0010;
-    OSCCON1bits.NOSC = 0b110;
+
+
+
+    __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
+    OSCENbits.EXTOEN = 1;
+    OSCCON1bits.NOSC = 0b111;
+
 
     RC0PPS = 0x10;
     TRISCbits.TRISC0 = 0;
-
     U1RXPPS = RC1;
-
     U1CON0bits.BRGS = 0;
     U1CON0bits.MODE = 0b0011;
     U1CON0bits.RXEN = 1;
@@ -22539,7 +22542,8 @@ void setup(){
     U1CON2bits.RXPOL = 0;
     U1CON2bits.TXPOL = 0;
     U1CON2bits.STP = 0b00;
-# 46 "main.c"
+# 52 "main.c"
+    U1CON0bits.BRGS = 1;
     U1BRGH = 0;
     U1BRGL = 0x19;
 
@@ -22556,7 +22560,7 @@ void loop(){
 
     _delay((unsigned long)((1)*(4000000/4000.0)));
 }
-# 75 "main.c"
+# 82 "main.c"
 void main(void) {
     setup();
 

@@ -25,9 +25,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14052
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14052: extern volatile unsigned char U1TXB __attribute__((address(0x2A3)));
 [v _U1TXB `Vuc ~T0 @X0 0 e@675 ]
-"5368
-[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5368: extern volatile unsigned char OSCFREQ __attribute__((address(0x0B1)));
-[v _OSCFREQ `Vuc ~T0 @X0 0 e@177 ]
+"5571
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5571:     struct {
+[s S258 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S258 . PLLEN . ADOEN SOSCEN LFOEN MFOEN HFOEN EXTOEN ]
+"5570
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5570: typedef union {
+[u S257 `S258 1 ]
+[n S257 . . ]
+"5582
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5582: extern volatile OSCENbits_t OSCENbits __attribute__((address(0x0B3)));
+[v _OSCENbits `VS257 ~T0 @X0 0 e@179 ]
 "5131
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5131:     struct {
 [s S237 :4 `uc 1 :3 `uc 1 ]
@@ -2185,57 +2193,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _setup ]
 [f ]
-"21
-[; ;main.c: 21:     OSCFREQ = 0b0010;
-[e = _OSCFREQ -> -> 2 `i `uc ]
-"22
-[; ;main.c: 22:     OSCCON1bits.NOSC = 0b110;
-[e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
 "24
-[; ;main.c: 24:     RC0PPS = 0x10;
-[e = _RC0PPS -> -> 16 `i `uc ]
+[; ;main.c: 24:     __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
+[; <" GLOBAL nosup@@$_$_CONFIG ;# ">
+[; <" nosup@@$_$_CONFIG SET 0 ;# ">
 "25
-[; ;main.c: 25:     TRISCbits.TRISC0 = 0;
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"27
-[; ;main.c: 27:     U1RXPPS = RC1;
-[e = _U1RXPPS -> _RC1 `uc ]
+[; ;main.c: 25:     OSCENbits.EXTOEN = 1;
+[e = . . _OSCENbits 0 7 -> -> 1 `i `uc ]
+"26
+[; ;main.c: 26:     OSCCON1bits.NOSC = 0b111;
+[e = . . _OSCCON1bits 0 1 -> -> 7 `i `uc ]
 "29
-[; ;main.c: 29:     U1CON0bits.BRGS = 0;
-[e = . . _U1CON0bits 3 4 -> -> 0 `i `uc ]
+[; ;main.c: 29:     RC0PPS = 0x10;
+[e = _RC0PPS -> -> 16 `i `uc ]
 "30
-[; ;main.c: 30:     U1CON0bits.MODE = 0b0011;
-[e = . . _U1CON0bits 3 0 -> -> 3 `i `uc ]
+[; ;main.c: 30:     TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 "31
-[; ;main.c: 31:     U1CON0bits.RXEN = 1;
-[e = . . _U1CON0bits 3 1 -> -> 1 `i `uc ]
+[; ;main.c: 31:     U1RXPPS = RC1;
+[e = _U1RXPPS -> _RC1 `uc ]
 "32
-[; ;main.c: 32:     U1CON0bits.TXEN = 1;
-[e = . . _U1CON0bits 3 2 -> -> 1 `i `uc ]
+[; ;main.c: 32:     U1CON0bits.BRGS = 0;
+[e = . . _U1CON0bits 3 4 -> -> 0 `i `uc ]
+"33
+[; ;main.c: 33:     U1CON0bits.MODE = 0b0011;
+[e = . . _U1CON0bits 3 0 -> -> 3 `i `uc ]
 "34
-[; ;main.c: 34:     U1CON2bits.RXPOL = 0;
-[e = . . _U1CON2bits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 34:     U1CON0bits.RXEN = 1;
+[e = . . _U1CON0bits 3 1 -> -> 1 `i `uc ]
 "35
-[; ;main.c: 35:     U1CON2bits.TXPOL = 0;
+[; ;main.c: 35:     U1CON0bits.TXEN = 1;
+[e = . . _U1CON0bits 3 2 -> -> 1 `i `uc ]
+"37
+[; ;main.c: 37:     U1CON2bits.RXPOL = 0;
+[e = . . _U1CON2bits 0 4 -> -> 0 `i `uc ]
+"38
+[; ;main.c: 38:     U1CON2bits.TXPOL = 0;
 [e = . . _U1CON2bits 0 1 -> -> 0 `i `uc ]
-"36
-[; ;main.c: 36:     U1CON2bits.STP = 0b00;
+"39
+[; ;main.c: 39:     U1CON2bits.STP = 0b00;
 [e = . . _U1CON2bits 0 3 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     U1BRGH = 0;
+"52
+[; ;main.c: 52:     U1CON0bits.BRGS = 1;
+[e = . . _U1CON0bits 3 4 -> -> 1 `i `uc ]
+"53
+[; ;main.c: 53:     U1BRGH = 0;
 [e = _U1BRGH -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     U1BRGL = 0x19;
+"54
+[; ;main.c: 54:     U1BRGL = 0x19;
 [e = _U1BRGL -> -> 25 `i `uc ]
-"49
-[; ;main.c: 49:     U1CON1bits.ON = 1;
+"56
+[; ;main.c: 56:     U1CON1bits.ON = 1;
 [e = . . _U1CON1bits 0 6 -> -> 1 `i `uc ]
-"50
-[; ;main.c: 50: }
+"57
+[; ;main.c: 57: }
 [e :UE 1849 ]
 }
-"52
-[; ;main.c: 52: void loop(){
+"59
+[; ;main.c: 59: void loop(){
 [v _loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _loop ]
@@ -2243,8 +2258,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F13022 `uc ~T0 @X0 -> 7 `i s ]
 [i F13022
 :U ..
-"54
-[; ;main.c: 54:     char msg[7] = "testing";
+"61
+[; ;main.c: 61:     char msg[7] = "testing";
 -> 116 `c
 -> 101 `c
 -> 115 `c
@@ -2256,8 +2271,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _msg `uc ~T0 @X0 -> 7 `i a ]
 [e = _msg F13022 ]
-"55
-[; ;main.c: 55:     for(int i = 0; i<7; i++){
+"62
+[; ;main.c: 62:     for(int i = 0; i<7; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2265,53 +2280,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1852  ]
 [e :U 1851 ]
 {
-"56
-[; ;main.c: 56:         TX(msg[i]);
+"63
+[; ;main.c: 63:         TX(msg[i]);
 [e ( _TX (1 *U + &U _msg * -> -> _i `ui `ux -> -> # *U &U _msg `ui `ux ]
-"57
-[; ;main.c: 57:     }
+"64
+[; ;main.c: 64:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 7 `i 1851  ]
 [e :U 1852 ]
 }
-"58
-[; ;main.c: 58:     TX(0x09);
+"65
+[; ;main.c: 65:     TX(0x09);
 [e ( _TX (1 -> -> 9 `i `uc ]
-"60
-[; ;main.c: 60:     _delay((unsigned long)((1)*(4000000/4000.0)));
+"67
+[; ;main.c: 67:     _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"61
-[; ;main.c: 61: }
+"68
+[; ;main.c: 68: }
 [e :UE 1850 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"75
-[; ;main.c: 75: void main(void) {
+"82
+[; ;main.c: 82: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"76
-[; ;main.c: 76:     setup();
+"83
+[; ;main.c: 83:     setup();
 [e ( _setup ..  ]
-"78
-[; ;main.c: 78:     while(1){
+"85
+[; ;main.c: 85:     while(1){
 [e :U 1856 ]
 {
-"79
-[; ;main.c: 79:         loop();
+"86
+[; ;main.c: 86:         loop();
 [e ( _loop ..  ]
-"80
-[; ;main.c: 80:     }
+"87
+[; ;main.c: 87:     }
 }
 [e :U 1855 ]
 [e $U 1856  ]
 [e :U 1857 ]
-"81
-[; ;main.c: 81:     return;
+"88
+[; ;main.c: 88:     return;
 [e $UE 1854  ]
-"82
-[; ;main.c: 82: }
+"89
+[; ;main.c: 89: }
 [e :UE 1854 ]
 }

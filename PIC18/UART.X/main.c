@@ -18,8 +18,14 @@ void TX(char data){
 }
 
 void setup(){
-    OSCFREQ = 0b0010;   //Set HF clock to 4MHz
-    OSCCON1bits.NOSC = 0b110;   //Set HF to Fosc
+//    OSCFREQ = 0b0010;   //Set HF clock to 4MHz
+//    OSCCON1bits.NOSC = 0b110;   //Set HF to Fosc
+    
+    __CONFIG(FEXTOSC, 0b110);   //Configure the EXTOSC mode for a 500kHz-8MHz clock
+    OSCENbits.EXTOEN = 1;       //Enable the external oscillator
+    OSCCON1bits.NOSC = 0b111;   //Switch the clock to EXTOSC
+    
+    
     RC0PPS = 0x10;  //Set UART TX to C0
     TRISCbits.TRISC0 = 0;
     U1RXPPS = RC1;  //Set UART RX to C1
@@ -40,6 +46,10 @@ void setup(){
      * BRG = ~27
     */
     
+//    U1BRGH = 0;
+//    U1BRGL = 0x19;  //Set BRG to 27 for baud of ~9600 (manually changed to 25 when debugging)
+    
+    U1CON0bits.BRGS = 1;    //Set Baud rate generator to normal speed with 4 clocks per bit
     U1BRGH = 0;
     U1BRGL = 0x19;  //Set BRG to 27 for baud of ~9600 (manually changed to 25 when debugging)
     
