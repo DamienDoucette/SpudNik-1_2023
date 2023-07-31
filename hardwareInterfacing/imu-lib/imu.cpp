@@ -321,7 +321,7 @@ void imu::setAccelOffset(int16_t x, int16_t y, int16_t z){
             z   -   16bit value to define the offset of the accelerometer in z
     */
 
-    changeBank(0x02);   //Change to register bank 2
+    changeBank(0x01);   //Change to register bank 2
     uint8_t command[2]; //Delcare a variable for the write buffer
 
     /*Store the addresses of the accelerometer offset registers*/
