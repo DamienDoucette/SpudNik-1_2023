@@ -1,7 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"8 C:\Program Files\Microchip\xc8\v2.41\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
 "14654 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14654:     struct {
 [s S729 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -60,12 +57,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36615
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36615: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x4C8)));
 [v _TRISCbits `VS1735 ~T0 @X0 0 e@1224 ]
+"31570
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31570:     struct {
+[s S1502 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1502 . ANSELC0 ANSELC1 ANSELC2 ANSELC3 ANSELC4 ANSELC5 ANSELC6 ANSELC7 ]
+"31569
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31569: typedef union {
+[u S1501 `S1502 1 ]
+[n S1501 . . ]
+"31581
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31581: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x410)));
+[v _ANSELCbits `VS1501 ~T0 @X0 0 e@1040 ]
 "12088
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 12088: extern volatile unsigned char U1RXPPS __attribute__((address(0x272)));
 [v _U1RXPPS `Vuc ~T0 @X0 0 e@626 ]
-"43737
-[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 43737: extern volatile __bit RC1 __attribute__((address(0x2681)));
-[v _RC1 `Vb ~T0 @X0 0 e@9857 ]
 "14257
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14257:     struct {
 [s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -118,6 +123,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14608
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14608: extern volatile unsigned char U1BRGL __attribute__((address(0x2AE)));
 [v _U1BRGL `Vuc ~T0 @X0 0 e@686 ]
+"36817
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36817:     struct {
+[s S1744 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1744 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"36826
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36826:     struct {
+[s S1745 :7 `uc 1 :1 `uc 1 ]
+[n S1745 . . GIEH ]
+"36816
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36816: typedef union {
+[u S1743 `S1744 1 `S1745 1 ]
+[n S1743 . . . ]
+"36831
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36831: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS1743 ~T0 @X0 0 e@1238 ]
+"35315
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35315:     struct {
+[s S1687 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1687 . U1RXIE U1TXIE U1EIE U1IE TMR3IE TMR3GIE PWM1PIE PWM1IE ]
+"35314
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35314: typedef union {
+[u S1686 `S1687 1 ]
+[n S1686 . . ]
+"35326
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35326: extern volatile PIE4bits_t PIE4bits __attribute__((address(0x4AC)));
+[v _PIE4bits `VS1686 ~T0 @X0 0 e@1196 ]
+"24932
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24932:     struct {
+[s S1203 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1203 . U1RXIP U1TXIP U1EIP U1IP TMR3IP TMR3GIP PWM1PIP PWM1IP ]
+"24931
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24931: typedef union {
+[u S1202 `S1203 1 ]
+[n S1202 . . ]
+"24943
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24943: extern volatile IPR4bits_t IPR4bits __attribute__((address(0x36B)));
+[v _IPR4bits `VS1202 ~T0 @X0 0 e@875 ]
+"35962
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35962:     struct {
+[s S1711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1711 . U1RXIF U1TXIF U1EIF U1IF TMR3IF TMR3GIF PWM1PIF PWM1IF ]
+"35961
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35961: typedef union {
+[u S1710 `S1711 1 ]
+[n S1710 . . ]
+"35973
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35973: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x4B7)));
+[v _PIR4bits `VS1710 ~T0 @X0 0 e@1207 ]
+"13994
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 13994: extern volatile unsigned char U1RXB __attribute__((address(0x2A1)));
+[v _U1RXB `Vuc ~T0 @X0 0 e@673 ]
 "14385
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14385:     struct {
 [s S717 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
@@ -137,6 +193,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:\Program Files\Microchip\xc8\v2.41\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt irq ( U1RX ) ]
 [p mainexit ]
 "269 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 269: __asm("CLKRCON equ 039h");
@@ -2146,443 +2204,241 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 38140: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
 "11 main.c
-[; ;main.c: 11: uint8_t receive[8];
-[v _receive `uc ~T0 @X0 -> 8 `i e ]
+[; ;main.c: 11: uint8_t receive[64];
+[v _receive `uc ~T0 @X0 -> 64 `i e ]
 "12
 [; ;main.c: 12: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
 [i _count
 -> 0 `i
 ]
-"13
-[; ;main.c: 13: unsigned char reverse_byte(unsigned char x)
-[v _reverse_byte `(uc ~T0 @X0 1 ef1`uc ]
 "14
-[; ;main.c: 14: {
-{
-[e :U _reverse_byte ]
-"13
-[; ;main.c: 13: unsigned char reverse_byte(unsigned char x)
-[v _x `uc ~T0 @X0 1 r1 ]
-"14
-[; ;main.c: 14: {
-[f ]
-"15
-[; ;main.c: 15:     static const unsigned char table[] = {
-[v F13019 `Cuc ~T0 @X0 -> 256 `i s table ]
-[i F13019
-:U ..
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 64 `i `uc
--> -> 192 `i `uc
--> -> 32 `i `uc
--> -> 160 `i `uc
--> -> 96 `i `uc
--> -> 224 `i `uc
--> -> 16 `i `uc
--> -> 144 `i `uc
--> -> 80 `i `uc
--> -> 208 `i `uc
--> -> 48 `i `uc
--> -> 176 `i `uc
--> -> 112 `i `uc
--> -> 240 `i `uc
--> -> 8 `i `uc
--> -> 136 `i `uc
--> -> 72 `i `uc
--> -> 200 `i `uc
--> -> 40 `i `uc
--> -> 168 `i `uc
--> -> 104 `i `uc
--> -> 232 `i `uc
--> -> 24 `i `uc
--> -> 152 `i `uc
--> -> 88 `i `uc
--> -> 216 `i `uc
--> -> 56 `i `uc
--> -> 184 `i `uc
--> -> 120 `i `uc
--> -> 248 `i `uc
--> -> 4 `i `uc
--> -> 132 `i `uc
--> -> 68 `i `uc
--> -> 196 `i `uc
--> -> 36 `i `uc
--> -> 164 `i `uc
--> -> 100 `i `uc
--> -> 228 `i `uc
--> -> 20 `i `uc
--> -> 148 `i `uc
--> -> 84 `i `uc
--> -> 212 `i `uc
--> -> 52 `i `uc
--> -> 180 `i `uc
--> -> 116 `i `uc
--> -> 244 `i `uc
--> -> 12 `i `uc
--> -> 140 `i `uc
--> -> 76 `i `uc
--> -> 204 `i `uc
--> -> 44 `i `uc
--> -> 172 `i `uc
--> -> 108 `i `uc
--> -> 236 `i `uc
--> -> 28 `i `uc
--> -> 156 `i `uc
--> -> 92 `i `uc
--> -> 220 `i `uc
--> -> 60 `i `uc
--> -> 188 `i `uc
--> -> 124 `i `uc
--> -> 252 `i `uc
--> -> 2 `i `uc
--> -> 130 `i `uc
--> -> 66 `i `uc
--> -> 194 `i `uc
--> -> 34 `i `uc
--> -> 162 `i `uc
--> -> 98 `i `uc
--> -> 226 `i `uc
--> -> 18 `i `uc
--> -> 146 `i `uc
--> -> 82 `i `uc
--> -> 210 `i `uc
--> -> 50 `i `uc
--> -> 178 `i `uc
--> -> 114 `i `uc
--> -> 242 `i `uc
--> -> 10 `i `uc
--> -> 138 `i `uc
--> -> 74 `i `uc
--> -> 202 `i `uc
--> -> 42 `i `uc
--> -> 170 `i `uc
--> -> 106 `i `uc
--> -> 234 `i `uc
--> -> 26 `i `uc
--> -> 154 `i `uc
--> -> 90 `i `uc
--> -> 218 `i `uc
--> -> 58 `i `uc
--> -> 186 `i `uc
--> -> 122 `i `uc
--> -> 250 `i `uc
--> -> 6 `i `uc
--> -> 134 `i `uc
--> -> 70 `i `uc
--> -> 198 `i `uc
--> -> 38 `i `uc
--> -> 166 `i `uc
--> -> 102 `i `uc
--> -> 230 `i `uc
--> -> 22 `i `uc
--> -> 150 `i `uc
--> -> 86 `i `uc
--> -> 214 `i `uc
--> -> 54 `i `uc
--> -> 182 `i `uc
--> -> 118 `i `uc
--> -> 246 `i `uc
--> -> 14 `i `uc
--> -> 142 `i `uc
--> -> 78 `i `uc
--> -> 206 `i `uc
--> -> 46 `i `uc
--> -> 174 `i `uc
--> -> 110 `i `uc
--> -> 238 `i `uc
--> -> 30 `i `uc
--> -> 158 `i `uc
--> -> 94 `i `uc
--> -> 222 `i `uc
--> -> 62 `i `uc
--> -> 190 `i `uc
--> -> 126 `i `uc
--> -> 254 `i `uc
--> -> 1 `i `uc
--> -> 129 `i `uc
--> -> 65 `i `uc
--> -> 193 `i `uc
--> -> 33 `i `uc
--> -> 161 `i `uc
--> -> 97 `i `uc
--> -> 225 `i `uc
--> -> 17 `i `uc
--> -> 145 `i `uc
--> -> 81 `i `uc
--> -> 209 `i `uc
--> -> 49 `i `uc
--> -> 177 `i `uc
--> -> 113 `i `uc
--> -> 241 `i `uc
--> -> 9 `i `uc
--> -> 137 `i `uc
--> -> 73 `i `uc
--> -> 201 `i `uc
--> -> 41 `i `uc
--> -> 169 `i `uc
--> -> 105 `i `uc
--> -> 233 `i `uc
--> -> 25 `i `uc
--> -> 153 `i `uc
--> -> 89 `i `uc
--> -> 217 `i `uc
--> -> 57 `i `uc
--> -> 185 `i `uc
--> -> 121 `i `uc
--> -> 249 `i `uc
--> -> 5 `i `uc
--> -> 133 `i `uc
--> -> 69 `i `uc
--> -> 197 `i `uc
--> -> 37 `i `uc
--> -> 165 `i `uc
--> -> 101 `i `uc
--> -> 229 `i `uc
--> -> 21 `i `uc
--> -> 149 `i `uc
--> -> 85 `i `uc
--> -> 213 `i `uc
--> -> 53 `i `uc
--> -> 181 `i `uc
--> -> 117 `i `uc
--> -> 245 `i `uc
--> -> 13 `i `uc
--> -> 141 `i `uc
--> -> 77 `i `uc
--> -> 205 `i `uc
--> -> 45 `i `uc
--> -> 173 `i `uc
--> -> 109 `i `uc
--> -> 237 `i `uc
--> -> 29 `i `uc
--> -> 157 `i `uc
--> -> 93 `i `uc
--> -> 221 `i `uc
--> -> 61 `i `uc
--> -> 189 `i `uc
--> -> 125 `i `uc
--> -> 253 `i `uc
--> -> 3 `i `uc
--> -> 131 `i `uc
--> -> 67 `i `uc
--> -> 195 `i `uc
--> -> 35 `i `uc
--> -> 163 `i `uc
--> -> 99 `i `uc
--> -> 227 `i `uc
--> -> 19 `i `uc
--> -> 147 `i `uc
--> -> 83 `i `uc
--> -> 211 `i `uc
--> -> 51 `i `uc
--> -> 179 `i `uc
--> -> 115 `i `uc
--> -> 243 `i `uc
--> -> 11 `i `uc
--> -> 139 `i `uc
--> -> 75 `i `uc
--> -> 203 `i `uc
--> -> 43 `i `uc
--> -> 171 `i `uc
--> -> 107 `i `uc
--> -> 235 `i `uc
--> -> 27 `i `uc
--> -> 155 `i `uc
--> -> 91 `i `uc
--> -> 219 `i `uc
--> -> 59 `i `uc
--> -> 187 `i `uc
--> -> 123 `i `uc
--> -> 251 `i `uc
--> -> 7 `i `uc
--> -> 135 `i `uc
--> -> 71 `i `uc
--> -> 199 `i `uc
--> -> 39 `i `uc
--> -> 167 `i `uc
--> -> 103 `i `uc
--> -> 231 `i `uc
--> -> 23 `i `uc
--> -> 151 `i `uc
--> -> 87 `i `uc
--> -> 215 `i `uc
--> -> 55 `i `uc
--> -> 183 `i `uc
--> -> 119 `i `uc
--> -> 247 `i `uc
--> -> 15 `i `uc
--> -> 143 `i `uc
--> -> 79 `i `uc
--> -> 207 `i `uc
--> -> 47 `i `uc
--> -> 175 `i `uc
--> -> 111 `i `uc
--> -> 239 `i `uc
--> -> 31 `i `uc
--> -> 159 `i `uc
--> -> 95 `i `uc
--> -> 223 `i `uc
--> -> 63 `i `uc
--> -> 191 `i `uc
--> -> 127 `i `uc
--> -> 255 `i `uc
-..
-]
-"49
-[; ;main.c: 49:     return table[x];
-[e ) *U + &U F13019 * -> _x `ux -> -> # *U &U F13019 `ui `ux ]
-[e $UE 1845  ]
-"50
-[; ;main.c: 50: }
-[e :UE 1845 ]
-}
-"52
-[; ;main.c: 52: void TX(char data){
+[; ;main.c: 14: void TX(char data){
 [v _TX `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _TX ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"53
-[; ;main.c: 53:     int timeout = 0;
+"15
+[; ;main.c: 15:     int timeout = 0;
 [v _timeout `i ~T0 @X0 1 a ]
 [e = _timeout -> 0 `i ]
-"54
-[; ;main.c: 54:     while(U1FIFObits.TXBF && timeout < 1000){timeout++; __nop();}
-[e $U 1847  ]
-[e :U 1848 ]
+"16
+[; ;main.c: 16:     while(U1FIFObits.TXBF && timeout < 1000){timeout++;}
+[e $U 1846  ]
+[e :U 1847 ]
 {
 [e ++ _timeout -> 1 `i ]
-[e ( ___nop ..  ]
 }
-[e :U 1847 ]
-[e $ && != -> . . _U1FIFObits 0 4 `i -> 0 `i < _timeout -> 1000 `i 1848  ]
-[e :U 1849 ]
-"60
-[; ;main.c: 60:     U1TXB = data;
+[e :U 1846 ]
+[e $ && != -> . . _U1FIFObits 0 4 `i -> 0 `i < _timeout -> 1000 `i 1847  ]
+[e :U 1848 ]
+"17
+[; ;main.c: 17:     U1TXB = data;
 [e = _U1TXB -> _data `uc ]
-"61
-[; ;main.c: 61:     __nop();
-[e ( ___nop ..  ]
-"63
-[; ;main.c: 63: }
-[e :UE 1846 ]
+"18
+[; ;main.c: 18: }
+[e :UE 1845 ]
 }
-"65
-[; ;main.c: 65: void setup(){
+"20
+[; ;main.c: 20: void setup(){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"66
-[; ;main.c: 66:     OSCFREQ = 0b0010;
+"21
+[; ;main.c: 21:     OSCFREQ = 0b0010;
 [e = _OSCFREQ -> -> 2 `i `uc ]
-"67
-[; ;main.c: 67:     OSCCON1bits.NOSC = 0b110;
+"22
+[; ;main.c: 22:     OSCCON1bits.NOSC = 0b110;
 [e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
-"69
-[; ;main.c: 69:     RC0PPS = 0x10;
+"29
+[; ;main.c: 29:     RC0PPS = 0x10;
 [e = _RC0PPS -> -> 16 `i `uc ]
-"70
-[; ;main.c: 70:     TRISCbits.TRISC0 = 0;
+"30
+[; ;main.c: 30:     TRISCbits.TRISC0 = 0;
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     U1RXPPS = RC1;
-[e = _U1RXPPS -> _RC1 `uc ]
-"74
-[; ;main.c: 74:     U1CON0bits.BRGS = 0;
+"31
+[; ;main.c: 31:     ANSELCbits.ANSELC1 = 0;
+[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
+"32
+[; ;main.c: 32:     U1RXPPS = 0b010001;
+[e = _U1RXPPS -> -> 17 `i `uc ]
+"34
+[; ;main.c: 34:     U1CON0bits.BRGS = 0;
 [e = . . _U1CON0bits 3 4 -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:     U1CON0bits.MODE = 0b0011;
+"35
+[; ;main.c: 35:     U1CON0bits.MODE = 0b0011;
 [e = . . _U1CON0bits 3 0 -> -> 3 `i `uc ]
-"76
-[; ;main.c: 76:     U1CON0bits.RXEN = 1;
+"36
+[; ;main.c: 36:     U1CON0bits.RXEN = 1;
 [e = . . _U1CON0bits 3 1 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     U1CON0bits.TXEN = 1;
+"37
+[; ;main.c: 37:     U1CON0bits.TXEN = 1;
 [e = . . _U1CON0bits 3 2 -> -> 1 `i `uc ]
-"79
-[; ;main.c: 79:     U1CON2bits.RXPOL = 0;
+"39
+[; ;main.c: 39:     U1CON2bits.RXPOL = 0;
 [e = . . _U1CON2bits 0 4 -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80:     U1CON2bits.TXPOL = 0;
+"40
+[; ;main.c: 40:     U1CON2bits.TXPOL = 0;
 [e = . . _U1CON2bits 0 1 -> -> 0 `i `uc ]
-"81
-[; ;main.c: 81:     U1CON2bits.STP = 0b00;
+"41
+[; ;main.c: 41:     U1CON2bits.STP = 0b00;
 [e = . . _U1CON2bits 0 3 -> -> 0 `i `uc ]
-"91
-[; ;main.c: 91:     U1BRGH = 0;
+"51
+[; ;main.c: 51:     U1BRGH = 0;
 [e = _U1BRGH -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92:     U1BRGL = 0x1B;
-[e = _U1BRGL -> -> 27 `i `uc ]
-"94
-[; ;main.c: 94:     U1CON1bits.ON = 1;
+"52
+[; ;main.c: 52:     U1BRGL = 0x19;
+[e = _U1BRGL -> -> 25 `i `uc ]
+"59
+[; ;main.c: 59:     INTCON0bits.GIE = 1;
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"60
+[; ;main.c: 60:     INTCON0bits.IPEN = 1;
+[e = . . _INTCON0bits 0 4 -> -> 1 `i `uc ]
+"63
+[; ;main.c: 63:     PIE4bits.U1IE = 1;
+[e = . . _PIE4bits 0 3 -> -> 1 `i `uc ]
+"64
+[; ;main.c: 64:     PIE4bits.U1RXIE = 1;
+[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
+"65
+[; ;main.c: 65:     IPR4bits.U1RXIP = 1;
+[e = . . _IPR4bits 0 0 -> -> 1 `i `uc ]
+"66
+[; ;main.c: 66:     PIR4bits.U1RXIF = 0;
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:     U1RXB = 0x00;
+[e = _U1RXB -> -> 0 `i `uc ]
+"70
+[; ;main.c: 70:     U1CON1bits.ON = 1;
 [e = . . _U1CON1bits 0 6 -> -> 1 `i `uc ]
-"95
-[; ;main.c: 95: }
-[e :UE 1850 ]
+"71
+[; ;main.c: 71: }
+[e :UE 1849 ]
 }
-"97
-[; ;main.c: 97: void loop(){
+"73
+[; ;main.c: 73: void loop(){
 [v _loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _loop ]
 [f ]
-[v F13025 `uc ~T0 @X0 -> 6 `i s ]
-[i F13025
+[v F13022 `uc ~T0 @X0 -> 7 `i s ]
+[i F13022
 :U ..
-"98
-[; ;main.c: 98:     char msg[6] = "Hello";
--> 72 `c
+"75
+[; ;main.c: 75:     char msg[7] = "testing";
+-> 116 `c
 -> 101 `c
--> 108 `c
--> 108 `c
--> 111 `c
--> 0 `c
+-> 115 `c
+-> 116 `c
+-> 105 `c
+-> 110 `c
+-> 103 `c
 ..
 ]
-[v _msg `uc ~T0 @X0 -> 6 `i a ]
-[e = _msg F13025 ]
-"103
-[; ;main.c: 103:     TX(msg[0]);
-[e ( _TX (1 *U + &U _msg * -> -> -> 0 `i `ui `ux -> -> # *U &U _msg `ui `ux ]
-"105
-[; ;main.c: 105:     _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"108
-[; ;main.c: 108: }
-[e :UE 1851 ]
+[v _msg `uc ~T0 @X0 -> 7 `i a ]
+[e = _msg F13022 ]
+"76
+[; ;main.c: 76:     for(int i = 0; i<7; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 7 `i 1851  ]
+[e $U 1852  ]
+[e :U 1851 ]
+{
+"77
+[; ;main.c: 77:         TX(msg[i]);
+[e ( _TX (1 *U + &U _msg * -> -> _i `ui `ux -> -> # *U &U _msg `ui `ux ]
+"78
+[; ;main.c: 78:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 7 `i 1851  ]
+[e :U 1852 ]
+}
+"79
+[; ;main.c: 79:     TX(0x09);
+[e ( _TX (1 -> -> 9 `i `uc ]
+"81
+[; ;main.c: 81:     _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"82
+[; ;main.c: 82: }
+[e :UE 1850 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"84
+[; ;main.c: 84: void __attribute__((picinterrupt(("irq(U1RX)")))) ISR(void) {
+[v _ISR `(v ~T1 @X0 1 ef ]
+{
+[e :U _ISR ]
+[f ]
+"85
+[; ;main.c: 85:     int timeout = 0;
+[v _timeout `i ~T0 @X0 1 a ]
+[e = _timeout -> 0 `i ]
+"86
+[; ;main.c: 86:     while(~U1FIFObits.RXBF && timeout < 500){timeout++;}
+[e $U 1855  ]
+[e :U 1856 ]
+{
+[e ++ _timeout -> 1 `i ]
+}
+[e :U 1855 ]
+[e $ && != ~ -> . . _U1FIFObits 0 0 `i -> 0 `i < _timeout -> 500 `i 1856  ]
+[e :U 1857 ]
+"87
+[; ;main.c: 87:     receive[count] = U1RXB;
+[e = *U + &U _receive * -> -> _count `ui `ux -> -> # *U &U _receive `ui `ux _U1RXB ]
+"88
+[; ;main.c: 88:     count++;
+[e ++ _count -> 1 `i ]
+"90
+[; ;main.c: 90:     if(count > 63){
+[e $ ! > _count -> 63 `i 1858  ]
+{
+"91
+[; ;main.c: 91:         count = 0;
+[e = _count -> 0 `i ]
+"92
+[; ;main.c: 92:     }
+}
+[e :U 1858 ]
+"93
+[; ;main.c: 93: }
+[e :UE 1854 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"122
-[; ;main.c: 122: void main(void) {
+"96
+[; ;main.c: 96: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"123
-[; ;main.c: 123:     setup();
+"97
+[; ;main.c: 97:     setup();
 [e ( _setup ..  ]
-"125
-[; ;main.c: 125:     while(1){
-[e :U 1854 ]
+"99
+[; ;main.c: 99:     while(1){
+[e :U 1861 ]
 {
-"126
-[; ;main.c: 126:         loop();
+"100
+[; ;main.c: 100:         loop();
 [e ( _loop ..  ]
-"127
-[; ;main.c: 127:     }
+"101
+[; ;main.c: 101:     }
 }
-[e :U 1853 ]
-[e $U 1854  ]
-[e :U 1855 ]
-"128
-[; ;main.c: 128:     return;
-[e $UE 1852  ]
-"129
-[; ;main.c: 129: }
-[e :UE 1852 ]
+[e :U 1860 ]
+[e $U 1861  ]
+[e :U 1862 ]
+"102
+[; ;main.c: 102:     return;
+[e $UE 1859  ]
+"103
+[; ;main.c: 103: }
+[e :UE 1859 ]
 }

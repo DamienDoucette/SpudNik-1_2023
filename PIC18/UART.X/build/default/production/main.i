@@ -22523,17 +22523,18 @@ void TX(char data){
 }
 
 void setup(){
+    OSCFREQ = 0b0010;
+    OSCCON1bits.NOSC = 0b110;
 
 
 
-    __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-    OSCENbits.EXTOEN = 1;
-    OSCCON1bits.NOSC = 0b111;
+
 
 
     RC0PPS = 0x10;
     TRISCbits.TRISC0 = 0;
     U1RXPPS = RC1;
+
     U1CON0bits.BRGS = 0;
     U1CON0bits.MODE = 0b0011;
     U1CON0bits.RXEN = 1;
@@ -22542,25 +22543,40 @@ void setup(){
     U1CON2bits.RXPOL = 0;
     U1CON2bits.TXPOL = 0;
     U1CON2bits.STP = 0b00;
-# 52 "main.c"
-    U1CON0bits.BRGS = 1;
+# 50 "main.c"
     U1BRGH = 0;
     U1BRGL = 0x19;
+
+
+
+
 
     U1CON1bits.ON = 1;
 }
 
 void loop(){
 
-    char msg[7] = "testing";
-    for(int i = 0; i<7; i++){
-        TX(msg[i]);
-    }
-    TX(0x09);
+
+
+
+
+
 
     _delay((unsigned long)((1)*(4000000/4000.0)));
 }
-# 82 "main.c"
+
+void __attribute__((picinterrupt(("irq(U1RX)")))) ISR(void) {
+    int timeout = 0;
+    while(~U1FIFObits.RXBF && timeout < 500){timeout++;}
+    receive[count] = U1RXB;
+    count++;
+
+    if(count > 7){
+        count = 0;
+    }
+}
+
+
 void main(void) {
     setup();
 
