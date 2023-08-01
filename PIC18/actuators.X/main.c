@@ -7,8 +7,38 @@
 
 
 #include <xc.h>
-
+uint8_t i2cBuffer[3];
 #define _XTAL_FREQ 4000000 // One instruction cycle is 1 microsaec.
+
+void setPWM(int address, uint8_t duty_cycle){
+    
+    /*Determine address of PWMxCON register to disable and enable PWM*/
+    int temp = address >> 4;    //Remove the last character of the HEX address
+    int conReg;                 //Create variable to PWMxCON register address
+    
+    /*Determine the last character of HEX address based on the prior two
+     The address of the CON register for each PWM module shares the 12 MSb of the address
+     The last 4 bits are specific to each register*/
+    if(temp == 0x046){
+        conReg = temp << 4 | 0x0009;    //PWM1CON address is 0x0469
+    }
+    if(temp == 0x047){
+        conReg = temp << 4 | 0x0008;    //PWM1CON address is 0x0478
+    }
+    if(temp == 0x048){
+        conReg = temp << 4 | 0x0007;    //PWM1CON address is 0x0487
+    }
+    
+    //Convert address value to a pointer to the register
+    int volatile * const pConReg = (int *) conReg;
+    *pConReg &= ~(0b10000000);    //Clear the enable bit of the register (Disable PWM)
+    
+    //Convert address value to a pointer to the register
+    int volatile * const pDutyReg = (int *) address;
+    *pDutyReg = duty_cycle;     //Set duty cycle register to duty cycle
+    *pConReg |= 0b10000000;       //Set the enable bit of the register (Enable PWM)
+}
+
 void configI2C(){
     I2C1CON0bits.EN = 0;    //Disable I2c
     //SCL1 -- RC1
@@ -89,6 +119,45 @@ void configI2C(){
     I2C1PIEbits.SCIE = 1;       //Enable interrupt when start condition detected
 }
 
+void i2cStart(){
+    /*
+     *Address is received from the host
+     * Address is compared to the address saved on this client
+     * If there is a match, the SMA bit is set by hardware to activate client mode
+     * Data bit D is cleared by hardware to indicate last byte was address
+     */
+    
+    while(I2C1STAT0bits.SMA == 0){};
+   
+    if(I2C1STAT0bits.R == 0){
+        int index = 0;
+        while(I2C1CNTL > 0){
+            I2C1CON0bits.CSTR = 0;
+            while(I2C1STAT1bits.RXBF == 0);
+            i2cBuffer[index] = I2C1RXB;
+            I2C1CON1bits.ACKDT = 0;
+            I2C1CON0bits.CSTR = 0;
+            index++;
+        }   
+    }
+    
+    while(I2C1CON1bits.ACKT == 0);
+    
+    int address = i2cBuffer[0] << 8 | i2cBuffer[1];
+    setPWM(address, i2cBuffer[2]);
+    
+    /*RESET FOR NEXT COMMUNICATION*/
+    I2C1CON0bits.EN = 0;
+    I2C1PIR = 0x00;
+    I2C1CON0bits.EN = 1;
+}
+
+void __interrupt(irq(I2C1)) ISR(void){
+    if(I2C1PIRbits.SCIF == 1){
+        I2C1PIRbits.SCIF = 0;
+        i2cStart();
+    }
+}
 void PWMsetup(){
     //Set pins to output
     TRISCbits.TRISC3 = 0;
@@ -168,46 +237,12 @@ void PWMsetup(){
 }
 
 void loop(){
-        
-    /*Some function to control the PWM signal to ensure its changeable*/
-    for(uint16_t i = 0; i < 0x00C8; i++){
-        setPWM(0x048B, i);
-        
-        __delay_ms(10);
-    } 
-}
 
-void setPWM(int address, uint8_t duty_cycle){
-    
-    /*Determine address of PWMxCON register to disable and enable PWM*/
-    int temp = address >> 4;    //Remove the last character of the HEX address
-    int conReg;                 //Create variable to PWMxCON register address
-    
-    /*Determine the last character of HEX address based on the prior two
-     The address of the CON register for each PWM module shares the 12 MSb of the address
-     The last 4 bits are specific to each register*/
-    if(temp == 0x046){
-        conReg = temp << 4 | 0x0009;    //PWM1CON address is 0x0469
-    }
-    if(temp == 0x047){
-        conReg = temp << 4 | 0x0008;    //PWM1CON address is 0x0478
-    }
-    if(temp == 0x048){
-        conReg = temp << 4 | 0x0007;    //PWM1CON address is 0x0487
-    }
-    
-    //Convert address value to a pointer to the register
-    int volatile * const pConReg = (int *) conReg;
-    *pConReg &= ~(0b10000000);    //Clear the enable bit of the register (Disable PWM)
-    
-    //Convert address value to a pointer to the register
-    int volatile * const pDutyReg = (int *) address;
-    *pDutyReg = duty_cycle;     //Set duty cycle register to duty cycle
-    *pConReg |= 0b10000000;       //Set the enable bit of the register (Enable PWM)
 }
 
 void main(void) {
     PWMsetup();
+    configI2C();
     while(1){
         loop();
     }
