@@ -4,13 +4,15 @@ void writeToI2C(i2c& I2C, uint8_t addrMCU, uint16_t addrReg, uint8_t dutyCycle){
     
     /*Organize the data into bytes for the I2C write buffer*/
     uint8_t writeBuffer[3];
-    writeBuffer[0] = addrReg >> 8;  //Address H
-    writeBuffer[1] = addrReg & ~(0xFF00);   //Address L
-    writeBuffer[2] = dutyCycle;
+    writeBuffer[0] = addrReg >> 8;  //Duty cycle register address H
+    writeBuffer[1] = addrReg & ~(0xFF00);   //Duty cycle register address L
+    writeBuffer[2] = dutyCycle; //Duty cycle value
 
     /*Use I2C library to send data to the MCU*/
     if(I2C.writeBus(addrMCU, 3, writeBuffer)){
         printf("ERROR:\tWrite to client %d Failed!", addrMCU);
+    } else {
+        usleep(50); //Delay 50us to allow for the PWM signal to be set before interrupting the PIC
     }
 }
 

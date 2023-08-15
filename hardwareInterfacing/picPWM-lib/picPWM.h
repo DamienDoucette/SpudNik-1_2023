@@ -4,6 +4,7 @@
 /*Include libraries*/
 #include <stdint.h>
 #include "../i2c-lib/i2c.h"
+#include <unistd.h>
 
 class picPWM {
     /* Class to control the PWM signals for the magnetorquers and reaction wheel motors
