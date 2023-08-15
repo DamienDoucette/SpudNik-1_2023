@@ -1,15 +1,15 @@
-C1 = 1E-6;
-C2 = 330E-6;
-R1 = 100e-3;
-R2 = 3.4;
-L = 1E-3;
+C1 = 1E-6;  %filter cap [F]
+C2 = 330E-6;    %Balancing cap [F]
+R1 = 100e-3; %additional loop resistance [Ohm]
+R2 = 3.4;   %Inductor resistance [Ohm]
+L = 1E-3;   %Inductance [H]
 
-Rds = 0.2;
+%% MOSFET Parameters
+Rds = 0.2;  %[Ohm]
+Ciss = 400e-12; %[F]
+Coss = 170e-12; %[F]
+Crss = 42e-12;  %[F]
 
-Ciss = 400e-12;
-Coss = 170e-12;
-Crss = 42e-12;
-
-Cgd = Crss;
-Cgs = Ciss - Cgd;
-Cds = Coss - Cgd;
+Cgd = Crss; %[F]
+Cgs = Ciss - Cgd;   %[F]
+Cds = Coss - Cgd;   %[F]

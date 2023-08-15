@@ -1,0 +1,214 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F15Q40 ]
+[d frameptr 1249 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"19 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\CellBalancingTest.X\main.c
+[v _ADCsetup ADCsetup `(v  1 e 1 0 ]
+"74
+[v _PWMsetup PWMsetup `(v  1 e 1 0 ]
+"104
+[v _main main `(v  1 e 1 0 ]
+"8646 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
+[v _RB5PPS RB5PPS `VEuc  1 e 1 @526 ]
+"8696
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @527 ]
+[s S82 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 RDY 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"26720
+[s S89 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+[u S97 . 1 `S82 1 . 1 0 `S89 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES97  1 e 1 @983 ]
+"29119
+[v _ADRESL ADRESL `VEuc  1 e 1 @1002 ]
+"29247
+[v _ADRESH ADRESH `VEuc  1 e 1 @1003 ]
+"29367
+[v _ADPCH ADPCH `VEuc  1 e 1 @1004 ]
+"29425
+[v _ADACQ ADACQ `VEus  1 e 2 @1006 ]
+[s S116 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :2:2 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"29971
+[s S124 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S132 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM0 1 0 :1:2 
+`uc 1 FM1 1 0 :1:3 
+]
+[s S137 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S139 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[u S144 . 1 `S116 1 . 1 0 `S124 1 . 1 0 `S132 1 . 1 0 `S137 1 . 1 0 `S139 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES144  1 e 1 @1011 ]
+[s S28 . 1 `uc 1 PREF 1 0 :4:0 
+`uc 1 NREF 1 0 :4:4 
+]
+"30566
+[s S31 . 1 `uc 1 ADPREF 1 0 :4:0 
+`uc 1 ADNREF 1 0 :4:4 
+]
+[s S34 . 1 `uc 1 PREF0 1 0 :1:0 
+`uc 1 PREF1 1 0 :1:1 
+`uc 1 PREF2 1 0 :1:2 
+`uc 1 PREF3 1 0 :1:3 
+`uc 1 NREF0 1 0 :1:4 
+`uc 1 NREF1 1 0 :1:5 
+`uc 1 NREF2 1 0 :1:6 
+`uc 1 NREF3 1 0 :1:7 
+]
+[s S43 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 ADPREF2 1 0 :1:2 
+`uc 1 ADPREF3 1 0 :1:3 
+`uc 1 ADNREF0 1 0 :1:4 
+`uc 1 ADNREF1 1 0 :1:5 
+`uc 1 ADNREF2 1 0 :1:6 
+`uc 1 ADNREF3 1 0 :1:7 
+]
+[u S52 . 1 `S28 1 . 1 0 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES52  1 e 1 @1016 ]
+"31252
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
+"31564
+[v _ANSELC ANSELC `VEuc  1 e 1 @1040 ]
+"33382
+[v _PWM1ERS PWM1ERS `VEuc  1 e 1 @1120 ]
+"33452
+[v _PWM1CLK PWM1CLK `VEuc  1 e 1 @1121 ]
+"33592
+[v _PWM1PR PWM1PR `VEus  1 e 2 @1123 ]
+"33639
+[v _PWM1CPRE PWM1CPRE `VEuc  1 e 1 @1125 ]
+"33705
+[v _PWM1GIE PWM1GIE `VEuc  1 e 1 @1128 ]
+[s S224 . 1 `uc 1 ERSNOW 1 0 :1:0 
+`uc 1 ERSPOL 1 0 :1:1 
+`uc 1 LD 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 EN 1 0 :1:7 
+]
+"33745
+[u S230 . 1 `S224 1 . 1 0 ]
+"33745
+"33745
+[v _PWM1CONbits PWM1CONbits `VES230  1 e 1 @1129 ]
+[s S239 . 1 `uc 1 MODE 1 0 :3:0 
+`uc 1 PPEN 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 POL1 1 0 :1:6 
+`uc 1 POL2 1 0 :1:7 
+]
+"33789
+[s S245 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+]
+"33789
+[u S249 . 1 `S239 1 . 1 0 `S245 1 . 1 0 ]
+"33789
+"33789
+[v _PWM1S1CFGbits PWM1S1CFGbits `VES249  1 e 1 @1130 ]
+"33829
+[v _PWM1S1P1 PWM1S1P1 `VEus  1 e 2 @1131 ]
+"33876
+[v _PWM1S1P2 PWM1S1P2 `VEus  1 e 2 @1133 ]
+"36559
+[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
+[s S204 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"36573
+[u S210 . 1 `S204 1 . 1 0 ]
+"36573
+"36573
+[v _TRISBbits TRISBbits `VES210  1 e 1 @1223 ]
+"36598
+[v _TRISC TRISC `VEuc  1 e 1 @1224 ]
+[s S183 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"36615
+[u S192 . 1 `S183 1 . 1 0 ]
+"36615
+"36615
+[v _TRISCbits TRISCbits `VES192  1 e 1 @1224 ]
+"12 C:\Users\damie\Documents\GitHub\SpudNik-1_2023\PIC18\CellBalancingTest.X\main.c
+[v _channel_map channel_map `[4]uc  1 e 4 0 ]
+"104
+[v _main main `(v  1 e 1 0 ]
+{
+"165
+} 0
+"74
+[v _PWMsetup PWMsetup `(v  1 e 1 0 ]
+{
+"102
+} 0
+"19
+[v _ADCsetup ADCsetup `(v  1 e 1 0 ]
+{
+"49
+} 0
