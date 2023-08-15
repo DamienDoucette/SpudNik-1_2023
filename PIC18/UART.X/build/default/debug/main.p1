@@ -2325,28 +2325,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _loop ]
 [f ]
-[v F13022 `uc ~T0 @X0 -> 7 `i s ]
+[v F13022 `uc ~T0 @X0 -> 13 `i s ]
 [i F13022
 :U ..
 "75
-[; ;main.c: 75:     char msg[7] = "testing";
--> 116 `c
+[; ;main.c: 75:     char msg[13] = "Testing 1 2 3";
+-> 84 `c
 -> 101 `c
 -> 115 `c
 -> 116 `c
 -> 105 `c
 -> 110 `c
 -> 103 `c
+-> 32 `c
+-> 49 `c
+-> 32 `c
+-> 50 `c
+-> 32 `c
+-> 51 `c
 ..
 ]
-[v _msg `uc ~T0 @X0 -> 7 `i a ]
+[v _msg `uc ~T0 @X0 -> 13 `i a ]
 [e = _msg F13022 ]
 "76
-[; ;main.c: 76:     for(int i = 0; i<7; i++){
+[; ;main.c: 76:     for(int i = 0; i<13; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 7 `i 1851  ]
+[e $ < _i -> 13 `i 1851  ]
 [e $U 1852  ]
 [e :U 1851 ]
 {
@@ -2357,7 +2363,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 78:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 7 `i 1851  ]
+[e $ < _i -> 13 `i 1851  ]
 [e :U 1852 ]
 }
 "79

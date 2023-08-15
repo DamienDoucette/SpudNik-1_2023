@@ -22569,8 +22569,8 @@ void setup(){
 
 void loop(){
 
-    char msg[7] = "testing";
-    for(int i = 0; i<7; i++){
+    char msg[13] = "Testing 1 2 3";
+    for(int i = 0; i<13; i++){
         TX(msg[i]);
     }
     TX(0x09);

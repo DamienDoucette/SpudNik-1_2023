@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\dat\20230621192048_en.msgs \
   -pivt0x8=08h -cn -h+dist/default/debug\UART.X.debug.sym \
   --cmf=dist/default/debug\UART.X.debug.cmf -z -Q18F15Q40 \
-  -oC:\Users\damie\AppData\Local\Temp\xcBs1ig.1\driver_tmp_3.o \
+  -oC:\Users\damie\AppData\Local\Temp\xcAsfi0.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/debug/UART.X.debug.map \
-  --md=C:\Users\damie\AppData\Local\Temp\xcBs1ig.1\driver_tmp_0.dat -E1 \
+  --md=C:\Users\damie\AppData\Local\Temp\xcAsfi0.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0E00h-0EFFhx114 -AMEDIUMCONST=0E00h-07FFFh \
   -ACOMRAM=0501h-055Fh -AABS1=0500h-0CFFh -ABIGRAM=0501h-0CFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\damie\AppData\Local\Temp\xcBs1ig.1\driver_tmp_9.o \
+  C:\Users\damie\AppData\Local\Temp\xcAsfi0.\driver_tmp_9.o \
   dist/default/debug\UART.X.debug.o 
 
 Object code version is 3.11
@@ -36,21 +36,22 @@ Machine type is 18F15Q40
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\damie\AppData\Local\Temp\xcBs1ig.1\driver_tmp_9.o
+C:\Users\damie\AppData\Local\Temp\xcAsfi0.\driver_tmp_9.o
                 init                                 BA       BA        4        4       0
                 reset_vec                             0        0        4        0       0
 dist/default/debug\UART.X.debug.o
                 ivt0x8                                8        8       B2        4       0
                 text4                                C0       C0       6A       30       0
-                text3                               1DC      1DC       44       30       0
+                text3                               220      220       44       30       0
                 text2                               12A      12A       5C       30       0
                 text1                               186      186       56       30       0
-                text0                               260      260       10       30       0
-                cstackCOMRAM                        543      543        E      501       1
-                dataCOMRAM                          551      551        7      501       1
-                bssCOMRAM                           501      501       42      501       1
-                cinit                               220      220       40       30       0
-                idataCOMRAM                         270      270        7       30       0
+                text0                               264      264       10       30       0
+                cstackCOMRAM                        501      501       14      501       1
+                bssBANK5                            560      560       40      560       1
+                dataCOMRAM                          515      515        D      501       1
+                bssCOMRAM                           522      522        2      501       1
+                cinit                               1DC      1DC       44       30       0
+                idataCOMRAM                         274      274        D       30       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -58,12 +59,12 @@ TOTAL           Name                               Link     Load   Length     Sp
                 reset_vec                             0        0        4         0
                 ivt0x8                                8        8       B2         0
                 text4                                C0       C0       6A         0
-                text3                               1DC      1DC       44         0
+                text3                               220      220       44         0
                 text2                               12A      12A       5C         0
                 text1                               186      186       56         0
-                text0                               260      260       10         0
-                cinit                               220      220       40         0
-                idataCOMRAM                         270      270        7         0
+                text0                               264      264       10         0
+                cinit                               1DC      1DC       44         0
+                idataCOMRAM                         274      274        D         0
 
         CLASS   CONST          
 
@@ -72,9 +73,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                        543      543        E         1
-                dataCOMRAM                          551      551        7         1
-                bssCOMRAM                           501      501       42         1
+                cstackCOMRAM                        501      501       14         1
+                dataCOMRAM                          515      515        D         1
+                bssCOMRAM                           522      522        2         1
 
         CLASS   ABS1           
 
@@ -83,6 +84,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK5          
+                bssBANK5                            560      560       40         1
 
         CLASS   BANK6          
 
@@ -120,8 +122,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 ivt0x8                         000008  0000B6  0000BE         4       0  CODE    
-                text4                          0000C0  0001B7  000277        30       0  CODE    
-                bssCOMRAM                      000501  000057  000558       501       1  COMRAM  
+                text4                          0000C0  0001C1  000281        30       0  CODE    
+                cstackCOMRAM                   000501  000023  000524       501       1  COMRAM  
+                bssBANK5                       000560  000040  0005A0       560       1  BANK5   
 
 
 UNUSED ADDRESS RANGES
@@ -130,38 +133,39 @@ UNUSED ADDRESS RANGES
         BANK10           A00-AFF           100
         BANK11           B00-BFF           100
         BANK12           C00-CFF           100
-        BANK5            560-5FF            A0
+        BANK5            5A0-5FF            60
         BANK6            600-6FF           100
         BANK7            700-7FF           100
         BANK8            800-8FF           100
         BANK9            900-9FF           100
-        BIGRAM           558-CFF           7A8
+        BIGRAM           524-55F            3C
+                         5A0-CFF           760
         BIGSFR           000-4FF           500
                          D00-DFF           100
         CODE             004-007             4
                          0BE-0BF             2
-                         277-7FFF          7D89
-        COMRAM           558-55F             8
+                         281-7FFF          7D7F
+        COMRAM           524-55F            3C
         CONFIG           300000-300011            12
         CONST            004-007             4
                          0BE-0BF             2
-                         277-7FFF          7D89
+                         281-7FFF          7D7F
         EEDATA           380000-3801FF           200
         IDLOC            200000-20003F            40
         MEDIUMCONST      E00-7FFF          7200
-        RAM              560-CFF           100
+        RAM              5A0-CFF           100
         SFR              000-4FF           100
                          D00-DFF           100
         SMALLCONST       E00-7FFF           100
 
                                   Symbol Table
 
-ISR@timeout              cstackCOMRAM 543
+ISR@timeout              cstackCOMRAM 501
 IVTBASEH                 (abs)        45E
 IVTBASEL                 (abs)        45D
 IVTBASEU                 (abs)        45F
-TX@data                  cstackCOMRAM 547
-TX@timeout               cstackCOMRAM 545
+TX@data                  cstackCOMRAM 505
+TX@timeout               cstackCOMRAM 503
 _ANSELCbits              (abs)        410
 _INTCON0bits             (abs)        4D6
 _IPR4bits                (abs)        36B
@@ -172,7 +176,7 @@ _PIE4bits                (abs)        4AC
 _PIR4bits                (abs)        4B7
 _RC0PPS                  (abs)        211
 _TRISCbits               (abs)        4C8
-_TX                      text3        1DC
+_TX                      text3        220
 _U1BRGH                  (abs)        2AF
 _U1BRGL                  (abs)        2AE
 _U1CON0bits              (abs)        2AB
@@ -198,6 +202,7 @@ __Hbigdata               bigdata      000
 __Hbigram                bigram       000
 __Hbigsfr                bigsfr       000
 __Hbss                   bss          000
+__HbssBANK5              bssBANK5     000
 __HbssCOMRAM             bssCOMRAM    000
 __Hcinit                 cinit        000
 __Hclrtext               clrtext      000
@@ -236,7 +241,7 @@ __Hrparam                rparam       000
 __Hsfr                   sfr          000
 __Hsmallconst            smallconst   000
 __Hspace_0               (abs)        E00
-__Hspace_1               (abs)        558
+__Hspace_1               (abs)        5A0
 __Hspace_2               (abs)        000
 __Hspace_4               (abs)        000
 __Hstack                 stack        000
@@ -264,6 +269,7 @@ __Lbigdata               bigdata      000
 __Lbigram                bigram       000
 __Lbigsfr                bigsfr       000
 __Lbss                   bss          000
+__LbssBANK5              bssBANK5     000
 __LbssCOMRAM             bssCOMRAM    000
 __Lcinit                 cinit        000
 __Lclrtext               clrtext      000
@@ -314,8 +320,8 @@ __Ltext1                 text1        000
 __Ltext2                 text2        000
 __Ltext3                 text3        000
 __Ltext4                 text4        000
-__S0                     (abs)        277
-__S1                     (abs)        558
+__S0                     (abs)        281
+__S1                     (abs)        5A0
 __S4                     (abs)        000
 __S5                     (abs)        000
 ___heap_hi               (abs)        000
@@ -328,32 +334,33 @@ ___sp                    stack        000
 __accesstop              (abs)        560
 __activetblptr           (abs)        000
 __end_of_ISR             text4        12A
-__end_of_TX              text3        220
-__end_of__initialization cinit        25A
+__end_of_TX              text3        264
+__end_of__initialization cinit        21A
 __end_of_loop            text2        186
-__end_of_main            text0        270
+__end_of_main            text0        274
 __end_of_setup           text1        1DC
-__initialization         cinit        220
+__initialization         cinit        1DC
 __mediumconst            mediumconst  000
-__pbssCOMRAM             bssCOMRAM    501
-__pcinit                 cinit        220
-__pcstackCOMRAM          cstackCOMRAM 543
-__pdataCOMRAM            dataCOMRAM   551
-__pidataCOMRAM           idataCOMRAM  270
+__pbssBANK5              bssBANK5     560
+__pbssCOMRAM             bssCOMRAM    522
+__pcinit                 cinit        1DC
+__pcstackCOMRAM          cstackCOMRAM 501
+__pdataCOMRAM            dataCOMRAM   515
+__pidataCOMRAM           idataCOMRAM  274
 __pivt0x8                ivt0x8       008
-__ptext0                 text0        260
+__ptext0                 text0        264
 __ptext1                 text1        186
 __ptext2                 text2        12A
-__ptext3                 text3        1DC
+__ptext3                 text3        220
 __ptext4                 text4        0C0
 __ramtop                 ramtop       E00
 __smallconst             smallconst   000
-_count                   bssCOMRAM    541
+_count                   bssCOMRAM    522
 _loop                    text2        12A
-_main                    text0        260
-_receive                 bssCOMRAM    501
+_main                    text0        264
+_receive                 bssBANK5     560
 _setup                   text1        186
-end_of_initialization    cinit        25A
+end_of_initialization    cinit        21A
 intlevel0                text         000
 intlevel1                text         000
 intlevel2                text         000
@@ -362,29 +369,29 @@ isa$std                  (abs)        001
 isa$xinst                (abs)        000
 ivt0x8_base              ivt0x8       008
 ivt0x8_undefint          ivt0x8       0B8
-loop@F13022              dataCOMRAM   551
-loop@i                   cstackCOMRAM 54F
-loop@msg                 cstackCOMRAM 548
+loop@F13022              dataCOMRAM   515
+loop@i                   cstackCOMRAM 513
+loop@msg                 cstackCOMRAM 506
 stackhi                  (abs)        000
 stacklo                  (abs)        000
 start                    init         0BA
-start_initialization     cinit        220
+start_initialization     cinit        1DC
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	0220	0000	58
+		__initialization		CODE           	01DC	0000	62
 
-shared estimated size: 58
+shared estimated size: 62
 
 main.c
 		_loop          		CODE           	012A	0000	92
 		_ISR           		CODE           	00C0	0000	106
-		_main          		CODE           	0260	0000	16
+		_main          		CODE           	0264	0000	16
 		_setup         		CODE           	0186	0000	86
-		_TX            		CODE           	01DC	0000	68
+		_TX            		CODE           	0220	0000	68
 
 main.c estimated size: 368
 

@@ -71,8 +71,8 @@ void setup(){
 }
 
 void loop(){
-    #define length 7
-    char msg[length] = "testing";
+    #define length 13
+    char msg[length] = "Testing 1 2 3";
     for(int i = 0; i<length; i++){
         TX(msg[i]);
     }
