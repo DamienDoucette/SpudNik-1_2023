@@ -22705,9 +22705,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 uint8_t channel_map[12] = {
-    0b000101,
     0b000100,
-    0b000011,
     0b010101,
     0b010100,
     0b010011,
@@ -22716,7 +22714,9 @@ uint8_t channel_map[12] = {
     0b001111,
     0b001110,
     0b001101,
-    0b001100
+    0b001100,
+    0b010010,
+    0b000010
 };
 
 uint8_t data[24];
@@ -22803,16 +22803,18 @@ void configI2C(){
 
 void i2cStart(){
 
-    while(I2C1STAT0bits.SMA == 0){};
+    int timeout = 0;
+    while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
+    timeout = 0;
     if(I2C1STAT0bits.R == 1){
         I2C1CON0bits.CSTR = 0;
         for(int i = 0; i < 24; i ++){
-
-            I2C1TXB = i;
-            while(I2C1STAT1bits.TXBE == 0);
+            I2C1TXB = data[i];
+            while(I2C1STAT1bits.TXBE == 0 && timeout < 100){timeout++;};
+            timeout = 0;
         }
     }
-    while(I2C1CON1bits.ACKT == 0);
+    while(I2C1CON1bits.ACKT == 0 && timeout < 5){timeout++;};
 
 
     I2C1CON0bits.EN = 0;
@@ -22822,13 +22824,13 @@ void i2cStart(){
 
 void ADCsetup(){
 
-    TRISA = TRISA | 0b00111000;
+    TRISA = TRISA | 0b00010100;
     TRISB = TRISB | 0b11110000;
-    TRISC = TRISC | 0b11111000;
+    TRISC = TRISC | 0b11111100;
 
-    ANSELA = ANSELA | 0b00111000;
+    ANSELA = ANSELA | 0b00010100;
     ANSELB = ANSELB | 0b11110000;
-    ANSELC = ANSELC | 0b11111000;
+    ANSELC = ANSELC | 0b11111100;
 
 
     ADREFbits.NREF = 0;
@@ -22855,7 +22857,7 @@ void ADCsetup(){
 }
 
 uint16_t ADCread(int channel){
-# 172 "main.c"
+# 174 "main.c"
     ADPCH = 0b111011;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO);

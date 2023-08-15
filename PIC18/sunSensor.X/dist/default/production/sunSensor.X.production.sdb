@@ -31,15 +31,15 @@
 [v _configI2C configI2C `(v  1 e 1 0 ]
 "107
 [v _i2cStart i2cStart `(v  1 e 1 0 ]
-"126
+"127
 [v _ADCsetup ADCsetup `(v  1 e 1 0 ]
-"160
+"161
 [v _ADCread ADCread `(us  1 e 2 0 ]
-"192
+"193
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"199
+"200
 [v _loop loop `(v  1 e 1 0 ]
-"209
+"210
 [v _main main `(v  1 e 1 0 ]
 [s S606 . 1 `uc 1 NDIV 1 0 :4:0 
 `uc 1 NOSC 1 0 :3:4 
@@ -409,52 +409,54 @@
 [v _channel_map channel_map `[12]uc  1 e 12 0 ]
 "25
 [v _data data `[24]uc  1 e 24 0 ]
-"209
+"210
 [v _main main `(v  1 e 1 0 ]
 {
-"219
+"220
 } 0
-"199
+"200
 [v _loop loop `(v  1 e 1 0 ]
 {
+"203
+[v loop@i i `i  1 a 2 12 ]
 "202
-[v loop@i i `i  1 a 2 10 ]
-"201
-[v loop@temp temp `us  1 a 2 8 ]
-"207
+[v loop@temp temp `us  1 a 2 10 ]
+"208
 } 0
-"160
+"161
 [v _ADCread ADCread `(us  1 e 2 0 ]
 {
-"185
-[v ADCread@result result `us  1 a 2 6 ]
+"186
+[v ADCread@result result `us  1 a 2 8 ]
+"183
+[v ADCread@resultLow resultLow `uc  1 a 1 7 ]
 "182
-[v ADCread@resultLow resultLow `uc  1 a 1 5 ]
-"181
-[v ADCread@resultHigh resultHigh `uc  1 a 1 4 ]
-"160
-[v ADCread@channel channel `i  1 p 2 2 ]
-"190
+[v ADCread@resultHigh resultHigh `uc  1 a 1 6 ]
+"161
+[v ADCread@channel channel `i  1 p 2 4 ]
+"191
 } 0
 "27
 [v _configI2C configI2C `(v  1 e 1 0 ]
 {
 "105
 } 0
-"126
+"127
 [v _ADCsetup ADCsetup `(v  1 e 1 0 ]
 {
-"158
+"159
 } 0
-"192
+"193
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"197
+"198
 } 0
 "107
 [v _i2cStart i2cStart `(v  1 e 1 0 ]
 {
-"112
-[v i2cStart@i i `i  1 a 2 0 ]
-"124
+"114
+[v i2cStart@i i `i  1 a 2 2 ]
+"109
+[v i2cStart@timeout timeout `i  1 a 2 0 ]
+"125
 } 0

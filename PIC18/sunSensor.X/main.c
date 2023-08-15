@@ -1,10 +1,9 @@
-/** I N C L U D E S **********************************************************/
 #include <xc.h>
-#include <stdio.h>						// Standard IO functions
-#include <stdlib.h>						// Standard library functions
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-#define _XTAL_FREQ 4000000     // One instruction cycle is 1 microsaec.
+#define _XTAL_FREQ 4000000
 
 //This array hold the ADPCH bits for each pin
 uint8_t channel_map[12] = {
@@ -29,14 +28,15 @@ void configI2C(){
     //SCL1 -- RC1
     //SDA1 -- RC0
     
-    //Set all pins to digital not analog
-    ANSELCbits.ANSELC0 = 0;
-    ANSELCbits.ANSELC1 = 0;
-    
     /*Configure pins*/
     //Set pins
     TRISCbits.TRISC0 = 0;
     TRISCbits.TRISC1 = 0;
+    
+    //Set pins to digital not analog
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+    
     //Set pins to open drain
     ODCONCbits.ODCC0 = 1;
     ODCONCbits.ODCC1 = 1;
@@ -53,17 +53,17 @@ void configI2C(){
     I2C1CON0bits.MODE = 0b000; //Set to client 7bit w/o masking
     I2C1CON0bits.CSTR = 0;      //Enable clocking (not stretching clock)
     
-    I2C1CON1bits.CSD = 0;       //Disable clock stretching
+    I2C1CON1bits.CSD = 0;       //Enable clock stretching
     
-    I2C1CON2bits.ACNT = 0;      //First transmission after address will be loaded to the byte count register
+    I2C1CON2bits.ACNT = 0;      //Disable autoload CNT register
     I2C1CON2bits.GCEN = 1;      //Enable general address call -- will respond to address 0x00
-    I2C1CON2bits.ABD = 0;
-    I2C1CON2bits.SDAHT = 0b00;
+    I2C1CON2bits.ABD = 0;       //Enable the address buffer
+    I2C1CON2bits.SDAHT = 0b00;  //Sets minimum hold time on SDA after falling edge of SCL
     
-    I2C1PIEbits.CNT1IE = 0;     //Enable interrupt when byte count reaches 0
-    I2C1PIEbits.ACKTIE = 0;     //Enable interrupt for acknowledge clock stretching
-    I2C1PIEbits.WRIE = 0;       //Enable interrupt for receiving data to process and determine ACK or NACK
-    I2C1PIEbits.ADRIE = 1;      //Enable interrupt for processing address
+    I2C1PIEbits.CNT1IE = 0;     //Disable interrupt & clock stretching when byte count reaches 0
+    I2C1PIEbits.ACKTIE = 0;     //Disable interrupt & clock stretching for acknowledge clock stretching
+    I2C1PIEbits.WRIE = 0;       //Disable interrupt & clock stretching for receiving data to process and determine ACK or NACK
+    I2C1PIEbits.ADRIE = 1;      //Enable interrupt & clock stretching for processing address
     I2C1PIEbits.PCIE = 0;       //Disable interrupt when stop condition detected
     I2C1PIEbits.RSCIE = 0;      //Disable interrupt when restart condition detected
     I2C1PIEbits.SCIE = 1;       //Enable interrupt when start condition detected
@@ -79,7 +79,6 @@ void configI2C(){
     I2C1BTObits.TOTIME = 0x23;  //Set timeout time to 35ms (32kHz / 32 prescale * 35 = 35ms)
     
     I2C1ADR0 = 0xFF;   //Set 7bit address
-    I2C1ADR1 = 0xFF;   //Set 7bit address
     
     I2C1CLK = 0b0011;   //Set the clock to MFINTOSC (500kHz)
     I2C1BAUD = 0x04;    //Freq = I2C1CLK/(BAUD+1) = 500kHz/(4+1) = 100kHz
@@ -106,16 +105,22 @@ void configI2C(){
 
 void i2cStart(){
     /*This function gets called by the ISR when the start condition is detected*/
-    while(I2C1STAT0bits.SMA == 0){};    //Wait until client mode is active
+    int timeout = 0;
+    /*Wait for device to process address and determine if it should be in client
+     mode. The timeout will prevent the device from getting stuck in this while
+     loop if a different device was called*/
+    while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};    //Wait until client mode is active
+    timeout = 0;
     if(I2C1STAT0bits.R == 1){   //If a read command was given
         I2C1CON0bits.CSTR = 0;  //Enable the clock (Stop stretching)
+        /*For the 12 ADC readings, there are 24 bytes as the ADC is 12 bit*/
         for(int i = 0; i < 24; i ++){
             I2C1TXB = data[i];  //Load data into the transmit buffer
-            //I2C1TXB = i;
-            while(I2C1STAT1bits.TXBE == 0); //Wait until the buffer is emptied
+            while(I2C1STAT1bits.TXBE == 0 && timeout < 100){timeout++;}; //Wait until the TX buffer is emptied
+            timeout = 0;
         }
     }
-    while(I2C1CON1bits.ACKT == 0);  //Wait for an ACK to make sure the byte is fully sent
+    while(I2C1CON1bits.ACKT == 0 && timeout < 5){timeout++;};  //Wait for an ACK to make sure the byte is fully sent
     
     /*RESET FOR NEXT COMMUNICATION*/
     I2C1CON0bits.EN = 0;
@@ -198,9 +203,10 @@ void __interrupt(irq(I2C1)) ISR(void){
 
 void loop(){
     I2C1CNTL = 0x19;    //Set count to 24
-    uint16_t temp = 0;
+    uint16_t temp = 0;  //Variable to hold the 12bit ADC reading
     for(int i = 0; i < 12; i++){
-        temp = ADCread(i);
+        temp = ADCread(i);  //Read the ADC channel
+        //Store the data into a global array that will be transmitted when the I2C is called
         data[2*i] = temp >> 8;
         data[2*i+1] = temp & 0xFF;
     }
@@ -210,8 +216,8 @@ void main() {
     OSCFREQ = 0b0010;   //Set HF clock to 4MHz
     OSCCON1bits.NOSC = 0b110;   //Set HF to Fosc
     
-    configI2C();
-    ADCsetup();
+    configI2C();    //Setup the I2C registers
+    ADCsetup();     //Setup the ADC registers
     while(1){
         loop();
     }

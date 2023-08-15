@@ -22803,13 +22803,14 @@ void configI2C(){
 
 void i2cStart(){
 
-    while(I2C1STAT0bits.SMA == 0){};
+    int timeout = 0;
+    while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
+    timeout = 0;
     if(I2C1STAT0bits.R == 1){
         I2C1CON0bits.CSTR = 0;
         for(int i = 0; i < 24; i ++){
             I2C1TXB = data[i];
-
-            while(I2C1STAT1bits.TXBE == 0);
+            while(I2C1STAT1bits.TXBE == 0 && timeout < 50){timeout++;};
         }
     }
     while(I2C1CON1bits.ACKT == 0);
@@ -22855,7 +22856,7 @@ void ADCsetup(){
 }
 
 uint16_t ADCread(int channel){
-# 172 "main.c"
+# 173 "main.c"
     ADPCH = 0b111011;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO);
