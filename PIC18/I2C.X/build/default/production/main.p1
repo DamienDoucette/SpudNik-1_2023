@@ -2457,8 +2457,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1850 ]
 {
 "107
-[; ;main.c: 107:             I2C1TXB = i;
-[e = _I2C1TXB -> _i `uc ]
+[; ;main.c: 107:             I2C1TXB = i+1;
+[e = _I2C1TXB -> + _i -> 1 `i `uc ]
 "108
 [; ;main.c: 108:             while(I2C1STAT1bits.TXBE == 0);
 [e $U 1853  ]

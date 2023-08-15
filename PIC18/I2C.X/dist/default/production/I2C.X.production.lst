@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Mon Jul 24 13:35:44 2023
+                                                                                               Tue Aug 01 13:46:44 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F15Q40
@@ -662,450 +662,451 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    648   0000E0  6E14               	movwf	(i2cStart@i+1)^(0+1280),c
    649   0000E2  0E01               	movlw	1
    650   0000E4  6E13               	movwf	i2cStart@i^(0+1280),c
-   651   0000E6                     i2l74:
+   651   0000E6                     i2l859:
    652                           
    653                           ; BSR set to: 2
-   654                           ;main.c: 107:             I2C1TXB = i;
-   655   0000E6  C513  F28B         	movff	i2cStart@i,651	;volatile
-   656   0000EA                     i2l76:
-   657                           
-   658                           ; BSR set to: 2
-   659   0000EA  AB99               	btfss	153,5,b	;volatile
-   660   0000EC  EF7A  F000         	goto	i2u3_41
-   661   0000F0  EF7C  F000         	goto	i2u3_40
-   662   0000F4                     i2u3_41:
-   663   0000F4  EF75  F000         	goto	i2l76
-   664   0000F8                     i2u3_40:
-   665   0000F8                     
-   666                           ; BSR set to: 2
-   667                           ;main.c: 109:         }
-   668   0000F8  4A13               	infsnz	i2cStart@i^(0+1280),f,c
-   669   0000FA  2A14               	incf	(i2cStart@i+1)^(0+1280),f,c
-   670   0000FC                     
-   671                           ; BSR set to: 2
-   672   0000FC  BE14               	btfsc	(i2cStart@i+1)^(0+1280),7,c
-   673   0000FE  EF8A  F000         	goto	i2u4_41
-   674   000102  5014               	movf	(i2cStart@i+1)^(0+1280),w,c
-   675   000104  E109               	bnz	i2u4_40
-   676   000106  0E0D               	movlw	13
-   677   000108  5C13               	subwf	i2cStart@i^(0+1280),w,c
-   678   00010A  A0D8               	btfss	status,0,c
-   679   00010C  EF8A  F000         	goto	i2u4_41
-   680   000110  EF8C  F000         	goto	i2u4_40
-   681   000114                     i2u4_41:
-   682   000114  EF73  F000         	goto	i2l74
-   683   000118                     i2u4_40:
-   684   000118                     i2l79:
-   685                           
-   686                           ; BSR set to: 2
-   687   000118  A995               	btfss	149,4,b	;volatile
-   688   00011A  EF91  F000         	goto	i2u5_41
-   689   00011E  EF93  F000         	goto	i2u5_40
-   690   000122                     i2u5_41:
-   691   000122  EF8C  F000         	goto	i2l79
-   692   000126                     i2u5_40:
-   693   000126                     
-   694                           ; BSR set to: 2
-   695                           ;main.c: 113:     if(I2C1STAT0bits.R == 0){
-   696   000126  B998               	btfsc	152,4,b	;volatile
-   697   000128  EF98  F000         	goto	i2u6_41
-   698   00012C  EF9A  F000         	goto	i2u6_40
-   699   000130                     i2u6_41:
-   700   000130  EFBC  F000         	goto	i2l82
-   701   000134                     i2u6_40:
-   702   000134                     
-   703                           ; BSR set to: 2
-   704                           ;main.c: 114:         int index = 0;
-   705   000134  0E00               	movlw	0
-   706   000136  6E12               	movwf	(i2cStart@index+1)^(0+1280),c
-   707   000138  0E00               	movlw	0
-   708   00013A  6E11               	movwf	i2cStart@index^(0+1280),c
-   709                           
-   710                           ;main.c: 115:         while(I2C1CNTL > 0){
-   711   00013C  EFB4  F000         	goto	i2l873
-   712   000140                     i2l84:
-   713                           
-   714                           ; BSR set to: 2
-   715                           ;main.c: 116:             I2C1CON0bits.CSTR = 0;
-   716   000140  9994               	bcf	148,4,b	;volatile
-   717   000142                     i2l85:
-   718                           
-   719                           ; BSR set to: 2
-   720   000142  A199               	btfss	153,0,b	;volatile
-   721   000144  EFA6  F000         	goto	i2u7_41
-   722   000148  EFA8  F000         	goto	i2u7_40
-   723   00014C                     i2u7_41:
-   724   00014C  EFA1  F000         	goto	i2l85
-   725   000150                     i2u7_40:
-   726   000150                     
-   727                           ; BSR set to: 2
-   728                           ;main.c: 118:             i2cBuffer[index] = I2C1RXB;
-   729   000150  0E01               	movlw	low _i2cBuffer
-   730   000152  2411               	addwf	i2cStart@index^(0+1280),w,c
-   731   000154  6ED9               	movwf	fsr2l,c
-   732   000156  0E05               	movlw	high _i2cBuffer
-   733   000158  2012               	addwfc	(i2cStart@index+1)^(0+1280),w,c
-   734   00015A  6EDA               	movwf	fsr2h,c
-   735   00015C  C28A F4DF          	movff	650,indf2	;volatile
-   736   000160                     
-   737                           ; BSR set to: 2
-   738                           ;main.c: 119:             I2C1CON1bits.ACKDT = 0;
-   739   000160  9D95               	bcf	149,6,b	;volatile
-   740   000162                     
-   741                           ; BSR set to: 2
-   742                           ;main.c: 120:             I2C1CON0bits.CSTR = 0;
-   743   000162  9994               	bcf	148,4,b	;volatile
-   744   000164                     
-   745                           ; BSR set to: 2
-   746                           ;main.c: 121:             index++;
-   747   000164  4A11               	infsnz	i2cStart@index^(0+1280),f,c
-   748   000166  2A12               	incf	(i2cStart@index+1)^(0+1280),f,c
-   749   000168                     i2l873:
-   750                           
-   751                           ; BSR set to: 2
-   752                           ;main.c: 115:         while(I2C1CNTL > 0){
-   753   000168  518C               	movf	140,w,b	;volatile
-   754   00016A  A4D8               	btfss	status,2,c
-   755   00016C  EFBA  F000         	goto	i2u8_41
-   756   000170  EFBC  F000         	goto	i2u8_40
-   757   000174                     i2u8_41:
-   758   000174  EFA0  F000         	goto	i2l84
-   759   000178                     i2u8_40:
-   760   000178                     i2l82:
-   761                           
-   762                           ; BSR set to: 2
-   763                           ;main.c: 125:     I2C1CON0bits.EN = 0;
-   764   000178  9F94               	bcf	148,7,b	;volatile
-   765   00017A                     
-   766                           ; BSR set to: 2
-   767                           ;main.c: 126:     I2C1PIR = 0x00;
-   768   00017A  0E00               	movlw	0
-   769   00017C  6F9A               	movwf	154,b	;volatile
-   770   00017E                     
-   771                           ; BSR set to: 2
-   772                           ;main.c: 127:     I2C1CON0bits.EN = 1;
-   773   00017E  8F94               	bsf	148,7,b	;volatile
-   774   000180                     
-   775                           ; BSR set to: 2
-   776   000180  0012               	return		;funcret
-   777   000182                     __end_of_i2cStart:
-   778                           	callstack 0
-   779                           
-   780                           ;
-   781                           ; Interrupt Vector Table @ 0x8
-   782                           ;
-   783                           
-   784                           	psect	ivt0x8
-   785   000008                     __pivt0x8:
-   786                           	callstack 0
-   787   000008                     ivt0x8_base:
-   788                           	callstack 0
-   789                           
-   790                           ; Vector 0 : SWINT
-   791   000008  002E               	dw	ivt0x8_undefint shr (0+2)
-   792                           
-   793                           ; Vector 1 : HLVD
-   794   00000A  002E               	dw	ivt0x8_undefint shr (0+2)
-   795                           
-   796                           ; Vector 2 : OSF
-   797   00000C  002E               	dw	ivt0x8_undefint shr (0+2)
-   798                           
-   799                           ; Vector 3 : CSW
-   800   00000E  002E               	dw	ivt0x8_undefint shr (0+2)
-   801                           
-   802                           ; Vector 4 : NVMIP
-   803   000010  002E               	dw	ivt0x8_undefint shr (0+2)
-   804                           
-   805                           ; Vector 5 : CLC1
-   806   000012  002E               	dw	ivt0x8_undefint shr (0+2)
-   807                           
-   808                           ; Vector 6 : CRC
-   809   000014  002E               	dw	ivt0x8_undefint shr (0+2)
-   810                           
-   811                           ; Vector 7 : IOC
-   812   000016  002E               	dw	ivt0x8_undefint shr (0+2)
-   813                           
-   814                           ; Vector 8 : INT0
-   815   000018  002E               	dw	ivt0x8_undefint shr (0+2)
-   816                           
-   817                           ; Vector 9 : ZCD
-   818   00001A  002E               	dw	ivt0x8_undefint shr (0+2)
-   819                           
-   820                           ; Vector 10 : AD
-   821   00001C  002E               	dw	ivt0x8_undefint shr (0+2)
-   822                           
-   823                           ; Vector 11 : ACT
-   824   00001E  002E               	dw	ivt0x8_undefint shr (0+2)
-   825                           
-   826                           ; Vector 12 : CMP1
-   827   000020  002E               	dw	ivt0x8_undefint shr (0+2)
-   828                           
-   829                           ; Vector 13 : SMT1
-   830   000022  002E               	dw	ivt0x8_undefint shr (0+2)
-   831                           
-   832                           ; Vector 14 : SMT1PRA
-   833   000024  002E               	dw	ivt0x8_undefint shr (0+2)
-   834                           
-   835                           ; Vector 15 : SMT1PWA
-   836   000026  002E               	dw	ivt0x8_undefint shr (0+2)
-   837                           
-   838                           ; Vector 16 : ADT
-   839   000028  002E               	dw	ivt0x8_undefint shr (0+2)
-   840                           
-   841                           ; Vector 17 : Undefined
-   842   00002A  002E               	dw	ivt0x8_undefint shr (0+2)
-   843                           
-   844                           ; Vector 18 : Undefined
-   845   00002C  002E               	dw	ivt0x8_undefint shr (0+2)
-   846                           
-   847                           ; Vector 19 : Undefined
-   848   00002E  002E               	dw	ivt0x8_undefint shr (0+2)
-   849                           
-   850                           ; Vector 20 : DMA1SCNT
-   851   000030  002E               	dw	ivt0x8_undefint shr (0+2)
-   852                           
-   853                           ; Vector 21 : DMA1DCNT
-   854   000032  002E               	dw	ivt0x8_undefint shr (0+2)
-   855                           
-   856                           ; Vector 22 : DMA1OR
-   857   000034  002E               	dw	ivt0x8_undefint shr (0+2)
-   858                           
-   859                           ; Vector 23 : DMA1A
-   860   000036  002E               	dw	ivt0x8_undefint shr (0+2)
-   861                           
-   862                           ; Vector 24 : SPI1RX
-   863   000038  002E               	dw	ivt0x8_undefint shr (0+2)
-   864                           
-   865                           ; Vector 25 : SPI1TX
-   866   00003A  002E               	dw	ivt0x8_undefint shr (0+2)
-   867                           
-   868                           ; Vector 26 : SPI1
-   869   00003C  002E               	dw	ivt0x8_undefint shr (0+2)
-   870                           
-   871                           ; Vector 27 : TMR2
-   872   00003E  002E               	dw	ivt0x8_undefint shr (0+2)
-   873                           
-   874                           ; Vector 28 : TMR1
-   875   000040  002E               	dw	ivt0x8_undefint shr (0+2)
-   876                           
-   877                           ; Vector 29 : TMR1G
-   878   000042  002E               	dw	ivt0x8_undefint shr (0+2)
-   879                           
-   880                           ; Vector 30 : CCP1
-   881   000044  002E               	dw	ivt0x8_undefint shr (0+2)
-   882                           
-   883                           ; Vector 31 : TMR0
-   884   000046  002E               	dw	ivt0x8_undefint shr (0+2)
-   885                           
-   886                           ; Vector 32 : U1RX
-   887   000048  002E               	dw	ivt0x8_undefint shr (0+2)
-   888                           
-   889                           ; Vector 33 : U1TX
-   890   00004A  002E               	dw	ivt0x8_undefint shr (0+2)
-   891                           
-   892                           ; Vector 34 : U1E
-   893   00004C  002E               	dw	ivt0x8_undefint shr (0+2)
-   894                           
-   895                           ; Vector 35 : U1
-   896   00004E  002E               	dw	ivt0x8_undefint shr (0+2)
-   897                           
-   898                           ; Vector 36 : TMR3
-   899   000050  002E               	dw	ivt0x8_undefint shr (0+2)
-   900                           
-   901                           ; Vector 37 : TMR3G
-   902   000052  002E               	dw	ivt0x8_undefint shr (0+2)
-   903                           
-   904                           ; Vector 38 : PWM1PR
-   905   000054  002E               	dw	ivt0x8_undefint shr (0+2)
-   906                           
-   907                           ; Vector 39 : PWM1
-   908   000056  002E               	dw	ivt0x8_undefint shr (0+2)
-   909                           
-   910                           ; Vector 40 : SPI2RX
-   911   000058  002E               	dw	ivt0x8_undefint shr (0+2)
-   912                           
-   913                           ; Vector 41 : SPI2TX
-   914   00005A  002E               	dw	ivt0x8_undefint shr (0+2)
-   915                           
-   916                           ; Vector 42 : SPI2
-   917   00005C  002E               	dw	ivt0x8_undefint shr (0+2)
-   918                           
-   919                           ; Vector 43 : Undefined
-   920   00005E  002E               	dw	ivt0x8_undefint shr (0+2)
-   921                           
-   922                           ; Vector 44 : CMP2
-   923   000060  002E               	dw	ivt0x8_undefint shr (0+2)
-   924                           
-   925                           ; Vector 45 : CLC2
-   926   000062  002E               	dw	ivt0x8_undefint shr (0+2)
-   927                           
-   928                           ; Vector 46 : PWM2PR
-   929   000064  002E               	dw	ivt0x8_undefint shr (0+2)
-   930                           
-   931                           ; Vector 47 : PWM2
-   932   000066  002E               	dw	ivt0x8_undefint shr (0+2)
-   933                           
-   934                           ; Vector 48 : INT1
-   935   000068  002E               	dw	ivt0x8_undefint shr (0+2)
-   936                           
-   937                           ; Vector 49 : CWG1
-   938   00006A  002E               	dw	ivt0x8_undefint shr (0+2)
-   939                           
-   940                           ; Vector 50 : NCO1
-   941   00006C  002E               	dw	ivt0x8_undefint shr (0+2)
-   942                           
-   943                           ; Vector 51 : DMA2SCNT
-   944   00006E  002E               	dw	ivt0x8_undefint shr (0+2)
-   945                           
-   946                           ; Vector 52 : DMA2DCNT
-   947   000070  002E               	dw	ivt0x8_undefint shr (0+2)
-   948                           
-   949                           ; Vector 53 : DMA2OR
-   950   000072  002E               	dw	ivt0x8_undefint shr (0+2)
-   951                           
-   952                           ; Vector 54 : DMA2A
-   953   000074  002E               	dw	ivt0x8_undefint shr (0+2)
-   954                           
-   955                           ; Vector 55 : Undefined
-   956   000076  002E               	dw	ivt0x8_undefint shr (0+2)
-   957                           
-   958                           ; Vector 56 : I2C1RX
-   959   000078  002E               	dw	ivt0x8_undefint shr (0+2)
-   960                           
-   961                           ; Vector 57 : I2C1TX
-   962   00007A  002E               	dw	ivt0x8_undefint shr (0+2)
-   963                           
-   964                           ; Vector 58 : I2C1
-   965   00007C  008D               	dw	_ISR shr (0+2)
-   966                           
-   967                           ; Vector 59 : I2C1E
-   968   00007E  002E               	dw	ivt0x8_undefint shr (0+2)
-   969                           
-   970                           ; Vector 60 : Undefined
-   971   000080  002E               	dw	ivt0x8_undefint shr (0+2)
-   972                           
-   973                           ; Vector 61 : CLC3
-   974   000082  002E               	dw	ivt0x8_undefint shr (0+2)
-   975                           
-   976                           ; Vector 62 : PWM3PR
-   977   000084  002E               	dw	ivt0x8_undefint shr (0+2)
-   978                           
-   979                           ; Vector 63 : PWM3
-   980   000086  002E               	dw	ivt0x8_undefint shr (0+2)
-   981                           
-   982                           ; Vector 64 : U2RX
-   983   000088  002E               	dw	ivt0x8_undefint shr (0+2)
-   984                           
-   985                           ; Vector 65 : U2TX
-   986   00008A  002E               	dw	ivt0x8_undefint shr (0+2)
-   987                           
-   988                           ; Vector 66 : U2E
-   989   00008C  002E               	dw	ivt0x8_undefint shr (0+2)
-   990                           
-   991                           ; Vector 67 : U2
-   992   00008E  002E               	dw	ivt0x8_undefint shr (0+2)
-   993                           
-   994                           ; Vector 68 : Undefined
-   995   000090  002E               	dw	ivt0x8_undefint shr (0+2)
-   996                           
-   997                           ; Vector 69 : CLC4
-   998   000092  002E               	dw	ivt0x8_undefint shr (0+2)
-   999                           
-  1000                           ; Vector 70 : Undefined
-  1001   000094  002E               	dw	ivt0x8_undefint shr (0+2)
-  1002                           
-  1003                           ; Vector 71 : SCAN
-  1004   000096  002E               	dw	ivt0x8_undefint shr (0+2)
-  1005                           
-  1006                           ; Vector 72 : U3RX
-  1007   000098  002E               	dw	ivt0x8_undefint shr (0+2)
-  1008                           
-  1009                           ; Vector 73 : U3TX
-  1010   00009A  002E               	dw	ivt0x8_undefint shr (0+2)
-  1011                           
-  1012                           ; Vector 74 : U3E
-  1013   00009C  002E               	dw	ivt0x8_undefint shr (0+2)
-  1014                           
-  1015                           ; Vector 75 : U3
-  1016   00009E  002E               	dw	ivt0x8_undefint shr (0+2)
-  1017                           
-  1018                           ; Vector 76 : DMA3SCNT
-  1019   0000A0  002E               	dw	ivt0x8_undefint shr (0+2)
-  1020                           
-  1021                           ; Vector 77 : DMA3DCNT
-  1022   0000A2  002E               	dw	ivt0x8_undefint shr (0+2)
-  1023                           
-  1024                           ; Vector 78 : DMA3OR
-  1025   0000A4  002E               	dw	ivt0x8_undefint shr (0+2)
-  1026                           
-  1027                           ; Vector 79 : DMA3A
-  1028   0000A6  002E               	dw	ivt0x8_undefint shr (0+2)
-  1029                           
-  1030                           ; Vector 80 : INT2
-  1031   0000A8  002E               	dw	ivt0x8_undefint shr (0+2)
-  1032                           
-  1033                           ; Vector 81 : Undefined
-  1034   0000AA  002E               	dw	ivt0x8_undefint shr (0+2)
-  1035                           
-  1036                           ; Vector 82 : Undefined
-  1037   0000AC  002E               	dw	ivt0x8_undefint shr (0+2)
-  1038                           
-  1039                           ; Vector 83 : TMR4
-  1040   0000AE  002E               	dw	ivt0x8_undefint shr (0+2)
-  1041                           
-  1042                           ; Vector 84 : DMA4SCNT
-  1043   0000B0  002E               	dw	ivt0x8_undefint shr (0+2)
-  1044                           
-  1045                           ; Vector 85 : DMA4DCNT
-  1046   0000B2  002E               	dw	ivt0x8_undefint shr (0+2)
-  1047                           
-  1048                           ; Vector 86 : DMA4OR
-  1049   0000B4  002E               	dw	ivt0x8_undefint shr (0+2)
-  1050                           
-  1051                           ; Vector 87 : DMA4A
-  1052   0000B6  002E               	dw	ivt0x8_undefint shr (0+2)
-  1053   0000B8                     ivt0x8_undefint:
-  1054                           	callstack 0
-  1055   0000B8  00FF               	reset	
-  1056   000000                     
-  1057                           	psect	rparam
-  1058   000000                     tosu	equ	0x4FF
-  1059                           tosh	equ	0x4FE
-  1060                           tosl	equ	0x4FD
-  1061                           stkptr	equ	0x4FC
-  1062                           pclatu	equ	0x4FB
-  1063                           pclath	equ	0x4FA
-  1064                           pcl	equ	0x4F9
-  1065                           tblptru	equ	0x4F8
-  1066                           tblptrh	equ	0x4F7
-  1067                           tblptrl	equ	0x4F6
-  1068                           tablat	equ	0x4F5
-  1069                           prodh	equ	0x4F4
-  1070                           prodl	equ	0x4F3
-  1071                           indf0	equ	0x4EF
-  1072                           postinc0	equ	0x4EE
-  1073                           postdec0	equ	0x4ED
-  1074                           preinc0	equ	0x4EC
-  1075                           plusw0	equ	0x4EB
-  1076                           fsr0h	equ	0x4EA
-  1077                           fsr0l	equ	0x4E9
-  1078                           wreg	equ	0x4E8
-  1079                           indf1	equ	0x4E7
-  1080                           postinc1	equ	0x4E6
-  1081                           postdec1	equ	0x4E5
-  1082                           preinc1	equ	0x4E4
-  1083                           plusw1	equ	0x4E3
-  1084                           fsr1h	equ	0x4E2
-  1085                           fsr1l	equ	0x4E1
-  1086                           bsr	equ	0x4E0
-  1087                           indf2	equ	0x4DF
-  1088                           postinc2	equ	0x4DE
-  1089                           postdec2	equ	0x4DD
-  1090                           preinc2	equ	0x4DC
-  1091                           plusw2	equ	0x4DB
-  1092                           fsr2h	equ	0x4DA
-  1093                           fsr2l	equ	0x4D9
-  1094                           status	equ	0x4D8
+   654                           ;main.c: 107:             I2C1TXB = i+1;
+   655   0000E6  2813               	incf	i2cStart@i^(0+1280),w,c
+   656   0000E8  6F8B               	movwf	139,b	;volatile
+   657   0000EA                     i2l76:
+   658                           
+   659                           ; BSR set to: 2
+   660   0000EA  AB99               	btfss	153,5,b	;volatile
+   661   0000EC  EF7A  F000         	goto	i2u3_41
+   662   0000F0  EF7C  F000         	goto	i2u3_40
+   663   0000F4                     i2u3_41:
+   664   0000F4  EF75  F000         	goto	i2l76
+   665   0000F8                     i2u3_40:
+   666   0000F8                     
+   667                           ; BSR set to: 2
+   668                           ;main.c: 109:         }
+   669   0000F8  4A13               	infsnz	i2cStart@i^(0+1280),f,c
+   670   0000FA  2A14               	incf	(i2cStart@i+1)^(0+1280),f,c
+   671   0000FC                     
+   672                           ; BSR set to: 2
+   673   0000FC  BE14               	btfsc	(i2cStart@i+1)^(0+1280),7,c
+   674   0000FE  EF8A  F000         	goto	i2u4_41
+   675   000102  5014               	movf	(i2cStart@i+1)^(0+1280),w,c
+   676   000104  E109               	bnz	i2u4_40
+   677   000106  0E0D               	movlw	13
+   678   000108  5C13               	subwf	i2cStart@i^(0+1280),w,c
+   679   00010A  A0D8               	btfss	status,0,c
+   680   00010C  EF8A  F000         	goto	i2u4_41
+   681   000110  EF8C  F000         	goto	i2u4_40
+   682   000114                     i2u4_41:
+   683   000114  EF73  F000         	goto	i2l859
+   684   000118                     i2u4_40:
+   685   000118                     i2l79:
+   686                           
+   687                           ; BSR set to: 2
+   688   000118  A995               	btfss	149,4,b	;volatile
+   689   00011A  EF91  F000         	goto	i2u5_41
+   690   00011E  EF93  F000         	goto	i2u5_40
+   691   000122                     i2u5_41:
+   692   000122  EF8C  F000         	goto	i2l79
+   693   000126                     i2u5_40:
+   694   000126                     
+   695                           ; BSR set to: 2
+   696                           ;main.c: 113:     if(I2C1STAT0bits.R == 0){
+   697   000126  B998               	btfsc	152,4,b	;volatile
+   698   000128  EF98  F000         	goto	i2u6_41
+   699   00012C  EF9A  F000         	goto	i2u6_40
+   700   000130                     i2u6_41:
+   701   000130  EFBC  F000         	goto	i2l82
+   702   000134                     i2u6_40:
+   703   000134                     
+   704                           ; BSR set to: 2
+   705                           ;main.c: 114:         int index = 0;
+   706   000134  0E00               	movlw	0
+   707   000136  6E12               	movwf	(i2cStart@index+1)^(0+1280),c
+   708   000138  0E00               	movlw	0
+   709   00013A  6E11               	movwf	i2cStart@index^(0+1280),c
+   710                           
+   711                           ;main.c: 115:         while(I2C1CNTL > 0){
+   712   00013C  EFB4  F000         	goto	i2l875
+   713   000140                     i2l84:
+   714                           
+   715                           ; BSR set to: 2
+   716                           ;main.c: 116:             I2C1CON0bits.CSTR = 0;
+   717   000140  9994               	bcf	148,4,b	;volatile
+   718   000142                     i2l85:
+   719                           
+   720                           ; BSR set to: 2
+   721   000142  A199               	btfss	153,0,b	;volatile
+   722   000144  EFA6  F000         	goto	i2u7_41
+   723   000148  EFA8  F000         	goto	i2u7_40
+   724   00014C                     i2u7_41:
+   725   00014C  EFA1  F000         	goto	i2l85
+   726   000150                     i2u7_40:
+   727   000150                     
+   728                           ; BSR set to: 2
+   729                           ;main.c: 118:             i2cBuffer[index] = I2C1RXB;
+   730   000150  0E01               	movlw	low _i2cBuffer
+   731   000152  2411               	addwf	i2cStart@index^(0+1280),w,c
+   732   000154  6ED9               	movwf	fsr2l,c
+   733   000156  0E05               	movlw	high _i2cBuffer
+   734   000158  2012               	addwfc	(i2cStart@index+1)^(0+1280),w,c
+   735   00015A  6EDA               	movwf	fsr2h,c
+   736   00015C  C28A F4DF          	movff	650,indf2	;volatile
+   737   000160                     
+   738                           ; BSR set to: 2
+   739                           ;main.c: 119:             I2C1CON1bits.ACKDT = 0;
+   740   000160  9D95               	bcf	149,6,b	;volatile
+   741   000162                     
+   742                           ; BSR set to: 2
+   743                           ;main.c: 120:             I2C1CON0bits.CSTR = 0;
+   744   000162  9994               	bcf	148,4,b	;volatile
+   745   000164                     
+   746                           ; BSR set to: 2
+   747                           ;main.c: 121:             index++;
+   748   000164  4A11               	infsnz	i2cStart@index^(0+1280),f,c
+   749   000166  2A12               	incf	(i2cStart@index+1)^(0+1280),f,c
+   750   000168                     i2l875:
+   751                           
+   752                           ; BSR set to: 2
+   753                           ;main.c: 115:         while(I2C1CNTL > 0){
+   754   000168  518C               	movf	140,w,b	;volatile
+   755   00016A  A4D8               	btfss	status,2,c
+   756   00016C  EFBA  F000         	goto	i2u8_41
+   757   000170  EFBC  F000         	goto	i2u8_40
+   758   000174                     i2u8_41:
+   759   000174  EFA0  F000         	goto	i2l84
+   760   000178                     i2u8_40:
+   761   000178                     i2l82:
+   762                           
+   763                           ; BSR set to: 2
+   764                           ;main.c: 125:     I2C1CON0bits.EN = 0;
+   765   000178  9F94               	bcf	148,7,b	;volatile
+   766   00017A                     
+   767                           ; BSR set to: 2
+   768                           ;main.c: 126:     I2C1PIR = 0x00;
+   769   00017A  0E00               	movlw	0
+   770   00017C  6F9A               	movwf	154,b	;volatile
+   771   00017E                     
+   772                           ; BSR set to: 2
+   773                           ;main.c: 127:     I2C1CON0bits.EN = 1;
+   774   00017E  8F94               	bsf	148,7,b	;volatile
+   775   000180                     
+   776                           ; BSR set to: 2
+   777   000180  0012               	return		;funcret
+   778   000182                     __end_of_i2cStart:
+   779                           	callstack 0
+   780                           
+   781                           ;
+   782                           ; Interrupt Vector Table @ 0x8
+   783                           ;
+   784                           
+   785                           	psect	ivt0x8
+   786   000008                     __pivt0x8:
+   787                           	callstack 0
+   788   000008                     ivt0x8_base:
+   789                           	callstack 0
+   790                           
+   791                           ; Vector 0 : SWINT
+   792   000008  002E               	dw	ivt0x8_undefint shr (0+2)
+   793                           
+   794                           ; Vector 1 : HLVD
+   795   00000A  002E               	dw	ivt0x8_undefint shr (0+2)
+   796                           
+   797                           ; Vector 2 : OSF
+   798   00000C  002E               	dw	ivt0x8_undefint shr (0+2)
+   799                           
+   800                           ; Vector 3 : CSW
+   801   00000E  002E               	dw	ivt0x8_undefint shr (0+2)
+   802                           
+   803                           ; Vector 4 : NVMIP
+   804   000010  002E               	dw	ivt0x8_undefint shr (0+2)
+   805                           
+   806                           ; Vector 5 : CLC1
+   807   000012  002E               	dw	ivt0x8_undefint shr (0+2)
+   808                           
+   809                           ; Vector 6 : CRC
+   810   000014  002E               	dw	ivt0x8_undefint shr (0+2)
+   811                           
+   812                           ; Vector 7 : IOC
+   813   000016  002E               	dw	ivt0x8_undefint shr (0+2)
+   814                           
+   815                           ; Vector 8 : INT0
+   816   000018  002E               	dw	ivt0x8_undefint shr (0+2)
+   817                           
+   818                           ; Vector 9 : ZCD
+   819   00001A  002E               	dw	ivt0x8_undefint shr (0+2)
+   820                           
+   821                           ; Vector 10 : AD
+   822   00001C  002E               	dw	ivt0x8_undefint shr (0+2)
+   823                           
+   824                           ; Vector 11 : ACT
+   825   00001E  002E               	dw	ivt0x8_undefint shr (0+2)
+   826                           
+   827                           ; Vector 12 : CMP1
+   828   000020  002E               	dw	ivt0x8_undefint shr (0+2)
+   829                           
+   830                           ; Vector 13 : SMT1
+   831   000022  002E               	dw	ivt0x8_undefint shr (0+2)
+   832                           
+   833                           ; Vector 14 : SMT1PRA
+   834   000024  002E               	dw	ivt0x8_undefint shr (0+2)
+   835                           
+   836                           ; Vector 15 : SMT1PWA
+   837   000026  002E               	dw	ivt0x8_undefint shr (0+2)
+   838                           
+   839                           ; Vector 16 : ADT
+   840   000028  002E               	dw	ivt0x8_undefint shr (0+2)
+   841                           
+   842                           ; Vector 17 : Undefined
+   843   00002A  002E               	dw	ivt0x8_undefint shr (0+2)
+   844                           
+   845                           ; Vector 18 : Undefined
+   846   00002C  002E               	dw	ivt0x8_undefint shr (0+2)
+   847                           
+   848                           ; Vector 19 : Undefined
+   849   00002E  002E               	dw	ivt0x8_undefint shr (0+2)
+   850                           
+   851                           ; Vector 20 : DMA1SCNT
+   852   000030  002E               	dw	ivt0x8_undefint shr (0+2)
+   853                           
+   854                           ; Vector 21 : DMA1DCNT
+   855   000032  002E               	dw	ivt0x8_undefint shr (0+2)
+   856                           
+   857                           ; Vector 22 : DMA1OR
+   858   000034  002E               	dw	ivt0x8_undefint shr (0+2)
+   859                           
+   860                           ; Vector 23 : DMA1A
+   861   000036  002E               	dw	ivt0x8_undefint shr (0+2)
+   862                           
+   863                           ; Vector 24 : SPI1RX
+   864   000038  002E               	dw	ivt0x8_undefint shr (0+2)
+   865                           
+   866                           ; Vector 25 : SPI1TX
+   867   00003A  002E               	dw	ivt0x8_undefint shr (0+2)
+   868                           
+   869                           ; Vector 26 : SPI1
+   870   00003C  002E               	dw	ivt0x8_undefint shr (0+2)
+   871                           
+   872                           ; Vector 27 : TMR2
+   873   00003E  002E               	dw	ivt0x8_undefint shr (0+2)
+   874                           
+   875                           ; Vector 28 : TMR1
+   876   000040  002E               	dw	ivt0x8_undefint shr (0+2)
+   877                           
+   878                           ; Vector 29 : TMR1G
+   879   000042  002E               	dw	ivt0x8_undefint shr (0+2)
+   880                           
+   881                           ; Vector 30 : CCP1
+   882   000044  002E               	dw	ivt0x8_undefint shr (0+2)
+   883                           
+   884                           ; Vector 31 : TMR0
+   885   000046  002E               	dw	ivt0x8_undefint shr (0+2)
+   886                           
+   887                           ; Vector 32 : U1RX
+   888   000048  002E               	dw	ivt0x8_undefint shr (0+2)
+   889                           
+   890                           ; Vector 33 : U1TX
+   891   00004A  002E               	dw	ivt0x8_undefint shr (0+2)
+   892                           
+   893                           ; Vector 34 : U1E
+   894   00004C  002E               	dw	ivt0x8_undefint shr (0+2)
+   895                           
+   896                           ; Vector 35 : U1
+   897   00004E  002E               	dw	ivt0x8_undefint shr (0+2)
+   898                           
+   899                           ; Vector 36 : TMR3
+   900   000050  002E               	dw	ivt0x8_undefint shr (0+2)
+   901                           
+   902                           ; Vector 37 : TMR3G
+   903   000052  002E               	dw	ivt0x8_undefint shr (0+2)
+   904                           
+   905                           ; Vector 38 : PWM1PR
+   906   000054  002E               	dw	ivt0x8_undefint shr (0+2)
+   907                           
+   908                           ; Vector 39 : PWM1
+   909   000056  002E               	dw	ivt0x8_undefint shr (0+2)
+   910                           
+   911                           ; Vector 40 : SPI2RX
+   912   000058  002E               	dw	ivt0x8_undefint shr (0+2)
+   913                           
+   914                           ; Vector 41 : SPI2TX
+   915   00005A  002E               	dw	ivt0x8_undefint shr (0+2)
+   916                           
+   917                           ; Vector 42 : SPI2
+   918   00005C  002E               	dw	ivt0x8_undefint shr (0+2)
+   919                           
+   920                           ; Vector 43 : Undefined
+   921   00005E  002E               	dw	ivt0x8_undefint shr (0+2)
+   922                           
+   923                           ; Vector 44 : CMP2
+   924   000060  002E               	dw	ivt0x8_undefint shr (0+2)
+   925                           
+   926                           ; Vector 45 : CLC2
+   927   000062  002E               	dw	ivt0x8_undefint shr (0+2)
+   928                           
+   929                           ; Vector 46 : PWM2PR
+   930   000064  002E               	dw	ivt0x8_undefint shr (0+2)
+   931                           
+   932                           ; Vector 47 : PWM2
+   933   000066  002E               	dw	ivt0x8_undefint shr (0+2)
+   934                           
+   935                           ; Vector 48 : INT1
+   936   000068  002E               	dw	ivt0x8_undefint shr (0+2)
+   937                           
+   938                           ; Vector 49 : CWG1
+   939   00006A  002E               	dw	ivt0x8_undefint shr (0+2)
+   940                           
+   941                           ; Vector 50 : NCO1
+   942   00006C  002E               	dw	ivt0x8_undefint shr (0+2)
+   943                           
+   944                           ; Vector 51 : DMA2SCNT
+   945   00006E  002E               	dw	ivt0x8_undefint shr (0+2)
+   946                           
+   947                           ; Vector 52 : DMA2DCNT
+   948   000070  002E               	dw	ivt0x8_undefint shr (0+2)
+   949                           
+   950                           ; Vector 53 : DMA2OR
+   951   000072  002E               	dw	ivt0x8_undefint shr (0+2)
+   952                           
+   953                           ; Vector 54 : DMA2A
+   954   000074  002E               	dw	ivt0x8_undefint shr (0+2)
+   955                           
+   956                           ; Vector 55 : Undefined
+   957   000076  002E               	dw	ivt0x8_undefint shr (0+2)
+   958                           
+   959                           ; Vector 56 : I2C1RX
+   960   000078  002E               	dw	ivt0x8_undefint shr (0+2)
+   961                           
+   962                           ; Vector 57 : I2C1TX
+   963   00007A  002E               	dw	ivt0x8_undefint shr (0+2)
+   964                           
+   965                           ; Vector 58 : I2C1
+   966   00007C  008D               	dw	_ISR shr (0+2)
+   967                           
+   968                           ; Vector 59 : I2C1E
+   969   00007E  002E               	dw	ivt0x8_undefint shr (0+2)
+   970                           
+   971                           ; Vector 60 : Undefined
+   972   000080  002E               	dw	ivt0x8_undefint shr (0+2)
+   973                           
+   974                           ; Vector 61 : CLC3
+   975   000082  002E               	dw	ivt0x8_undefint shr (0+2)
+   976                           
+   977                           ; Vector 62 : PWM3PR
+   978   000084  002E               	dw	ivt0x8_undefint shr (0+2)
+   979                           
+   980                           ; Vector 63 : PWM3
+   981   000086  002E               	dw	ivt0x8_undefint shr (0+2)
+   982                           
+   983                           ; Vector 64 : U2RX
+   984   000088  002E               	dw	ivt0x8_undefint shr (0+2)
+   985                           
+   986                           ; Vector 65 : U2TX
+   987   00008A  002E               	dw	ivt0x8_undefint shr (0+2)
+   988                           
+   989                           ; Vector 66 : U2E
+   990   00008C  002E               	dw	ivt0x8_undefint shr (0+2)
+   991                           
+   992                           ; Vector 67 : U2
+   993   00008E  002E               	dw	ivt0x8_undefint shr (0+2)
+   994                           
+   995                           ; Vector 68 : Undefined
+   996   000090  002E               	dw	ivt0x8_undefint shr (0+2)
+   997                           
+   998                           ; Vector 69 : CLC4
+   999   000092  002E               	dw	ivt0x8_undefint shr (0+2)
+  1000                           
+  1001                           ; Vector 70 : Undefined
+  1002   000094  002E               	dw	ivt0x8_undefint shr (0+2)
+  1003                           
+  1004                           ; Vector 71 : SCAN
+  1005   000096  002E               	dw	ivt0x8_undefint shr (0+2)
+  1006                           
+  1007                           ; Vector 72 : U3RX
+  1008   000098  002E               	dw	ivt0x8_undefint shr (0+2)
+  1009                           
+  1010                           ; Vector 73 : U3TX
+  1011   00009A  002E               	dw	ivt0x8_undefint shr (0+2)
+  1012                           
+  1013                           ; Vector 74 : U3E
+  1014   00009C  002E               	dw	ivt0x8_undefint shr (0+2)
+  1015                           
+  1016                           ; Vector 75 : U3
+  1017   00009E  002E               	dw	ivt0x8_undefint shr (0+2)
+  1018                           
+  1019                           ; Vector 76 : DMA3SCNT
+  1020   0000A0  002E               	dw	ivt0x8_undefint shr (0+2)
+  1021                           
+  1022                           ; Vector 77 : DMA3DCNT
+  1023   0000A2  002E               	dw	ivt0x8_undefint shr (0+2)
+  1024                           
+  1025                           ; Vector 78 : DMA3OR
+  1026   0000A4  002E               	dw	ivt0x8_undefint shr (0+2)
+  1027                           
+  1028                           ; Vector 79 : DMA3A
+  1029   0000A6  002E               	dw	ivt0x8_undefint shr (0+2)
+  1030                           
+  1031                           ; Vector 80 : INT2
+  1032   0000A8  002E               	dw	ivt0x8_undefint shr (0+2)
+  1033                           
+  1034                           ; Vector 81 : Undefined
+  1035   0000AA  002E               	dw	ivt0x8_undefint shr (0+2)
+  1036                           
+  1037                           ; Vector 82 : Undefined
+  1038   0000AC  002E               	dw	ivt0x8_undefint shr (0+2)
+  1039                           
+  1040                           ; Vector 83 : TMR4
+  1041   0000AE  002E               	dw	ivt0x8_undefint shr (0+2)
+  1042                           
+  1043                           ; Vector 84 : DMA4SCNT
+  1044   0000B0  002E               	dw	ivt0x8_undefint shr (0+2)
+  1045                           
+  1046                           ; Vector 85 : DMA4DCNT
+  1047   0000B2  002E               	dw	ivt0x8_undefint shr (0+2)
+  1048                           
+  1049                           ; Vector 86 : DMA4OR
+  1050   0000B4  002E               	dw	ivt0x8_undefint shr (0+2)
+  1051                           
+  1052                           ; Vector 87 : DMA4A
+  1053   0000B6  002E               	dw	ivt0x8_undefint shr (0+2)
+  1054   0000B8                     ivt0x8_undefint:
+  1055                           	callstack 0
+  1056   0000B8  00FF               	reset	
+  1057   000000                     
+  1058                           	psect	rparam
+  1059   000000                     tosu	equ	0x4FF
+  1060                           tosh	equ	0x4FE
+  1061                           tosl	equ	0x4FD
+  1062                           stkptr	equ	0x4FC
+  1063                           pclatu	equ	0x4FB
+  1064                           pclath	equ	0x4FA
+  1065                           pcl	equ	0x4F9
+  1066                           tblptru	equ	0x4F8
+  1067                           tblptrh	equ	0x4F7
+  1068                           tblptrl	equ	0x4F6
+  1069                           tablat	equ	0x4F5
+  1070                           prodh	equ	0x4F4
+  1071                           prodl	equ	0x4F3
+  1072                           indf0	equ	0x4EF
+  1073                           postinc0	equ	0x4EE
+  1074                           postdec0	equ	0x4ED
+  1075                           preinc0	equ	0x4EC
+  1076                           plusw0	equ	0x4EB
+  1077                           fsr0h	equ	0x4EA
+  1078                           fsr0l	equ	0x4E9
+  1079                           wreg	equ	0x4E8
+  1080                           indf1	equ	0x4E7
+  1081                           postinc1	equ	0x4E6
+  1082                           postdec1	equ	0x4E5
+  1083                           preinc1	equ	0x4E4
+  1084                           plusw1	equ	0x4E3
+  1085                           fsr1h	equ	0x4E2
+  1086                           fsr1l	equ	0x4E1
+  1087                           bsr	equ	0x4E0
+  1088                           indf2	equ	0x4DF
+  1089                           postinc2	equ	0x4DE
+  1090                           postdec2	equ	0x4DD
+  1091                           preinc2	equ	0x4DC
+  1092                           plusw2	equ	0x4DB
+  1093                           fsr2h	equ	0x4DA
+  1094                           fsr2l	equ	0x4D9
+  1095                           status	equ	0x4D8
 
 Data Sizes:
     Strings     0
@@ -1306,7 +1307,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Mon Jul 24 13:35:44 2023
+Symbol Table                                                                                   Tue Aug 01 13:46:44 2023
 
                      l67 0210                       l98 025E                      l101 0276  
                     l106 0264                      l801 01BA                      l811 01C4  
@@ -1318,23 +1319,23 @@ Symbol Table                                                                    
                     l827 01E8                      l819 01D0                      l845 020C  
                     l837 01F4                      l829 01EA                      l847 020E  
                     l839 01F8                      l791 01AC                      l793 01AE  
-                    l785 0182                      l881 025A                      l883 0270  
-                    l795 01B0                      l787 0194                      l891 0260  
-                    l797 01B2                      l789 01AA                      l799 01B8  
-                    l879 024C                      u107 0200                      _ISR 0234  
+                    l785 0182                      l881 024C                      l795 01B0  
+                    l787 0194                      l883 025A                      l885 0270  
+                    l797 01B2                      l789 01AA                      l893 0260  
+                    l799 01B8                      u107 0200                      _ISR 0234  
                     wreg 04E8                     ?_ISR 0511                     i2l70 00BE  
                    i2l72 00CE                     i2l81 0126                     i2l82 0178  
-                   i2l74 00E6                     i2l84 0140                     i2l76 00EA  
-                   i2l85 0142                     i2l79 0118                     i2l95 024A  
-                   i2l89 0180                     _main 0260                     _loop 0270  
-                   indf2 04DF                     fsr2l 04D9                     start 00BA  
-           ___param_bank 0000                    ??_ISR 0515                    ?_main 0511  
-                  ?_loop 0511                    i2l851 00DC                    i2l861 00FC  
-                  i2l853 00DE                    i2l871 0164                    i2l863 0134  
-                  i2l865 0150                    i2l873 0168                    i2l849 00BE  
-                  i2l875 017A                    i2l867 0160                    i2l859 00F8  
-                  i2l877 017E                    i2l869 0162                    i2l885 0234  
-                  i2l887 0244                    i2l889 0246                    _setup 024C  
+                   i2l84 0140                     i2l76 00EA                     i2l85 0142  
+                   i2l79 0118                     i2l95 024A                     i2l89 0180  
+                   _main 0260                     _loop 0270                     indf2 04DF  
+                   fsr2l 04D9                     start 00BA             ___param_bank 0000  
+                  ??_ISR 0515                    ?_main 0511                    ?_loop 0511  
+                  i2l851 00DC                    i2l861 00F8                    i2l853 00DE  
+                  i2l871 0162                    i2l863 00FC                    i2l873 0164  
+                  i2l865 0134                    i2l849 00BE                    i2l867 0150  
+                  i2l875 0168                    i2l859 00E6                    i2l891 0246  
+                  i2l877 017A                    i2l869 0160                    i2l879 017E  
+                  i2l887 0234                    i2l889 0244                    _setup 024C  
                   status 04D8          __initialization 0212             __end_of_main 0270  
            __end_of_loop 0278         __end_of_i2cStart 0182                   ??_main 0516  
                  ??_loop 0515            __activetblptr 0000                   ?_setup 0511  

@@ -22596,7 +22596,7 @@ void i2cStart(){
     if(I2C1STAT0bits.R == 1){
         I2C1CON0bits.CSTR = 0;
         for(int i = 1; i < 13; i ++){
-            I2C1TXB = i;
+            I2C1TXB = i+1;
             while(I2C1STAT1bits.TXBE == 0);
         }
     }
