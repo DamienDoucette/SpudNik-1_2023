@@ -184,6 +184,12 @@ void PWMsetup(){
     PWM1ERS = 0b0000;   //Sets the external reset source to disabled
     PWM1CLK = 0b0010;   //Sets the clock source for PWM - Set to Fosc
     
+    /* ************* ATTENTION ******************
+     * Changing the PWM1PR value will change the duty cycle range and frequency
+     * Max duty cycle value = PWM1PR value
+     * PWM Frequency (Hz) = Fosc / PWM1PR value
+     */
+
     PWM1PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
     PWM1CPRE = 0x00;    //Clock pre-scaler (n+1)
     PWM1GIE = 0x00;     //Interrupt register -- Disable/Enable interrupts  
@@ -203,6 +209,12 @@ void PWMsetup(){
     PWM2ERS = 0b0000;   //Sets the external reset source to disabled
     PWM2CLK = 0b0010;   //Sets the clock source for PWM - Set to Fosc
     
+    /* ************* ATTENTION ******************
+     * Changing the PWM2PR value will change the duty cycle range and frequency
+     * Max duty cycle value = PWM2PR value
+     * PWM Frequency (Hz) = Fosc / PWM2PR value
+     */
+    
     PWM2PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
     PWM2CPRE = 0x00;    //Clock pre-scaler (n+1)
     PWM2GIE = 0x00;     //Interrupt register -- Disable/Enable interrupts  
@@ -219,6 +231,12 @@ void PWMsetup(){
     /*Configure PWM3*/
     PWM3ERS = 0b0000;   //Sets the external reset source to disabled
     PWM3CLK = 0b0010;   //Sets the clock source for PWM - Set to Fosc
+    
+    /* ************* ATTENTION ******************
+     * Changing the PWM3PR value will change the duty cycle range and frequency
+     * Max duty cycle value = PWM3PR value
+     * PWM Frequency (Hz) = Fosc / PWM3PR value
+     */
     
     PWM3PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
     PWM3CPRE = 0x00;    //Clock pre-scaler (n+1)
