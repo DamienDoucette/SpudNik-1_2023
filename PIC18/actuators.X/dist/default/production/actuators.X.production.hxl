@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\damie\AppData\Local\Temp\xcAsdo4.\driver_tmp_3.o
+ C:\Users\damie\AppData\Local\Temp\xcCsgko.2\driver_tmp_3.o
  -Odist/default/production\actuators.X.production.hex
  -logfile=dist/default/production\actuators.X.production.hxl
  -addressing=1
@@ -9,17 +9,17 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\damie\AppData\Local\Temp\xcAsdo4.\driver_tmp_3.o)
-  8h - 441h		(C:\Users\damie\AppData\Local\Temp\xcAsdo4.\driver_tmp_3.o)
-  444h - 479h		(C:\Users\damie\AppData\Local\Temp\xcAsdo4.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\damie\AppData\Local\Temp\xcCsgko.2\driver_tmp_3.o)
+  8h - 445h		(C:\Users\damie\AppData\Local\Temp\xcCsgko.2\driver_tmp_3.o)
+  448h - 47Dh		(C:\Users\damie\AppData\Local\Temp\xcCsgko.2\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  442h - 443h
+  446h - 447h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\damie\AppData\Local\Temp\xcAsdo4.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\damie\AppData\Local\Temp\xcCsgko.2\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -91,8 +91,8 @@
 00000410 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000420 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000440 | H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000440 | H1 H1 H1 H1 H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1
 00000450 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000460 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000470 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+00000470 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 00000480 | --

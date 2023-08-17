@@ -203,8 +203,7 @@ void PWMsetup(){
     PWM2ERS = 0b0000;   //Sets the external reset source to disabled
     PWM2CLK = 0b0010;   //Sets the clock source for PWM - Set to Fosc
     
-    PWM2PR = 0xFFFF;    //Number of clock periods in PWM period (Effectively the resolution)
-    //PWM2PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
+    PWM2PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
     PWM2CPRE = 0x00;    //Clock pre-scaler (n+1)
     PWM2GIE = 0x00;     //Interrupt register -- Disable/Enable interrupts  
     PWM2CONbits.LD = 1; //Reload the PR, P1, and P2 registers on the next cycle
@@ -243,7 +242,7 @@ void PWMsetup(){
 }
 
 void loop(){
-    CLRWDT(); //EXTREMELY FUCKING IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
+    CLRWDT(); //EXTREMELY IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
     I2C1CNTL = 0x04;    //Set the CNT register to 3, as there are three bytes of data in a transmission
 }
 

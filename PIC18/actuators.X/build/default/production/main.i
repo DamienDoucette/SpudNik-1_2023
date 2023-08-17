@@ -22695,8 +22695,7 @@ void PWMsetup(){
     PWM2ERS = 0b0000;
     PWM2CLK = 0b0010;
 
-    PWM2PR = 0xFFFF;
-
+    PWM2PR = 0x00C7;
     PWM2CPRE = 0x00;
     PWM2GIE = 0x00;
     PWM2CONbits.LD = 1;

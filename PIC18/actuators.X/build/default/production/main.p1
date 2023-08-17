@@ -2831,124 +2831,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 204:     PWM2CLK = 0b0010;
 [e = _PWM2CLK -> -> 2 `i `uc ]
 "206
-[; ;main.c: 206:     PWM2PR = 0xFFFF;
-[e = _PWM2PR -> -> 65535 `ui `us ]
-"208
-[; ;main.c: 208:     PWM2CPRE = 0x00;
+[; ;main.c: 206:     PWM2PR = 0x00C7;
+[e = _PWM2PR -> -> 199 `i `us ]
+"207
+[; ;main.c: 207:     PWM2CPRE = 0x00;
 [e = _PWM2CPRE -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:     PWM2GIE = 0x00;
+"208
+[; ;main.c: 208:     PWM2GIE = 0x00;
 [e = _PWM2GIE -> -> 0 `i `uc ]
-"210
-[; ;main.c: 210:     PWM2CONbits.LD = 1;
+"209
+[; ;main.c: 209:     PWM2CONbits.LD = 1;
 [e = . . _PWM2CONbits 0 2 -> -> 1 `i `uc ]
-"213
-[; ;main.c: 213:     PWM2S1CFGbits.POL1 = 0;
+"212
+[; ;main.c: 212:     PWM2S1CFGbits.POL1 = 0;
 [e = . . _PWM2S1CFGbits 0 3 -> -> 0 `i `uc ]
-"215
-[; ;main.c: 215:     PWM1S1CFGbits.PPEN = 0;
+"214
+[; ;main.c: 214:     PWM1S1CFGbits.PPEN = 0;
 [e = . . _PWM1S1CFGbits 0 1 -> -> 0 `i `uc ]
-"216
-[; ;main.c: 216:     PWM1S1CFGbits.MODE = 0b001;
+"215
+[; ;main.c: 215:     PWM1S1CFGbits.MODE = 0b001;
 [e = . . _PWM1S1CFGbits 0 0 -> -> 1 `i `uc ]
-"218
-[; ;main.c: 218:     PWM2S1P1 = 0x0000;
+"217
+[; ;main.c: 217:     PWM2S1P1 = 0x0000;
 [e = _PWM2S1P1 -> -> 0 `i `us ]
-"221
-[; ;main.c: 221:     PWM3ERS = 0b0000;
+"220
+[; ;main.c: 220:     PWM3ERS = 0b0000;
 [e = _PWM3ERS -> -> 0 `i `uc ]
-"222
-[; ;main.c: 222:     PWM3CLK = 0b0010;
+"221
+[; ;main.c: 221:     PWM3CLK = 0b0010;
 [e = _PWM3CLK -> -> 2 `i `uc ]
-"224
-[; ;main.c: 224:     PWM3PR = 0x00C7;
+"223
+[; ;main.c: 223:     PWM3PR = 0x00C7;
 [e = _PWM3PR -> -> 199 `i `us ]
-"225
-[; ;main.c: 225:     PWM3CPRE = 0x00;
+"224
+[; ;main.c: 224:     PWM3CPRE = 0x00;
 [e = _PWM3CPRE -> -> 0 `i `uc ]
-"226
-[; ;main.c: 226:     PWM3GIE = 0x00;
+"225
+[; ;main.c: 225:     PWM3GIE = 0x00;
 [e = _PWM3GIE -> -> 0 `i `uc ]
-"227
-[; ;main.c: 227:     PWM3CONbits.LD = 1;
+"226
+[; ;main.c: 226:     PWM3CONbits.LD = 1;
 [e = . . _PWM3CONbits 0 2 -> -> 1 `i `uc ]
-"230
-[; ;main.c: 230:     PWM3S1CFGbits.POL1 = 0;
+"229
+[; ;main.c: 229:     PWM3S1CFGbits.POL1 = 0;
 [e = . . _PWM3S1CFGbits 0 3 -> -> 0 `i `uc ]
-"231
-[; ;main.c: 231:     PWM3S1CFGbits.POL2 = 0;
+"230
+[; ;main.c: 230:     PWM3S1CFGbits.POL2 = 0;
 [e = . . _PWM3S1CFGbits 0 4 -> -> 0 `i `uc ]
-"233
-[; ;main.c: 233:     PWM3S1CFGbits.PPEN = 0;
+"232
+[; ;main.c: 232:     PWM3S1CFGbits.PPEN = 0;
 [e = . . _PWM3S1CFGbits 0 1 -> -> 0 `i `uc ]
-"234
-[; ;main.c: 234:     PWM3S1CFGbits.MODE = 0b001;
+"233
+[; ;main.c: 233:     PWM3S1CFGbits.MODE = 0b001;
 [e = . . _PWM3S1CFGbits 0 0 -> -> 1 `i `uc ]
-"236
-[; ;main.c: 236:     PWM3S1P1 = 0x0000;
+"235
+[; ;main.c: 235:     PWM3S1P1 = 0x0000;
 [e = _PWM3S1P1 -> -> 0 `i `us ]
-"237
-[; ;main.c: 237:     PWM3S1P2 = 0x0000;
+"236
+[; ;main.c: 236:     PWM3S1P2 = 0x0000;
 [e = _PWM3S1P2 -> -> 0 `i `us ]
-"240
-[; ;main.c: 240:     PWM1CONbits.EN = 1;
+"239
+[; ;main.c: 239:     PWM1CONbits.EN = 1;
 [e = . . _PWM1CONbits 0 4 -> -> 1 `i `uc ]
-"241
-[; ;main.c: 241:     PWM2CONbits.EN = 1;
+"240
+[; ;main.c: 240:     PWM2CONbits.EN = 1;
 [e = . . _PWM2CONbits 0 4 -> -> 1 `i `uc ]
-"242
-[; ;main.c: 242:     PWM3CONbits.EN = 1;
+"241
+[; ;main.c: 241:     PWM3CONbits.EN = 1;
 [e = . . _PWM3CONbits 0 4 -> -> 1 `i `uc ]
-"243
-[; ;main.c: 243: }
+"242
+[; ;main.c: 242: }
 [e :UE 1862 ]
 }
-"245
-[; ;main.c: 245: void loop(){
+"244
+[; ;main.c: 244: void loop(){
 [v _loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _loop ]
 [f ]
-"246
-[; ;main.c: 246:     __asm(" clrwdt");
+"245
+[; ;main.c: 245:     __asm(" clrwdt");
 [; <"  clrwdt ;# ">
-"247
-[; ;main.c: 247:     I2C1CNTL = 0x04;
+"246
+[; ;main.c: 246:     I2C1CNTL = 0x04;
 [e = _I2C1CNTL -> -> 4 `i `uc ]
-"248
-[; ;main.c: 248: }
+"247
+[; ;main.c: 247: }
 [e :UE 1863 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"250
-[; ;main.c: 250: void main(void) {
+"249
+[; ;main.c: 249: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"251
-[; ;main.c: 251:     PWMsetup();
+"250
+[; ;main.c: 250:     PWMsetup();
 [e ( _PWMsetup ..  ]
-"252
-[; ;main.c: 252:     configI2C();
+"251
+[; ;main.c: 251:     configI2C();
 [e ( _configI2C ..  ]
-"253
-[; ;main.c: 253:     while(1){
+"252
+[; ;main.c: 252:     while(1){
 [e :U 1866 ]
 {
-"254
-[; ;main.c: 254:         loop();
+"253
+[; ;main.c: 253:         loop();
 [e ( _loop ..  ]
-"255
-[; ;main.c: 255:     }
+"254
+[; ;main.c: 254:     }
 }
 [e :U 1865 ]
 [e $U 1866  ]
 [e :U 1867 ]
-"256
-[; ;main.c: 256:     return;
+"255
+[; ;main.c: 255:     return;
 [e $UE 1864  ]
-"257
-[; ;main.c: 257: }
+"256
+[; ;main.c: 256: }
 [e :UE 1864 ]
 }
