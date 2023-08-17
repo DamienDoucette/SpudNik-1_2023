@@ -22505,6 +22505,9 @@ uint8_t i2cBuffer[3];
 void setPWM(int address, uint8_t duty_cycle){
 
 
+
+
+
     int temp = address >> 4;
     int conReg;
 
@@ -22537,13 +22540,14 @@ void configI2C(){
 
 
 
-    ANSELCbits.ANSELC0 = 0;
-    ANSELCbits.ANSELC1 = 0;
-
-
 
     TRISCbits.TRISC0 = 0;
     TRISCbits.TRISC1 = 0;
+
+
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+
 
     ODCONCbits.ODCC0 = 1;
     ODCONCbits.ODCC1 = 1;
@@ -22586,7 +22590,6 @@ void configI2C(){
     I2C1BTObits.TOTIME = 0x23;
 
     I2C1ADR0 = 0xFF;
-    I2C1ADR1 = 0xFF;
 
     I2C1CLK = 0b0011;
     I2C1BAUD = 0x04;
@@ -22613,28 +22616,26 @@ void configI2C(){
 
 void i2cStart(){
 
-
-
-
-
-
     int timeout = 0;
+
+
+
     while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
     timeout = 0;
-    if(I2C1STAT0bits.R == 0){
+    if(I2C1STAT0bits.SMA == 1 && I2C1STAT0bits.R == 0){
         int index = 0;
         while(I2C1CNTL > 0){
             I2C1CON0bits.CSTR = 0;
+
             while(I2C1STAT1bits.RXBF == 0 && timeout < 100){timeout++;};
             i2cBuffer[index] = I2C1RXB;
             I2C1CON1bits.ACKDT = 0;
-            I2C1CON0bits.CSTR = 0;
             index++;
         }
-    }
 
-    int address = i2cBuffer[0] << 8 | i2cBuffer[1];
-    setPWM(address, i2cBuffer[2]);
+        int address = i2cBuffer[0] << 8 | i2cBuffer[1];
+        setPWM(address, i2cBuffer[2]);
+    }
 
 
     I2C1CON0bits.EN = 0;
@@ -22643,6 +22644,11 @@ void i2cStart(){
 }
 
 void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
+
+
+
+
+
     if(I2C1PIRbits.SCIF == 1){
         I2C1PIRbits.SCIF = 0;
         i2cStart();
@@ -22727,6 +22733,7 @@ void PWMsetup(){
 }
 
 void loop(){
+    __asm(" clrwdt");
     I2C1CNTL = 0x03;
 }
 

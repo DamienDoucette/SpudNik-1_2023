@@ -130,7 +130,7 @@ void i2cStart(){
      loop if a different device was called*/
     while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
     timeout = 0;
-    if(I2C1STAT0bits.R == 0){   //If the address had a write command
+    if(I2C1STAT0bits.SMA == 1 && I2C1STAT0bits.R == 0){   //If the address had a write command
         int index = 0;
         while(I2C1CNTL > 0){
             I2C1CON0bits.CSTR = 0;  //Enable clocking (release clock)
@@ -139,12 +139,11 @@ void i2cStart(){
             i2cBuffer[index] = I2C1RXB; //Store the value from the RXB buffer
             I2C1CON1bits.ACKDT = 0;     //Send an ACK bit
             index++;
-        }   
+        }
+        //Combine the H and L address values, then set the PWM signal
+        int address = i2cBuffer[0] << 8 | i2cBuffer[1];
+        setPWM(address, i2cBuffer[2]);
     }
-    
-    //Combine the H and L address values, then set the PWM signal
-    int address = i2cBuffer[0] << 8 | i2cBuffer[1];
-    setPWM(address, i2cBuffer[2]);
     
     /*RESET FOR NEXT COMMUNICATION*/
     I2C1CON0bits.EN = 0;
@@ -242,6 +241,7 @@ void PWMsetup(){
 }
 
 void loop(){
+    CLRWDT(); //EXTREMELY FUCKING IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
     I2C1CNTL = 0x03;    //Set the CNT register to 3, as there are three bytes of data in a transmission
 }
 

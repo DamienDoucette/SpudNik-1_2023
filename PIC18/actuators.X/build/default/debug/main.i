@@ -22622,7 +22622,7 @@ void i2cStart(){
 
     while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
     timeout = 0;
-    if(I2C1STAT0bits.R == 0){
+    if(I2C1STAT0bits.SMA == 1 && I2C1STAT0bits.R == 0){
         int index = 0;
         while(I2C1CNTL > 0){
             I2C1CON0bits.CSTR = 0;
@@ -22632,11 +22632,10 @@ void i2cStart(){
             I2C1CON1bits.ACKDT = 0;
             index++;
         }
+
+        int address = i2cBuffer[0] << 8 | i2cBuffer[1];
+        setPWM(address, i2cBuffer[2]);
     }
-
-
-    int address = i2cBuffer[0] << 8 | i2cBuffer[1];
-    setPWM(address, i2cBuffer[2]);
 
 
     I2C1CON0bits.EN = 0;
@@ -22734,6 +22733,7 @@ void PWMsetup(){
 }
 
 void loop(){
+    __asm(" clrwdt");
     I2C1CNTL = 0x03;
 }
 
