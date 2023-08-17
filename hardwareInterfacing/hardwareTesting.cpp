@@ -1,13 +1,13 @@
-#include "hardwareInterfacing/i2c-lib/i2c.h"
-#include "hardwareInterfacing/imu-lib/imu.h"
-#include "hardwareInterfacing/picADC-lib/picADC.h"
-#include "hardwareInterfacing/picPWM-lib/picPWM.h"
+#include "i2c-lib/i2c.h"
+#include "imu-lib/imu.h"
+#include "picADC-lib/picADC.h"
+#include "picPWM-lib/picPWM.h"
 
 i2c I2C;  //Create instance of the I2C class
 
 void testADC(){
     
-	int addr = 0b1111111;    //Define address of client
+	int addr = 0b0110000;    //Define address of client
     picADC adc(addr, I2C);  //Create instance of picADC class
 
     /* READ ADC VALUES */
@@ -21,31 +21,35 @@ void testADC(){
     for(int i = 0; i < 12; i++){
         printf("Reading %d:\t%d\n", i+1, readings[i]);
     }
-    printf("====================================\n");
-
 }
 
 void testPWM(){
-    int addr = 0xFF;    //Define the address of the client
+    int addr = 0b1111111;    //Define the address of the client
     uint8_t duty;
 
     picPWM pwm(addr, I2C);  //Create instance of the picPWM class
     
     /* WRITE PWM INFO TO MCU */
+    printf("====================================\n");
     duty = 30;    //Define a duty cycle
     pwm.setMotX(duty);      //Write the duty cycle to Motor X
+    printf("Wrote duty cycle 30/200 on MotX\n");
 
     duty = 60;            //Change duty cycle variable  
     pwm.setMotY(duty);      //Write the duty cycle to Motor Y
+    printf("Wrote duty cycle 60/200 on MotY\n");
 
     duty = 90;            //Change duty cycle variable  
     pwm.setMagX(duty);      //Write the duty cycle to Magnetorquer X
+    printf("Wrote duty cycle 90/200 on MagX\n");
 
     duty = 120;            //Change duty cycle variable  
-    pwm.setMagX(duty);      //Write the duty cycle to Magnetorquer X
+    pwm.setMagY(duty);      //Write the duty cycle to Magnetorquer Y
+    printf("Wrote duty cycle 120/200 on MagY\n");
 
     duty = 150;            //Change duty cycle variable  
-    pwm.setMagX(duty);      //Write the duty cycle to Magnetorquer X
+    pwm.setMagZ(duty);      //Write the duty cycle to Magnetorquer Z
+    printf("Wrote duty cycle 150/200 on MagZ\n");
 }
 
 void testIMU(){
@@ -77,10 +81,13 @@ void testIMU(){
 }
 
 int main(){
-    testADC();
-    testPWM();
-    testIMU();
 
+    for(int i = 0; i < 5; i++){
+        testADC();
+        testPWM();
+        testIMU();
+    }
+    
     I2C.closeBus();
     return 0;
 }
