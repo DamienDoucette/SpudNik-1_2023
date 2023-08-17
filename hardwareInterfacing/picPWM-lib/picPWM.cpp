@@ -12,7 +12,7 @@ void writeToI2C(i2c& I2C, uint8_t addrMCU, uint16_t addrReg, uint8_t dutyCycle){
     if(I2C.writeBus(addrMCU, 3, writeBuffer)){
         printf("ERROR:\tWrite to client %d Failed!", addrMCU);
     } else {
-        usleep(50); //Delay 50us to allow for the PWM signal to be set before interrupting the PIC
+        usleep(150); //Delay 50us to allow for the PWM signal to be set before interrupting the PIC
     }
 }
 
