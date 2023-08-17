@@ -78,7 +78,7 @@ void configI2C(){
     I2C1BTObits.TOBY32 = 0;     //Enable 32 prescaling
     I2C1BTObits.TOTIME = 0x23;  //Set timeout time to 35ms (32kHz / 32 prescale * 35 = 35ms)
     
-    I2C1ADR0 = 0xFF;   //Set 7bit address
+    I2C1ADR0 = 0b01100000;   //Set 7bit address
     
     I2C1CLK = 0b0011;   //Set the clock to MFINTOSC (500kHz)
     I2C1BAUD = 0x04;    //Freq = I2C1CLK/(BAUD+1) = 500kHz/(4+1) = 100kHz
@@ -111,7 +111,7 @@ void i2cStart(){
      loop if a different device was called*/
     while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};    //Wait until client mode is active
     timeout = 0;
-    if(I2C1STAT0bits.R == 1){   //If a read command was given
+    if(I2C1STAT0bits.SMA == 1 && I2C1STAT0bits.R == 1){   //If a read command was given
         I2C1CON0bits.CSTR = 0;  //Enable the clock (Stop stretching)
         /*For the 12 ADC readings, there are 24 bytes as the ADC is 12 bit*/
         for(int i = 0; i < 24; i ++){
@@ -202,6 +202,7 @@ void __interrupt(irq(I2C1)) ISR(void){
 }
 
 void loop(){
+    CLRWDT(); //EXTREMELY FUCKING IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
     I2C1CNTL = 0x19;    //Set count to 24
     uint16_t temp = 0;  //Variable to hold the 12bit ADC reading
     for(int i = 0; i < 12; i++){

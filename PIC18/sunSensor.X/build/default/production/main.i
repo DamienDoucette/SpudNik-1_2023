@@ -7,7 +7,6 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -22490,7 +22489,7 @@ __attribute__((__unsupported__("The READTIMER" "3" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 2 3
-# 2 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
@@ -22638,7 +22637,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "main.c" 2
+# 2 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
@@ -22698,7 +22697,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 5 "main.c" 2
+# 4 "main.c" 2
 
 
 
@@ -22727,13 +22726,14 @@ void configI2C(){
 
 
 
-    ANSELCbits.ANSELC0 = 0;
-    ANSELCbits.ANSELC1 = 0;
-
-
 
     TRISCbits.TRISC0 = 0;
     TRISCbits.TRISC1 = 0;
+
+
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+
 
     ODCONCbits.ODCC0 = 1;
     ODCONCbits.ODCC1 = 1;
@@ -22775,8 +22775,7 @@ void configI2C(){
     I2C1BTObits.TOBY32 = 0;
     I2C1BTObits.TOTIME = 0x23;
 
-    I2C1ADR0 = 0xFF;
-    I2C1ADR1 = 0xFF;
+    I2C1ADR0 = 0b01100000;
 
     I2C1CLK = 0b0011;
     I2C1BAUD = 0x04;
@@ -22804,16 +22803,21 @@ void configI2C(){
 void i2cStart(){
 
     int timeout = 0;
+
+
+
     while(I2C1STAT0bits.SMA == 0 && timeout < 10){timeout++;};
     timeout = 0;
-    if(I2C1STAT0bits.R == 1){
+    if(I2C1STAT0bits.SMA == 1 && I2C1STAT0bits.R == 1){
         I2C1CON0bits.CSTR = 0;
+
         for(int i = 0; i < 24; i ++){
             I2C1TXB = data[i];
-            while(I2C1STAT1bits.TXBE == 0 && timeout < 50){timeout++;};
+            while(I2C1STAT1bits.TXBE == 0 && timeout < 100){timeout++;};
+            timeout = 0;
         }
     }
-    while(I2C1CON1bits.ACKT == 0);
+    while(I2C1CON1bits.ACKT == 0 && timeout < 5){timeout++;};
 
 
     I2C1CON0bits.EN = 0;
@@ -22856,7 +22860,7 @@ void ADCsetup(){
 }
 
 uint16_t ADCread(int channel){
-# 173 "main.c"
+# 177 "main.c"
     ADPCH = 0b111011;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO);
@@ -22885,10 +22889,12 @@ void __attribute__((picinterrupt(("irq(I2C1)")))) ISR(void){
 }
 
 void loop(){
+    __asm(" clrwdt");
     I2C1CNTL = 0x19;
     uint16_t temp = 0;
     for(int i = 0; i < 12; i++){
         temp = ADCread(i);
+
         data[2*i] = temp >> 8;
         data[2*i+1] = temp & 0xFF;
     }
