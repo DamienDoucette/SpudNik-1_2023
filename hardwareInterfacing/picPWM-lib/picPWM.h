@@ -33,23 +33,23 @@ class picPWM {
         Methods:
             setMagX:    Method to set the PWM signal for the magnetorquer on the X axis
                 Parameters:
-                    duty_cycle  -   duty cycle value ranging from 0-199
+                    duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
                     
             setMagY:    Method to set the PWM signal for the magnetorquer on the Y axis
                 Parameters:
-                    duty_cycle  -   duty cycle value ranging from 0-199
+                    duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
             setMagZ:    Method to set the PWM signal for the magnetorquer on the Z axis
                 Parameters:
-                    duty_cycle  -   duty cycle value ranging from 0-199
+                    duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
             setMotX:    Method to set the PWM signal for the reaction wheel on the X axis
                 Parameters:
-                    duty_cycle  -   duty cycle value ranging from 0-199
+                    duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
             setMotY:    Method to set the PWM signal for the reaction wheel on the Y axis
                 Parameters:
-                    duty_cycle  -   duty cycle value ranging from 0-199
+                    duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
     */
    
     private:

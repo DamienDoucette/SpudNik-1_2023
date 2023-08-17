@@ -26,7 +26,7 @@ void picPWM::setMagX(uint16_t duty_cycle){
     /*
     setMagX:    Method to set the PWM signal for the magnetorquer on the X axis
             Parameters:
-                duty_cycle  -   duty cycle value ranging from 0-199
+                duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
           
     */
     uint16_t address= 0x46B;   //Memory address for PWM1S1P1 duty cycle
@@ -37,7 +37,7 @@ void picPWM::setMagY(uint16_t duty_cycle){
     /*
     setMagY:    Method to set the PWM signal for the magnetorquer on the Y axis
             Parameters:
-                duty_cycle  -   duty cycle value ranging from 0-199
+                duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
     */
     uint16_t address = 0x46D;   //Memory address for PWM1S1P2 duty cycle
@@ -48,7 +48,7 @@ void picPWM::setMagZ(uint16_t duty_cycle){
     /*
     setMagZ:    Method to set the PWM signal for the magnetorquer on the Z axis
             Parameters:
-                duty_cycle  -   duty cycle value ranging from 0-199
+                duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
     */
     uint16_t address = 0x47A;   //Memory address for PWM2S1P1 duty cycle
@@ -59,7 +59,7 @@ void picPWM::setMotX(uint16_t duty_cycle){
     /*
     setMotX:    Method to set the PWM signal for the reaction wheel on the X axis
             Parameters:
-                duty_cycle  -   duty cycle value ranging from 0-199
+                duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
 
     */
     uint16_t address = 0x489;   //Memory address for PWM3S1P1 duty cycle
@@ -70,7 +70,7 @@ void picPWM::setMotY(uint16_t duty_cycle){
     /*
     setMotY:    Method to set the PWM signal for the reaction wheel on the Y axis
             Parameters:
-                duty_cycle  -   duty cycle value ranging from 0-199
+                duty_cycle  -   duty cycle value up to 16bit - actual resolution is defined in PIC script
     */
     uint16_t address = 0x48B;   //Memory address for PWM3S1P2 duty cycle
     writeToI2C(I2C, addr, address, duty_cycle); //Write data to MCU
