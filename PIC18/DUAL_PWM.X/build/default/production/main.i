@@ -22505,9 +22505,9 @@ unsigned char __t3rd16on(void);
 void PWMsetup(){
 
     TRISCbits.TRISC7 = 0;
-    TRISBbits.TRISB6 = 0;
+    TRISBbits.TRISB7 = 0;
 
-    RB6PPS = 0x0A;
+    RB7PPS = 0x0A;
     RC7PPS = 0x0B;
 
     PWM1ERS = 0b0000;
@@ -22517,9 +22517,7 @@ void PWMsetup(){
     PWM1PR = 0x00C7;
     PWM1CPRE = 0x00;
     PWM1GIE = 0x00;
-
-
-    PWM1CONbits.LD = 0;
+    PWM1CONbits.LD = 1;
 
 
 
@@ -22535,25 +22533,6 @@ void PWMsetup(){
     PWM1CONbits.EN = 1;
 }
 
-void setPWM(int address, uint8_t duty_cycle){
-    int temp = address >> 4;
-    int conReg;
-    if(temp == 0x046){
-        conReg = temp << 4 | 0x0009;
-    }
-    if(temp == 0x047){
-        conReg = temp << 4 | 0x0008;
-    }
-    if(temp == 0x048){
-        conReg = temp << 4 | 0x0007;
-    }
-    int volatile * const pConReg = (int *) conReg;
-    *pConReg &= ~(0b10000000);
-    int volatile * const pDutyReg = (int *) address;
-    *pDutyReg = duty_cycle;
-    *pConReg |= 0b10000000;
-}
-
 void loop(){
 
 
@@ -22565,15 +22544,13 @@ void loop(){
     int volatile * const pwm12 = (int *) buffer2;
 
 
-    for(uint16_t i = 0; i < 0x00C8; i++){
+    for(uint16_t i = 20; i < 0x00C0; i++){
 
+        PWM1CONbits.EN = 0;
+        *pwm11 = i;
+        *pwm12 = (0x00C8 - i);
 
-
-
-
-
-
-        setPWM(0x046B, i);
+        PWM1CONbits.EN = 1;
 
         _delay((unsigned long)((10)*(4000000/4000.0)));
     }

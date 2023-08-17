@@ -13,9 +13,9 @@
 void PWMsetup(){
     //Set pins to output
     TRISCbits.TRISC7 = 0;   //Set C7 to output
-    TRISBbits.TRISB6 = 0;   //Set B6 to output
+    TRISBbits.TRISB7 = 0;   //Set B6 to output
     
-    RB6PPS = 0x0A;  //Configure to PWM1S1P1_OUT
+    RB7PPS = 0x0A;  //Configure to PWM1S1P1_OUT
     RC7PPS = 0x0B;  //Configure to PWM1S1P2_OUT
     
     PWM1ERS = 0b0000;   //Sets the external reset source to disabled
@@ -52,11 +52,11 @@ void loop(){
     int volatile * const pwm12 = (int *) buffer2;
     
     /*Some function to control the PWM signal to ensure its changeable*/
-    for(uint16_t i = 0; i < 0x00C8; i++){
+    for(uint16_t i = 20; i < 0x00C0; i++){
         /*NOTE: PWM must be disabled before changing duty cycle*/
         PWM1CONbits.EN = 0; //Enable PWM module
         *pwm11 = i;                 //Change the duty cycle of P1
-        *pwm12 = (0x00C8 - i)/2;    //Change the duty cycle of P2
+        *pwm12 = (0x00C8 - i);    //Change the duty cycle of P2
         
         PWM1CONbits.EN = 1; //Enable PWM module
         
