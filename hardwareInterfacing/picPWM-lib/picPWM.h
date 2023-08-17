@@ -61,12 +61,12 @@ class picPWM {
         //Define methods
         picPWM(uint8_t address, i2c& I2Cobj);
 
-        void setMagX(uint8_t duty_cycle);
-        void setMagY(uint8_t duty_cycle);
-        void setMagZ(uint8_t duty_cycle);
+        void setMagX(uint16_t duty_cycle);
+        void setMagY(uint16_t duty_cycle);
+        void setMagZ(uint16_t duty_cycle);
 
-        void setMotX(uint8_t duty_cycle);
-        void setMotY(uint8_t duty_cycle);
+        void setMotX(uint16_t duty_cycle);
+        void setMotY(uint16_t duty_cycle);
 };
 
 #endif
