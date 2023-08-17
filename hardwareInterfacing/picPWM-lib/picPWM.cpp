@@ -7,7 +7,7 @@ void writeToI2C(i2c& I2C, uint8_t addrMCU, uint16_t addrReg, uint16_t dutyCycle)
     writeBuffer[0] = addrReg >> 8;  //Duty cycle register address H
     writeBuffer[1] = addrReg & ~(0xFF00);   //Duty cycle register address L
     writeBuffer[2] = dutyCycle >> 8; //Duty cycle value High
-    writeBuffer[2] = dutyCycle & 0xFF; //Duty cycle value Low
+    writeBuffer[3] = dutyCycle & 0x00FF; //Duty cycle value Low
 
     /*Use I2C library to send data to the MCU*/
     if(I2C.writeBus(addrMCU, 4, writeBuffer)){
