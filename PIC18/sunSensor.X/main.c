@@ -202,7 +202,7 @@ void __interrupt(irq(I2C1)) ISR(void){
 }
 
 void loop(){
-    CLRWDT(); //EXTREMELY FUCKING IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
+    CLRWDT(); //EXTREMELY IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
     I2C1CNTL = 0x19;    //Set count to 24
     uint16_t temp = 0;  //Variable to hold the 12bit ADC reading
     for(int i = 0; i < 12; i++){
