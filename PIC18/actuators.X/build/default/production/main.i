@@ -22499,10 +22499,10 @@ unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
-uint8_t i2cBuffer[3];
+uint8_t i2cBuffer[4];
 
 
-void setPWM(int address, uint8_t duty_cycle){
+void setPWM(uint16_t address, uint16_t duty_cycle){
 
 
 
@@ -22633,8 +22633,9 @@ void i2cStart(){
             index++;
         }
 
-        int address = i2cBuffer[0] << 8 | i2cBuffer[1];
-        setPWM(address, i2cBuffer[2]);
+        uint16_t address = i2cBuffer[0] << 8 | i2cBuffer[1];
+        uint16_t duty_cycle = i2cBuffer[2] << 8 | i2cBuffer[3];
+        setPWM(address, duty_cycle);
     }
 
 
@@ -22694,7 +22695,8 @@ void PWMsetup(){
     PWM2ERS = 0b0000;
     PWM2CLK = 0b0010;
 
-    PWM2PR = 0x00C7;
+    PWM2PR = 0xFFFF;
+
     PWM2CPRE = 0x00;
     PWM2GIE = 0x00;
     PWM2CONbits.LD = 1;
@@ -22734,7 +22736,7 @@ void PWMsetup(){
 
 void loop(){
     __asm(" clrwdt");
-    I2C1CNTL = 0x03;
+    I2C1CNTL = 0x04;
 }
 
 void main(void) {

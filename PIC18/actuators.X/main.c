@@ -7,10 +7,10 @@
 
 
 #include <xc.h>
-uint8_t i2cBuffer[3];
+uint8_t i2cBuffer[4];
 #define _XTAL_FREQ 4000000 //Define clock speed, needed for __delay
 
-void setPWM(int address, uint8_t duty_cycle){
+void setPWM(uint16_t address, uint16_t duty_cycle){
     /*This function is used to set the PWM duty cycle. 
      * It takes the address of the duty cycle register
      * and the duty cycle value */
@@ -141,8 +141,9 @@ void i2cStart(){
             index++;
         }
         //Combine the H and L address values, then set the PWM signal
-        int address = i2cBuffer[0] << 8 | i2cBuffer[1];
-        setPWM(address, i2cBuffer[2]);
+        uint16_t address = i2cBuffer[0] << 8 | i2cBuffer[1];
+        uint16_t duty_cycle = i2cBuffer[2] << 8 | i2cBuffer[3];
+        setPWM(address, duty_cycle);
     }
     
     /*RESET FOR NEXT COMMUNICATION*/
@@ -202,7 +203,8 @@ void PWMsetup(){
     PWM2ERS = 0b0000;   //Sets the external reset source to disabled
     PWM2CLK = 0b0010;   //Sets the clock source for PWM - Set to Fosc
     
-    PWM2PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
+    PWM2PR = 0xFFFF;    //Number of clock periods in PWM period (Effectively the resolution)
+    //PWM2PR = 0x00C7;    //Number of clock periods in PWM period (Effectively the resolution)
     PWM2CPRE = 0x00;    //Clock pre-scaler (n+1)
     PWM2GIE = 0x00;     //Interrupt register -- Disable/Enable interrupts  
     PWM2CONbits.LD = 1; //Reload the PR, P1, and P2 registers on the next cycle
@@ -242,7 +244,7 @@ void PWMsetup(){
 
 void loop(){
     CLRWDT(); //EXTREMELY FUCKING IMPORTANT OR ELSE THE CHIP WILL JUST RESET ITSELF... I LEARNED 2 MONTHS INTO USING THIS CHIP
-    I2C1CNTL = 0x03;    //Set the CNT register to 3, as there are three bytes of data in a transmission
+    I2C1CNTL = 0x04;    //Set the CNT register to 3, as there are three bytes of data in a transmission
 }
 
 void main(void) {
