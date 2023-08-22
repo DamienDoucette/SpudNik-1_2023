@@ -5,14 +5,9 @@
 
 int main(){
     i2c I2C;    //Create an instance of the I2C class
-<<<<<<< Updated upstream
     int addr = 0b1111111;    //Define the address of the client
-=======
-    
-	int addr = 0b1111111;    //Define the address of the client
-    uint8_t duty;
->>>>>>> Stashed changes
 
+    uint8_t duty;
     picPWM pwm(addr, I2C);  //Create instance of the picPWM class
     
     /* WRITE PWM INFO TO MCU */
