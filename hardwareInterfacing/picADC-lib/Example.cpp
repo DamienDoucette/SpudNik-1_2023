@@ -5,7 +5,11 @@
 
 int main(){
     i2c I2C;  //Create instance of the I2C class
+<<<<<<< Updated upstream
     int addr = 0b0110000;    //Define address of client
+=======
+	int addr = 0b0110000;    //Define address of client
+>>>>>>> Stashed changes
 
     picADC adc(addr, I2C);  //Create instance of picADC class
 
