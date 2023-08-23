@@ -9,28 +9,30 @@ int main(){
 
     uint8_t duty;
     picPWM pwm(addr, I2C);  //Create instance of the picPWM class
+
+    int range = 200;    //Duty cycle range set on the PIC chip (Only used for displays)
     
     /* WRITE PWM INFO TO MCU */
     printf("====================================\n");
     duty = 30;    //Define a duty cycle
     pwm.setMotX(duty);      //Write the duty cycle to Motor X
-    printf("Wrote duty cycle 30/200 on MotX\n");
+    printf("Wrote duty cycle %d/%d on MotX\n", duty, range);
 
     duty = 60;            //Change duty cycle variable  
     pwm.setMotY(duty);      //Write the duty cycle to Motor Y
-    printf("Wrote duty cycle 60/200 on MotY\n");
+    printf("Wrote duty cycle %d/%d on MotY\n", duty, range);
 
     duty = 90;            //Change duty cycle variable  
     pwm.setMagX(duty);      //Write the duty cycle to Magnetorquer X
-    printf("Wrote duty cycle 90/200 on MagX\n");
+    printf("Wrote duty cycle %d/%d on MagX\n", duty, range);
 
     duty = 120;            //Change duty cycle variable  
     pwm.setMagY(duty);      //Write the duty cycle to Magnetorquer Y
-    printf("Wrote duty cycle 120/200 on MagY\n");
+    printf("Wrote duty cycle %d/%d on MagY\n", duty, range);
 
     duty = 150;            //Change duty cycle variable  
     pwm.setMagZ(duty);      //Write the duty cycle to Magnetorquer Z
-    printf("Wrote duty cycle 150/200 on MagZ\n");
+    printf("Wrote duty cycle %d/%d on MagZ\n", duty, range);
 
     return 0;
 }
