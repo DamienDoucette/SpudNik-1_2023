@@ -7,7 +7,7 @@ int main(){
     i2c I2C;    //Create an instance of the I2C class
     int addr = 0b1111111;    //Define the address of the client
 
-    uint8_t duty;
+    uint16_t duty;
     picPWM pwm(addr, I2C);  //Create instance of the picPWM class
 
     int range1 = 200;    //Duty cycle PWM 1 range set on the PIC chip (Only used for displays)
