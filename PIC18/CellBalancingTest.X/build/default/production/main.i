@@ -22512,14 +22512,164 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 10 "main.c" 2
+
+
+
+uint16_t Vcell[4];
 uint8_t channel_map[4] = {
     0b010011,
     0b010110,
     0b010111,
     0b001111,
 };
+float Vt;
 
 void ADCsetup(){
 
@@ -22541,7 +22691,7 @@ void ADCsetup(){
 
 
 
-    FVRCONbits.ADFVR = 0b11;
+    FVRCONbits.ADFVR = 0b10;
 
 
 
@@ -22587,7 +22737,7 @@ void PWMsetup(){
     PWM1CLK = 0b0010;
 
 
-    PWM1PR = 2000;
+    PWM1PR = 6600;
     PWM1CPRE = 0x00;
     PWM1GIE = 0x00;
     PWM1CONbits.LD = 1;
@@ -22600,10 +22750,130 @@ void PWMsetup(){
     PWM1S1CFGbits.PPEN = 1;
     PWM1S1CFGbits.MODE = 0b001;
 
-    PWM1S1P1 = 0xFFFF;
-    PWM1S1P2 = 0xFFFF;
+    PWM1S1P1 = 6600;
+    PWM1S1P2 = 6600;
 
     PWM1CONbits.EN = 1;
+}
+
+void balanceCells(){
+    uint16_t max = 0;
+    uint16_t min = 0xFFFF;
+    uint8_t index_max = 0;
+    uint8_t index_min = 0;
+    uint8_t prev_index_max = 0;
+    uint8_t prev_index_min = 0;
+
+    for(int i = 0; i < 4; i++){
+        uint16_t reading = ADCread(i);
+        Vcell[i] = reading;
+
+        if(reading > max){
+            max = reading;
+            prev_index_max = index_max;
+            index_max = i;
+        }
+
+        if(reading < min){
+            min = reading;
+            prev_index_min = index_min;
+            index_min = i;
+        }
+    }
+    if(index_max != prev_index_max || index_min != prev_index_min){
+        RC2PPS = 0x29;
+        RB4PPS = 0x29;
+        RB5PPS = 0x29;
+        RB6PPS = 0x29;
+
+        switch(index_max){
+            case 0:
+                RB6PPS = 0x0A;
+                break;
+            case 1:
+                RB5PPS = 0x0A;
+                break;
+            case 2:
+                RB4PPS = 0x0A;
+                break;
+            case 3:
+                RC2PPS = 0x0A;
+                break;
+        }
+        switch(index_min){
+            case 0:
+                RB6PPS = 0x0B;
+                break;
+            case 1:
+                RB5PPS = 0x0B;
+                break;
+            case 2:
+                RB4PPS = 0x0B;
+                break;
+            case 3:
+                RC2PPS = 0x0B;
+                break;
+        }
+    }
+}
+
+void TX(char data){
+    int timeout = 0;
+    while(U1FIFObits.TXBF && timeout < 1000){timeout++;}
+    U1TXB = data;
+}
+
+void UARTsetup(){
+    OSCFREQ = 0b0010;
+    OSCCON1bits.NOSC = 0b110;
+
+    RC0PPS = 0x10;
+    TRISCbits.TRISC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+    U1RXPPS = 0b010001;
+
+    U1CON0bits.BRGS = 0;
+    U1CON0bits.MODE = 0b0011;
+    U1CON0bits.RXEN = 1;
+    U1CON0bits.TXEN = 1;
+
+    U1CON2bits.RXPOL = 0;
+    U1CON2bits.TXPOL = 0;
+    U1CON2bits.STP = 0b00;
+# 200 "main.c"
+    U1BRGH = 0;
+    U1BRGL = 0x19;
+
+
+    INTCON0bits.GIE = 1;
+    INTCON0bits.IPEN = 1;
+
+
+    PIE4bits.U1IE = 1;
+    PIE4bits.U1RXIE = 1;
+    IPR4bits.U1RXIP = 1;
+    PIR4bits.U1RXIF = 0;
+
+    U1RXB = 0x00;
+
+    U1CON1bits.ON = 1;
+}
+
+void sendData(){
+    char msg[64];
+
+    sprintf(msg, "%d, %d, %d, %d, %d, %d, %d, %d, %f\n",
+            Vcell[0], Vcell[1], Vcell[2], Vcell[3],
+            RB6PPS, RB5PPS, RB4PPS, RC2PPS,
+            Vt);
+
+    for(int i = 0; i<64; i++){
+        TX(msg[i]);
+        if(msg[i] == 0x0A){
+            break;
+        }
+    }
+    __nop();
 }
 
 void main(void) {
@@ -22612,8 +22882,14 @@ void main(void) {
 
     PWMsetup();
     ADCsetup();
-# 173 "main.c"
-    RB5PPS = 0x0A;
-    RB6PPS = 0x0B;
+    UARTsetup();
+
+    while(1){
+        __asm(" clrwdt");
+        balanceCells();
+        Vt = 2.048*(Vcell[0] + Vcell[1] + Vcell[2] + Vcell[3])/4095;
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+        sendData();
+    }
     return;
 }

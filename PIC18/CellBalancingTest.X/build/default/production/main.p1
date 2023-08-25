@@ -157,7 +157,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33876
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 33876: extern volatile unsigned short PWM1S1P2 __attribute__((address(0x46D)));
 [v _PWM1S1P2 `Vus ~T0 @X0 0 e@1133 ]
-[p mainexit ]
+"8896
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8896: extern volatile unsigned char RC2PPS __attribute__((address(0x213)));
+[v _RC2PPS `Vuc ~T0 @X0 0 e@531 ]
+"8596
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8596: extern volatile unsigned char RB4PPS __attribute__((address(0x20D)));
+[v _RB4PPS `Vuc ~T0 @X0 0 e@525 ]
+"8646
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8646: extern volatile unsigned char RB5PPS __attribute__((address(0x20E)));
+[v _RB5PPS `Vuc ~T0 @X0 0 e@526 ]
+"8696
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8696: extern volatile unsigned char RB6PPS __attribute__((address(0x20F)));
+[v _RB6PPS `Vuc ~T0 @X0 0 e@527 ]
+"14654
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14654:     struct {
+[s S729 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S729 . RXBF RXBE XON RXIDL TXBF TXBE STPMD TXWRE ]
+"14664
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14664:     struct {
+[s S730 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S730 . U1RXBF U1RXBE U1XON U1RXIDL U1TXBF U1TXBE U1STPMD U1TXWRE ]
+"14674
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14674:     struct {
+[s S731 :3 `uc 1 :1 `uc 1 ]
+[n S731 . . U1RCIDL ]
+"14678
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14678:     struct {
+[s S732 :3 `uc 1 :1 `uc 1 ]
+[n S732 . . RCIDL ]
+"14653
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14653: typedef union {
+[u S728 `S729 1 `S730 1 `S731 1 `S732 1 ]
+[n S728 . . . . . ]
+"14683
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14683: extern volatile U1FIFObits_t U1FIFObits __attribute__((address(0x2B0)));
+[v _U1FIFObits `VS728 ~T0 @X0 0 e@688 ]
+"14052
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14052: extern volatile unsigned char U1TXB __attribute__((address(0x2A3)));
+[v _U1TXB `Vuc ~T0 @X0 0 e@675 ]
 "5368
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5368: extern volatile unsigned char OSCFREQ __attribute__((address(0x0B1)));
 [v _OSCFREQ `Vuc ~T0 @X0 0 e@177 ]
@@ -176,12 +213,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5145
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 5145: extern volatile OSCCON1bits_t OSCCON1bits __attribute__((address(0x0AD)));
 [v _OSCCON1bits `VS236 ~T0 @X0 0 e@173 ]
-"8646
-[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8646: extern volatile unsigned char RB5PPS __attribute__((address(0x20E)));
-[v _RB5PPS `Vuc ~T0 @X0 0 e@526 ]
-"8696
-[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8696: extern volatile unsigned char RB6PPS __attribute__((address(0x20F)));
-[v _RB6PPS `Vuc ~T0 @X0 0 e@527 ]
+"8796
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 8796: extern volatile unsigned char RC0PPS __attribute__((address(0x211)));
+[v _RC0PPS `Vuc ~T0 @X0 0 e@529 ]
+"31570
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31570:     struct {
+[s S1502 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1502 . ANSELC0 ANSELC1 ANSELC2 ANSELC3 ANSELC4 ANSELC5 ANSELC6 ANSELC7 ]
+"31569
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31569: typedef union {
+[u S1501 `S1502 1 ]
+[n S1501 . . ]
+"31581
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 31581: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x410)));
+[v _ANSELCbits `VS1501 ~T0 @X0 0 e@1040 ]
+"12088
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 12088: extern volatile unsigned char U1RXPPS __attribute__((address(0x272)));
+[v _U1RXPPS `Vuc ~T0 @X0 0 e@626 ]
+"14257
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14257:     struct {
+[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S712 . MODE0 MODE1 MODE2 MODE3 ]
+"14263
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14263:     struct {
+[s S713 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S713 . U1MODE U1RXEN U1TXEN U1ABDEN U1BRGS ]
+"14270
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14270:     struct {
+[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S714 . U1MODE0 U1MODE1 U1MODE2 U1MODE3 ]
+"14276
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14276:     struct {
+[s S715 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S715 . MODE RXEN TXEN ABDEN BRGS ]
+"14256
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14256: typedef union {
+[u S711 `S712 1 `S713 1 `S714 1 `S715 1 ]
+[n S711 . . . . . ]
+"14284
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14284: extern volatile U1CON0bits_t U1CON0bits __attribute__((address(0x2AB)));
+[v _U1CON0bits `VS711 ~T0 @X0 0 e@683 ]
+"14465
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14465:     struct {
+[s S720 :2 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S720 . FLO TXPOL C0EN STP RXPOL RUNOVF ]
+"14473
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14473:     struct {
+[s S721 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S721 . FLO0 FLO1 . STP0 STP1 ]
+"14480
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14480:     struct {
+[s S722 :2 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S722 . U1FLO U1TXPOL U1C0EN U1STP U1RXPOL U1RUNOVF ]
+"14488
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14488:     struct {
+[s S723 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S723 . U1FLO0 U1FLO1 . U1STP0 U1STP1 ]
+"14464
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14464: typedef union {
+[u S719 `S720 1 `S721 1 `S722 1 `S723 1 ]
+[n S719 . . . . . ]
+"14496
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14496: extern volatile U1CON2bits_t U1CON2bits __attribute__((address(0x2AD)));
+[v _U1CON2bits `VS719 ~T0 @X0 0 e@685 ]
+"14628
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14628: extern volatile unsigned char U1BRGH __attribute__((address(0x2AF)));
+[v _U1BRGH `Vuc ~T0 @X0 0 e@687 ]
+"14608
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14608: extern volatile unsigned char U1BRGL __attribute__((address(0x2AE)));
+[v _U1BRGL `Vuc ~T0 @X0 0 e@686 ]
+"36817
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36817:     struct {
+[s S1744 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1744 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"36826
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36826:     struct {
+[s S1745 :7 `uc 1 :1 `uc 1 ]
+[n S1745 . . GIEH ]
+"36816
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36816: typedef union {
+[u S1743 `S1744 1 `S1745 1 ]
+[n S1743 . . . ]
+"36831
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 36831: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS1743 ~T0 @X0 0 e@1238 ]
+"35315
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35315:     struct {
+[s S1687 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1687 . U1RXIE U1TXIE U1EIE U1IE TMR3IE TMR3GIE PWM1PIE PWM1IE ]
+"35314
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35314: typedef union {
+[u S1686 `S1687 1 ]
+[n S1686 . . ]
+"35326
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35326: extern volatile PIE4bits_t PIE4bits __attribute__((address(0x4AC)));
+[v _PIE4bits `VS1686 ~T0 @X0 0 e@1196 ]
+"24932
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24932:     struct {
+[s S1203 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1203 . U1RXIP U1TXIP U1EIP U1IP TMR3IP TMR3GIP PWM1PIP PWM1IP ]
+"24931
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24931: typedef union {
+[u S1202 `S1203 1 ]
+[n S1202 . . ]
+"24943
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 24943: extern volatile IPR4bits_t IPR4bits __attribute__((address(0x36B)));
+[v _IPR4bits `VS1202 ~T0 @X0 0 e@875 ]
+"35962
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35962:     struct {
+[s S1711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1711 . U1RXIF U1TXIF U1EIF U1IF TMR3IF TMR3GIF PWM1PIF PWM1IF ]
+"35961
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35961: typedef union {
+[u S1710 `S1711 1 ]
+[n S1710 . . ]
+"35973
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 35973: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x4B7)));
+[v _PIR4bits `VS1710 ~T0 @X0 0 e@1207 ]
+"13994
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 13994: extern volatile unsigned char U1RXB __attribute__((address(0x2A1)));
+[v _U1RXB `Vuc ~T0 @X0 0 e@673 ]
+"14385
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14385:     struct {
+[s S717 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S717 . SENDB BRKOVR . RXBIMD WUE . ON ]
+"14394
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14394:     struct {
+[s S718 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S718 . U1SENDB U1BRKOVR . U1RXBIMD U1WUE . U1ON ]
+"14384
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14384: typedef union {
+[u S716 `S717 1 `S718 1 ]
+[n S716 . . . ]
+"14404
+[; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 14404: extern volatile U1CON1bits_t U1CON1bits __attribute__((address(0x2AC)));
+[v _U1CON1bits `VS716 ~T0 @X0 0 e@684 ]
+"111 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 111: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+[p mainexit ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
 "269 C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 269: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2189,8 +2366,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38140
 [; ;C:/Users/damie/.mchp_packs/Microchip/PIC18F-Q_DFP/1.19.401/xc8\pic\include\proc\pic18f15q40.h: 38140: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"12 main.c
-[; ;main.c: 12: uint8_t channel_map[4] = {
+"13 main.c
+[; ;main.c: 13: uint16_t Vcell[4];
+[v _Vcell `us ~T0 @X0 -> 4 `i e ]
+"14
+[; ;main.c: 14: uint8_t channel_map[4] = {
 [v _channel_map `uc ~T0 @X0 -> 4 `i e ]
 [i _channel_map
 :U ..
@@ -2200,201 +2380,597 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 15 `i `uc
 ..
 ]
-"19
-[; ;main.c: 19: void ADCsetup(){
+"20
+[; ;main.c: 20: float Vt;
+[v _Vt `f ~T0 @X0 1 e ]
+"22
+[; ;main.c: 22: void ADCsetup(){
 [v _ADCsetup `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADCsetup ]
 [f ]
-"21
-[; ;main.c: 21:     TRISB = TRISB | 0b10000000;
-[e = _TRISB -> | -> _TRISB `i -> 128 `i `uc ]
-"22
-[; ;main.c: 22:     TRISC = TRISC | 0b11001000;
-[e = _TRISC -> | -> _TRISC `i -> 200 `i `uc ]
 "24
-[; ;main.c: 24:     ANSELB = ANSELB | 0b10000000;
-[e = _ANSELB -> | -> _ANSELB `i -> 128 `i `uc ]
+[; ;main.c: 24:     TRISB = TRISB | 0b10000000;
+[e = _TRISB -> | -> _TRISB `i -> 128 `i `uc ]
 "25
-[; ;main.c: 25:     ANSELC = ANSELC | 0b11001000;
-[e = _ANSELC -> | -> _ANSELC `i -> 200 `i `uc ]
+[; ;main.c: 25:     TRISC = TRISC | 0b11001000;
+[e = _TRISC -> | -> _TRISC `i -> 200 `i `uc ]
+"27
+[; ;main.c: 27:     ANSELB = ANSELB | 0b10000000;
+[e = _ANSELB -> | -> _ANSELB `i -> 128 `i `uc ]
 "28
-[; ;main.c: 28:     ADREFbits.NREF = 0;
+[; ;main.c: 28:     ANSELC = ANSELC | 0b11001000;
+[e = _ANSELC -> | -> _ANSELC `i -> 200 `i `uc ]
+"31
+[; ;main.c: 31:     ADREFbits.NREF = 0;
 [e = . . _ADREFbits 0 1 -> -> 0 `i `uc ]
-"32
-[; ;main.c: 32:     ADREFbits.PREF = 0b11;
+"35
+[; ;main.c: 35:     ADREFbits.PREF = 0b11;
 [e = . . _ADREFbits 0 0 -> -> 3 `i `uc ]
-"39
-[; ;main.c: 39:     FVRCONbits.ADFVR = 0b11;
-[e = . . _FVRCONbits 0 0 -> -> 3 `i `uc ]
-"44
-[; ;main.c: 44:     FVRCONbits.EN = 1;
-[e = . . _FVRCONbits 0 5 -> -> 1 `i `uc ]
-"46
-[; ;main.c: 46:     ADCON0bits.FM = 1;
-[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
+"42
+[; ;main.c: 42:     FVRCONbits.ADFVR = 0b10;
+[e = . . _FVRCONbits 0 0 -> -> 2 `i `uc ]
 "47
-[; ;main.c: 47:     ADCON0bits.CS = 1;
-[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-"48
-[; ;main.c: 48:     ADACQ = 32;
-[e = _ADACQ -> -> 32 `i `us ]
+[; ;main.c: 47:     FVRCONbits.EN = 1;
+[e = . . _FVRCONbits 0 5 -> -> 1 `i `uc ]
 "49
-[; ;main.c: 49: }
-[e :UE 1845 ]
-}
+[; ;main.c: 49:     ADCON0bits.FM = 1;
+[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
+"50
+[; ;main.c: 50:     ADCON0bits.CS = 1;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "51
-[; ;main.c: 51: uint16_t ADCread(int channel){
+[; ;main.c: 51:     ADACQ = 32;
+[e = _ADACQ -> -> 32 `i `us ]
+"52
+[; ;main.c: 52: }
+[e :UE 1847 ]
+}
+"54
+[; ;main.c: 54: uint16_t ADCread(int channel){
 [v _ADCread `(us ~T0 @X0 1 ef1`i ]
 {
 [e :U _ADCread ]
 [v _channel `i ~T0 @X0 1 r1 ]
 [f ]
-"54
-[; ;main.c: 54:     ADPCH = 0b111011;
+"57
+[; ;main.c: 57:     ADPCH = 0b111011;
 [e = _ADPCH -> -> 59 `i `uc ]
-"55
-[; ;main.c: 55:     ADCON0bits.GO = 1;
+"58
+[; ;main.c: 58:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"56
-[; ;main.c: 56:     while(ADCON0bits.GO);
-[e $U 1847  ]
-[e :U 1848 ]
-[e :U 1847 ]
-[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 1848  ]
-[e :U 1849 ]
 "59
-[; ;main.c: 59:     ADPCH = channel_map[channel];
-[e = _ADPCH *U + &U _channel_map * -> -> _channel `ui `ux -> -> # *U &U _channel_map `ui `ux ]
-"60
-[; ;main.c: 60:     ADCON0bits.ON = 1;
-[e = . . _ADCON0bits 0 6 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:     while(ADCON0bits.GO);
-[e $U 1850  ]
-[e :U 1851 ]
+[; ;main.c: 59:     while(ADCON0bits.GO);
+[e $U 1849  ]
 [e :U 1850 ]
-[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 1851  ]
-[e :U 1852 ]
+[e :U 1849 ]
+[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 1850  ]
+[e :U 1851 ]
+"62
+[; ;main.c: 62:     ADPCH = channel_map[channel];
+[e = _ADPCH *U + &U _channel_map * -> -> _channel `ui `ux -> -> # *U &U _channel_map `ui `ux ]
 "63
-[; ;main.c: 63:     uint8_t resultHigh = ADRESH;
+[; ;main.c: 63:     ADCON0bits.ON = 1;
+[e = . . _ADCON0bits 0 6 -> -> 1 `i `uc ]
+"64
+[; ;main.c: 64:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"65
+[; ;main.c: 65:     while(ADCON0bits.GO);
+[e $U 1852  ]
+[e :U 1853 ]
+[e :U 1852 ]
+[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 1853  ]
+[e :U 1854 ]
+"66
+[; ;main.c: 66:     uint8_t resultHigh = ADRESH;
 [v _resultHigh `uc ~T0 @X0 1 a ]
 [e = _resultHigh _ADRESH ]
-"64
-[; ;main.c: 64:     uint8_t resultLow = ADRESL;
+"67
+[; ;main.c: 67:     uint8_t resultLow = ADRESL;
 [v _resultLow `uc ~T0 @X0 1 a ]
 [e = _resultLow _ADRESL ]
-"67
-[; ;main.c: 67:     uint16_t result = resultHigh;
+"70
+[; ;main.c: 70:     uint16_t result = resultHigh;
 [v _result `us ~T0 @X0 1 a ]
 [e = _result -> _resultHigh `us ]
-"68
-[; ;main.c: 68:     result = result << 8;
-[e = _result -> << -> _result `ui -> 8 `i `us ]
-"69
-[; ;main.c: 69:     result = result | resultLow;
-[e = _result -> | -> _result `ui -> _resultLow `ui `us ]
 "71
-[; ;main.c: 71:     return result;
-[e ) _result ]
-[e $UE 1846  ]
+[; ;main.c: 71:     result = result << 8;
+[e = _result -> << -> _result `ui -> 8 `i `us ]
 "72
-[; ;main.c: 72: }
-[e :UE 1846 ]
-}
+[; ;main.c: 72:     result = result | resultLow;
+[e = _result -> | -> _result `ui -> _resultLow `ui `us ]
 "74
-[; ;main.c: 74: void PWMsetup(){
+[; ;main.c: 74:     return result;
+[e ) _result ]
+[e $UE 1848  ]
+"75
+[; ;main.c: 75: }
+[e :UE 1848 ]
+}
+"77
+[; ;main.c: 77: void PWMsetup(){
 [v _PWMsetup `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWMsetup ]
 [f ]
-"76
-[; ;main.c: 76:     TRISCbits.TRISC2 = 0;
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:     TRISBbits.TRISB4 = 0;
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     TRISBbits.TRISB5 = 0;
-[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
 "79
-[; ;main.c: 79:     TRISBbits.TRISB6 = 0;
-[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 79:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"80
+[; ;main.c: 80:     TRISBbits.TRISB4 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 "81
-[; ;main.c: 81:     PWM1ERS = 0b0000;
-[e = _PWM1ERS -> -> 0 `i `uc ]
+[; ;main.c: 81:     TRISBbits.TRISB5 = 0;
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
 "82
-[; ;main.c: 82:     PWM1CLK = 0b0010;
-[e = _PWM1CLK -> -> 2 `i `uc ]
+[; ;main.c: 82:     TRISBbits.TRISB6 = 0;
+[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+"84
+[; ;main.c: 84:     PWM1ERS = 0b0000;
+[e = _PWM1ERS -> -> 0 `i `uc ]
 "85
-[; ;main.c: 85:     PWM1PR = 2000;
-[e = _PWM1PR -> -> 2000 `i `us ]
-"86
-[; ;main.c: 86:     PWM1CPRE = 0x00;
-[e = _PWM1CPRE -> -> 0 `i `uc ]
-"87
-[; ;main.c: 87:     PWM1GIE = 0x00;
-[e = _PWM1GIE -> -> 0 `i `uc ]
+[; ;main.c: 85:     PWM1CLK = 0b0010;
+[e = _PWM1CLK -> -> 2 `i `uc ]
 "88
-[; ;main.c: 88:     PWM1CONbits.LD = 1;
+[; ;main.c: 88:     PWM1PR = 6600;
+[e = _PWM1PR -> -> 6600 `i `us ]
+"89
+[; ;main.c: 89:     PWM1CPRE = 0x00;
+[e = _PWM1CPRE -> -> 0 `i `uc ]
+"90
+[; ;main.c: 90:     PWM1GIE = 0x00;
+[e = _PWM1GIE -> -> 0 `i `uc ]
+"91
+[; ;main.c: 91:     PWM1CONbits.LD = 1;
 [e = . . _PWM1CONbits 0 2 -> -> 1 `i `uc ]
-"92
-[; ;main.c: 92:     PWM1S1CFGbits.POL1 = 0;
-[e = . . _PWM1S1CFGbits 0 3 -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:     PWM1S1CFGbits.POL2 = 0;
-[e = . . _PWM1S1CFGbits 0 4 -> -> 0 `i `uc ]
 "95
-[; ;main.c: 95:     PWM1S1CFGbits.PPEN = 1;
-[e = . . _PWM1S1CFGbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 95:     PWM1S1CFGbits.POL1 = 0;
+[e = . . _PWM1S1CFGbits 0 3 -> -> 0 `i `uc ]
 "96
-[; ;main.c: 96:     PWM1S1CFGbits.MODE = 0b001;
-[e = . . _PWM1S1CFGbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 96:     PWM1S1CFGbits.POL2 = 0;
+[e = . . _PWM1S1CFGbits 0 4 -> -> 0 `i `uc ]
 "98
-[; ;main.c: 98:     PWM1S1P1 = 0xFFFF;
-[e = _PWM1S1P1 -> -> 65535 `ui `us ]
+[; ;main.c: 98:     PWM1S1CFGbits.PPEN = 1;
+[e = . . _PWM1S1CFGbits 0 1 -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99:     PWM1S1P2 = 0xFFFF;
-[e = _PWM1S1P2 -> -> 65535 `ui `us ]
+[; ;main.c: 99:     PWM1S1CFGbits.MODE = 0b001;
+[e = . . _PWM1S1CFGbits 0 0 -> -> 1 `i `uc ]
 "101
-[; ;main.c: 101:     PWM1CONbits.EN = 1;
-[e = . . _PWM1CONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 101:     PWM1S1P1 = 6600;
+[e = _PWM1S1P1 -> -> 6600 `i `us ]
 "102
-[; ;main.c: 102: }
-[e :UE 1853 ]
+[; ;main.c: 102:     PWM1S1P2 = 6600;
+[e = _PWM1S1P2 -> -> 6600 `i `us ]
+"104
+[; ;main.c: 104:     PWM1CONbits.EN = 1;
+[e = . . _PWM1CONbits 0 4 -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105: }
+[e :UE 1855 ]
+}
+"107
+[; ;main.c: 107: void balanceCells(){
+[v _balanceCells `(v ~T0 @X0 1 ef ]
+{
+[e :U _balanceCells ]
+[f ]
+"108
+[; ;main.c: 108:     uint16_t max = 0;
+[v _max `us ~T0 @X0 1 a ]
+[e = _max -> -> 0 `i `us ]
+"109
+[; ;main.c: 109:     uint16_t min = 0xFFFF;
+[v _min `us ~T0 @X0 1 a ]
+[e = _min -> -> 65535 `ui `us ]
+"110
+[; ;main.c: 110:     uint8_t index_max = 0;
+[v _index_max `uc ~T0 @X0 1 a ]
+[e = _index_max -> -> 0 `i `uc ]
+"111
+[; ;main.c: 111:     uint8_t index_min = 0;
+[v _index_min `uc ~T0 @X0 1 a ]
+[e = _index_min -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:     uint8_t prev_index_max = 0;
+[v _prev_index_max `uc ~T0 @X0 1 a ]
+[e = _prev_index_max -> -> 0 `i `uc ]
+"113
+[; ;main.c: 113:     uint8_t prev_index_min = 0;
+[v _prev_index_min `uc ~T0 @X0 1 a ]
+[e = _prev_index_min -> -> 0 `i `uc ]
+"115
+[; ;main.c: 115:     for(int i = 0; i < 4; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 1857  ]
+[e $U 1858  ]
+[e :U 1857 ]
+{
+"116
+[; ;main.c: 116:         uint16_t reading = ADCread(i);
+[v _reading `us ~T0 @X0 1 a ]
+[e = _reading ( _ADCread (1 _i ]
+"117
+[; ;main.c: 117:         Vcell[i] = reading;
+[e = *U + &U _Vcell * -> -> _i `ui `ux -> -> # *U &U _Vcell `ui `ux _reading ]
+"119
+[; ;main.c: 119:         if(reading > max){
+[e $ ! > -> _reading `ui -> _max `ui 1860  ]
+{
+"120
+[; ;main.c: 120:             max = reading;
+[e = _max _reading ]
+"121
+[; ;main.c: 121:             prev_index_max = index_max;
+[e = _prev_index_max _index_max ]
+"122
+[; ;main.c: 122:             index_max = i;
+[e = _index_max -> _i `uc ]
+"123
+[; ;main.c: 123:         }
+}
+[e :U 1860 ]
+"125
+[; ;main.c: 125:         if(reading < min){
+[e $ ! < -> _reading `ui -> _min `ui 1861  ]
+{
+"126
+[; ;main.c: 126:             min = reading;
+[e = _min _reading ]
+"127
+[; ;main.c: 127:             prev_index_min = index_min;
+[e = _prev_index_min _index_min ]
+"128
+[; ;main.c: 128:             index_min = i;
+[e = _index_min -> _i `uc ]
+"129
+[; ;main.c: 129:         }
+}
+[e :U 1861 ]
+"130
+[; ;main.c: 130:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 1857  ]
+[e :U 1858 ]
+}
+"131
+[; ;main.c: 131:     if(index_max != prev_index_max || index_min != prev_index_min){
+[e $ ! || != -> _index_max `i -> _prev_index_max `i != -> _index_min `i -> _prev_index_min `i 1862  ]
+{
+"132
+[; ;main.c: 132:         RC2PPS = 0x29;
+[e = _RC2PPS -> -> 41 `i `uc ]
+"133
+[; ;main.c: 133:         RB4PPS = 0x29;
+[e = _RB4PPS -> -> 41 `i `uc ]
+"134
+[; ;main.c: 134:         RB5PPS = 0x29;
+[e = _RB5PPS -> -> 41 `i `uc ]
+"135
+[; ;main.c: 135:         RB6PPS = 0x29;
+[e = _RB6PPS -> -> 41 `i `uc ]
+"137
+[; ;main.c: 137:         switch(index_max){
+[e $U 1864  ]
+{
+"138
+[; ;main.c: 138:             case 0:
+[e :U 1865 ]
+"139
+[; ;main.c: 139:                 RB6PPS = 0x0A;
+[e = _RB6PPS -> -> 10 `i `uc ]
+"140
+[; ;main.c: 140:                 break;
+[e $U 1863  ]
+"141
+[; ;main.c: 141:             case 1:
+[e :U 1866 ]
+"142
+[; ;main.c: 142:                 RB5PPS = 0x0A;
+[e = _RB5PPS -> -> 10 `i `uc ]
+"143
+[; ;main.c: 143:                 break;
+[e $U 1863  ]
+"144
+[; ;main.c: 144:             case 2:
+[e :U 1867 ]
+"145
+[; ;main.c: 145:                 RB4PPS = 0x0A;
+[e = _RB4PPS -> -> 10 `i `uc ]
+"146
+[; ;main.c: 146:                 break;
+[e $U 1863  ]
+"147
+[; ;main.c: 147:             case 3:
+[e :U 1868 ]
+"148
+[; ;main.c: 148:                 RC2PPS = 0x0A;
+[e = _RC2PPS -> -> 10 `i `uc ]
+"149
+[; ;main.c: 149:                 break;
+[e $U 1863  ]
+"150
+[; ;main.c: 150:         }
+}
+[e $U 1863  ]
+[e :U 1864 ]
+[e [\ -> _index_max `i , $ -> 0 `i 1865
+ , $ -> 1 `i 1866
+ , $ -> 2 `i 1867
+ , $ -> 3 `i 1868
+ 1863 ]
+[e :U 1863 ]
+"151
+[; ;main.c: 151:         switch(index_min){
+[e $U 1870  ]
+{
+"152
+[; ;main.c: 152:             case 0:
+[e :U 1871 ]
+"153
+[; ;main.c: 153:                 RB6PPS = 0x0B;
+[e = _RB6PPS -> -> 11 `i `uc ]
+"154
+[; ;main.c: 154:                 break;
+[e $U 1869  ]
+"155
+[; ;main.c: 155:             case 1:
+[e :U 1872 ]
+"156
+[; ;main.c: 156:                 RB5PPS = 0x0B;
+[e = _RB5PPS -> -> 11 `i `uc ]
+"157
+[; ;main.c: 157:                 break;
+[e $U 1869  ]
+"158
+[; ;main.c: 158:             case 2:
+[e :U 1873 ]
+"159
+[; ;main.c: 159:                 RB4PPS = 0x0B;
+[e = _RB4PPS -> -> 11 `i `uc ]
+"160
+[; ;main.c: 160:                 break;
+[e $U 1869  ]
+"161
+[; ;main.c: 161:             case 3:
+[e :U 1874 ]
+"162
+[; ;main.c: 162:                 RC2PPS = 0x0B;
+[e = _RC2PPS -> -> 11 `i `uc ]
+"163
+[; ;main.c: 163:                 break;
+[e $U 1869  ]
+"164
+[; ;main.c: 164:         }
+}
+[e $U 1869  ]
+[e :U 1870 ]
+[e [\ -> _index_min `i , $ -> 0 `i 1871
+ , $ -> 1 `i 1872
+ , $ -> 2 `i 1873
+ , $ -> 3 `i 1874
+ 1869 ]
+[e :U 1869 ]
+"165
+[; ;main.c: 165:     }
+}
+[e :U 1862 ]
+"166
+[; ;main.c: 166: }
+[e :UE 1856 ]
+}
+"168
+[; ;main.c: 168: void TX(char data){
+[v _TX `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _TX ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"169
+[; ;main.c: 169:     int timeout = 0;
+[v _timeout `i ~T0 @X0 1 a ]
+[e = _timeout -> 0 `i ]
+"170
+[; ;main.c: 170:     while(U1FIFObits.TXBF && timeout < 1000){timeout++;}
+[e $U 1876  ]
+[e :U 1877 ]
+{
+[e ++ _timeout -> 1 `i ]
+}
+[e :U 1876 ]
+[e $ && != -> . . _U1FIFObits 0 4 `i -> 0 `i < _timeout -> 1000 `i 1877  ]
+[e :U 1878 ]
+"171
+[; ;main.c: 171:     U1TXB = data;
+[e = _U1TXB -> _data `uc ]
+"172
+[; ;main.c: 172: }
+[e :UE 1875 ]
+}
+"174
+[; ;main.c: 174: void UARTsetup(){
+[v _UARTsetup `(v ~T0 @X0 1 ef ]
+{
+[e :U _UARTsetup ]
+[f ]
+"175
+[; ;main.c: 175:     OSCFREQ = 0b0010;
+[e = _OSCFREQ -> -> 2 `i `uc ]
+"176
+[; ;main.c: 176:     OSCCON1bits.NOSC = 0b110;
+[e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
+"178
+[; ;main.c: 178:     RC0PPS = 0x10;
+[e = _RC0PPS -> -> 16 `i `uc ]
+"179
+[; ;main.c: 179:     TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"180
+[; ;main.c: 180:     ANSELCbits.ANSELC1 = 0;
+[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
+"181
+[; ;main.c: 181:     U1RXPPS = 0b010001;
+[e = _U1RXPPS -> -> 17 `i `uc ]
+"183
+[; ;main.c: 183:     U1CON0bits.BRGS = 0;
+[e = . . _U1CON0bits 3 4 -> -> 0 `i `uc ]
+"184
+[; ;main.c: 184:     U1CON0bits.MODE = 0b0011;
+[e = . . _U1CON0bits 3 0 -> -> 3 `i `uc ]
+"185
+[; ;main.c: 185:     U1CON0bits.RXEN = 1;
+[e = . . _U1CON0bits 3 1 -> -> 1 `i `uc ]
+"186
+[; ;main.c: 186:     U1CON0bits.TXEN = 1;
+[e = . . _U1CON0bits 3 2 -> -> 1 `i `uc ]
+"188
+[; ;main.c: 188:     U1CON2bits.RXPOL = 0;
+[e = . . _U1CON2bits 0 4 -> -> 0 `i `uc ]
+"189
+[; ;main.c: 189:     U1CON2bits.TXPOL = 0;
+[e = . . _U1CON2bits 0 1 -> -> 0 `i `uc ]
+"190
+[; ;main.c: 190:     U1CON2bits.STP = 0b00;
+[e = . . _U1CON2bits 0 3 -> -> 0 `i `uc ]
+"200
+[; ;main.c: 200:     U1BRGH = 0;
+[e = _U1BRGH -> -> 0 `i `uc ]
+"201
+[; ;main.c: 201:     U1BRGL = 0x19;
+[e = _U1BRGL -> -> 25 `i `uc ]
+"204
+[; ;main.c: 204:     INTCON0bits.GIE = 1;
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"205
+[; ;main.c: 205:     INTCON0bits.IPEN = 1;
+[e = . . _INTCON0bits 0 4 -> -> 1 `i `uc ]
+"208
+[; ;main.c: 208:     PIE4bits.U1IE = 1;
+[e = . . _PIE4bits 0 3 -> -> 1 `i `uc ]
+"209
+[; ;main.c: 209:     PIE4bits.U1RXIE = 1;
+[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
+"210
+[; ;main.c: 210:     IPR4bits.U1RXIP = 1;
+[e = . . _IPR4bits 0 0 -> -> 1 `i `uc ]
+"211
+[; ;main.c: 211:     PIR4bits.U1RXIF = 0;
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+"213
+[; ;main.c: 213:     U1RXB = 0x00;
+[e = _U1RXB -> -> 0 `i `uc ]
+"215
+[; ;main.c: 215:     U1CON1bits.ON = 1;
+[e = . . _U1CON1bits 0 6 -> -> 1 `i `uc ]
+"216
+[; ;main.c: 216: }
+[e :UE 1879 ]
+}
+"218
+[; ;main.c: 218: void sendData(){
+[v _sendData `(v ~T0 @X0 1 ef ]
+{
+[e :U _sendData ]
+[f ]
+"219
+[; ;main.c: 219:     char msg[64];
+[v _msg `uc ~T0 @X0 -> 64 `i a ]
+"221
+[; ;main.c: 221:     sprintf(msg, "%d, %d, %d, %d, %d, %d, %d, %d, %f\n",
+[e ( _sprintf (1 , , , , , , , , , (. , &U _msg :s 1C -> *U + &U _Vcell * -> -> -> 0 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 1 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 2 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 3 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> _RB6PPS `i -> _RB5PPS `i -> _RB4PPS `i -> _RC2PPS `i -> _Vt `d ]
+"226
+[; ;main.c: 226:     for(int i = 0; i<64; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 64 `i 1881  ]
+[e $U 1882  ]
+[e :U 1881 ]
+{
+"227
+[; ;main.c: 227:         TX(msg[i]);
+[e ( _TX (1 *U + &U _msg * -> -> _i `ui `ux -> -> # *U &U _msg `ui `ux ]
+"228
+[; ;main.c: 228:         if(msg[i] == 0x0A){
+[e $ ! == -> *U + &U _msg * -> -> _i `ui `ux -> -> # *U &U _msg `ui `ux `i -> 10 `i 1884  ]
+{
+"229
+[; ;main.c: 229:             break;
+[e $U 1882  ]
+"230
+[; ;main.c: 230:         }
+}
+[e :U 1884 ]
+"231
+[; ;main.c: 231:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 64 `i 1881  ]
+[e :U 1882 ]
+}
+"232
+[; ;main.c: 232:     __nop();
+[e ( ___nop ..  ]
+"233
+[; ;main.c: 233: }
+[e :UE 1880 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"104
-[; ;main.c: 104: void main(void) {
+"235
+[; ;main.c: 235: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"105
-[; ;main.c: 105:     OSCFREQ = 0b0010;
+"236
+[; ;main.c: 236:     OSCFREQ = 0b0010;
 [e = _OSCFREQ -> -> 2 `i `uc ]
-"106
-[; ;main.c: 106:     OSCCON1bits.NOSC = 0b110;
+"237
+[; ;main.c: 237:     OSCCON1bits.NOSC = 0b110;
 [e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
-"108
-[; ;main.c: 108:     PWMsetup();
+"239
+[; ;main.c: 239:     PWMsetup();
 [e ( _PWMsetup ..  ]
-"109
-[; ;main.c: 109:     ADCsetup();
+"240
+[; ;main.c: 240:     ADCsetup();
 [e ( _ADCsetup ..  ]
-"173
-[; ;main.c: 173:     RB5PPS = 0x0A;
-[e = _RB5PPS -> -> 10 `i `uc ]
-"174
-[; ;main.c: 174:     RB6PPS = 0x0B;
-[e = _RB6PPS -> -> 11 `i `uc ]
-"175
-[; ;main.c: 175:     return;
-[e $UE 1854  ]
-"176
-[; ;main.c: 176: }
-[e :UE 1854 ]
+"241
+[; ;main.c: 241:     UARTsetup();
+[e ( _UARTsetup ..  ]
+"243
+[; ;main.c: 243:     while(1){
+[e :U 1887 ]
+{
+"244
+[; ;main.c: 244:         __asm(" clrwdt");
+[; <"  clrwdt ;# ">
+"245
+[; ;main.c: 245:         balanceCells();
+[e ( _balanceCells ..  ]
+"246
+[; ;main.c: 246:         Vt = 2.048*(Vcell[0] + Vcell[1] + Vcell[2] + Vcell[3])/4095;
+[e = _Vt -> / * .2.048 -> + + + -> *U + &U _Vcell * -> -> -> 0 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 1 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 2 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui -> *U + &U _Vcell * -> -> -> 3 `i `ui `ux -> -> # *U &U _Vcell `ui `ux `ui `d -> -> 4095 `i `d `f ]
+"247
+[; ;main.c: 247:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"248
+[; ;main.c: 248:         sendData();
+[e ( _sendData ..  ]
+"249
+[; ;main.c: 249:     }
 }
+[e :U 1886 ]
+[e $U 1887  ]
+[e :U 1888 ]
+"250
+[; ;main.c: 250:     return;
+[e $UE 1885  ]
+"251
+[; ;main.c: 251: }
+[e :UE 1885 ]
+}
+[p f _sprintf 8396928 ]
+[a 1C 37 100 44 32 37 100 44 32 37 100 44 32 37 100 44 32 37 100 44 32 37 100 44 32 37 100 44 32 37 100 44 32 37 102 10 0 ]
