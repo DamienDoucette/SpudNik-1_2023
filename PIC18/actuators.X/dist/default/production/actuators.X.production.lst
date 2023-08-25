@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Thu Aug 17 12:14:06 2023
+                                                                                               Wed Aug 23 12:25:41 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F15Q40
@@ -235,7 +235,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    221 ;;
    222 ;; *************** function _main *****************
    223 ;; Defined at:
-   224 ;;		line 249 in file "main.c"
+   224 ;;		line 267 in file "main.c"
    225 ;; Parameters:    Size  Location     Type
    226 ;;		None
    227 ;; Auto vars:     Size  Location     Type
@@ -270,14 +270,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    256   000460                     _main:
    257                           	callstack 123
    258   000460                     
-   259                           ;main.c: 250:     PWMsetup();
+   259                           ;main.c: 268:     PWMsetup();
    260   000460  EC6B  F001         	call	_PWMsetup	;wreg free
    261                           
-   262                           ;main.c: 251:     configI2C();
+   262                           ;main.c: 269:     configI2C();
    263   000464  ECCE  F001         	call	_configI2C	;wreg free
    264   000468                     l163:
    265                           
-   266                           ;main.c: 253:         loop();
+   266                           ;main.c: 271:         loop();
    267   000468  EC3A  F002         	call	_loop	;wreg free
    268   00046C  EF34  F002         	goto	l163
    269   000470  EF5D  F000         	goto	start
@@ -286,7 +286,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    272                           
    273 ;; *************** function _loop *****************
    274 ;; Defined at:
-   275 ;;		line 244 in file "main.c"
+   275 ;;		line 262 in file "main.c"
    276 ;; Parameters:    Size  Location     Type
    277 ;;		None
    278 ;; Auto vars:     Size  Location     Type
@@ -321,7 +321,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    307                           	callstack 123
    308   000474  0004               	clrwdt		;# 
    309   000476                     
-   310                           ;main.c: 246:     I2C1CNTL = 0x04;
+   310                           ;main.c: 264:     I2C1CNTL = 0x04;
    311   000476  0E04               	movlw	4
    312   000478  0102               	movlb	2	; () banked
    313   00047A  6F8C               	movwf	140,b	;volatile
@@ -644,166 +644,166 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    630   0002FA  0E02               	movlw	2
    631   0002FC  6E61               	movwf	97,c	;volatile
    632                           
-   633                           ;main.c: 187:     PWM1PR = 0x00C7;
+   633                           ;main.c: 193:     PWM1PR = 0x00C7;
    634   0002FE  0E00               	movlw	0
    635   000300  6E64               	movwf	100,c	;volatile
    636   000302  0EC7               	movlw	199
    637   000304  6E63               	movwf	99,c	;volatile
    638                           
-   639                           ;main.c: 188:     PWM1CPRE = 0x00;
+   639                           ;main.c: 194:     PWM1CPRE = 0x00;
    640   000306  0E00               	movlw	0
    641   000308  6E65               	movwf	101,c	;volatile
    642                           
-   643                           ;main.c: 189:     PWM1GIE = 0x00;
+   643                           ;main.c: 195:     PWM1GIE = 0x00;
    644   00030A  0E00               	movlw	0
    645   00030C  6E68               	movwf	104,c	;volatile
    646   00030E                     
    647                           ; BSR set to: 2
-   648                           ;main.c: 190:     PWM1CONbits.LD = 1;
+   648                           ;main.c: 196:     PWM1CONbits.LD = 1;
    649   00030E  8469               	bsf	105,2,c	;volatile
    650   000310                     
    651                           ; BSR set to: 2
-   652                           ;main.c: 193:     PWM1S1CFGbits.POL1 = 0;
+   652                           ;main.c: 199:     PWM1S1CFGbits.POL1 = 0;
    653   000310  9C6A               	bcf	106,6,c	;volatile
    654   000312                     
    655                           ; BSR set to: 2
-   656                           ;main.c: 194:     PWM1S1CFGbits.POL2 = 0;
+   656                           ;main.c: 200:     PWM1S1CFGbits.POL2 = 0;
    657   000312  9E6A               	bcf	106,7,c	;volatile
    658   000314                     
    659                           ; BSR set to: 2
-   660                           ;main.c: 196:     PWM1S1CFGbits.PPEN = 0;
+   660                           ;main.c: 202:     PWM1S1CFGbits.PPEN = 0;
    661   000314  966A               	bcf	106,3,c	;volatile
    662                           
-   663                           ;main.c: 197:     PWM1S1CFGbits.MODE = 0b001;
+   663                           ;main.c: 203:     PWM1S1CFGbits.MODE = 0b001;
    664   000316  506A               	movf	106,w,c	;volatile
    665   000318  0BF8               	andlw	-8
    666   00031A  0901               	iorlw	1
    667   00031C  6E6A               	movwf	106,c	;volatile
    668                           
-   669                           ;main.c: 199:     PWM1S1P1 = 0x0000;
+   669                           ;main.c: 205:     PWM1S1P1 = 0x0000;
    670   00031E  0E00               	movlw	0
    671   000320  6E6C               	movwf	108,c	;volatile
    672   000322  0E00               	movlw	0
    673   000324  6E6B               	movwf	107,c	;volatile
    674                           
-   675                           ;main.c: 200:     PWM1S1P2 = 0x0000;
+   675                           ;main.c: 206:     PWM1S1P2 = 0x0000;
    676   000326  0E00               	movlw	0
    677   000328  6E6E               	movwf	110,c	;volatile
    678   00032A  0E00               	movlw	0
    679   00032C  6E6D               	movwf	109,c	;volatile
    680                           
-   681                           ;main.c: 203:     PWM2ERS = 0b0000;
+   681                           ;main.c: 209:     PWM2ERS = 0b0000;
    682   00032E  0E00               	movlw	0
    683   000330  6E6F               	movwf	111,c	;volatile
    684                           
-   685                           ;main.c: 204:     PWM2CLK = 0b0010;
+   685                           ;main.c: 210:     PWM2CLK = 0b0010;
    686   000332  0E02               	movlw	2
    687   000334  6E70               	movwf	112,c	;volatile
    688                           
-   689                           ;main.c: 206:     PWM2PR = 0x00C7;
+   689                           ;main.c: 218:     PWM2PR = 0x00C7;
    690   000336  0E00               	movlw	0
    691   000338  6E73               	movwf	115,c	;volatile
    692   00033A  0EC7               	movlw	199
    693   00033C  6E72               	movwf	114,c	;volatile
    694                           
-   695                           ;main.c: 207:     PWM2CPRE = 0x00;
+   695                           ;main.c: 219:     PWM2CPRE = 0x00;
    696   00033E  0E00               	movlw	0
    697   000340  6E74               	movwf	116,c	;volatile
    698                           
-   699                           ;main.c: 208:     PWM2GIE = 0x00;
+   699                           ;main.c: 220:     PWM2GIE = 0x00;
    700   000342  0E00               	movlw	0
    701   000344  6E77               	movwf	119,c	;volatile
    702   000346                     
    703                           ; BSR set to: 2
-   704                           ;main.c: 209:     PWM2CONbits.LD = 1;
+   704                           ;main.c: 221:     PWM2CONbits.LD = 1;
    705   000346  8478               	bsf	120,2,c	;volatile
    706   000348                     
    707                           ; BSR set to: 2
-   708                           ;main.c: 212:     PWM2S1CFGbits.POL1 = 0;
+   708                           ;main.c: 224:     PWM2S1CFGbits.POL1 = 0;
    709   000348  9C79               	bcf	121,6,c	;volatile
    710   00034A                     
    711                           ; BSR set to: 2
-   712                           ;main.c: 214:     PWM1S1CFGbits.PPEN = 0;
+   712                           ;main.c: 226:     PWM1S1CFGbits.PPEN = 0;
    713   00034A  966A               	bcf	106,3,c	;volatile
    714                           
-   715                           ;main.c: 215:     PWM1S1CFGbits.MODE = 0b001;
+   715                           ;main.c: 227:     PWM1S1CFGbits.MODE = 0b001;
    716   00034C  506A               	movf	106,w,c	;volatile
    717   00034E  0BF8               	andlw	-8
    718   000350  0901               	iorlw	1
    719   000352  6E6A               	movwf	106,c	;volatile
    720                           
-   721                           ;main.c: 217:     PWM2S1P1 = 0x0000;
+   721                           ;main.c: 229:     PWM2S1P1 = 0x0000;
    722   000354  0E00               	movlw	0
    723   000356  6E7B               	movwf	123,c	;volatile
    724   000358  0E00               	movlw	0
    725   00035A  6E7A               	movwf	122,c	;volatile
    726                           
-   727                           ;main.c: 220:     PWM3ERS = 0b0000;
+   727                           ;main.c: 232:     PWM3ERS = 0b0000;
    728   00035C  0E00               	movlw	0
    729   00035E  6E7E               	movwf	126,c	;volatile
    730                           
-   731                           ;main.c: 221:     PWM3CLK = 0b0010;
+   731                           ;main.c: 233:     PWM3CLK = 0b0010;
    732   000360  0E02               	movlw	2
    733   000362  6E7F               	movwf	127,c	;volatile
    734                           
-   735                           ;main.c: 223:     PWM3PR = 0x00C7;
+   735                           ;main.c: 241:     PWM3PR = 0x00C7;
    736   000364  0E00               	movlw	0
    737   000366  6E82               	movwf	130,c	;volatile
    738   000368  0EC7               	movlw	199
    739   00036A  6E81               	movwf	129,c	;volatile
    740                           
-   741                           ;main.c: 224:     PWM3CPRE = 0x00;
+   741                           ;main.c: 242:     PWM3CPRE = 0x00;
    742   00036C  0E00               	movlw	0
    743   00036E  6E83               	movwf	131,c	;volatile
    744                           
-   745                           ;main.c: 225:     PWM3GIE = 0x00;
+   745                           ;main.c: 243:     PWM3GIE = 0x00;
    746   000370  0E00               	movlw	0
    747   000372  6E86               	movwf	134,c	;volatile
    748   000374                     
    749                           ; BSR set to: 2
-   750                           ;main.c: 226:     PWM3CONbits.LD = 1;
+   750                           ;main.c: 244:     PWM3CONbits.LD = 1;
    751   000374  8487               	bsf	135,2,c	;volatile
    752   000376                     
    753                           ; BSR set to: 2
-   754                           ;main.c: 229:     PWM3S1CFGbits.POL1 = 0;
+   754                           ;main.c: 247:     PWM3S1CFGbits.POL1 = 0;
    755   000376  9C88               	bcf	136,6,c	;volatile
    756   000378                     
    757                           ; BSR set to: 2
-   758                           ;main.c: 230:     PWM3S1CFGbits.POL2 = 0;
+   758                           ;main.c: 248:     PWM3S1CFGbits.POL2 = 0;
    759   000378  9E88               	bcf	136,7,c	;volatile
    760   00037A                     
    761                           ; BSR set to: 2
-   762                           ;main.c: 232:     PWM3S1CFGbits.PPEN = 0;
+   762                           ;main.c: 250:     PWM3S1CFGbits.PPEN = 0;
    763   00037A  9688               	bcf	136,3,c	;volatile
    764                           
-   765                           ;main.c: 233:     PWM3S1CFGbits.MODE = 0b001;
+   765                           ;main.c: 251:     PWM3S1CFGbits.MODE = 0b001;
    766   00037C  5088               	movf	136,w,c	;volatile
    767   00037E  0BF8               	andlw	-8
    768   000380  0901               	iorlw	1
    769   000382  6E88               	movwf	136,c	;volatile
    770                           
-   771                           ;main.c: 235:     PWM3S1P1 = 0x0000;
+   771                           ;main.c: 253:     PWM3S1P1 = 0x0000;
    772   000384  0E00               	movlw	0
    773   000386  6E8A               	movwf	138,c	;volatile
    774   000388  0E00               	movlw	0
    775   00038A  6E89               	movwf	137,c	;volatile
    776                           
-   777                           ;main.c: 236:     PWM3S1P2 = 0x0000;
+   777                           ;main.c: 254:     PWM3S1P2 = 0x0000;
    778   00038C  0E00               	movlw	0
    779   00038E  6E8C               	movwf	140,c	;volatile
    780   000390  0E00               	movlw	0
    781   000392  6E8B               	movwf	139,c	;volatile
    782   000394                     
    783                           ; BSR set to: 2
-   784                           ;main.c: 239:     PWM1CONbits.EN = 1;
+   784                           ;main.c: 257:     PWM1CONbits.EN = 1;
    785   000394  8E69               	bsf	105,7,c	;volatile
    786   000396                     
    787                           ; BSR set to: 2
-   788                           ;main.c: 240:     PWM2CONbits.EN = 1;
+   788                           ;main.c: 258:     PWM2CONbits.EN = 1;
    789   000396  8E78               	bsf	120,7,c	;volatile
    790   000398                     
    791                           ; BSR set to: 2
-   792                           ;main.c: 241:     PWM3CONbits.EN = 1;
+   792                           ;main.c: 259:     PWM3CONbits.EN = 1;
    793   000398  8E87               	bsf	135,7,c	;volatile
    794   00039A                     
    795                           ; BSR set to: 2
@@ -1806,7 +1806,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Thu Aug 17 12:14:06 2023
+Symbol Table                                                                                   Wed Aug 23 12:25:41 2023
 
                     l129 0428                      l155 039A                      l163 0468  
                     l158 047C                      l900 0402                      l910 0410  

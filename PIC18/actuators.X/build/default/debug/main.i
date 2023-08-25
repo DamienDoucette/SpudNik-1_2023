@@ -22676,6 +22676,12 @@ void PWMsetup(){
     PWM1ERS = 0b0000;
     PWM1CLK = 0b0010;
 
+
+
+
+
+
+
     PWM1PR = 0x00C7;
     PWM1CPRE = 0x00;
     PWM1GIE = 0x00;
@@ -22695,6 +22701,12 @@ void PWMsetup(){
     PWM2ERS = 0b0000;
     PWM2CLK = 0b0010;
 
+
+
+
+
+
+
     PWM2PR = 0x00C7;
     PWM2CPRE = 0x00;
     PWM2GIE = 0x00;
@@ -22711,6 +22723,12 @@ void PWMsetup(){
 
     PWM3ERS = 0b0000;
     PWM3CLK = 0b0010;
+
+
+
+
+
+
 
     PWM3PR = 0x00C7;
     PWM3CPRE = 0x00;
